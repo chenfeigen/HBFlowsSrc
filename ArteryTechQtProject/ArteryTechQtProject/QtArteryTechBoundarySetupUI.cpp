@@ -10,6 +10,11 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QWidget *parent)
 	this->setWindowTitle("边界条件设置");
 	setMinimumSize(1115, 500);
 	setMaximumSize(1115, 500);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
+
 	this->vinCheckBox = new QCheckBox;
 	this->wallCheckBox = new QCheckBox;
 	this->inletFlowfactorCheckBox = new QCheckBox;
@@ -30,7 +35,7 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QWidget *parent)
 
 
 	//设置初始值
-	InitBoundaryData();
+	InitUiData();
 	//获取UI界面上的数据
 	//SaveBoundaryData();
 	QObject::connect(ui->OKPushButton, SIGNAL(clicked(bool)), this, SLOT(OKPushButtonSlots()));
@@ -60,6 +65,10 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QString tmpFileName,QWi
 	this->setWindowTitle("边界条件设置");
 	setMinimumSize(1115, 500);
 	setMaximumSize(1115, 500);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	m_tmpFileName = tmpFileName;
 
@@ -83,7 +92,7 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QString tmpFileName,QWi
 
 
 	//设置初始值
-	InitBoundaryData();
+	InitUiData();
 	//获取UI界面上的数据
 	//SaveBoundaryData();
 	QObject::connect(ui->OKPushButton, SIGNAL(clicked(bool)), this, SLOT(OKPushButtonSlots()));
@@ -112,10 +121,11 @@ void QtArteryTechBoundarySetupUI::OKPushButtonSlots()
 
 void QtArteryTechBoundarySetupUI::CancelPushButtonSlots()
 {
-	InitBoundaryData();
+	InitBoundaryData(false);
 	this->close();
 }
 
+#if 0
 //初始化UI界面上的数据
 void QtArteryTechBoundarySetupUI::InitBoundaryData()
 {
@@ -150,41 +160,149 @@ void QtArteryTechBoundarySetupUI::InitBoundaryData()
 	ui->ParabolicInflowLabel->setVisible(true);
 	ui->ParabolicInflowLineEdit->setVisible(false);
 }
+#endif
 
-#if 0
-//初始化UI界面上的数据
-void QtArteryTechBoundarySetupUI::InitBoundaryData()
+void QtArteryTechBoundarySetupUI::InitUiData()
 {
+	this->vinCheckBox->setVisible(false);
+	this->vinCheckBox->setEnabled(false);
+	this->vinCheckBox->setCheckState(Qt::Checked);
+
+	this->wallCheckBox->setVisible(false);
+	this->wallCheckBox->setEnabled(false);
+	this->wallCheckBox->setCheckState(Qt::Checked);
+
+	ui->BoundaryTypeLineEdit->setVisible(false);
+	ui->BoundaryTypeLineEdit->setEnabled(false);
 	ui->BoundaryTypeLineEdit->setText("2");
-	ui->NodeSetFileLineEdit->setText("Nodeset");
-	ui->SideSetFileLineEdit->setText("Sideset");
-	ui->NodeAndSideSetFileLineEdit->setText("BCsetup");
-	ui->WindkesselFileLineEdit->setText("windkessel");
-	ui->InletFlowRateFileLineEdit->setText("inflowrate.txt");
-	ui->NumberOfOutletsLineEdit->setText("15");
+
+	ui->NodeSetFileLineEdit->setText(NULL);
+	ui->SideSetFileLineEdit->setText(NULL);
+	ui->NodeAndSideSetFileLineEdit->setText(NULL);
+	ui->WindkesselFileLineEdit->setText(NULL);
+	ui->InletFlowRateFileLineEdit->setText(NULL);
+	ui->NumberOfOutletsLineEdit->setText("0");
+
+	ui->IndexForAortaOutletLineEdit->setVisible(false);
+	ui->IndexForAortaOutletLineEdit->setEnabled(false);
 	ui->IndexForAortaOutletLineEdit->setText("21");
+
 	ui->IncludeInletBoundaryLineEdit->setText(NULL);
 	ui->IncludeInletBoundaryLabel->setVisible(true);
 	ui->IncludeInletBoundaryLineEdit->setVisible(false);
 	ui->IncludeWallBoundaryLineEdit->setText(NULL);
 	ui->IncludeWallBoundaryLabel->setVisible(true);
 	ui->IncludeWallBoundaryLineEdit->setVisible(false);
-	ui->InletBoudaryNormXDirectionLineEdit->setText("-0.750503");
-	ui->InletBoudaryNormYDirectionLineEdit->setText("-0.28611");
-	ui->InletBoudaryNormZDirectionLineEdit->setText("0.595723");
-	ui->InletBoudaryLowBoundXDirectionLineEdit->setText("2.2996237");
-	ui->InletBoudaryLowBoundYDirectionLineEdit->setText("-16.819449");
-	ui->InletBoudaryLowBoundZDirectionLineEdit->setText("111.55184");
-	ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("3.877808");
-	ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("-14.531108");
-	ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("109.63409");
-	ui->InletBoudaryAreaLineEdit->setText("4.47770145");
+	ui->InletBoudaryNormXDirectionLineEdit->setText("0");
+	ui->InletBoudaryNormYDirectionLineEdit->setText("0");
+	ui->InletBoudaryNormZDirectionLineEdit->setText("0");
+	ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
+	ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
+	ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
+	ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
+	ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
+	ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
+	ui->InletBoudaryAreaLineEdit->setText("0");
 	ui->InletFlowRateFactorLineEdit->setText(NULL);
 	ui->InletFlowRateFactorLabel->setVisible(true);
 	ui->InletFlowRateFactorLineEdit->setVisible(false);
 	ui->ParabolicInflowLineEdit->setText(NULL);
 	ui->ParabolicInflowLabel->setVisible(true);
 	ui->ParabolicInflowLineEdit->setVisible(false);
+}
+
+#if 1
+//初始化UI界面上的数据
+void QtArteryTechBoundarySetupUI::InitBoundaryData(bool flag)
+{
+	if (flag)
+	{
+		//允许修改
+		this->vinCheckBox->setVisible(true);
+		this->vinCheckBox->setEnabled(true);
+		this->wallCheckBox->setVisible(true);
+		this->wallCheckBox->setEnabled(true);
+		ui->BoundaryTypeLineEdit->setVisible(true);
+		ui->BoundaryTypeLineEdit->setEnabled(true);
+		//ui->BoundaryTypeLineEdit->setText("2");
+		ui->NodeSetFileLineEdit->setText(NULL);
+		ui->SideSetFileLineEdit->setText(NULL);
+		//ui->NodeAndSideSetFileLineEdit->setText(NULL);
+		ui->WindkesselFileLineEdit->setText(NULL);
+		//ui->InletFlowRateFileLineEdit->setText(NULL);
+		//ui->NumberOfOutletsLineEdit->setText("0");
+
+		ui->IndexForAortaOutletLineEdit->setVisible(true);
+		ui->IndexForAortaOutletLineEdit->setEnabled(true);
+		//ui->IndexForAortaOutletLineEdit->setText("21");
+		ui->IncludeInletBoundaryLineEdit->setText(NULL);
+		ui->IncludeInletBoundaryLabel->setVisible(true);
+		ui->IncludeInletBoundaryLineEdit->setVisible(false);
+		ui->IncludeWallBoundaryLineEdit->setText(NULL);
+		ui->IncludeWallBoundaryLabel->setVisible(true);
+		ui->IncludeWallBoundaryLineEdit->setVisible(false);
+		ui->InletBoudaryNormXDirectionLineEdit->setText("0");
+		ui->InletBoudaryNormYDirectionLineEdit->setText("0");
+		ui->InletBoudaryNormZDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
+		ui->InletBoudaryAreaLineEdit->setText("0");
+		ui->InletFlowRateFactorLineEdit->setText(NULL);
+		ui->InletFlowRateFactorLabel->setVisible(true);
+		ui->InletFlowRateFactorLineEdit->setVisible(false);
+		ui->ParabolicInflowLineEdit->setText(NULL);
+		ui->ParabolicInflowLabel->setVisible(true);
+		ui->ParabolicInflowLineEdit->setVisible(false);
+	}
+	else
+	{
+		this->vinCheckBox->setVisible(false);
+		this->vinCheckBox->setEnabled(false);
+
+		this->wallCheckBox->setVisible(false);
+		this->wallCheckBox->setEnabled(false);
+
+		ui->BoundaryTypeLineEdit->setVisible(false);
+		ui->BoundaryTypeLineEdit->setEnabled(false);
+
+		ui->NodeSetFileLineEdit->setText(NULL);
+		ui->SideSetFileLineEdit->setText(NULL);
+		//ui->NodeAndSideSetFileLineEdit->setText(NULL);
+		ui->WindkesselFileLineEdit->setText(NULL);
+		//ui->InletFlowRateFileLineEdit->setText(NULL);
+		//ui->NumberOfOutletsLineEdit->setText("0");
+
+		ui->IndexForAortaOutletLineEdit->setVisible(false);
+		ui->IndexForAortaOutletLineEdit->setEnabled(false);
+
+		ui->IncludeInletBoundaryLineEdit->setText(NULL);
+		ui->IncludeInletBoundaryLabel->setVisible(true);
+		ui->IncludeInletBoundaryLineEdit->setVisible(false);
+		ui->IncludeWallBoundaryLineEdit->setText(NULL);
+		ui->IncludeWallBoundaryLabel->setVisible(true);
+		ui->IncludeWallBoundaryLineEdit->setVisible(false);
+		ui->InletBoudaryNormXDirectionLineEdit->setText("0");
+		ui->InletBoudaryNormYDirectionLineEdit->setText("0");
+		ui->InletBoudaryNormZDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
+		ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
+		ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
+		ui->InletBoudaryAreaLineEdit->setText("0");
+		ui->InletFlowRateFactorLineEdit->setText(NULL);
+		ui->InletFlowRateFactorLabel->setVisible(true);
+		ui->InletFlowRateFactorLineEdit->setVisible(false);
+		ui->ParabolicInflowLineEdit->setText(NULL);
+		ui->ParabolicInflowLabel->setVisible(true);
+		ui->ParabolicInflowLineEdit->setVisible(false);
+	}
+	
 }
 #endif
 //获取UI界面上的数据
@@ -202,16 +320,31 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->NodeSetFileLabel->text() + " " + "-nodeset_file" + " ";
-	labeltext = "	#-nodeset_file ";
-	lineEdit = ui->NodeSetFileLineEdit->text() + "\n";
-	contenttext = labeltext + lineEdit;
-	boundaryDataList.append(contenttext);
+	if (NULL == ui->NodeSetFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-nodeset_file\n";
+		boundaryDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-nodeset_file ";
+		lineEdit = ui->NodeSetFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		boundaryDataList.append(contenttext);
+	}
 
-	//labeltext = "	" + ui->SideSetFileLabel->text() + " " + "-sideset_file" + " ";
-	labeltext = "	#-sideset_file ";
-	lineEdit = ui->SideSetFileLineEdit->text() + "\n";
-	contenttext = labeltext + lineEdit;
-	boundaryDataList.append(contenttext);
+	if (NULL == ui->SideSetFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-sideset_file\n";;
+		boundaryDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-sideset_file ";
+		lineEdit = ui->SideSetFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		boundaryDataList.append(contenttext);
+	}
 
 	//labeltext = "	" + ui->NodeAndSideSetFileLabel->text() + " " + "-BC_setup_file" + " ";
 	labeltext = "	-BC_setup_file ";
@@ -220,10 +353,18 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->WindkesselFileLabel->text() + " " + "-Windkessel_file" + " ";
-	labeltext = "	-Windkessel_file ";
-	lineEdit = ui->WindkesselFileLineEdit->text() + "\n";
-	contenttext = labeltext + lineEdit;
-	boundaryDataList.append(contenttext);
+	if (NULL == ui->WindkesselFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-Windkessel_file\n";
+		boundaryDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-Windkessel_file ";
+		lineEdit = ui->WindkesselFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		boundaryDataList.append(contenttext);
+	}
 
 	//labeltext = "	" + ui->InletFlowRateFileLabel->text() + " " + "-Q_file" + " ";
 	labeltext = "	-Q_file ";
@@ -316,7 +457,7 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryAreaLabel->text() + " " + "-inlet_area" + " ";
-	labeltext = "	#-inlet_area ";//-inlet_flowfactor
+	labeltext = "	#-inlet_area ";
 	lineEdit = ui->InletBoudaryAreaLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
@@ -338,6 +479,184 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 		contenttext = labeltext + lineEdit;
 		boundaryDataList.append(contenttext);
 	}
+}
+
+// 获取UI界面上的数据
+QStringList QtArteryTechBoundarySetupUI::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString MenuStr = "#Boundary Setup\n";
+	resultUIDataList.append(MenuStr);
+	//QString labeltext = "	" + ui->BoundaryTypeLabel->text() + " " + "-bloodflow_bc_type" + " ";
+	QString labeltext = "	-bloodflow_bc_type ";
+	QString lineEdit = ui->BoundaryTypeLineEdit->text() + "\n";
+	QString contenttext = labeltext + lineEdit;
+	bloodflowBcTypeText = ui->BoundaryTypeLineEdit->text().trimmed();
+	SendBoundaryTypeSignal(bloodflowBcTypeText);
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->NodeSetFileLabel->text() + " " + "-nodeset_file" + " ";
+	if (NULL == ui->NodeSetFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-nodeset_file\n";
+		resultUIDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-nodeset_file ";
+		lineEdit = ui->NodeSetFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	if (NULL == ui->SideSetFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-sideset_file\n";;
+		resultUIDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-sideset_file ";
+		lineEdit = ui->SideSetFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->NodeAndSideSetFileLabel->text() + " " + "-BC_setup_file" + " ";
+	labeltext = "	-BC_setup_file ";
+	lineEdit = ui->NodeAndSideSetFileLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->WindkesselFileLabel->text() + " " + "-Windkessel_file" + " ";
+	if (NULL == ui->WindkesselFileLineEdit->text().trimmed())
+	{
+		contenttext = "	#-Windkessel_file\n";
+		resultUIDataList.append(contenttext);
+	}
+	else
+	{
+		labeltext = "	-Windkessel_file ";
+		lineEdit = ui->WindkesselFileLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->InletFlowRateFileLabel->text() + " " + "-Q_file" + " ";
+	labeltext = "	-Q_file ";
+	lineEdit = ui->InletFlowRateFileLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->NumberOfOutletsLabel->text() + " " + "-num_outlet" + " ";
+	labeltext = "	-num_outlet ";
+	lineEdit = ui->NumberOfOutletsLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->IndexForAortaOutletLabel->text() + " " + "-aortic_outlet" + " ";
+	labeltext = "	-aortic_outlet ";
+	lineEdit = ui->IndexForAortaOutletLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->vinCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->IncludeInletBoundaryLabel->text() + " " + "-vin" + " ";
+		labeltext = "	-vin ";
+		lineEdit = ui->IncludeInletBoundaryLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	if (this->wallCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->IncludeWallBoundaryLabel->text() + " " + "-wall" + " ";
+		labeltext = "	-wall ";
+		lineEdit = ui->IncludeWallBoundaryLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->InletBoudaryNormXDirectionLabel->text() + " " + "-inlet_nx" + " ";
+	labeltext = "	#-inlet_nx ";
+	lineEdit = ui->InletBoudaryNormXDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryNormYDirectionLabel->text() + " " + "-inlet_ny" + " ";
+	labeltext = "	#-inlet_ny ";
+	lineEdit = ui->InletBoudaryNormYDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryNormZDirectionLabel->text() + " " + "-inlet_nz" + " ";
+	labeltext = "	#-inlet_nz ";
+	lineEdit = ui->InletBoudaryNormZDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryLowBoundXDirectionLabel->text() + " " + "-inlet_xi" + " ";
+	labeltext = "	#-inlet_xi ";
+	lineEdit = ui->InletBoudaryLowBoundXDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryLowBoundYDirectionLabel->text() + " " + "-inlet_yi" + " ";
+	labeltext = "	#-inlet_yi ";
+	lineEdit = ui->InletBoudaryLowBoundYDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryLowBoundZDirectionLabel->text() + " " + "-inlet_zi" + " ";
+	labeltext = "	#-inlet_zi ";
+	lineEdit = ui->InletBoudaryLowBoundZDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryUpperBoundXDirectionLabel->text() + " " + "-inlet_xf" + " ";
+	labeltext = "	#-inlet_xf ";
+	lineEdit = ui->InletBoudaryUpperBoundXDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryUpperBoundYDirectionLabel->text() + " " + "-inlet_yf" + " ";
+	labeltext = "	#-inlet_yf ";
+	lineEdit = ui->InletBoudaryUpperBoundYDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryUpperBoundZDirectionLabel->text() + " " + "-inlet_zf" + " ";
+	labeltext = "	#-inlet_zf ";
+	lineEdit = ui->InletBoudaryUpperBoundZDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletBoudaryAreaLabel->text() + " " + "-inlet_area" + " ";
+	labeltext = "	#-inlet_area ";
+	lineEdit = ui->InletBoudaryAreaLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->inletFlowfactorCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->InletFlowRateFactorLabel->text() + " " + "-inlet_flowfactor" + " ";
+		labeltext = "	-inlet_flowfactor ";
+		lineEdit = ui->InletFlowRateFactorLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	if (this->parabolicInflowCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->ParabolicInflowLabel->text() + " " + "-parabolic_inflow" + " ";
+		labeltext = "	-parabolic_inflow ";
+		lineEdit = ui->ParabolicInflowLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+	return resultUIDataList;
 }
 
 QtArteryTechBoundarySetupUI::~QtArteryTechBoundarySetupUI()
@@ -823,3 +1142,62 @@ void QtArteryTechBoundarySetupUI::SendBoundaryTypeSignal(QString boundaryTypeTex
 	emit BoundaryTypeSignal(boundaryTypeText);
 }
 
+void QtArteryTechBoundarySetupUI::BTCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->BoundaryTypeLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->BoundaryTypeLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->BoundaryTypeLineEdit->setReadOnly(true);
+	}
+}
+
+
+void QtArteryTechBoundarySetupUI::IFAOCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->IndexForAortaOutletLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->IndexForAortaOutletLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->IndexForAortaOutletLineEdit->setReadOnly(true);
+	}
+}
+
+void QtArteryTechBoundarySetupUI::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitBoundaryData(flag);
+}
+
+void QtArteryTechBoundarySetupUI::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this,"提示:","接收信号");
+	int length = VariableParametersList.length();
+	qDebug() << "length:" << length;
+	for (size_t i = 0; i < VariableParametersList.length(); i++)
+	{
+		if (VariableParametersList.at(i).startsWith("Node & Side Set File:"))
+		{
+			ui->NodeAndSideSetFileLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("Inlet Flow Rate File:"))
+		{
+			ui->InletFlowRateFileLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("Number of Outlets:"))
+		{
+			ui->NumberOfOutletsLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+	}
+}

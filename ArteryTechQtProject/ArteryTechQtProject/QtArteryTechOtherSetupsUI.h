@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechOtherSetupsUI; };
 
@@ -23,6 +24,7 @@ public:
 	~QtArteryTechOtherSetupsUI();
 	QStringList otherDataList;
 	QStringList GetTechOtherData();
+	QStringList getUIData();
 
 private:
 	QCheckBox *blockOrderCheckBox =	NULL;
@@ -30,14 +32,19 @@ private:
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitOtherData();
+	void InitOtherData(bool flag);
 	void SaveOtherData();
 	int isDigitStr(QString str);
+	void InitUiData();
+
 private slots:
 	void OkButtonSlots();
 	void CancelButtonSlots();
 	void InitialNumberOfPartitionLineEditSlot();
 	void DiagnalScalerLineEditSlot();
+	void INOPCheckBoxStateChanged(int Status);
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 
 private:
 	Ui::QtArteryTechOtherSetupsUI *ui;

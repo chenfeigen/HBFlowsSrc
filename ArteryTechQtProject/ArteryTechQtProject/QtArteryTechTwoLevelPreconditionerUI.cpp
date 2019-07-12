@@ -10,6 +10,10 @@ QtArteryTechTwoLevelPreconditionerUI::QtArteryTechTwoLevelPreconditionerUI(QWidg
 	this->setWindowTitle("两水平预处理参数设置");
 	this->setMinimumSize(528, 100);
 	this->setMaximumSize(528, 100);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->twoLevelPreconditionerCheckBox = new QCheckBox;
 	//this->TwoLevelCheckBox = new QCheckBox;
@@ -25,7 +29,7 @@ QtArteryTechTwoLevelPreconditionerUI::QtArteryTechTwoLevelPreconditionerUI(QWidg
 	//this->UseMGLineEditCheckBox->setCheckState(Qt::Checked);
 
 
-	InitTLPreconditionerData();
+	InitTLPreconditionerData(false);
 	//SaveTLPreconditionerData();
 	//信号与槽函数
 	QObject::connect(ui->CoarseLinearSolverRestartLineEdit, SIGNAL(editingFinished()), this, SLOT(CoarseLinearSolverRestartLineEditSlot()));
@@ -45,8 +49,13 @@ QtArteryTechTwoLevelPreconditionerUI::QtArteryTechTwoLevelPreconditionerUI(QStri
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	m_tmpFileName = tmpFileName;
 	this->setWindowTitle("两水平预处理参数设置");
+	//设置窗口的尺寸
 	this->setMinimumSize(528, 100);
 	this->setMaximumSize(528, 100);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->twoLevelPreconditionerCheckBox = new QCheckBox;
 	//this->TwoLevelCheckBox = new QCheckBox;
@@ -61,8 +70,7 @@ QtArteryTechTwoLevelPreconditionerUI::QtArteryTechTwoLevelPreconditionerUI(QStri
 	//设置checkbox的初始状态为已经选择
 	//this->UseMGLineEditCheckBox->setCheckState(Qt::Checked);
 
-
-	InitTLPreconditionerData();
+	InitTLPreconditionerData(false);
 	//SaveTLPreconditionerData();
 	//信号与槽函数
 	QObject::connect(ui->CoarseLinearSolverRestartLineEdit, SIGNAL(editingFinished()), this, SLOT(CoarseLinearSolverRestartLineEditSlot()));
@@ -74,7 +82,7 @@ QtArteryTechTwoLevelPreconditionerUI::QtArteryTechTwoLevelPreconditionerUI(QStri
 	QObject::connect(ui->CancelPushButton, SIGNAL(clicked()), this, SLOT(CancelPushButtonSlots()));//CancelPushButtonSlots
 }
 
-void QtArteryTechTwoLevelPreconditionerUI::InitTLPreconditionerData()
+void QtArteryTechTwoLevelPreconditionerUI::InitTLPreconditionerData(bool flag)
 {
 	//ui->TwoLevelPreconditionerLineEdit->setText(NULL);
 	ui->horizontalLayout->addWidget(this->twoLevelPreconditionerCheckBox);
@@ -364,6 +372,7 @@ void QtArteryTechTwoLevelPreconditionerUI::TwoLevelPreconditionerCheckBoxSlots()
 		this->mGTypeLineEditCheckBox->setVisible(false);
 	}
 }
+
 void QtArteryTechTwoLevelPreconditionerUI::SaveTLPreconditionerData()
 {
 	this->twoLPreconditionerDataList.clear();
@@ -488,8 +497,135 @@ void QtArteryTechTwoLevelPreconditionerUI::SaveTLPreconditionerData()
 		this->twoLPreconditionerDataList.append(contenttext);
 
 	}
+}
 
 
+QStringList QtArteryTechTwoLevelPreconditionerUI::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString Menustr = "#Two-Level Preconditioner\n";
+	resultUIDataList.append(Menustr);
+	if (this->twoLevelPreconditionerCheckBox->isChecked())
+	{
+		//QString labeltext = "   -two_level ";
+		//QString lineEdit = ui->TwoLevelPreconditionerLineEdit->text() + "\n";
+		//QString contenttext = labeltext + lineEdit;
+		QString labeltext = "	-two_level \n";
+		QString lineEdit = NULL;
+		QString contenttext = labeltext;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseLinearSolverLabel->text() + " " + "-coarse_ksp_type" + " ";
+		labeltext = "	-coarse_ksp_type ";
+		lineEdit = ui->CoarseLinearSolverLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarsePreconditionerSideLabel->text() + " " + "-coarse_ksp_pc_side" + " ";
+		labeltext = "	-coarse_ksp_pc_side ";
+		lineEdit = ui->CoarsePreconditionerSideLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseLinearSolverRestartLabel->text() + " " + "-coarse_ksp_gmres_restart" + " ";
+		labeltext = "	-coarse_ksp_gmres_restart ";
+		lineEdit = ui->CoarseLinearSolverRestartLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseLinearSolverMaxIterationLabel->text() + " " + "-coarse_ksp_max_it" + " ";
+		labeltext = "	-coarse_ksp_max_it ";
+		lineEdit = ui->CoarseLinearSolverMaxIterationLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseLinearSolverRelativeTolLabel->text() + " " + "-coarse_ksp_rtol" + " ";
+		labeltext = "	-coarse_ksp_rtol ";
+		lineEdit = ui->CoarseLinearSolverRelativeTolLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		if (this->useMGLineEditCheckBox->isChecked())
+		{
+			labeltext = "	-mg ";
+			//lineEdit = ui->UseMGLineEdit->text() + "\n";
+			lineEdit = "\n";
+			contenttext = labeltext + lineEdit;
+			resultUIDataList.append(contenttext);
+		}
+
+		if (this->mGTypeLineEditCheckBox->isChecked())
+		{
+			labeltext = "	-cascade ";
+			//lineEdit = ui->MGTypeLineEdit->text() + "\n";
+			lineEdit = "\n";
+			contenttext = labeltext + lineEdit;
+			resultUIDataList.append(contenttext);
+		}
+
+		//labeltext = "	" + ui->CompositeTypeLabel->text() + " " + "-pc_composite_type" + " ";
+		labeltext = "	-pc_composite_type ";
+		lineEdit = ui->CompositeTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->MGCycleTypeLabel->text() + " " + "-pc_mg_cycle_type" + " ";
+		labeltext = "	-pc_mg_cycle_type ";
+		lineEdit = ui->MGCycleTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->FinePreconditionerTypeLabel->text() + " " + "-fine_pc_type" + " ";
+		labeltext = "	-fine_pc_type ";
+		lineEdit = ui->FinePreconditionerTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->FineSubdomainPreconTypeLabel->text() + " " + "-fine_sub_pc_type" + " ";
+		labeltext = "	-fine_sub_pc_type ";
+		lineEdit = ui->FineSubdomainPreconTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->FineILULevelsLabel->text() + " " + "-fine_sub_pc_factor_levels" + " ";
+		labeltext = "	-fine_sub_pc_factor_levels ";
+		lineEdit = ui->FineILULevelsLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->FineSubMatrixOderingTypeLabel->text() + " " + "-fine_sub_pc_factor_mat_ordering_type" + " ";
+		labeltext = "	-fine_sub_pc_factor_mat_ordering_type ";
+		lineEdit = ui->FineSubMatrixOderingTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarsePreconditionerTypeLabel->text() + " " + "-coarse_pc_type" + " ";
+		labeltext = "	-coarse_pc_type ";
+		lineEdit = ui->CoarsePreconditionerTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseSubdomainPreconTypeLabel->text() + " " + "-coarse_sub_pc_type" + " ";
+		labeltext = "	-coarse_sub_pc_type ";
+		lineEdit = ui->CoarseSubdomainPreconTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		//labeltext = "	" + ui->CoarseILULevelsLabel->text() + " " + "-coarse_sub_pc_factor_levels" + " ";
+		labeltext = "	-coarse_sub_pc_factor_levels ";
+		lineEdit = ui->CoarseILULevelsLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+		labeltext = "	" + ui->CoarseSubMatrixOderingTypeLabel->text() + " " + "-two_level" + " ";
+		labeltext = "	-coarse_sub_pc_factor_mat_ordering_type ";
+		lineEdit = ui->CoarseSubMatrixOderingTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+
+	}
+	return resultUIDataList;
 }
 
 void QtArteryTechTwoLevelPreconditionerUI::OkPushButtonSlots()
@@ -500,7 +636,7 @@ void QtArteryTechTwoLevelPreconditionerUI::OkPushButtonSlots()
 
 void QtArteryTechTwoLevelPreconditionerUI::CancelPushButtonSlots()
 {
-	InitTLPreconditionerData();
+	InitTLPreconditionerData(false);
 	this->close();
 }
 
@@ -711,4 +847,14 @@ void QtArteryTechTwoLevelPreconditionerUI::CoarseILULevelsLineEditSlot()
 			ui->CoarseILULevelsLineEdit->setText("0");
 		}
 	}
+}
+
+void QtArteryTechTwoLevelPreconditionerUI::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitTLPreconditionerData(flag);
+}
+
+void QtArteryTechTwoLevelPreconditionerUI::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this, "提示:", "接收信号");
 }

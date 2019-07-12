@@ -111,6 +111,15 @@
     <ClCompile Include="GetCalculationResultsDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VariableParametersDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VerifyPassword.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputingMultipleBP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ArteryTechQtProject.h">
@@ -191,6 +200,15 @@
     <QtMoc Include="GetCalculationResultsDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="VariableParametersDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="VerifyPassword.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ComputingMultipleBP.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ArteryTechQtProject.ui">
@@ -260,6 +278,15 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="GetCalculationResultsDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="VariableParametersDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="VerifyPassword.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ComputingMultipleBP.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

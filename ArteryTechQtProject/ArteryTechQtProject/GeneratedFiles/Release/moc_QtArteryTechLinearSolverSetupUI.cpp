@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtArteryTechLinearSolverSetupUI_t {
-    QByteArrayData data[7];
-    char stringdata0[163];
+    QByteArrayData data[11];
+    char stringdata0[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,14 +37,21 @@ QT_MOC_LITERAL(2, 50, 0), // ""
 QT_MOC_LITERAL(3, 51, 21), // "CancelPushButtonSlots"
 QT_MOC_LITERAL(4, 73, 25), // "RestartNumberLineEditSlot"
 QT_MOC_LITERAL(5, 99, 30), // "MaxIterationNumberLineEditSlot"
-QT_MOC_LITERAL(6, 130, 32) // "RatioOfThe1stStepTolLineEditSlot"
+QT_MOC_LITERAL(6, 130, 32), // "RatioOfThe1stStepTolLineEditSlot"
+QT_MOC_LITERAL(7, 163, 26), // "GetVerifyPasswordStatuSlot"
+QT_MOC_LITERAL(8, 190, 4), // "flag"
+QT_MOC_LITERAL(9, 195, 31), // "GetVariableParametersSignalSlot"
+QT_MOC_LITERAL(10, 227, 22) // "VariableParametersList"
 
     },
     "QtArteryTechLinearSolverSetupUI\0"
     "OkPushButtonSlots\0\0CancelPushButtonSlots\0"
     "RestartNumberLineEditSlot\0"
     "MaxIterationNumberLineEditSlot\0"
-    "RatioOfThe1stStepTolLineEditSlot"
+    "RatioOfThe1stStepTolLineEditSlot\0"
+    "GetVerifyPasswordStatuSlot\0flag\0"
+    "GetVariableParametersSignalSlot\0"
+    "VariableParametersList"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +61,7 @@ static const uint qt_meta_data_QtArteryTechLinearSolverSetupUI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,11 +69,13 @@ static const uint qt_meta_data_QtArteryTechLinearSolverSetupUI[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x08 /* Private */,
-       3,    0,   40,    2, 0x08 /* Private */,
-       4,    0,   41,    2, 0x08 /* Private */,
-       5,    0,   42,    2, 0x08 /* Private */,
-       6,    0,   43,    2, 0x08 /* Private */,
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    0,   50,    2, 0x08 /* Private */,
+       4,    0,   51,    2, 0x08 /* Private */,
+       5,    0,   52,    2, 0x08 /* Private */,
+       6,    0,   53,    2, 0x08 /* Private */,
+       7,    1,   54,    2, 0x08 /* Private */,
+       9,    1,   57,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -74,6 +83,8 @@ static const uint qt_meta_data_QtArteryTechLinearSolverSetupUI[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    8,
+    QMetaType::Void, QMetaType::QStringList,   10,
 
        0        // eod
 };
@@ -89,10 +100,11 @@ void QtArteryTechLinearSolverSetupUI::qt_static_metacall(QObject *_o, QMetaObjec
         case 2: _t->RestartNumberLineEditSlot(); break;
         case 3: _t->MaxIterationNumberLineEditSlot(); break;
         case 4: _t->RatioOfThe1stStepTolLineEditSlot(); break;
+        case 5: _t->GetVerifyPasswordStatuSlot((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->GetVariableParametersSignalSlot((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject QtArteryTechLinearSolverSetupUI::staticMetaObject = {
@@ -120,13 +132,13 @@ int QtArteryTechLinearSolverSetupUI::qt_metacall(QMetaObject::Call _c, int _id, 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 7;
     }
     return _id;
 }

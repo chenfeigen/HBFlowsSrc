@@ -17,6 +17,7 @@
 #include "ArteryTechQtProject.h"
 #include "InstallationAlignment.h"
 #include "EncryptedFileDialog.h"
+#include <QDesktopWidget>
 
 class LoginInterface : public QDialog
 {

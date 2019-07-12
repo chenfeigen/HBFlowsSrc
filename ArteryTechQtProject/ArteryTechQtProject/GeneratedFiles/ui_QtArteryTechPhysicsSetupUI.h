@@ -27,8 +27,8 @@ QT_BEGIN_NAMESPACE
 class Ui_QtArteryTechPhysicsSetupUI
 {
 public:
-    QVBoxLayout *verticalLayout_19;
-    QVBoxLayout *verticalLayout_18;
+    QVBoxLayout *verticalLayout_21;
+    QVBoxLayout *verticalLayout_20;
     QHBoxLayout *horizontalLayout_19;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
@@ -117,6 +117,17 @@ public:
     QLabel *label_16;
     QLabel *ZeroInitialConditionLabel;
     QLineEdit *ZeroInitialConditionLineEdit;
+    QHBoxLayout *horizontalLayout_29;
+    QHBoxLayout *horizontalLayout_27;
+    QVBoxLayout *verticalLayout_18;
+    QLabel *label_18;
+    QLabel *RdForWK3Label;
+    QLineEdit *RdForWK3LineEdit;
+    QHBoxLayout *horizontalLayout_28;
+    QVBoxLayout *verticalLayout_19;
+    QLabel *label_19;
+    QLabel *CForWK3Lable;
+    QLineEdit *CForWK3LineEdit;
     QHBoxLayout *horizontalLayout_17;
     QVBoxLayout *verticalLayout_17;
     QLabel *label_17;
@@ -131,14 +142,14 @@ public:
     {
         if (QtArteryTechPhysicsSetupUI->objectName().isEmpty())
             QtArteryTechPhysicsSetupUI->setObjectName(QStringLiteral("QtArteryTechPhysicsSetupUI"));
-        QtArteryTechPhysicsSetupUI->resize(733, 421);
-        verticalLayout_19 = new QVBoxLayout(QtArteryTechPhysicsSetupUI);
-        verticalLayout_19->setSpacing(6);
-        verticalLayout_19->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_19->setObjectName(QStringLiteral("verticalLayout_19"));
-        verticalLayout_18 = new QVBoxLayout();
-        verticalLayout_18->setSpacing(6);
-        verticalLayout_18->setObjectName(QStringLiteral("verticalLayout_18"));
+        QtArteryTechPhysicsSetupUI->resize(696, 423);
+        verticalLayout_21 = new QVBoxLayout(QtArteryTechPhysicsSetupUI);
+        verticalLayout_21->setSpacing(6);
+        verticalLayout_21->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_21->setObjectName(QStringLiteral("verticalLayout_21"));
+        verticalLayout_20 = new QVBoxLayout();
+        verticalLayout_20->setSpacing(6);
+        verticalLayout_20->setObjectName(QStringLiteral("verticalLayout_20"));
         horizontalLayout_19 = new QHBoxLayout();
         horizontalLayout_19->setSpacing(6);
         horizontalLayout_19->setObjectName(QStringLiteral("horizontalLayout_19"));
@@ -197,7 +208,7 @@ public:
         horizontalLayout_19->addLayout(horizontalLayout_2);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_19);
+        verticalLayout_20->addLayout(horizontalLayout_19);
 
         horizontalLayout_20 = new QHBoxLayout();
         horizontalLayout_20->setSpacing(6);
@@ -257,7 +268,7 @@ public:
         horizontalLayout_20->addLayout(horizontalLayout_4);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_20);
+        verticalLayout_20->addLayout(horizontalLayout_20);
 
         horizontalLayout_21 = new QHBoxLayout();
         horizontalLayout_21->setSpacing(6);
@@ -317,7 +328,7 @@ public:
         horizontalLayout_21->addLayout(horizontalLayout_6);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_21);
+        verticalLayout_20->addLayout(horizontalLayout_21);
 
         horizontalLayout_22 = new QHBoxLayout();
         horizontalLayout_22->setSpacing(6);
@@ -377,7 +388,7 @@ public:
         horizontalLayout_22->addLayout(horizontalLayout_8);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_22);
+        verticalLayout_20->addLayout(horizontalLayout_22);
 
         horizontalLayout_23 = new QHBoxLayout();
         horizontalLayout_23->setSpacing(6);
@@ -437,7 +448,7 @@ public:
         horizontalLayout_23->addLayout(horizontalLayout_10);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_23);
+        verticalLayout_20->addLayout(horizontalLayout_23);
 
         horizontalLayout_24 = new QHBoxLayout();
         horizontalLayout_24->setSpacing(6);
@@ -497,7 +508,7 @@ public:
         horizontalLayout_24->addLayout(horizontalLayout_12);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_24);
+        verticalLayout_20->addLayout(horizontalLayout_24);
 
         horizontalLayout_25 = new QHBoxLayout();
         horizontalLayout_25->setSpacing(6);
@@ -557,7 +568,7 @@ public:
         horizontalLayout_25->addLayout(horizontalLayout_14);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_25);
+        verticalLayout_20->addLayout(horizontalLayout_25);
 
         horizontalLayout_26 = new QHBoxLayout();
         horizontalLayout_26->setSpacing(6);
@@ -617,7 +628,64 @@ public:
         horizontalLayout_26->addLayout(horizontalLayout_16);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_26);
+        verticalLayout_20->addLayout(horizontalLayout_26);
+
+        horizontalLayout_29 = new QHBoxLayout();
+        horizontalLayout_29->setSpacing(6);
+        horizontalLayout_29->setObjectName(QStringLiteral("horizontalLayout_29"));
+        horizontalLayout_27 = new QHBoxLayout();
+        horizontalLayout_27->setSpacing(6);
+        horizontalLayout_27->setObjectName(QStringLiteral("horizontalLayout_27"));
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setSpacing(6);
+        verticalLayout_18->setObjectName(QStringLiteral("verticalLayout_18"));
+        label_18 = new QLabel(QtArteryTechPhysicsSetupUI);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        verticalLayout_18->addWidget(label_18);
+
+        RdForWK3Label = new QLabel(QtArteryTechPhysicsSetupUI);
+        RdForWK3Label->setObjectName(QStringLiteral("RdForWK3Label"));
+
+        verticalLayout_18->addWidget(RdForWK3Label);
+
+
+        horizontalLayout_27->addLayout(verticalLayout_18);
+
+        RdForWK3LineEdit = new QLineEdit(QtArteryTechPhysicsSetupUI);
+        RdForWK3LineEdit->setObjectName(QStringLiteral("RdForWK3LineEdit"));
+
+        horizontalLayout_27->addWidget(RdForWK3LineEdit);
+
+
+        horizontalLayout_29->addLayout(horizontalLayout_27);
+
+        horizontalLayout_28 = new QHBoxLayout();
+        horizontalLayout_28->setSpacing(6);
+        horizontalLayout_28->setObjectName(QStringLiteral("horizontalLayout_28"));
+        verticalLayout_19 = new QVBoxLayout();
+        verticalLayout_19->setSpacing(6);
+        verticalLayout_19->setObjectName(QStringLiteral("verticalLayout_19"));
+        label_19 = new QLabel(QtArteryTechPhysicsSetupUI);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        verticalLayout_19->addWidget(label_19);
+
+        CForWK3Lable = new QLabel(QtArteryTechPhysicsSetupUI);
+        CForWK3Lable->setObjectName(QStringLiteral("CForWK3Lable"));
+
+        verticalLayout_19->addWidget(CForWK3Lable);
+
+
+        horizontalLayout_28->addLayout(verticalLayout_19);
+
+        CForWK3LineEdit = new QLineEdit(QtArteryTechPhysicsSetupUI);
+        CForWK3LineEdit->setObjectName(QStringLiteral("CForWK3LineEdit"));
+
+        horizontalLayout_28->addWidget(CForWK3LineEdit);
+
+
+        horizontalLayout_29->addLayout(horizontalLayout_28);
 
         horizontalLayout_17 = new QHBoxLayout();
         horizontalLayout_17->setSpacing(6);
@@ -644,7 +712,10 @@ public:
         horizontalLayout_17->addWidget(InletVelocityLineEdit);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_17);
+        horizontalLayout_29->addLayout(horizontalLayout_17);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_29);
 
         horizontalLayout_18 = new QHBoxLayout();
         horizontalLayout_18->setSpacing(6);
@@ -664,10 +735,10 @@ public:
         horizontalLayout_18->addWidget(CancelPushButton);
 
 
-        verticalLayout_18->addLayout(horizontalLayout_18);
+        verticalLayout_20->addLayout(horizontalLayout_18);
 
 
-        verticalLayout_19->addLayout(verticalLayout_18);
+        verticalLayout_21->addLayout(verticalLayout_20);
 
 
         retranslateUi(QtArteryTechPhysicsSetupUI);
@@ -711,6 +782,10 @@ public:
         FixedMeshLabel->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "Fixed Mesh:", Q_NULLPTR));
         label_16->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "\351\233\266\345\210\235\345\247\213\346\235\241\344\273\266", Q_NULLPTR));
         ZeroInitialConditionLabel->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "Zero Initial Condition:", Q_NULLPTR));
+        label_18->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "\345\257\271\345\272\224\344\270\216W3\347\232\204Rd", Q_NULLPTR));
+        RdForWK3Label->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "Rd for WK3:", Q_NULLPTR));
+        label_19->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "\345\257\271\345\272\224\344\270\216W3\347\232\204C", Q_NULLPTR));
+        CForWK3Lable->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "C for WK3:", Q_NULLPTR));
         label_17->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "\345\205\245\345\217\243\351\200\237\345\272\246", Q_NULLPTR));
         InletVelocityLabel->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "Inlet Velocity:", Q_NULLPTR));
         OkPushButton->setText(QApplication::translate("QtArteryTechPhysicsSetupUI", "\347\241\256\345\256\232", Q_NULLPTR));

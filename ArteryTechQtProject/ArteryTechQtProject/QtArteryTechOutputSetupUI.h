@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechOutputSetupUI; };
 
@@ -23,8 +24,11 @@ public:
 	~QtArteryTechOutputSetupUI();
 	QStringList outputDataList;
 	QStringList GetOutputData();
+	QStringList getUIData();
 
 private:
+	Ui::QtArteryTechOutputSetupUI *ui;
+
 	QCheckBox *showPartitionBasicCheckBox =	NULL;
 	QCheckBox *basicGridOutputCheckBox = NULL;
 	QCheckBox *solutionOutputBasicCheckBox = NULL;
@@ -32,16 +36,16 @@ private:
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitOutputData();
+	void InitOutputData(bool flag);
 	void SaveOutputData();
 	int isDigitStr(QString str);
+	void InitUiData();
 
 private slots:
 	void NumberOfStepsForOutputLineEditSlot();
 	void TimeIntervalForOutputLineEditSlot();
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
-
-private:
-	Ui::QtArteryTechOutputSetupUI *ui;
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

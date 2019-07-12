@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechLinearSolverSetupUI; };
 
@@ -23,19 +24,23 @@ public:
 	~QtArteryTechLinearSolverSetupUI();
 	QStringList linearSolverDataList;
 	QStringList GetTechLinearSolverData();
+	QStringList getUIData();
 private:
 	Ui::QtArteryTechLinearSolverSetupUI *ui;
 	QCheckBox *diffLKRtolGAsmCheckBox;
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitLinearSolverData();
+	void InitLinearSolverData(bool flag);
 	void SaveLinearSolverData();
 	int isDigitStr(QString src);
+	void InitUiData();
 private slots:
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
 	void RestartNumberLineEditSlot();
 	void MaxIterationNumberLineEditSlot();
 	void RatioOfThe1stStepTolLineEditSlot();
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

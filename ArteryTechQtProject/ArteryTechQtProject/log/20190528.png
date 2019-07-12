@@ -1,0 +1,67 @@
+
+Debug:  (2019-05-28 09:36:18 周二)
+writeSize: 1
+Info:  (2019-05-28 09:36:18 周二)
+filename: EncryptedFileDialog.cpp  line: 628  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db 解密成功！"
+Info:  (2019-05-28 09:36:18 周二)
+filename: RegisterInterface.cpp  line: 141  functionName: RegisterInterface::SaveuserInfoFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db文件解密成功！"
+Debug:  (2019-05-28 09:36:18 周二)
+fileContent: "1000|123456789\n"
+Debug:  (2019-05-28 09:36:18 周二)
+fileContent: "1111|111222333\n"
+Debug:  (2019-05-28 09:36:18 周二)
+fileContent: "33333|111444777\n"
+Debug:  (2019-05-28 09:36:18 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:36:18 周二)
+writeSize: 1
+Info:  (2019-05-28 09:36:18 周二)
+filename: EncryptedFileDialog.cpp  line: 601  functionName: EncryptedFileDialog::EncryptionFile  LOG: "userInfo.db 加密成功！"
+Info:  (2019-05-28 09:36:18 周二)
+filename: RegisterInterface.cpp  line: 188  functionName: RegisterInterface::SaveuserInfoFile  LOG: "userInfo.db文件加密成功！"
+Debug:  (2019-05-28 09:37:11 周二)
+writeSize: 1
+Info:  (2019-05-28 09:37:11 周二)
+filename: EncryptedFileDialog.cpp  line: 628  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db 解密成功！"
+Info:  (2019-05-28 09:37:11 周二)
+filename: RegisterInterface.cpp  line: 141  functionName: RegisterInterface::SaveuserInfoFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db文件解密成功！"
+Debug:  (2019-05-28 09:37:11 周二)
+fileContent: "1000|123456789\n"
+Debug:  (2019-05-28 09:37:11 周二)
+fileContent: "1111|111222333\n"
+Debug:  (2019-05-28 09:37:11 周二)
+fileContent: "33333|111444777\n"
+Debug:  (2019-05-28 09:37:11 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:37:11 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:37:11 周二)
+writeSize: 1
+Info:  (2019-05-28 09:37:11 周二)
+filename: EncryptedFileDialog.cpp  line: 601  functionName: EncryptedFileDialog::EncryptionFile  LOG: "userInfo.db 加密成功！"
+Info:  (2019-05-28 09:37:11 周二)
+filename: RegisterInterface.cpp  line: 188  functionName: RegisterInterface::SaveuserInfoFile  LOG: "userInfo.db文件加密成功！"
+Debug:  (2019-05-28 09:37:20 周二)
+writeSize: 1
+Info:  (2019-05-28 09:37:20 周二)
+filename: EncryptedFileDialog.cpp  line: 628  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db 解密成功！"
+Info:  (2019-05-28 09:37:20 周二)
+filename: RegisterInterface.cpp  line: 141  functionName: RegisterInterface::SaveuserInfoFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db文件解密成功！"
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: "1000|123456789\n"
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: "1111|111222333\n"
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: "33333|111444777\n"
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:37:20 周二)
+fileContent: ""
+Debug:  (2019-05-28 09:37:20 周二)
+writeSize: 1
+Info:  (2019-05-28 09:37:20 周二)
+filename: EncryptedFileDialog.cpp  line: 601  functionName: EncryptedFileDialog::EncryptionFile  LOG: "userInfo.db 加密成功！"
+Info:  (2019-05-28 09:37:20 周二)
+filename: RegisterInterface.cpp  line: 188  functionName: RegisterInterface::SaveuserInfoFile  LOG: "userInfo.db文件加密成功！"

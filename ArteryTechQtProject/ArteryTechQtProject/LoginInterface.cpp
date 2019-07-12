@@ -653,13 +653,18 @@ LoginInterface::LoginInterface(QWidget *parent)
 	ui.setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	this->setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
-	this->setMaximumSize(500, 300);
-	this->setMinimumSize(500, 300);
+	//this->setMaximumSize(500, 300);
+	//this->setMinimumSize(500, 300);
+	this->resize(500, 300);//设置窗口的尺寸
+	//设置窗口的默认显示位置在屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
+
 	ui.BackgroundLabel->setAlignment(Qt::AlignCenter);
 	ui.BackgroundLabel->setText("软件型号规格：HBFlows \n软件版本号：01.00.00\n软件发布版本号：01");
 	this->setWindowTitle("CT无创血流储备分数测量系统");
 	ui.PasswordLineEdit->setEchoMode(QLineEdit::Password);//输入的时候就显示圆点
-	bool getStatus = GetSerialNumber();
+	/*bool getStatus = GetSerialNumber();
 	if (!getStatus)
 	{
 		installationAlignment = new InstallationAlignment(this);
@@ -669,8 +674,8 @@ LoginInterface::LoginInterface(QWidget *parent)
 	else
 	{
 		show();
-	}
-	//show();
+	}*/
+	show();
 	ui.LoginPushButton->setFocus();
 	//信号与槽函数的连接
 	QObject::connect(ui.LoginPushButton, SIGNAL(clicked(bool)), this, SLOT(LoginPushButtonSlot()));
@@ -914,6 +919,7 @@ int LoginInterface::FindInfoFromUserInfo(QString usernamePar, QString passwordPa
 	return 1;
 }
 
+
 bool LoginInterface::GetSerialNumber()
 {
 	//把加密字符串进行解密，然后与serialnumber进行比较看是不是完全相同
@@ -1025,7 +1031,6 @@ bool LoginInterface::GetSerialNumber()
 	}
 	return true;
 }
-
 #if 0
 bool LoginInterface::GetSerialNumber()
 {
@@ -1106,13 +1111,13 @@ bool LoginInterface::GetSerialNumber()
 					if (timeDiff < 0)
 					{
 						qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Sorry, the license of this software has expired and can't continue to use.";
-						QMessageBox::critical(this, "错误：", "对不起，授权文件已经到期，软件不能继续使用！请联系官方续费！");
+						QMessageBox::information(this, "警告", "对不起，授权文件已经到期，软件不能继续使用！请联系官方续费！");
 						return false;
 					}
 					if (timeDiff < 30)
 					{
 						//提示软件还有timeDiff多天到期，请联系官方进行续期
-						QMessageBox::warning(this, "警告：", "软件还有  " + QString::number(timeDiff) + " 天到期，请联系官方进行续费。");
+						QMessageBox::information(this, "警告：", "软件还有  " + QString::number(timeDiff) + " 天到期，请联系官方进行续费。");
 					}
 					break;
 				}
@@ -1135,6 +1140,7 @@ bool LoginInterface::GetSerialNumber()
 	return true;
 }
 #endif
+
 void LoginInterface::GetInstallationAlignmentSlot(QString serialNumber)
 {
 	bool saveStatus = SaveLicenseFile(serialNumber);
@@ -1151,7 +1157,6 @@ void LoginInterface::GetInstallationAlignmentSlot(QString serialNumber)
 	}
 }
 
-
 //按注册按钮会进行注册
 /******************************************************************************
 函数名：saveLicenseFile
@@ -1159,9 +1164,9 @@ void LoginInterface::GetInstallationAlignmentSlot(QString serialNumber)
 返回值：bool
 功能：更具输入的序列号，然后判断是否正确，正确生成license文件
 步骤：
-1.先执行wmic bios get serialnumber命令获取本机的序列号serialnumberstr，获取的是未加密的序列号SerialNumber\nM705URC8\n
-2.将serialnumberstr用\n分解，然后与serialnumber:字符串拼接成加密文件中的加密的序列号serialnumber
-3.先判断licence文件是否存在，如果存在则判断是否正确，如果不存在，则生成license文件
+	1.先执行wmic bios get serialnumber命令获取本机的序列号serialnumberstr，获取的是未加密的序列号SerialNumber\nM705URC8\n
+	2.将serialnumberstr用\n分解，然后与serialnumber:字符串拼接成加密文件中的加密的序列号serialnumber
+	3.先判断licence文件是否存在，如果存在则判断是否正确，如果不存在，则生成license文件
 ******************************************************************************/
 bool LoginInterface::SaveLicenseFile(QString ParamSerialNumber)
 {
@@ -1234,19 +1239,7 @@ bool LoginInterface::SaveLicenseFile(QString ParamSerialNumber)
 		return false;
 	}
 }
-
 #if 0
-//按注册按钮会进行注册
-/******************************************************************************
-函数名：saveLicenseFile
-参数：QString serialNumber 序列号
-返回值：bool
-功能：更具输入的序列号，然后判断是否正确，正确生成license文件
-步骤：
-	1.先执行wmic bios get serialnumber命令获取本机的序列号serialnumberstr，获取的是未加密的序列号SerialNumber\nM705URC8\n
-	2.将serialnumberstr用\n分解，然后与serialnumber:字符串拼接成加密文件中的加密的序列号serialnumber
-	3.先判断licence文件是否存在，如果存在则判断是否正确，如果不存在，则生成license文件
-******************************************************************************/
 bool LoginInterface::SaveLicenseFile(QString serialNumber)
 {
 	//把加密字符串进行解密，然后与serialnumber进行比较看是不是完全相同

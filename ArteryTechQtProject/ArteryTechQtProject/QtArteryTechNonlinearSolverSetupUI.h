@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechNonlinearSolverSetupUI; };
 
@@ -23,15 +24,18 @@ public:
 	~QtArteryTechNonlinearSolverSetupUI();
 	QStringList nonlinearSolverDataList;
 	QStringList GetTechNonlinearSolverData();
+	QStringList getUIData();
 
 private:
+	Ui::QtArteryTechNonlinearSolverSetupUI *ui;
 	QCheckBox *snesViewCheckBox;
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitNonlinearSolverData();
+	void InitNonlinearSolverData(bool flag);
 	void SaveNonlinearSolverData();
 	int isDigitStr(QString str);
+	void InitUiData();
 
 private slots:
 	void OkPushButton();
@@ -39,8 +43,6 @@ private slots:
 	void MaxIterationNumberLineEditSlot();
 	void RebuildJacobianLineEditSlot();
 	void RebuildPreconditionerLineEditSlot();
-
-private:
-	Ui::QtArteryTechNonlinearSolverSetupUI *ui;
-
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

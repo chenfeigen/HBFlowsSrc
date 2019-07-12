@@ -1,0 +1,2419 @@
+
+Debug:  (2019-06-19 15:12:38 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 15:13:56 周三)
+参数传入的序列码： "7F1C958CAD0DEB34AEDF6D308B685F18C9FFBA3C1BA49F873D4C063D49E9E3B758E6F493CBDB0C79B58100FDA478178508D669A766E0F96F"
+Debug:  (2019-06-19 15:13:56 周三)
+安装电脑的序列码： "serialnumber:M705URC8"
+Info:  (2019-06-19 15:13:56 周三)
+filename: LoginInterface.cpp  line: 1224  functionName: LoginInterface::SaveLicenseFile  LOG: Register successfully, thank you for using the genuine software, welcome to use!
+Debug:  (2019-06-19 15:14:11 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 15:14:11 周三)
+filename: LoginInterface.cpp  line: 950  functionName: LoginInterface::GetSerialNumber  LOG: readfileByte: "7F1C958CAD0DEB34AEDF6D308B685F18C9FFBA3C1BA49F873D4C063D49E9E3B758E6F493CBDB0C79B58100FDA478178508D669A766E0F96F"
+Debug:  (2019-06-19 16:23:16 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 16:23:52 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 16:24:04 ����)
+writeSize: 1
+Info:  (2019-06-19 16:24:04 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 16:24:16 ����)
+writeSize: 1
+Info:  (2019-06-19 16:24:16 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 16:26:59 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 16:27:10 ����)
+writeSize: 1
+Info:  (2019-06-19 16:27:10 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 16:28:31 周三)
+行数: 72
+Debug:  (2019-06-19 16:28:31 周三)
+列数: 9
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "计算参数报告表"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "病例ID号"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "处理日期"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "图像号"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "数据号"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "序号"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "参数名称"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "单位"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "值"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "1"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "舒张压Pmin"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "mmHg"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "80"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "2"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "收缩压Pmax"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "mmHg"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "120"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "3"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "心率"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "bpm"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "70"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "4"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "心肌体积"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "ml"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "200"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "5"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "出口个数"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "19"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "6"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "近端(入口)压力监测点坐标P0"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "1.32"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-3.12"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-1"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "7"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第一个远端压力监测点P1"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.0324"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.8976"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "10.28"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "8"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第二个远端压力监测点P2"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "12.98"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-20.33"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.19"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "9"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第三个远端压力监测点P3"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-0.12"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.34"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "10.9"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "10"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第四个远端压力监测点P4"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "12"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-0.12"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-18.9"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "11"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第五个远端压力监测点P5"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "33"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "21.84"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "20.18"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "12"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第六个远端压力监测点P6"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "11.45"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-12.33"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "14.98"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "13"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第七个远端压力监测点P7"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-12.33"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-30.22"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-19.66"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "14"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第八个远端压力监测点P8"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "-20.99"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "12.99"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.99"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "15"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "第九个远端压力监测点P9"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.18"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.25"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.44"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "16"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "WK3模型参数WKRd"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "1317.85735002571"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "17"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "WK3模型参数WKC"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.00144091643659596"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "18"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "WK3模型参数WKP0"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "80"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "19"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "计算时间T"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.857142857142857"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "20"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "时间步长dt"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "0.00857142857142857"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "21"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "总阻力Rtotal"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "5849.81240912236"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "编写人"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "数据处理人"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "审核人"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "批准人"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "批准专用章"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: "批准日期"
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:31 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:32 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  0 : "File Name:./mesh/sdz00011000117520114100.exo"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  1 : "Node & Side Set File:sdz00011000117520114100.bc"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  2 : "Inlet Flow Rate File:sdz00011000117520114100.in"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  3 : "Rd for WK3:1317.85735002571"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  4 : "C for WK3:0.00144091643659596"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  5 : "Final Time:0.857142857142857"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  6 : "Time Step Size:0.00857142857142857"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  7 : "Total Resistance:5849.81240912236"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  8 : "P0 for WK3:80"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  9 : "Show Solution:solution_output"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  10 : "Solution Output File:./results/sdz00011000117520114100"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  11 : "Show Mesh Data:basic_grid_output"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  12 : "FFR Monitor File:./results/sdz00011000117520114100.ffr"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  13 : "Flow Rate Monitor File:./results/sdz00011000117520114100.flow"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  14 : "Ref Monitor Point:1.32,-3.12,-1"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  15 : "Monitor Point 1:0.0324,0.8976,10.28"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  16 : "Monitor Point 2:12.98,-20.33,0.19"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  17 : "Monitor Point 3:-0.12,0.34,10.9"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  18 : "Monitor Point 4:12,-0.12,-18.9"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  19 : "Monitor Point 5:33,21.84,20.18"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  20 : "Monitor Point 6:11.45,-12.33,14.98"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  21 : "Monitor Point 7:-12.33,-30.22,-19.66"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  22 : "Monitor Point 8:-20.99,12.99,0.99"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  23 : "Monitor Point 9:0.18,0.25,0.44"
+Debug:  (2019-06-19 16:28:34 周三)
+uiDateList  24 : "Number of Outlets:19"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  0 : "File Name:./mesh/sdz00011000117520114100.exo"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  1 : "Node & Side Set File:sdz00011000117520114100.bc"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  2 : "Inlet Flow Rate File:sdz00011000117520114100.in"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  3 : "Rd for WK3:1317.85735002571"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  4 : "C for WK3:0.00144091643659596"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  5 : "Final Time:0.857142857142857"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  6 : "Time Step Size:0.00857142857142857"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  7 : "Total Resistance:5849.81240912236"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  8 : "P0 for WK3:80"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  9 : "Show Solution:solution_output"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  10 : "Solution Output File:./results/sdz00011000117520114100"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  11 : "Show Mesh Data:basic_grid_output"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  12 : "FFR Monitor File:./results/sdz00011000117520114100.ffr"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  13 : "Flow Rate Monitor File:./results/sdz00011000117520114100.flow"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  14 : "Ref Monitor Point:1.32,-3.12,-1"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  15 : "Monitor Point 1:0.0324,0.8976,10.28"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  16 : "Monitor Point 2:12.98,-20.33,0.19"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  17 : "Monitor Point 3:-0.12,0.34,10.9"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  18 : "Monitor Point 4:12,-0.12,-18.9"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  19 : "Monitor Point 5:33,21.84,20.18"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  20 : "Monitor Point 6:11.45,-12.33,14.98"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  21 : "Monitor Point 7:-12.33,-30.22,-19.66"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  22 : "Monitor Point 8:-20.99,12.99,0.99"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  23 : "Monitor Point 9:0.18,0.25,0.44"
+Debug:  (2019-06-19 16:28:34 周三)
+m_variableParametersList  24 : "Number of Outlets:19"
+Debug:  (2019-06-19 16:28:34 周三)
+length: 25
+Debug:  (2019-06-19 16:28:34 周三)
+length: 25
+Debug:  (2019-06-19 16:28:34 周三)
+length: 25
+Debug:  (2019-06-19 16:28:34 周三)
+length: 25
+Debug:  (2019-06-19 17:16:22 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:16:35 ����)
+writeSize: 1
+Info:  (2019-06-19 17:16:35 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:16:51 周三)
+行数: 72
+Debug:  (2019-06-19 17:16:51 周三)
+列数: 9
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "计算参数报告表"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "病例ID号"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "处理日期"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "图像号"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "数据号"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "序号"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "参数名称"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "单位"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "值"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "1"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "舒张压Pmin"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "mmHg"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "80"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "2"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "收缩压Pmax"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "mmHg"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "120"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "3"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "心率"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "bpm"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "70"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "4"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "心肌体积"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "ml"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "200"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "5"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "出口个数"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "19"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "6"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "近端(入口)压力监测点坐标P0"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "1.32"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-3.12"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-1"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "7"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第一个远端压力监测点P1"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.0324"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.8976"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "10.28"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "8"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第二个远端压力监测点P2"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "12.98"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-20.33"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.19"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "9"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第三个远端压力监测点P3"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-0.12"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.34"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "10.9"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "10"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第四个远端压力监测点P4"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "12"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-0.12"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-18.9"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "11"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第五个远端压力监测点P5"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "33"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "21.84"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "20.18"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "12"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第六个远端压力监测点P6"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "11.45"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-12.33"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "14.98"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "13"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第七个远端压力监测点P7"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-12.33"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-30.22"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-19.66"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "14"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第八个远端压力监测点P8"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "-20.99"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "12.99"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.99"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "15"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "第九个远端压力监测点P9"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.18"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.25"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.44"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "16"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "WK3模型参数WKRd"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "1317.85735002571"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "17"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "WK3模型参数WKC"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "0.00144091643659596"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "18"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "WK3模型参数WKP0"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "80"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "19"
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:51 周三)
+cellStr sheet2: "计算时间T"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "0.857142857142857"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "20"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "时间步长dt"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "0.00857142857142857"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "21"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "总阻力Rtotal"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "5849.81240912236"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "编写人"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "数据处理人"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "审核人"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "批准人"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "批准专用章"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: "批准日期"
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:52 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:16:53 周三)
+cellStr sheet2: ""
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  0 : "File Name:./mesh/sdz00011000117520114100.exo"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  1 : "Node & Side Set File:sdz00011000117520114100.bc"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  2 : "Inlet Flow Rate File:sdz00011000117520114100.in"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  3 : "Rd for WK3:1317.85735002571"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  4 : "C for WK3:0.00144091643659596"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  5 : "Final Time:0.857142857142857"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  6 : "Time Step Size:0.00857142857142857"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  7 : "Total Resistance:5849.81240912236"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  8 : "P0 for WK3:80"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  9 : "Show Solution:solution_output"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  10 : "Solution Output File:./results/sdz00011000117520114100"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  11 : "Show Mesh Data:basic_grid_output"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  12 : "FFR Monitor File:./results/sdz00011000117520114100.ffr"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  13 : "Flow Rate Monitor File:./results/sdz00011000117520114100.flow"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  14 : "Ref Monitor Point:1.32,-3.12,-1"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  15 : "Monitor Point 1:0.0324,0.8976,10.28"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  16 : "Monitor Point 2:12.98,-20.33,0.19"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  17 : "Monitor Point 3:-0.12,0.34,10.9"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  18 : "Monitor Point 4:12,-0.12,-18.9"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  19 : "Monitor Point 5:33,21.84,20.18"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  20 : "Monitor Point 6:11.45,-12.33,14.98"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  21 : "Monitor Point 7:-12.33,-30.22,-19.66"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  22 : "Monitor Point 8:-20.99,12.99,0.99"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  23 : "Monitor Point 9:0.18,0.25,0.44"
+Debug:  (2019-06-19 17:17:05 周三)
+uiDateList  24 : "Number of Outlets:19"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  0 : "File Name:./mesh/sdz00011000117520114100.exo"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  1 : "Node & Side Set File:sdz00011000117520114100.bc"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  2 : "Inlet Flow Rate File:sdz00011000117520114100.in"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  3 : "Rd for WK3:1317.85735002571"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  4 : "C for WK3:0.00144091643659596"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  5 : "Final Time:0.857142857142857"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  6 : "Time Step Size:0.00857142857142857"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  7 : "Total Resistance:5849.81240912236"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  8 : "P0 for WK3:80"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  9 : "Show Solution:solution_output"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  10 : "Solution Output File:./results/sdz00011000117520114100"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  11 : "Show Mesh Data:basic_grid_output"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  12 : "FFR Monitor File:./results/sdz00011000117520114100.ffr"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  13 : "Flow Rate Monitor File:./results/sdz00011000117520114100.flow"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  14 : "Ref Monitor Point:1.32,-3.12,-1"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  15 : "Monitor Point 1:0.0324,0.8976,10.28"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  16 : "Monitor Point 2:12.98,-20.33,0.19"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  17 : "Monitor Point 3:-0.12,0.34,10.9"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  18 : "Monitor Point 4:12,-0.12,-18.9"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  19 : "Monitor Point 5:33,21.84,20.18"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  20 : "Monitor Point 6:11.45,-12.33,14.98"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  21 : "Monitor Point 7:-12.33,-30.22,-19.66"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  22 : "Monitor Point 8:-20.99,12.99,0.99"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  23 : "Monitor Point 9:0.18,0.25,0.44"
+Debug:  (2019-06-19 17:17:05 周三)
+m_variableParametersList  24 : "Number of Outlets:19"
+Debug:  (2019-06-19 17:17:05 周三)
+length: 25
+Debug:  (2019-06-19 17:17:05 周三)
+length: 25
+Debug:  (2019-06-19 17:17:05 周三)
+length: 25
+Debug:  (2019-06-19 17:17:05 周三)
+length: 25
+Debug:  (2019-06-19 17:27:33 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:27:42 ����)
+writeSize: 1
+Info:  (2019-06-19 17:27:42 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:29:47 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:29:58 ����)
+writeSize: 1
+Info:  (2019-06-19 17:29:58 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:35:25 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:37:16 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:37:23 ����)
+writeSize: 1
+Info:  (2019-06-19 17:37:23 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:40:38 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:40:46 ����)
+writeSize: 1
+Info:  (2019-06-19 17:40:46 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:41:44 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:41:53 ����)
+writeSize: 1
+Info:  (2019-06-19 17:41:53 ����)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-06-19 17:43:51 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:44:14 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:45:01 周三)
+参数传入的序列码： "7F1C958CAD0DEB3426931B9FBD150DF9C9FFBA3C1BA49F873D4C063D49E9E3B758E6F493CBDB0C7966078B308A1D748C08D669A766E0F96F"
+Debug:  (2019-06-19 17:45:02 周三)
+安装电脑的序列码： "serialnumber:M705URC8"
+Info:  (2019-06-19 17:45:02 周三)
+filename: LoginInterface.cpp  line: 1224  functionName: LoginInterface::SaveLicenseFile  LOG: Register successfully, thank you for using the genuine software, welcome to use!
+Debug:  (2019-06-19 17:45:08 周三)
+filename: LoginInterface.cpp  line: 932  functionName: LoginInterface::GetSerialNumber  LOG: serialnumber: "serialnumber:M705URC8"
+Debug:  (2019-06-19 17:45:08 周三)
+filename: LoginInterface.cpp  line: 950  functionName: LoginInterface::GetSerialNumber  LOG: readfileByte: "7F1C958CAD0DEB3426931B9FBD150DF9C9FFBA3C1BA49F873D4C063D49E9E3B758E6F493CBDB0C7966078B308A1D748C08D669A766E0F96F"

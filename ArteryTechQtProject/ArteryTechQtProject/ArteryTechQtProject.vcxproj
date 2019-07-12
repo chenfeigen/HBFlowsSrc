@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="AbnormalData.cpp" />
     <ClCompile Include="ArteryTechQtProject.cpp" />
+    <ClCompile Include="ComputingMultipleBP.cpp" />
     <ClCompile Include="EncryptedFileDialog.cpp" />
     <ClCompile Include="GetCalculationResultsDialog.cpp" />
     <ClCompile Include="Help.cpp" />
@@ -147,6 +148,8 @@
     <ClCompile Include="SshClient.cpp" />
     <ClCompile Include="TcpClientDialog.cpp" />
     <ClCompile Include="userInformation.cpp" />
+    <ClCompile Include="VariableParametersDialog.cpp" />
+    <ClCompile Include="VerifyPassword.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ArteryTechQtProject.h">
@@ -157,6 +160,7 @@
   <ItemGroup>
     <QtUic Include="AbnormalData.ui" />
     <QtUic Include="ArteryTechQtProject.ui" />
+    <QtUic Include="ComputingMultipleBP.ui" />
     <QtUic Include="EncryptedFileDialog.ui" />
     <QtUic Include="GetCalculationResultsDialog.ui" />
     <QtUic Include="Help.ui" />
@@ -178,11 +182,21 @@
     <QtUic Include="RetrievePasswordInterface.ui" />
     <QtUic Include="SshClient.ui" />
     <QtUic Include="TcpClientDialog.ui" />
+    <QtUic Include="VariableParametersDialog.ui" />
+    <QtUic Include="VerifyPassword.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ArteryTechQtProject.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="VerifyPassword.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
+    <QtMoc Include="VariableParametersDialog.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
     <QtMoc Include="RetrievePasswordInterface.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
@@ -258,9 +272,9 @@
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_NETWORKAUTH_LIB;QT_SQL_LIB</Define>
     </QtMoc>
     <QtMoc Include="QtArteryTechTwoLevelPreconditionerUI.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_NETWORKAUTH_LIB;QT_SQL_LIB</Define>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;QT_NETWORKAUTH_LIB;QT_SQL_LIB</Define>
     </QtMoc>
     <QtMoc Include="QtPainEvent.h">
@@ -310,6 +324,10 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
     </QtMoc>
     <QtMoc Include="GetCalculationResultsDialog.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
+    <QtMoc Include="ComputingMultipleBP.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;D:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\include\vtk-8.1;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtNetworkAuth;$(QTDIR)\include\QtSql;$(QTDIR)\include\ActiveQt;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
     </QtMoc>

@@ -10,11 +10,20 @@ GetCalculationResultsDialog::GetCalculationResultsDialog(QWidget *parent)
 	setMaximumSize(940,720);
 	setMinimumSize(940, 720);
 	setWindowTitle("获取计算结果");
+	//设置窗口最大化最小化
 
+	//Qt::WindowFlags windowFlag = Qt::Dialog;
+	//windowFlag |= Qt::WindowMinimizeButtonHint;
+	//windowFlag |= Qt::WindowMaximizeButtonHint;
+	//windowFlag |= Qt::WindowCloseButtonHint;
+
+	setWindowFlags(Qt::Dialog| Qt::WindowMinimizeButtonHint| Qt::WindowMaximizeButtonHint| Qt::WindowCloseButtonHint); //设置窗口最大化最小化
 	ui->ResultTextEdit->setReadOnly(true);
 	//信号与槽函数的连接
 	QObject::connect(ui->InputFilePushButton,SIGNAL(clicked(bool)),this,SLOT(InputFilePushButtonSlot()));
 	QObject::connect(ui->GetResultPushButton, SIGNAL(clicked(bool)), this, SLOT(GetResultPushButtonSlot()));
+	QObject::connect(ui->SaveAspushButton, SIGNAL(clicked(bool)), this, SLOT(SaveAspushButtonSlot()));
+	QObject::connect(ui->PrintPushButton, SIGNAL(clicked(bool)), this, SLOT(PrintPushButtonSlot()));
 }
 
 GetCalculationResultsDialog::~GetCalculationResultsDialog()
@@ -172,5 +181,40 @@ void GetCalculationResultsDialog::GetResultPushButtonSlot()
 	for (size_t i = 0; i < outputRes.length(); i++)
 	{
 		ui->ResultTextEdit->append(outputRes.at(i));
+	}
+}
+
+//另存为槽函数
+void GetCalculationResultsDialog::SaveAspushButtonSlot()
+{
+	QString fullFileName = QFileDialog::getSaveFileName(this,"保存",QDir::currentPath());
+	if (NULL == fullFileName)
+	{
+		QMessageBox::warning(this,"警告","文件不存在，保存失败！");
+		return;
+	}
+	else
+	{
+		QFile file(fullFileName.trimmed());
+		QString textEditStr = ui->ResultTextEdit->toPlainText();
+		bool openstatu = file.open(QIODevice::WriteOnly|QIODevice::Text);
+		if (!openstatu)
+		{
+			QMessageBox::warning(this, "警告", "文件保存失败！");
+			return;
+		}
+		file.write(textEditStr.toUtf8());
+		file.close();
+	}
+}
+//打印槽函数
+void GetCalculationResultsDialog::PrintPushButtonSlot()
+{
+	QPrinter printer;
+	QPrintDialog printDialog(&printer,this);
+	if (printDialog.exec())
+	{
+		QTextDocument *doc = ui->ResultTextEdit->document();
+		doc->print(&printer);
 	}
 }

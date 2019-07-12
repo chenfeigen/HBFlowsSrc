@@ -1,0 +1,473 @@
+
+Debug:  (2019-07-02 10:45:55 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 10:45:56 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-07-02 10:46:09 周二)
+filename: "xwl00011000170913716030"
+Debug:  (2019-07-02 10:46:09 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 10:46:09 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/xwl00011000170913716030" 文件夹创建成功!
+Debug:  (2019-07-02 10:46:09 周二)
+fileFullPathName： "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:46:09 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 10:46:09 周二)
+fileName： "xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:46:09 周二)
+outputFileName： "xwl00011000170913716030"
+Debug:  (2019-07-02 10:46:09 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/"
+Debug:  (2019-07-02 10:46:09 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/xwl00011000170913716030.sh"
+Info:  (2019-07-02 10:46:10 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 10:46:39 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 10:46:49 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:46:49 周二)
+length: 26
+Debug:  (2019-07-02 10:46:49 周二)
+length: 26
+Debug:  (2019-07-02 10:46:49 周二)
+length: 26
+Debug:  (2019-07-02 10:46:49 周二)
+length: 26
+Debug:  (2019-07-02 10:46:49 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Info:  (2019-07-02 10:46:51 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "xwl00011000170913716030.xlsx" 文件出口个数: "21"
+Info:  (2019-07-02 10:46:56 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/xwl00011000170913716030/xwl00011000170913716030.bc"
+Info:  (2019-07-02 10:46:56 周二)
+filename: ComputingMultipleBP.cpp  line: 930  functionName: ComputingMultipleBP::copyFileToDir  LOG: "E:/计算/xwl00011000170913716030.in" 文件拷贝失败!
+Debug:  (2019-07-02 10:48:23 周二)
+filename: "xwl00011000170913716030"
+Debug:  (2019-07-02 10:48:23 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 10:48:23 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/xwl00011000170913716030" 文件夹创建成功!
+Debug:  (2019-07-02 10:48:23 周二)
+fileFullPathName： "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:48:23 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 10:48:23 周二)
+fileName： "xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:48:23 周二)
+outputFileName： "xwl00011000170913716030"
+Debug:  (2019-07-02 10:48:23 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/"
+Debug:  (2019-07-02 10:48:23 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/xwl00011000170913716030.sh"
+Info:  (2019-07-02 10:48:23 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 10:48:53 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 10:49:00 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:49:00 周二)
+length: 26
+Debug:  (2019-07-02 10:49:00 周二)
+length: 26
+Debug:  (2019-07-02 10:49:00 周二)
+length: 26
+Debug:  (2019-07-02 10:49:00 周二)
+length: 26
+Debug:  (2019-07-02 10:49:00 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Info:  (2019-07-02 10:49:01 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "xwl00011000170913716030.xlsx" 文件出口个数: "21"
+Info:  (2019-07-02 10:49:05 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/xwl00011000170913716030/xwl00011000170913716030.bc"
+Debug:  (2019-07-02 10:49:37 周二)
+filename: "xwl00011000170913716030"
+Debug:  (2019-07-02 10:49:37 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 10:49:37 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/xwl00011000170913716030" 文件夹创建成功!
+Debug:  (2019-07-02 10:49:37 周二)
+fileFullPathName： "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:49:37 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 10:49:37 周二)
+fileName： "xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:49:37 周二)
+outputFileName： "xwl00011000170913716030"
+Debug:  (2019-07-02 10:49:37 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/"
+Debug:  (2019-07-02 10:49:37 周二)
+outputFullPathName： "E:/计算/xwl00011000170913716030/xwl00011000170913716030.sh"
+Info:  (2019-07-02 10:49:37 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 10:50:08 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 10:50:14 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Debug:  (2019-07-02 10:50:14 周二)
+length: 26
+Debug:  (2019-07-02 10:50:14 周二)
+length: 26
+Debug:  (2019-07-02 10:50:14 周二)
+length: 26
+Debug:  (2019-07-02 10:50:14 周二)
+length: 26
+Debug:  (2019-07-02 10:50:14 周二)
+fullFileName: "E:/计算/xwl00011000170913716030.xlsx"
+Info:  (2019-07-02 10:50:15 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "xwl00011000170913716030.xlsx" 文件出口个数: "20"
+Info:  (2019-07-02 10:50:20 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/xwl00011000170913716030/xwl00011000170913716030.bc"
+Debug:  (2019-07-02 11:26:27 周二)
+filename: "cjy00011000172309716050"
+Debug:  (2019-07-02 11:26:27 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 11:26:27 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/cjy00011000172309716050" 文件夹创建成功!
+Debug:  (2019-07-02 11:26:27 周二)
+fileFullPathName： "E:/计算/cjy00011000172309716050.xlsx"
+Debug:  (2019-07-02 11:26:27 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 11:26:27 周二)
+fileName： "cjy00011000172309716050.xlsx"
+Debug:  (2019-07-02 11:26:27 周二)
+outputFileName： "cjy00011000172309716050"
+Debug:  (2019-07-02 11:26:27 周二)
+outputFullPathName： "E:/计算/cjy00011000172309716050/"
+Debug:  (2019-07-02 11:26:27 周二)
+outputFullPathName： "E:/计算/cjy00011000172309716050/cjy00011000172309716050.sh"
+Info:  (2019-07-02 11:26:27 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 11:26:57 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 11:27:01 周二)
+fullFileName: "E:/计算/cjy00011000172309716050.xlsx"
+Debug:  (2019-07-02 11:27:01 周二)
+length: 26
+Debug:  (2019-07-02 11:27:01 周二)
+length: 26
+Debug:  (2019-07-02 11:27:01 周二)
+length: 26
+Debug:  (2019-07-02 11:27:01 周二)
+length: 26
+Debug:  (2019-07-02 11:27:01 周二)
+fullFileName: "E:/计算/cjy00011000172309716050.xlsx"
+Info:  (2019-07-02 11:27:02 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "cjy00011000172309716050.xlsx" 文件出口个数: "26"
+Info:  (2019-07-02 11:27:05 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/cjy00011000172309716050/cjy00011000172309716050.bc"
+Debug:  (2019-07-02 15:36:06 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:36:06 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/LockUserInfo/testsystem002.db ���ܳɹ���"
+Info:  (2019-07-02 15:36:06 �ܶ�)
+filename: LoginInterface.cpp  line: 1432  functionName: LoginInterface::LockAccountsStatus  LOG: "lock flag : 1"
+Debug:  (2019-07-02 15:36:08 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:36:08 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/LockUserInfo/testsystem002.db ���ܳɹ���"
+Info:  (2019-07-02 15:36:08 �ܶ�)
+filename: LoginInterface.cpp  line: 1432  functionName: LoginInterface::LockAccountsStatus  LOG: "lock flag : 1"
+Debug:  (2019-07-02 15:36:12 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:36:12 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Warning:  (2019-07-02 15:36:13 周二)
+QTextHtmlParser::applyAttributes: Unknown color name '#e9a96f;'
+Debug:  (2019-07-02 15:37:32 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:37:32 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/LockUserInfo/testsystem002.db ���ܳɹ���"
+Info:  (2019-07-02 15:37:32 �ܶ�)
+filename: LoginInterface.cpp  line: 1432  functionName: LoginInterface::LockAccountsStatus  LOG: "lock flag : 1"
+Debug:  (2019-07-02 15:37:33 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:37:33 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/LockUserInfo/testsystem002.db ���ܳɹ���"
+Info:  (2019-07-02 15:37:33 �ܶ�)
+filename: LoginInterface.cpp  line: 1432  functionName: LoginInterface::LockAccountsStatus  LOG: "lock flag : 1"
+Debug:  (2019-07-02 15:37:38 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 15:37:38 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Warning:  (2019-07-02 15:37:39 周二)
+QTextHtmlParser::applyAttributes: Unknown color name '#e9a96f;'
+Info:  (2019-07-02 15:39:54 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:54 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:39:55 周二)
+filename: ArteryTechQtProject.cpp  line: 1278  functionName: ArteryTechQtProject::wheelEvent  LOG: 进入鼠标滚轮前进事件!
+Info:  (2019-07-02 15:41:08 周二)
+filename: GetCalculationResultsDialog.cpp  line: 49  functionName: GetCalculationResultsDialog::InputFilePushButtonSlot  LOG1: "C:/Users/Administrator/Desktop/计算结果/scx00011000136318614070.log"
+Info:  (2019-07-02 15:41:10 周二)
+filename: GetCalculationResultsDialog.cpp  line: 137  functionName: GetCalculationResultsDialog::GetResultPushButtonSlot  LOG9: "Average number of linear iterations = 252.609955\n"
+Info:  (2019-07-02 15:41:47 周二)
+filename: GetCalculationResultsDialog.cpp  line: 49  functionName: GetCalculationResultsDialog::InputFilePushButtonSlot  LOG1: "C:/Users/Administrator/Desktop/计算结果/ZJ2nd031A0080B0200G0050M0a.log"
+Info:  (2019-07-02 15:41:49 周二)
+filename: GetCalculationResultsDialog.cpp  line: 137  functionName: GetCalculationResultsDialog::GetResultPushButtonSlot  LOG9: "Average number of linear iterations = 226.767502\n"
+Warning:  (2019-07-02 15:42:38 周二)
+External WM_DESTROY received for  QWidgetWindow(0x21640897f30, name="GetCalculationResultsDialogWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x2164063c5a0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-07-02 15:42:38 周二)
+External WM_DESTROY received for  QWidgetWindow(0x21640898950, name="GetCalculationResultsDialogWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x2164063c5a0, name="ArteryTechQtProjectClassWindow")
+Debug:  (2019-07-02 16:19:41 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 16:19:41 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-07-02 16:19:42 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 16:19:42 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-07-02 16:19:50 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 16:19:50 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Debug:  (2019-07-02 16:20:03 �ܶ�)
+writeSize: 1
+Info:  (2019-07-02 16:20:03 �ܶ�)
+filename: EncryptedFileDialog.cpp  line: 633  functionName: EncryptedFileDialog::DecryptionFile  LOG: "D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/UserInfo/userInfo.db ���ܳɹ���"
+Warning:  (2019-07-02 16:20:04 周二)
+QTextHtmlParser::applyAttributes: Unknown color name '#e9a96f;'
+Debug:  (2019-07-02 16:20:15 周二)
+filename: "lxs00011000132845815020"
+Debug:  (2019-07-02 16:20:15 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:20:15 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/lxs00011000132845815020" 文件夹创建成功!
+Debug:  (2019-07-02 16:20:15 周二)
+fileFullPathName： "E:/计算/lxs00011000132845815020.xlsx"
+Debug:  (2019-07-02 16:20:15 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:20:15 周二)
+fileName： "lxs00011000132845815020.xlsx"
+Debug:  (2019-07-02 16:20:15 周二)
+outputFileName： "lxs00011000132845815020"
+Debug:  (2019-07-02 16:20:15 周二)
+outputFullPathName： "E:/计算/lxs00011000132845815020/"
+Debug:  (2019-07-02 16:20:15 周二)
+outputFullPathName： "E:/计算/lxs00011000132845815020/lxs00011000132845815020.sh"
+Info:  (2019-07-02 16:20:15 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:20:45 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:20:54 周二)
+fullFileName: "E:/计算/lxs00011000132845815020.xlsx"
+Debug:  (2019-07-02 16:20:54 周二)
+length: 26
+Debug:  (2019-07-02 16:20:54 周二)
+length: 26
+Debug:  (2019-07-02 16:20:54 周二)
+length: 26
+Debug:  (2019-07-02 16:20:54 周二)
+length: 26
+Debug:  (2019-07-02 16:20:54 周二)
+fullFileName: "E:/计算/lxs00011000132845815020.xlsx"
+Info:  (2019-07-02 16:20:56 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "lxs00011000132845815020.xlsx" 文件出口个数: "29"
+Info:  (2019-07-02 16:21:00 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/lxs00011000132845815020/lxs00011000132845815020.bc"
+Debug:  (2019-07-02 16:21:00 周二)
+filename: "szj00010000178823517020"
+Debug:  (2019-07-02 16:21:00 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:21:00 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/szj00010000178823517020" 文件夹创建成功!
+Debug:  (2019-07-02 16:21:00 周二)
+fileFullPathName： "E:/计算/szj00010000178823517020.xlsx"
+Debug:  (2019-07-02 16:21:00 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:21:00 周二)
+fileName： "szj00010000178823517020.xlsx"
+Debug:  (2019-07-02 16:21:00 周二)
+outputFileName： "szj00010000178823517020"
+Debug:  (2019-07-02 16:21:00 周二)
+outputFullPathName： "E:/计算/szj00010000178823517020/"
+Debug:  (2019-07-02 16:21:00 周二)
+outputFullPathName： "E:/计算/szj00010000178823517020/szj00010000178823517020.sh"
+Info:  (2019-07-02 16:21:00 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:21:31 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:21:37 周二)
+fullFileName: "E:/计算/szj00010000178823517020.xlsx"
+Debug:  (2019-07-02 16:21:37 周二)
+length: 26
+Debug:  (2019-07-02 16:21:37 周二)
+length: 26
+Debug:  (2019-07-02 16:21:37 周二)
+length: 26
+Debug:  (2019-07-02 16:21:37 周二)
+length: 26
+Debug:  (2019-07-02 16:21:37 周二)
+fullFileName: "E:/计算/szj00010000178823517020.xlsx"
+Info:  (2019-07-02 16:21:39 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "szj00010000178823517020.xlsx" 文件出口个数: "13"
+Info:  (2019-07-02 16:21:43 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/szj00010000178823517020/szj00010000178823517020.bc"
+Debug:  (2019-07-02 16:21:43 周二)
+filename: "wcq00011000164578115060"
+Debug:  (2019-07-02 16:21:43 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:21:43 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/wcq00011000164578115060" 文件夹创建成功!
+Debug:  (2019-07-02 16:21:43 周二)
+fileFullPathName： "E:/计算/wcq00011000164578115060.xlsx"
+Debug:  (2019-07-02 16:21:43 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:21:43 周二)
+fileName： "wcq00011000164578115060.xlsx"
+Debug:  (2019-07-02 16:21:43 周二)
+outputFileName： "wcq00011000164578115060"
+Debug:  (2019-07-02 16:21:43 周二)
+outputFullPathName： "E:/计算/wcq00011000164578115060/"
+Debug:  (2019-07-02 16:21:43 周二)
+outputFullPathName： "E:/计算/wcq00011000164578115060/wcq00011000164578115060.sh"
+Info:  (2019-07-02 16:21:43 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:22:13 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:22:20 周二)
+fullFileName: "E:/计算/wcq00011000164578115060.xlsx"
+Debug:  (2019-07-02 16:22:20 周二)
+length: 26
+Debug:  (2019-07-02 16:22:20 周二)
+length: 26
+Debug:  (2019-07-02 16:22:20 周二)
+length: 26
+Debug:  (2019-07-02 16:22:20 周二)
+length: 26
+Debug:  (2019-07-02 16:22:20 周二)
+fullFileName: "E:/计算/wcq00011000164578115060.xlsx"
+Info:  (2019-07-02 16:22:21 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "wcq00011000164578115060.xlsx" 文件出口个数: "25"
+Info:  (2019-07-02 16:22:26 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/wcq00011000164578115060/wcq00011000164578115060.bc"
+Debug:  (2019-07-02 16:22:26 周二)
+filename: "wxh00011000161654315030"
+Debug:  (2019-07-02 16:22:26 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:22:26 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/wxh00011000161654315030" 文件夹创建成功!
+Debug:  (2019-07-02 16:22:26 周二)
+fileFullPathName： "E:/计算/wxh00011000161654315030.xlsx"
+Debug:  (2019-07-02 16:22:26 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:22:26 周二)
+fileName： "wxh00011000161654315030.xlsx"
+Debug:  (2019-07-02 16:22:26 周二)
+outputFileName： "wxh00011000161654315030"
+Debug:  (2019-07-02 16:22:26 周二)
+outputFullPathName： "E:/计算/wxh00011000161654315030/"
+Debug:  (2019-07-02 16:22:26 周二)
+outputFullPathName： "E:/计算/wxh00011000161654315030/wxh00011000161654315030.sh"
+Info:  (2019-07-02 16:22:26 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:22:56 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:23:03 周二)
+fullFileName: "E:/计算/wxh00011000161654315030.xlsx"
+Debug:  (2019-07-02 16:23:03 周二)
+length: 26
+Debug:  (2019-07-02 16:23:03 周二)
+length: 26
+Debug:  (2019-07-02 16:23:03 周二)
+length: 26
+Debug:  (2019-07-02 16:23:03 周二)
+length: 26
+Debug:  (2019-07-02 16:23:03 周二)
+fullFileName: "E:/计算/wxh00011000161654315030.xlsx"
+Info:  (2019-07-02 16:23:06 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "wxh00011000161654315030.xlsx" 文件出口个数: "25"
+Info:  (2019-07-02 16:23:10 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/wxh00011000161654315030/wxh00011000161654315030.bc"
+Info:  (2019-07-02 16:23:29 周二)
+filename: ArteryTechQtProject.cpp  line: 1234  functionName: ArteryTechQtProject::mousePressEvent  LOG: 进入鼠标按压左击事件!
+Info:  (2019-07-02 16:23:29 周二)
+filename: ArteryTechQtProject.cpp  line: 1258  functionName: ArteryTechQtProject::mouseReleaseEvent  LOG: 进入鼠标松开事件!
+Debug:  (2019-07-02 16:25:13 周二)
+filename: "cwx00011000180973317050"
+Debug:  (2019-07-02 16:25:13 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:25:13 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/cwx00011000180973317050" 文件夹创建成功!
+Debug:  (2019-07-02 16:25:13 周二)
+fileFullPathName： "E:/计算/cwx00011000180973317050.xlsx"
+Debug:  (2019-07-02 16:25:13 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:25:13 周二)
+fileName： "cwx00011000180973317050.xlsx"
+Debug:  (2019-07-02 16:25:13 周二)
+outputFileName： "cwx00011000180973317050"
+Debug:  (2019-07-02 16:25:13 周二)
+outputFullPathName： "E:/计算/cwx00011000180973317050/"
+Debug:  (2019-07-02 16:25:13 周二)
+outputFullPathName： "E:/计算/cwx00011000180973317050/cwx00011000180973317050.sh"
+Info:  (2019-07-02 16:25:13 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:25:43 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:25:50 周二)
+fullFileName: "E:/计算/cwx00011000180973317050.xlsx"
+Debug:  (2019-07-02 16:25:50 周二)
+length: 26
+Debug:  (2019-07-02 16:25:50 周二)
+length: 26
+Debug:  (2019-07-02 16:25:50 周二)
+length: 26
+Debug:  (2019-07-02 16:25:50 周二)
+length: 26
+Debug:  (2019-07-02 16:25:50 周二)
+fullFileName: "E:/计算/cwx00011000180973317050.xlsx"
+Info:  (2019-07-02 16:25:51 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "cwx00011000180973317050.xlsx" 文件出口个数: "11"
+Info:  (2019-07-02 16:25:55 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/cwx00011000180973317050/cwx00011000180973317050.bc"
+Debug:  (2019-07-02 16:25:55 周二)
+filename: "cxs00011000117392716110"
+Debug:  (2019-07-02 16:25:55 周二)
+tempDir: QDir( "E:/计算" , nameFilters = { "*" },  QDir::SortFlags( Name | IgnoreCase ) , QDir::Filters( Dirs|Files|Drives|AllEntries ) )
+Info:  (2019-07-02 16:25:55 周二)
+filename: ComputingMultipleBP.cpp  line: 564  functionName: ComputingMultipleBP::createFile  LOG: "E:/计算/cxs00011000117392716110" 文件夹创建成功!
+Debug:  (2019-07-02 16:25:55 周二)
+fileFullPathName： "E:/计算/cxs00011000117392716110.xlsx"
+Debug:  (2019-07-02 16:25:55 周二)
+filePath： "E:/计算"
+Debug:  (2019-07-02 16:25:55 周二)
+fileName： "cxs00011000117392716110.xlsx"
+Debug:  (2019-07-02 16:25:55 周二)
+outputFileName： "cxs00011000117392716110"
+Debug:  (2019-07-02 16:25:55 周二)
+outputFullPathName： "E:/计算/cxs00011000117392716110/"
+Debug:  (2019-07-02 16:25:55 周二)
+outputFullPathName： "E:/计算/cxs00011000117392716110/cxs00011000117392716110.sh"
+Info:  (2019-07-02 16:25:55 周二)
+filename: ComputingMultipleBP.cpp  line: 670  functionName: ComputingMultipleBP::on_readoutput  LOG: 执行边界参数计算成功！
+Warning:  (2019-07-02 16:26:26 周二)
+QProcess: Destroyed while process ("D:\\HBFlowsSrc\\ArteryTechQtProject\\x64\\Release\\Matlab.bat") is still running.
+Debug:  (2019-07-02 16:26:32 周二)
+fullFileName: "E:/计算/cxs00011000117392716110.xlsx"
+Debug:  (2019-07-02 16:26:32 周二)
+length: 26
+Debug:  (2019-07-02 16:26:32 周二)
+length: 26
+Debug:  (2019-07-02 16:26:32 周二)
+length: 26
+Debug:  (2019-07-02 16:26:32 周二)
+length: 26
+Debug:  (2019-07-02 16:26:32 周二)
+fullFileName: "E:/计算/cxs00011000117392716110.xlsx"
+Info:  (2019-07-02 16:26:34 周二)
+filename: ComputingMultipleBP.cpp  line: 848  functionName: ComputingMultipleBP::getNumberofexports  LOG: "cxs00011000117392716110.xlsx" 文件出口个数: "27"
+Info:  (2019-07-02 16:26:38 周二)
+filename: ComputingMultipleBP.cpp  line: 760  functionName: ComputingMultipleBP::CreateBCFile  LOG: outputFullPathName: "E:/计算/cxs00011000117392716110/cxs00011000117392716110.bc"

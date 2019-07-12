@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechMeshSetup; };
 
@@ -23,15 +24,18 @@ public:
 	~QtArteryTechMeshSetup();
 	QStringList meshSetupDataList;
 	QStringList GetMeshData();
+	
+	QStringList getUIData();
 
 private:
 	Ui::QtArteryTechMeshSetup *ui;
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitMeshData();
+	void InitMeshData(bool flag);
 	void SaveMeshData();
 	int isDigitStr(QString str);
+	void InitUiData();
 
 private slots:
 	void OkPushButtonSlots();
@@ -39,4 +43,9 @@ private slots:
 	void XEditingFinishedSlot();
 	void YEditingFinishedSlot();
 	void ZEditingFinishedSlot();
+	void XCheckBoxStateChanged(int);
+	void YCheckBoxStateChanged(int);
+	void ZCheckBoxStateChanged(int);
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

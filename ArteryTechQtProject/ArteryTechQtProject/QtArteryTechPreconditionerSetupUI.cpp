@@ -10,6 +10,10 @@ QtArteryTechPreconditionerSetupUI::QtArteryTechPreconditionerSetupUI(QWidget *pa
 	this->setWindowTitle("预处理算法参数设置");
 	this->setMinimumSize(647, 211);
 	this->setMaximumSize(647, 211);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->geometricAsmCheckBox = new QCheckBox;
 	this->geometricAsmCheckBox->setText("geometric_asm");
@@ -18,7 +22,7 @@ QtArteryTechPreconditionerSetupUI::QtArteryTechPreconditionerSetupUI(QWidget *pa
 
 	ui->horizontalLayout_7->addWidget(this->geometricAsmCheckBox);
 
-	InitPreconditionerData();
+	InitUiData();
 	//SavePreconditionerData();
 	//信号与槽函数的连接
 	QObject::connect(ui->ILULevelsLineEdit, SIGNAL(editingFinished()), this, SLOT(ILULevelsLineEditSlot()));
@@ -37,6 +41,10 @@ QtArteryTechPreconditionerSetupUI::QtArteryTechPreconditionerSetupUI(QString tmp
 	this->setWindowTitle("预处理算法参数设置");
 	this->setMinimumSize(647, 211);
 	this->setMaximumSize(647, 211);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->geometricAsmCheckBox = new QCheckBox;
 	this->geometricAsmCheckBox->setText("geometric_asm");
@@ -45,7 +53,7 @@ QtArteryTechPreconditionerSetupUI::QtArteryTechPreconditionerSetupUI(QString tmp
 
 	ui->horizontalLayout_6->addWidget(this->geometricAsmCheckBox);
 
-	InitPreconditionerData();
+	InitUiData();
 	//SavePreconditionerData();
 	//信号与槽函数的连接
 	QObject::connect(ui->ILULevelsLineEdit, SIGNAL(editingFinished()), this, SLOT(ILULevelsLineEditSlot()));
@@ -53,7 +61,7 @@ QtArteryTechPreconditionerSetupUI::QtArteryTechPreconditionerSetupUI(QString tmp
 	QObject::connect(ui->OKPushButton, SIGNAL(clicked()), this, SLOT(OkPushButtonSlots()));
 	QObject::connect(ui->CancelPushButton, SIGNAL(clicked()), this, SLOT(CancelPushButtonSlots()));
 }
-
+#if 0
 void QtArteryTechPreconditionerSetupUI::InitPreconditionerData()
 {
 	ui->PreconditionerTypeLineEdit->setText(NULL);
@@ -66,18 +74,100 @@ void QtArteryTechPreconditionerSetupUI::InitPreconditionerData()
 	ui->OverlappingTypeLineEdit->setVisible(false);
 	ui->OverlappingSizeLineEdit->setText("0");
 }
-#if 0
-void QtArteryTechPreconditionerSetupUI::InitPreconditionerData()
+#endif
+
+void QtArteryTechPreconditionerSetupUI::InitUiData()
 {
+	this->geometricAsmCheckBox->setVisible(false);
+	this->geometricAsmCheckBox->setEnabled(false);
+	this->geometricAsmCheckBox->setCheckState(Qt::Checked);
+
+	ui->PreconditionerTypeLineEdit->setVisible(false);
+	ui->PreconditionerTypeLineEdit->setEnabled(false);
 	ui->PreconditionerTypeLineEdit->setText("asm");
+
+	ui->ASMTypeLineEdit->setVisible(false);
+	ui->ASMTypeLineEdit->setEnabled(false);
 	ui->ASMTypeLineEdit->setText("RESTRICT");
+
+	ui->SubdomainSolverLineEdit->setVisible(false);
+	ui->SubdomainSolverLineEdit->setEnabled(false);
 	ui->SubdomainSolverLineEdit->setText("ilu");
+
+	ui->ILULevelsLineEdit->setVisible(false);
+	ui->ILULevelsLineEdit->setEnabled(false);
 	ui->ILULevelsLineEdit->setText("1");
+
+	ui->SubdomainMatrixOrderingTypeLineEdit->setVisible(false);
+	ui->SubdomainMatrixOrderingTypeLineEdit->setEnabled(false);
 	ui->SubdomainMatrixOrderingTypeLineEdit->setText("rcm");
+
 	ui->OverlappingTypeLineEdit->setText(NULL);
-	ui->OverlappingTypeLabel->setVisible(false);
+	ui->OverlappingTypeLabel->setVisible(true);
 	ui->OverlappingTypeLineEdit->setVisible(false);
+
+	ui->OverlappingSizeLineEdit->setVisible(false);
+	ui->OverlappingSizeLineEdit->setEnabled(false);
 	ui->OverlappingSizeLineEdit->setText("1");
+}
+#if 1
+void QtArteryTechPreconditionerSetupUI::InitPreconditionerData(bool flag)
+{
+	if (flag)
+	{
+		this->geometricAsmCheckBox->setVisible(true);
+		this->geometricAsmCheckBox->setEnabled(true);
+
+		ui->PreconditionerTypeLineEdit->setVisible(true);
+		ui->PreconditionerTypeLineEdit->setEnabled(true);
+
+		ui->ASMTypeLineEdit->setVisible(true);
+		ui->ASMTypeLineEdit->setEnabled(true);
+
+		ui->SubdomainSolverLineEdit->setVisible(true);
+		ui->SubdomainSolverLineEdit->setEnabled(true);
+
+		ui->ILULevelsLineEdit->setVisible(true);
+		ui->ILULevelsLineEdit->setEnabled(true);
+
+		ui->SubdomainMatrixOrderingTypeLineEdit->setVisible(true);
+		ui->SubdomainMatrixOrderingTypeLineEdit->setEnabled(true);
+
+		ui->OverlappingTypeLineEdit->setText(NULL);
+		ui->OverlappingTypeLabel->setVisible(true);
+		ui->OverlappingTypeLineEdit->setVisible(false);
+
+		ui->OverlappingSizeLineEdit->setVisible(true);
+		ui->OverlappingSizeLineEdit->setEnabled(true);
+	}
+	else
+	{
+		this->geometricAsmCheckBox->setVisible(false);
+		this->geometricAsmCheckBox->setEnabled(false);
+
+		ui->PreconditionerTypeLineEdit->setVisible(false);
+		ui->PreconditionerTypeLineEdit->setEnabled(false);
+
+		ui->ASMTypeLineEdit->setVisible(false);
+		ui->ASMTypeLineEdit->setEnabled(false);
+
+		ui->SubdomainSolverLineEdit->setVisible(false);
+		ui->SubdomainSolverLineEdit->setEnabled(false);
+
+		ui->ILULevelsLineEdit->setVisible(false);
+		ui->ILULevelsLineEdit->setEnabled(false);
+
+		ui->SubdomainMatrixOrderingTypeLineEdit->setVisible(false);
+		ui->SubdomainMatrixOrderingTypeLineEdit->setEnabled(false);
+
+		ui->OverlappingTypeLineEdit->setText(NULL);
+		ui->OverlappingTypeLabel->setVisible(true);
+		ui->OverlappingTypeLineEdit->setVisible(false);
+
+		ui->OverlappingSizeLineEdit->setVisible(false);
+		ui->OverlappingSizeLineEdit->setEnabled(false);
+	}
+	
 }
 #endif
 void QtArteryTechPreconditionerSetupUI::SavePreconditionerData()
@@ -137,6 +227,65 @@ void QtArteryTechPreconditionerSetupUI::SavePreconditionerData()
 	*/
 }
 
+QStringList QtArteryTechPreconditionerSetupUI::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString Menustr = "#Preconditioner Setup\n";
+	resultUIDataList.append(Menustr);
+	//QString labeltext = "	" + ui->PreconditionerTypeLabel->text() + " " + "-pc_type" + " ";
+	QString labeltext = "	-pc_type ";
+	QString lineEdit = ui->PreconditionerTypeLineEdit->text() + "\n";
+	QString contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->ASMTypeLabel->text() + " " + "-pc_asm_type" + " ";
+	labeltext = "	#-pc_asm_type ";
+	lineEdit = ui->ASMTypeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->SubdomainSolverLabel->text() + " " + "-sub_pc_type" + " ";
+	labeltext = "	-sub_pc_type ";
+	lineEdit = ui->SubdomainSolverLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->ILULevelsLabel->text() + " " + "-sub_pc_factor_levels" + " ";
+	labeltext = "	-sub_pc_factor_levels ";
+	lineEdit = ui->ILULevelsLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->SubdomainMatrixOrderingTypeLabel->text() + " " + "-sub_pc_factor_mat_ordering_type" + " ";
+	labeltext = "	-sub_pc_factor_mat_ordering_type ";
+	lineEdit = ui->SubdomainMatrixOrderingTypeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->geometricAsmCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->OverlappingTypeLabel->text() + " " + "-geometric_asm" + " ";
+		labeltext = "	-geometric_asm ";
+		lineEdit = ui->OverlappingTypeLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->OverlappingSizeLabel->text() + " " + "-geometric_asm_overlap" + " ";
+	labeltext = "	-geometric_asm_overlap ";
+	lineEdit = ui->OverlappingSizeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+	/*
+	for (size_t i = 0; i < preconditionerDataList.length(); i++)
+	{
+	qDebug() << "PreconditionerSetupUiData:" << preconditionerDataList[i];
+	}
+	*/
+	return resultUIDataList;
+}
+
 void QtArteryTechPreconditionerSetupUI::OkPushButtonSlots()
 {
 	SavePreconditionerData();
@@ -145,7 +294,7 @@ void QtArteryTechPreconditionerSetupUI::OkPushButtonSlots()
 
 void QtArteryTechPreconditionerSetupUI::CancelPushButtonSlots()
 {
-	InitPreconditionerData();
+	InitPreconditionerData(false);
 	this->close();
 }
 
@@ -278,4 +427,31 @@ void QtArteryTechPreconditionerSetupUI::OverlappingSizeLineEditSlot()
 			ui->OverlappingSizeLineEdit->setText("0");
 		}
 	}
+}
+//OverlappingSizeLineEdit
+
+void QtArteryTechPreconditionerSetupUI::OverlappingSizeCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->OverlappingSizeLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->OverlappingSizeLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->OverlappingSizeLineEdit->setReadOnly(true);
+	}
+}
+
+void QtArteryTechPreconditionerSetupUI::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitPreconditionerData(flag);
+}
+
+void QtArteryTechPreconditionerSetupUI::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this, "提示:", "接收信号");
 }

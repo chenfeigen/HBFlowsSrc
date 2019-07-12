@@ -112,6 +112,11 @@ bool aes(char* source_path, char* des_path, char* password, int method) {
 		}
 	}
 	FILE *file1 = fopen(des_path, "wb");
+	if (NULL == file1)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "文件打开失败！";
+		return false;
+	}
 	size_t writeSize = fwrite(encry, size, 1, file1);
 	qDebug() << "writeSize:" << writeSize;
 	fflush(file1);

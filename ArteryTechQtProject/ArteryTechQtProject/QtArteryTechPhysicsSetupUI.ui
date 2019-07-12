@@ -6,16 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>733</width>
-    <height>421</height>
+    <width>696</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechPhysicsSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_19">
+  <layout class="QVBoxLayout" name="verticalLayout_21">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_18">
+    <layout class="QVBoxLayout" name="verticalLayout_20">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_19">
        <item>
@@ -453,27 +453,81 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_17">
+      <layout class="QHBoxLayout" name="horizontalLayout_29">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_17">
+        <layout class="QHBoxLayout" name="horizontalLayout_27">
          <item>
-          <widget class="QLabel" name="label_17">
-           <property name="text">
-            <string>入口速度</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>对应与W3的Rd</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RdForWK3Label">
+             <property name="text">
+              <string>Rd for WK3:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLabel" name="InletVelocityLabel">
-           <property name="text">
-            <string>Inlet Velocity:</string>
-           </property>
-          </widget>
+          <widget class="QLineEdit" name="RdForWK3LineEdit"/>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="InletVelocityLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_28">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>对应与W3的C</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CForWK3Lable">
+             <property name="text">
+              <string>C for WK3:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="CForWK3LineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>入口速度</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletVelocityLabel">
+             <property name="text">
+              <string>Inlet Velocity:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="InletVelocityLineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>

@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechPhysicsSetupUI; };
 
@@ -23,8 +24,11 @@ public:
 	~QtArteryTechPhysicsSetupUI();
 	QStringList physicsDataList;
 	QStringList GetPhysicsData();
+	QStringList getUIData();
 
 private:
+	Ui::QtArteryTechPhysicsSetupUI *ui;
+
 	QCheckBox *allImpedanceCheckBox;
 	QCheckBox *bloodflowCheckBox;
 	QCheckBox *fluidonlyCheckBox;
@@ -34,9 +38,10 @@ private:
 	int m_boundaryType = 1;
 
 	void closeEvent(QCloseEvent *event);
-	void InitPhysicsData();
+	void InitPhysicsData(bool flag);
 	void SavePhysicsData();
 	int isDigitStr(QString str);
+	void InitUiData();
 
 private slots:
 	void OkPushButtonSlots();
@@ -53,6 +58,7 @@ private slots:
 	void PeriodLineEditSlot();
 	void InletVelocityLineEditSlot();
 	void GetBoundaryTypeSlot(QString boundaryTypeText);
-private:
-	Ui::QtArteryTechPhysicsSetupUI *ui;
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
+
 };

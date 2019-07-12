@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechPreconditionerSetupUI; };
 
@@ -24,6 +25,7 @@ public:
 	QStringList preconditionerDataList;
 	QStringList GetTechPreconditionerData();
 	int isDigitStr(QString str);
+	QStringList getUIData();
 
 private:
 	Ui::QtArteryTechPreconditionerSetupUI *ui;
@@ -31,12 +33,16 @@ private:
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitPreconditionerData();
+	void InitPreconditionerData(bool flag);
 	void SavePreconditionerData();
+	void InitUiData();
 
 private slots:
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
 	void ILULevelsLineEditSlot();
 	void OverlappingSizeLineEditSlot();
+	void OverlappingSizeCheckBoxStateChanged(int Status);
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

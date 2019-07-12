@@ -10,6 +10,10 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QWidget *parent)
 	this->setMaximumSize(807, 421);
 	this->setMinimumSize(807, 421);
 	this->setWindowTitle("物理参数设置");
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->allImpedanceCheckBox = new QCheckBox;
 	this->bloodflowCheckBox = new QCheckBox;
@@ -23,10 +27,10 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QWidget *parent)
 	this->fixedMeshCheckBox->setText("fixed_mesh");
 	this->zeroInitialCheckBox->setText("zero_initial");
 	//设置checkbox的初始状态为已经选择
-	//this->BloodflowCheckBox->setCheckState(Qt::Checked);
-	//this->FluidonlyCheckBox->setCheckState(Qt::Checked);
-	//this->FixedMeshCheckBox->setCheckState(Qt::Checked);
-	//this->ZeroInitialCheckBox->setCheckState(Qt::Checked);
+	//this->bloodflowCheckBox->setCheckState(Qt::Checked);
+	//this->fluidonlyCheckBox->setCheckState(Qt::Checked);
+	//this->fixedMeshCheckBox->setCheckState(Qt::Checked);
+	//this->zeroInitialCheckBox->setCheckState(Qt::Checked);
 
 	ui->horizontalLayout_3->addWidget(this->allImpedanceCheckBox);
 	ui->horizontalLayout_8->addWidget(this->bloodflowCheckBox);
@@ -36,7 +40,7 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QWidget *parent)
 
 
 
-	InitPhysicsData();
+	InitUiData();
 	//SavePhysicsData();
 	//信号与槽函数的连接
 	QObject::connect(ui->TotalResistanceLineEdit, SIGNAL(editingFinished()), this, SLOT(TotalResistanceLineEditSlot()));
@@ -64,6 +68,10 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QString tmpFileName, QWid
 	this->setMaximumSize(807, 421);
 	this->setMinimumSize(807, 421);
 	this->setWindowTitle("物理参数设置");
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->allImpedanceCheckBox = new QCheckBox;
 	this->bloodflowCheckBox = new QCheckBox;
@@ -90,7 +98,7 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QString tmpFileName, QWid
 
 
 
-	InitPhysicsData();
+	InitUiData();
 	//SavePhysicsData();
 	//信号与槽函数的连接
 	QObject::connect(ui->TotalResistanceLineEdit, SIGNAL(editingFinished()), this, SLOT(TotalResistanceLineEditSlot()));
@@ -108,6 +116,7 @@ QtArteryTechPhysicsSetupUI::QtArteryTechPhysicsSetupUI(QString tmpFileName, QWid
 	QObject::connect(ui->CancelPushButton, SIGNAL(clicked()), this, SLOT(CancelPushButtonSlots()));
 }
 
+#if 0
 void QtArteryTechPhysicsSetupUI::InitPhysicsData()
 {
 	ui->TotalResistanceLineEdit->setText("0");
@@ -138,36 +147,173 @@ void QtArteryTechPhysicsSetupUI::InitPhysicsData()
 	ui->ZeroInitialConditionLineEdit->setVisible(false);
 	ui->InletVelocityLineEdit->setText("0");
 }
-#if 0
-void QtArteryTechPhysicsSetupUI::InitPhysicsData()
+#endif
+
+void QtArteryTechPhysicsSetupUI::InitUiData()
 {
-	ui->TotalResistanceLineEdit->setText("7600.0");
-	ui->TotalCapacityLineEdit->setText("8.e-4");
+	this->bloodflowCheckBox->setVisible(false);
+	this->bloodflowCheckBox->setEnabled(false);
+	this->fluidonlyCheckBox->setVisible(false);
+	this->fluidonlyCheckBox->setEnabled(false);
+	this->fixedMeshCheckBox->setVisible(false);
+	this->fixedMeshCheckBox->setEnabled(false);
+	this->bloodflowCheckBox->setCheckState(Qt::Checked);
+	this->fluidonlyCheckBox->setCheckState(Qt::Checked);
+	this->fixedMeshCheckBox->setCheckState(Qt::Checked);
+	this->zeroInitialCheckBox->setVisible(false);
+	this->zeroInitialCheckBox->setEnabled(false);
+	this->zeroInitialCheckBox->setCheckState(Qt::Checked);
+
+	ui->TotalResistanceLineEdit->setText("0");
+	ui->TotalCapacityLineEdit->setText("0");
 	ui->AllImpedanceLineEdit->setText(NULL);
 	ui->AllImpedanceLabel->setVisible(true);
 	ui->AllImpedanceLineEdit->setVisible(false);
-	ui->PdForWK3LineEdit->setText("0.0");
-	ui->P0ForWK3LineEdit->setText("77.0");
+	ui->PdForWK3LineEdit->setText("0");
+	ui->P0ForWK3LineEdit->setText("0");
+
+	ui->FluidViscosityLineEdit->setVisible(false);
+	ui->FluidViscosityLineEdit->setEnabled(false);
 	ui->FluidViscosityLineEdit->setText("0.035");
+
+	ui->FluidDensityLineEdit->setVisible(false);
+	ui->FluidDensityLineEdit->setEnabled(false);
 	ui->FluidDensityLineEdit->setText("1.060");
+
 	ui->BloodFlowSimulationLineEdit->setText(NULL);
 	ui->BloodFlowSimulationLabel->setVisible(true);
 	ui->BloodFlowSimulationLineEdit->setVisible(false);
 	ui->FluidOnlySimulationLineEdit->setText(NULL);
 	ui->FluidOnlySimulationLabel->setVisible(true);
 	ui->FluidOnlySimulationLineEdit->setVisible(false);
+
+	ui->TimeDiscretizationMethodLineEdit->setVisible(false);
+	ui->TimeDiscretizationMethodLineEdit->setEnabled(false);
 	ui->TimeDiscretizationMethodLineEdit->setText("1");
+
+	ui->InitialTimeLineEdit->setVisible(false);
+	ui->InitialTimeLineEdit->setEnabled(false);
 	ui->InitialTimeLineEdit->setText("0.0");
-	ui->FinalTimeLineEdit->setText("0.909090909");
-	ui->TimeStepSizeLineEdit->setText("0.00909090909");
-	ui->PeriodLineEdit->setText("5.0");
+
+	ui->FinalTimeLineEdit->setText("0");
+	ui->TimeStepSizeLineEdit->setText("0");
+	ui->PeriodLineEdit->setText("0");
 	ui->FixedMeshLineEdit->setText(NULL);
 	ui->FixedMeshLabel->setVisible(true);
 	ui->FixedMeshLineEdit->setVisible(false);
 	ui->ZeroInitialConditionLineEdit->setText(NULL);
 	ui->ZeroInitialConditionLabel->setVisible(true);
 	ui->ZeroInitialConditionLineEdit->setVisible(false);
+
+	ui->RdForWK3LineEdit->setText("0");
+	ui->CForWK3LineEdit->setText("0");
+
+	ui->InletVelocityLineEdit->setVisible(false);
+	ui->InletVelocityLineEdit->setEnabled(false);
 	ui->InletVelocityLineEdit->setText("1.0");
+}
+#if 1
+void QtArteryTechPhysicsSetupUI::InitPhysicsData(bool flag)
+{
+	if (flag)
+	{
+		this->bloodflowCheckBox->setVisible(true);
+		this->bloodflowCheckBox->setEnabled(true);
+		this->fluidonlyCheckBox->setVisible(true);
+		this->fluidonlyCheckBox->setEnabled(true);
+		this->fixedMeshCheckBox->setVisible(true);
+		this->fixedMeshCheckBox->setEnabled(true);
+
+		//ui->TotalResistanceLineEdit->setText("0");
+		ui->TotalCapacityLineEdit->setText("0");
+		ui->AllImpedanceLineEdit->setText(NULL);
+		ui->AllImpedanceLabel->setVisible(true);
+		ui->AllImpedanceLineEdit->setVisible(false);
+		ui->PdForWK3LineEdit->setText("0");
+		//ui->P0ForWK3LineEdit->setText("0");
+
+		ui->FluidViscosityLineEdit->setVisible(true);
+		ui->FluidViscosityLineEdit->setEnabled(true);
+
+		ui->FluidDensityLineEdit->setVisible(true);
+		ui->FluidDensityLineEdit->setEnabled(true);
+
+		ui->BloodFlowSimulationLineEdit->setText(NULL);
+		ui->BloodFlowSimulationLabel->setVisible(true);
+		ui->BloodFlowSimulationLineEdit->setVisible(false);
+		ui->FluidOnlySimulationLineEdit->setText(NULL);
+		ui->FluidOnlySimulationLabel->setVisible(true);
+		ui->FluidOnlySimulationLineEdit->setVisible(false);
+
+		ui->TimeDiscretizationMethodLineEdit->setVisible(true);
+		ui->TimeDiscretizationMethodLineEdit->setEnabled(true);
+
+		ui->InitialTimeLineEdit->setVisible(true);
+		ui->InitialTimeLineEdit->setEnabled(true);
+
+		//ui->FinalTimeLineEdit->setText("0");
+		//ui->TimeStepSizeLineEdit->setText("0");
+		ui->PeriodLineEdit->setText("0");
+		ui->FixedMeshLineEdit->setText(NULL);
+		ui->FixedMeshLabel->setVisible(true);
+		ui->FixedMeshLineEdit->setVisible(false);
+		ui->ZeroInitialConditionLineEdit->setText(NULL);
+		ui->ZeroInitialConditionLabel->setVisible(true);
+		ui->ZeroInitialConditionLineEdit->setVisible(false);
+
+		ui->InletVelocityLineEdit->setVisible(true);
+		ui->InletVelocityLineEdit->setEnabled(true);
+	}
+	else
+	{
+		this->bloodflowCheckBox->setVisible(false);
+		this->bloodflowCheckBox->setEnabled(false);
+		this->fluidonlyCheckBox->setVisible(false);
+		this->fluidonlyCheckBox->setEnabled(false);
+		this->fixedMeshCheckBox->setVisible(false);
+		this->fixedMeshCheckBox->setEnabled(false);
+
+		//ui->TotalResistanceLineEdit->setText("0");
+		ui->TotalCapacityLineEdit->setText("0");
+		ui->AllImpedanceLineEdit->setText(NULL);
+		ui->AllImpedanceLabel->setVisible(true);
+		ui->AllImpedanceLineEdit->setVisible(false);
+		ui->PdForWK3LineEdit->setText("0");
+		//ui->P0ForWK3LineEdit->setText("0");
+
+		ui->FluidViscosityLineEdit->setVisible(false);
+		ui->FluidViscosityLineEdit->setEnabled(false);
+
+		ui->FluidDensityLineEdit->setVisible(false);
+		ui->FluidDensityLineEdit->setEnabled(false);
+
+		ui->BloodFlowSimulationLineEdit->setText(NULL);
+		ui->BloodFlowSimulationLabel->setVisible(true);
+		ui->BloodFlowSimulationLineEdit->setVisible(false);
+		ui->FluidOnlySimulationLineEdit->setText(NULL);
+		ui->FluidOnlySimulationLabel->setVisible(true);
+		ui->FluidOnlySimulationLineEdit->setVisible(false);
+
+		ui->TimeDiscretizationMethodLineEdit->setVisible(false);
+		ui->TimeDiscretizationMethodLineEdit->setEnabled(false);
+
+		ui->InitialTimeLineEdit->setVisible(false);
+		ui->InitialTimeLineEdit->setEnabled(false);
+
+		//ui->FinalTimeLineEdit->setText("0");
+		//ui->TimeStepSizeLineEdit->setText("0");
+		ui->PeriodLineEdit->setText("0");
+		ui->FixedMeshLineEdit->setText(NULL);
+		ui->FixedMeshLabel->setVisible(true);
+		ui->FixedMeshLineEdit->setVisible(false);
+		ui->ZeroInitialConditionLineEdit->setText(NULL);
+		ui->ZeroInitialConditionLabel->setVisible(true);
+		ui->ZeroInitialConditionLineEdit->setVisible(false);
+
+		ui->InletVelocityLineEdit->setVisible(false);
+		ui->InletVelocityLineEdit->setEnabled(false);
+	}
+	
 }
 #endif
 void QtArteryTechPhysicsSetupUI::SavePhysicsData()
@@ -209,7 +355,7 @@ void QtArteryTechPhysicsSetupUI::SavePhysicsData()
 
 
 	//labeltext = "	" + ui->PdForWK3Label->text() + " " + "-impedance_pd" + " ";
-	labeltext = "	-impedance_pd ";
+	labeltext = "	#-impedance_pd ";
 	lineEdit = ui->PdForWK3LineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->physicsDataList.append(contenttext);
@@ -275,7 +421,7 @@ void QtArteryTechPhysicsSetupUI::SavePhysicsData()
 	this->physicsDataList.append(contenttext);
 
 	//labeltext = "	" + ui->PeriodLabel->text() + " " + "-period" + " ";
-	labeltext = "	-period ";
+	labeltext = "	#-period ";
 	lineEdit = ui->PeriodLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->physicsDataList.append(contenttext);
@@ -298,6 +444,16 @@ void QtArteryTechPhysicsSetupUI::SavePhysicsData()
 		this->physicsDataList.append(contenttext);
 	}
 
+	labeltext = "	-impedance_Rd ";
+	lineEdit = ui->RdForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	this->physicsDataList.append(contenttext);
+
+	labeltext = "	-impedance_C ";
+	lineEdit = ui->CForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	this->physicsDataList.append(contenttext);
+
 	//labeltext = "	" + ui->InletVelocityLabel->text() + " " + "-P1coords" + " ";
 	labeltext = "	-inlet_velocity ";
 	lineEdit = ui->InletVelocityLineEdit->text() + "\n";
@@ -311,6 +467,159 @@ void QtArteryTechPhysicsSetupUI::SavePhysicsData()
 	*/
 }
 
+QStringList QtArteryTechPhysicsSetupUI::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString Menustr = "#Physics Setup\n";
+	resultUIDataList.append(Menustr);
+	//QString labeltext = "	" + ui->TotalResistanceLabel->text() + " " + "-R_total" + " ";
+	QString labeltext = "	-R_total ";
+	QString lineEdit = ui->TotalResistanceLineEdit->text() + "\n";
+	QString contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->TotalCapacityLabel->text() + " " + "-C_total" + " ";
+	labeltext = "	#-C_total ";
+	lineEdit = ui->TotalCapacityLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+	if (this->allImpedanceCheckBox->isChecked())
+	{
+		if (m_boundaryType == 2)
+		{
+			//labeltext = "	" + ui->AllImpedanceLabel->text() + " " + "-all_impedance_bc" + " ";
+			labeltext = "	-all_impedance_bc ";
+			lineEdit = ui->AllImpedanceLineEdit->text() + "\n";
+			contenttext = labeltext + lineEdit;
+			resultUIDataList.append(contenttext);
+		}
+		else
+		{
+			//labeltext = "	" + ui->AllImpedanceLabel->text() + " " + "-resistance_distribution_pulmonary" + " ";
+			labeltext = "	-resistance_distribution_pulmonary ";
+			lineEdit = ui->AllImpedanceLineEdit->text() + "\n";
+			contenttext = labeltext + lineEdit;
+			resultUIDataList.append(contenttext);
+		}
+
+	}
+
+
+	//labeltext = "	" + ui->PdForWK3Label->text() + " " + "-impedance_pd" + " ";
+	labeltext = "	#-impedance_pd ";
+	lineEdit = ui->PdForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->P0ForWK3Label->text() + " " + "-impedance_p0" + " ";
+	labeltext = "	-impedance_p0 ";
+	lineEdit = ui->P0ForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->FluidViscosityLabel->text() + " " + "-viscosity" + " ";
+	labeltext = "	-viscosity ";
+	lineEdit = ui->FluidViscosityLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->FluidDensityLabel->text() + " " + "-fluid_density" + " ";
+	labeltext = "	-fluid_density ";
+	lineEdit = ui->FluidDensityLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->bloodflowCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->BloodFlowSimulationLabel->text() + " " + "-bloodflow" + " ";
+		labeltext = "	-bloodflow ";
+		lineEdit = ui->BloodFlowSimulationLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	if (this->fluidonlyCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->FluidOnlySimulationLabel->text() + " " + "-fluidonly" + " ";
+		labeltext = "	-fluidonly ";
+		lineEdit = ui->FluidOnlySimulationLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->TimeDiscretizationMethodLabel->text() + " " + "-timestep" + " ";
+	labeltext = "	-timestep ";
+	lineEdit = ui->TimeDiscretizationMethodLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InitialTimeLabel->text() + " " + "-initial_time" + " ";
+	labeltext = "	-initial_time ";
+	lineEdit = ui->InitialTimeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->FinalTimeLabel->text() + " " + "-final_time" + " ";
+	labeltext = "	-final_time ";
+	lineEdit = ui->FinalTimeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->TimeStepSizeLabel->text() + " " + "-dt" + " ";
+	labeltext = "	-dt ";
+	lineEdit = ui->TimeStepSizeLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->PeriodLabel->text() + " " + "-period" + " ";
+	labeltext = "	#-period ";
+	lineEdit = ui->PeriodLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->fixedMeshCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->FixedMeshLabel->text() + " " + "-fixed_mesh" + " ";
+		labeltext = "	-fixed_mesh ";
+		lineEdit = ui->FixedMeshLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	if (this->zeroInitialCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->ZeroInitialConditionLabel->text() + " " + "-zero_initial" + " ";
+		labeltext = "	-zero_initial ";
+		lineEdit = ui->ZeroInitialConditionLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	labeltext = "	-impedance_Rd ";
+	lineEdit = ui->RdForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	labeltext = "	-impedance_C ";
+	lineEdit = ui->CForWK3LineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->InletVelocityLabel->text() + " " + "-P1coords" + " ";
+	labeltext = "	-inlet_velocity ";
+	lineEdit = ui->InletVelocityLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+	/*
+	for (size_t i = 0; i < physicsDataList.length(); i++)
+	{
+	qDebug() << "PhysicsSetupUiData:" << physicsDataList[i];
+	}
+	*/
+	return resultUIDataList;
+}
+
 void QtArteryTechPhysicsSetupUI::OkPushButtonSlots()
 {
 	SavePhysicsData();
@@ -319,7 +628,7 @@ void QtArteryTechPhysicsSetupUI::OkPushButtonSlots()
 
 void QtArteryTechPhysicsSetupUI::CancelPushButtonSlots()
 {
-	InitPhysicsData();
+	InitPhysicsData(false);
 	this->close();
 }
 
@@ -428,7 +737,7 @@ void QtArteryTechPhysicsSetupUI::TotalResistanceLineEditSlot()
 		bool digitsStatus = isDigitStr(ui->TotalResistanceLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
-			if (ui->TotalResistanceLineEdit->text().trimmed().length() > 15)
+			if (ui->TotalResistanceLineEdit->text().trimmed().length() > 20)
 			{
 				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
 				ui->TotalResistanceLineEdit->setText("0");
@@ -631,7 +940,7 @@ void QtArteryTechPhysicsSetupUI::FinalTimeLineEditSlot()
 		bool digitsStatus = isDigitStr(ui->FinalTimeLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
-			if (ui->FinalTimeLineEdit->text().trimmed().length() > 15)
+			if (ui->FinalTimeLineEdit->text().trimmed().length() > 20)
 			{
 				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
 				ui->FinalTimeLineEdit->setText("0");
@@ -660,7 +969,7 @@ void QtArteryTechPhysicsSetupUI::TimeStepSizeLineEditSlot()
 		bool digitsStatus = isDigitStr(ui->TimeStepSizeLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
-			if (ui->TimeStepSizeLineEdit->text().trimmed().length() > 15)
+			if (ui->TimeStepSizeLineEdit->text().trimmed().length() > 20)
 			{
 				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
 				ui->TimeStepSizeLineEdit->setText("0");
@@ -738,4 +1047,43 @@ void QtArteryTechPhysicsSetupUI::InletVelocityLineEditSlot()
 void QtArteryTechPhysicsSetupUI::GetBoundaryTypeSlot(QString boundaryTypeText)
 {
 	m_boundaryType = boundaryTypeText.trimmed().toInt();
+}
+
+void QtArteryTechPhysicsSetupUI::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitPhysicsData(flag);
+}
+
+void QtArteryTechPhysicsSetupUI::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this, "提示:", "接收信号");
+	int length = VariableParametersList.length();
+	qDebug() << "length:" << length;
+	for (size_t i = 0; i < VariableParametersList.length(); i++)
+	{
+		if (VariableParametersList.at(i).startsWith("Rd for WK3:"))
+		{
+			ui->RdForWK3LineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("C for WK3:"))
+		{
+			ui->CForWK3LineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("Final Time:"))
+		{
+			ui->FinalTimeLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("Time Step Size:"))
+		{
+			ui->TimeStepSizeLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("Total Resistance:"))
+		{
+			ui->TotalResistanceLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+		else if (VariableParametersList.at(i).startsWith("P0 for WK3:"))
+		{
+			ui->P0ForWK3LineEdit->setText(VariableParametersList.at(i).split(":").at(1));
+		}
+	}
 }

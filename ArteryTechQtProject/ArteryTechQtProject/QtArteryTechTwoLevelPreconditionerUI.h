@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechTwoLevelPreconditionerUI; };
 
@@ -24,6 +25,7 @@ public:
 	QStringList twoLPreconditionerDataList;
 	QStringList GetTLPreconditionerData();
 	int isDigitStr(QString str);
+	QStringList getUIData();
 
 private:
 	Ui::QtArteryTechTwoLevelPreconditionerUI *ui;
@@ -34,8 +36,9 @@ private:
 	QString m_tmpFileName = NULL;
 
 	void closeEvent(QCloseEvent *event);
-	void InitTLPreconditionerData();
+	void InitTLPreconditionerData(bool flag);
 	void SaveTLPreconditionerData();
+	void InitUiData();
 
 
 private slots:
@@ -46,4 +49,6 @@ private slots:
 	void CoarseLinearSolverMaxIterationLineEditSlot();
 	void FineILULevelsLineEditSlot();
 	void CoarseILULevelsLineEditSlot();
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

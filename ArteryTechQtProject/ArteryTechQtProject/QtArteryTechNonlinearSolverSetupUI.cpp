@@ -10,12 +10,16 @@ QtArteryTechNonlinearSolverSetupUI::QtArteryTechNonlinearSolverSetupUI(QWidget *
 	this->setWindowTitle("非线性求解器参数设置");
 	this->setMinimumSize(777, 230);
 	this->setMaximumSize(777, 230);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->snesViewCheckBox = new QCheckBox;
 	this->snesViewCheckBox->setText("snes_view");
 	ui->horizontalLayout_5->addWidget(this->snesViewCheckBox);
 
-	InitNonlinearSolverData();
+	InitUiData();
 	//SaveNonlinearSolverData();
 
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked()), this, SLOT(OkPushButton()));
@@ -37,12 +41,16 @@ QtArteryTechNonlinearSolverSetupUI::QtArteryTechNonlinearSolverSetupUI(QString t
 	this->setWindowTitle("非线性求解器参数设置");
 	this->setMinimumSize(777, 230);
 	this->setMaximumSize(777, 230);
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 
 	this->snesViewCheckBox = new QCheckBox;
 	this->snesViewCheckBox->setText("snes_view");
 	ui->horizontalLayout_5->addWidget(this->snesViewCheckBox);
 
-	InitNonlinearSolverData();
+	InitUiData();
 	//SaveNonlinearSolverData();
 
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked()), this, SLOT(OkPushButton()));
@@ -53,17 +61,70 @@ QtArteryTechNonlinearSolverSetupUI::QtArteryTechNonlinearSolverSetupUI(QString t
 	QObject::connect(ui->RebuildPreconditionerLineEdit, SIGNAL(editingFinished()), this, SLOT(RebuildPreconditionerLineEditSlot()));
 }
 
-void QtArteryTechNonlinearSolverSetupUI::InitNonlinearSolverData()
+void QtArteryTechNonlinearSolverSetupUI::InitUiData()
 {
 	ui->NonlinearSolverTypeLineEdit->setText(NULL);
-	ui->RelativeTolleranceLineEdit->setText("0");
-	ui->AbsoluteTolleranceLineEdit->setText("0");
-	ui->MaxIterationNumberLineEdit->setText("0");
+
+	ui->RelativeTolleranceLineEdit->setVisible(false);
+	ui->RelativeTolleranceLineEdit->setEnabled(false);
+	ui->RelativeTolleranceLineEdit->setText("1.e-6");
+
+	ui->AbsoluteTolleranceLineEdit->setVisible(false);
+	ui->AbsoluteTolleranceLineEdit->setEnabled(false);
+	ui->AbsoluteTolleranceLineEdit->setText("1.e-6");
+
+	ui->MaxIterationNumberLineEdit->setVisible(false);
+	ui->MaxIterationNumberLineEdit->setEnabled(false);
+	ui->MaxIterationNumberLineEdit->setText("300");
+
 	ui->MonitorNonlinearSolverLineEdit->setText(NULL);
 	ui->MonitorNonlinearSolverLabel->setVisible(true);
 	ui->MonitorNonlinearSolverLineEdit->setVisible(false);
 	ui->RebuildJacobianLineEdit->setText("0");
 	ui->RebuildPreconditionerLineEdit->setText("0");
+}
+
+void QtArteryTechNonlinearSolverSetupUI::InitNonlinearSolverData(bool flag)
+{
+	if (flag)
+	{
+		ui->NonlinearSolverTypeLineEdit->setText(NULL);
+
+		ui->RelativeTolleranceLineEdit->setVisible(true);
+		ui->RelativeTolleranceLineEdit->setEnabled(true);
+		
+		ui->AbsoluteTolleranceLineEdit->setVisible(true);
+		ui->AbsoluteTolleranceLineEdit->setEnabled(true);
+
+		ui->MaxIterationNumberLineEdit->setVisible(true);
+		ui->MaxIterationNumberLineEdit->setEnabled(true);
+
+		ui->MonitorNonlinearSolverLineEdit->setText(NULL);
+		ui->MonitorNonlinearSolverLabel->setVisible(true);
+		ui->MonitorNonlinearSolverLineEdit->setVisible(false);
+		ui->RebuildJacobianLineEdit->setText("0");
+		ui->RebuildPreconditionerLineEdit->setText("0");
+	}
+	else
+	{
+		ui->NonlinearSolverTypeLineEdit->setText(NULL);
+
+		ui->RelativeTolleranceLineEdit->setVisible(false);
+		ui->RelativeTolleranceLineEdit->setEnabled(false);
+
+		ui->AbsoluteTolleranceLineEdit->setVisible(false);
+		ui->AbsoluteTolleranceLineEdit->setEnabled(false);
+
+		ui->MaxIterationNumberLineEdit->setVisible(false);
+		ui->MaxIterationNumberLineEdit->setEnabled(false);
+
+		ui->MonitorNonlinearSolverLineEdit->setText(NULL);
+		ui->MonitorNonlinearSolverLabel->setVisible(true);
+		ui->MonitorNonlinearSolverLineEdit->setVisible(false);
+		ui->RebuildJacobianLineEdit->setText("0");
+		ui->RebuildPreconditionerLineEdit->setText("0");
+	}
+	
 }
 #if 0
 void QtArteryTechNonlinearSolverSetupUI::InitNonlinearSolverData()
@@ -136,6 +197,65 @@ void QtArteryTechNonlinearSolverSetupUI::SaveNonlinearSolverData()
 	*/
 }
 
+QStringList QtArteryTechNonlinearSolverSetupUI::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString Menustr = "#Nonlinear Solver Setup\n";
+	resultUIDataList.append(Menustr);
+	//QString labeltext = "	" + ui->NonlinearSolverTypeLabel->text() + " " + "-snes_type" + " ";
+	QString labeltext = "	#-snes_type ";
+	QString lineEdit = ui->NonlinearSolverTypeLineEdit->text() + "\n";
+	QString contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->RelativeTolleranceLabel->text() + " " + "-snes_rtol" + " ";
+	labeltext = "	-snes_rtol ";
+	lineEdit = ui->RelativeTolleranceLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->AbsoluteTolleranceLabel->text() + " " + "-snes_atol" + " ";
+	labeltext = "	-snes_atol ";
+	lineEdit = ui->AbsoluteTolleranceLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->MaxIterationNumberLabel->text() + " " + "-snes_max_it" + " ";
+	labeltext = "	-snes_max_it ";
+	lineEdit = ui->MaxIterationNumberLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	if (this->snesViewCheckBox->isChecked())
+	{
+		//labeltext = "	" + ui->MonitorNonlinearSolverLabel->text() + " " + "-snes_view" + " ";
+		labeltext = "	-snes_view ";
+		lineEdit = ui->MonitorNonlinearSolverLineEdit->text() + "\n";
+		contenttext = labeltext + lineEdit;
+		resultUIDataList.append(contenttext);
+	}
+
+	//labeltext = "	" + ui->RebuildJacobianLabel->text() + " " + "-snes_lag_jacobian" + " ";
+	labeltext = "	#-snes_lag_jacobian ";
+	lineEdit = ui->RebuildJacobianLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->RebuildPreconditionerLabel->text() + " " + "-snes_lag_preconditioner" + " ";
+	labeltext = "	#-snes_lag_preconditioner ";
+	lineEdit = ui->RebuildPreconditionerLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+	/*
+	for (size_t i = 0; i < nonlinearSolverDataList.length(); i++)
+	{
+	qDebug() << "NonlinearSolverSetupUiData:" << nonlinearSolverDataList[i];
+	}
+	*/
+	return resultUIDataList;
+}
+
 void QtArteryTechNonlinearSolverSetupUI::OkPushButton()
 {
 	SaveNonlinearSolverData();
@@ -144,7 +264,7 @@ void QtArteryTechNonlinearSolverSetupUI::OkPushButton()
 
 void QtArteryTechNonlinearSolverSetupUI::CancelPushButton()
 {
-	InitNonlinearSolverData();
+	InitNonlinearSolverData(false);
 	this->close();
 }
 
@@ -306,4 +426,14 @@ void QtArteryTechNonlinearSolverSetupUI::RebuildPreconditionerLineEditSlot()
 			ui->RebuildPreconditionerLineEdit->setText("0");
 		}
 	}
+}
+
+void QtArteryTechNonlinearSolverSetupUI::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitNonlinearSolverData(flag);
+}
+
+void QtArteryTechNonlinearSolverSetupUI::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this, "提示:", "接收信号");
 }

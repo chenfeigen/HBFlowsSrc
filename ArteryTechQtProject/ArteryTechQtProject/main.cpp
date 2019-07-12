@@ -11,6 +11,7 @@
 #include <QMutex>
 #include <QDateTime>
 #include <windows.h>
+#include "ComputingMultipleBP.h"//计算多个边界参数
 using namespace std;
 QMutex mutex;// 日志代码互斥
 QString timePoint;
@@ -104,7 +105,6 @@ int main(int argc, char *argv[])
 	//qInstallMessageHandler(LogOutTxt);
 //#endif
 	QApplication a(argc, argv);
-	//a.setWindowIcon(QIcon("./images/图片路径"));//设置应用程序的图标//.exe的图标
 
 //先建立两个隐藏文件夹，一个叫UserInfo用来存放用户信息的隐藏文件，一个叫LockUserInfo文件夹用来存放上锁的用户信息
 //这两个文件夹下的内容都先进行了加密
@@ -140,9 +140,8 @@ int main(int argc, char *argv[])
 	//qFatal("divide:Fatal");
 
 	LoginInterface w;
-
-	//LoginInterfaceWidget w;
-	//GetCalculationResultsDialog w;
+	//ComputingMultipleBP w;
+	//VariableParametersDialog w;
 	//w.show();
 
 	

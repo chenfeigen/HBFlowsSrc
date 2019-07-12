@@ -40,12 +40,16 @@ public:
     QLabel *ResultLabel;
     QSpacerItem *horizontalSpacer;
     QTextEdit *ResultTextEdit;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *SaveAspushButton;
+    QPushButton *PrintPushButton;
 
     void setupUi(QDialog *GetCalculationResultsDialog)
     {
         if (GetCalculationResultsDialog->objectName().isEmpty())
             GetCalculationResultsDialog->setObjectName(QStringLiteral("GetCalculationResultsDialog"));
-        GetCalculationResultsDialog->resize(931, 716);
+        GetCalculationResultsDialog->resize(931, 465);
         verticalLayout_3 = new QVBoxLayout(GetCalculationResultsDialog);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -105,6 +109,26 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_2);
+
+        SaveAspushButton = new QPushButton(GetCalculationResultsDialog);
+        SaveAspushButton->setObjectName(QStringLiteral("SaveAspushButton"));
+
+        horizontalLayout_3->addWidget(SaveAspushButton);
+
+        PrintPushButton = new QPushButton(GetCalculationResultsDialog);
+        PrintPushButton->setObjectName(QStringLiteral("PrintPushButton"));
+
+        horizontalLayout_3->addWidget(PrintPushButton);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
 
         verticalLayout_3->addLayout(verticalLayout_2);
 
@@ -121,6 +145,8 @@ public:
         InputFilePushButton->setText(QApplication::translate("GetCalculationResultsDialog", "\350\276\223\345\205\245\346\226\207\344\273\266", Q_NULLPTR));
         GetResultPushButton->setText(QApplication::translate("GetCalculationResultsDialog", "\350\216\267\345\217\226\347\273\223\346\236\234", Q_NULLPTR));
         ResultLabel->setText(QApplication::translate("GetCalculationResultsDialog", "\347\273\223\346\236\234", Q_NULLPTR));
+        SaveAspushButton->setText(QApplication::translate("GetCalculationResultsDialog", "\345\217\246\345\255\230\344\270\272", Q_NULLPTR));
+        PrintPushButton->setText(QApplication::translate("GetCalculationResultsDialog", "\346\211\223\345\215\260", Q_NULLPTR));
     } // retranslateUi
 
 };

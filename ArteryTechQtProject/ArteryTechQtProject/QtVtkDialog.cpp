@@ -248,8 +248,7 @@ void QtVtkDialog::displyPicture3d()
 	//qDebug() << "多帧 time1:" << time1;
 	//qDebug() << "多帧 time2:" << time2;
 	int elapsed = time1.msecsTo(time2);
-	//QMessageBox::information(this, "消息:", "打开CTA影像耗时" + QString::number(elapsed) + "毫秒。");
-	QMessageBox::information(this, "消息:", "打开CTA影像耗时22369毫秒。");
+	QMessageBox::information(this, "消息:", "打开CTA影像耗时" + QString::number(elapsed) + " ms");
 }
 
 void QtVtkDialog::openpicture()

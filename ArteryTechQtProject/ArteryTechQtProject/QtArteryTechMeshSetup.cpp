@@ -10,8 +10,12 @@ QtArteryTechMeshSetup::QtArteryTechMeshSetup(QWidget *parent)
 	this->setMinimumSize(782, 209);
 	this->setMaximumSize(782, 209);
 	this->setWindowTitle("网格设置");
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	//move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 	//先给现实界面设计初始值
-	InitMeshData();
+	InitUiData();
 	//SaveMeshData();
 	//信号与槽的链接
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked(bool)), this, SLOT(OkPushButtonSlots()));
@@ -27,13 +31,17 @@ QtArteryTechMeshSetup::QtArteryTechMeshSetup(QString tmpFileName, QWidget *paren
 	ui = new Ui::QtArteryTechMeshSetup();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-
+	setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint); //设置窗口最大化最小化
 	m_tmpFileName = tmpFileName;
 	this->setMinimumSize(782, 209);
 	this->setMaximumSize(782, 209);
 	this->setWindowTitle("网格设置");
+
+	//设置界面显示的位置为屏幕的中间
+	QDesktopWidget *deskdop = QApplication::desktop();
+	//move((deskdop->width() - this->width()) / 2, (deskdop->height() - this->height()) / 2);
 	//先给现实界面设计初始值
-	InitMeshData();
+	InitUiData();
 	//SaveMeshData();
 	//信号与槽的链接
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked(bool)), this, SLOT(OkPushButtonSlots()));
@@ -43,7 +51,23 @@ QtArteryTechMeshSetup::QtArteryTechMeshSetup(QString tmpFileName, QWidget *paren
 	QObject::connect(ui->CoordinateScaleZDirectionLineEdit, SIGNAL(editingFinished()), this, SLOT(ZEditingFinishedSlot()));
 }
 
-void QtArteryTechMeshSetup::InitMeshData()
+void QtArteryTechMeshSetup::InitUiData()
+{
+	ui->FileNameLineEdit->setText(NULL);
+	ui->CoordinateScaleXDirectionLineEdit->setVisible(false);
+	ui->CoordinateScaleXDirectionLineEdit->setEnabled(false);
+	ui->CoordinateScaleXDirectionLineEdit->setText("10");
+
+	ui->CoordinateScaleYDirectionLineEdit->setVisible(false);
+	ui->CoordinateScaleYDirectionLineEdit->setEnabled(false);
+	ui->CoordinateScaleYDirectionLineEdit->setText("10");
+
+	ui->CoordinateScaleZDirectionLineEdit->setVisible(false);
+	ui->CoordinateScaleZDirectionLineEdit->setEnabled(false);
+	ui->CoordinateScaleZDirectionLineEdit->setText("10");
+}
+
+void QtArteryTechMeshSetup::InitMeshData(bool flag)
 {
 	//实例，只能输入-180到180之间的小数，小数点后最多两位（可用于限制经纬度等）
 	//QDoubleValidator *pDfValidator = new QDoubleValidator(-180.0, 180.0, 2, validatorLineEdit);
@@ -58,20 +82,33 @@ void QtArteryTechMeshSetup::InitMeshData()
 	ui->CoordinateScaleYDirectionLineEdit->setValidator(new QIntValidator(ui->CoordinateScaleYDirectionLineEdit));
 	ui->CoordinateScaleZDirectionLineEdit->setValidator(new QIntValidator(ui->CoordinateScaleZDirectionLineEdit));
 #endif
-	ui->FileNameLineEdit->setText(NULL);
-	ui->CoordinateScaleXDirectionLineEdit->setText("0");
-	ui->CoordinateScaleYDirectionLineEdit->setText("0");
-	ui->CoordinateScaleZDirectionLineEdit->setText("0");
+	if (flag)
+	{
+		//ui->FileNameLineEdit->setText(NULL);
+		ui->CoordinateScaleXDirectionLineEdit->setVisible(true);
+		ui->CoordinateScaleXDirectionLineEdit->setEnabled(true);
+
+		ui->CoordinateScaleYDirectionLineEdit->setVisible(true);
+		ui->CoordinateScaleYDirectionLineEdit->setEnabled(true);
+
+		ui->CoordinateScaleZDirectionLineEdit->setVisible(true);
+		ui->CoordinateScaleZDirectionLineEdit->setEnabled(true);
+	}
+	else
+	{
+		//ui->FileNameLineEdit->setText(NULL);
+		ui->CoordinateScaleXDirectionLineEdit->setVisible(false);
+		ui->CoordinateScaleXDirectionLineEdit->setEnabled(false);
+
+		ui->CoordinateScaleYDirectionLineEdit->setVisible(false);
+		ui->CoordinateScaleYDirectionLineEdit->setEnabled(false);
+
+		ui->CoordinateScaleZDirectionLineEdit->setVisible(false);
+		ui->CoordinateScaleZDirectionLineEdit->setEnabled(false);
+	}
+	
+	
 }
-#if 0
-void QtArteryTechMeshSetup::InitMeshData()
-{
-	ui->FileNameLineEdit->setText("./meshfiles/test.exo");
-	ui->CoordinateScaleXDirectionLineEdit->setText("10");
-	ui->CoordinateScaleYDirectionLineEdit->setText("10");
-	ui->CoordinateScaleZDirectionLineEdit->setText("10");
-}
-#endif
 
 void QtArteryTechMeshSetup::SaveMeshData()
 {
@@ -105,6 +142,40 @@ void QtArteryTechMeshSetup::SaveMeshData()
 	meshSetupDataList.append(contenttext);
 }
 
+QStringList QtArteryTechMeshSetup::getUIData()
+{
+	QStringList resultUIDataList;
+	resultUIDataList.clear();
+	QString MenuStr = "#Mesh Setup\n";
+	resultUIDataList.append(MenuStr);
+	//QString labeltest = "	" + ui->FileNameLabel->text().trimmed() + " " + "-f" + " ";
+	//qDebug() << "labeltest:" << labeltest;
+	QString labeltext = "	-f ";
+	QString lineEdit = ui->FileNameLineEdit->text() + "\n";
+	QString contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//qDebug() << "contenttext text:" << contenttext;
+	//labeltext = "	" + ui->CoordinateScaleXDirectionLabel->text().trimmed() + " " + "-coord_x_scale" + " ";
+	labeltext = "	-coord_x_scale ";
+	lineEdit = ui->CoordinateScaleXDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->CoordinateScaleYDirectionLabel->text().trimmed() + " " + "-coord_y_scale" + " ";
+	labeltext = "	-coord_y_scale ";
+	lineEdit = ui->CoordinateScaleYDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+
+	//labeltext = "	" + ui->CoordinateScaleZDirectionLabel->text().trimmed() + " " + "-coord_z_scale" + " ";
+	labeltext = "	-coord_z_scale ";
+	lineEdit = ui->CoordinateScaleZDirectionLineEdit->text() + "\n";
+	contenttext = labeltext + lineEdit;
+	resultUIDataList.append(contenttext);
+	return resultUIDataList;
+}
+
 void QtArteryTechMeshSetup::OkPushButtonSlots()
 {
 	SaveMeshData();
@@ -113,7 +184,7 @@ void QtArteryTechMeshSetup::OkPushButtonSlots()
 
 void QtArteryTechMeshSetup::CancelPushButtonSlots()
 {
-	InitMeshData();//点击取消，设置失败，界面的数据需要恢复到初始值
+	InitMeshData(false);//点击取消，设置失败，界面的数据需要恢复到初始值
 	this->close();
 }
 
@@ -261,6 +332,73 @@ void QtArteryTechMeshSetup::ZEditingFinishedSlot()
 		{
 			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->CoordinateScaleZDirectionLineEdit->setText("0");
+		}
+	}
+}
+
+void QtArteryTechMeshSetup::XCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->CoordinateScaleXDirectionLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->CoordinateScaleXDirectionLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->CoordinateScaleXDirectionLineEdit->setReadOnly(true);
+	}
+}
+
+void QtArteryTechMeshSetup::YCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->CoordinateScaleYDirectionLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->CoordinateScaleYDirectionLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->CoordinateScaleYDirectionLineEdit->setReadOnly(true);
+	}
+}
+
+void QtArteryTechMeshSetup::ZCheckBoxStateChanged(int Status)
+{
+	if (Status == Qt::Checked) // "选中"
+	{
+		ui->CoordinateScaleZDirectionLineEdit->setReadOnly(false);
+	}
+	else if (Status == Qt::PartiallyChecked) // "半选"
+	{
+		ui->CoordinateScaleZDirectionLineEdit->setReadOnly(true);
+	}
+	else // 未选中 - Qt::Unchecked
+	{
+		ui->CoordinateScaleZDirectionLineEdit->setReadOnly(true);
+	}
+}
+
+void QtArteryTechMeshSetup::GetVerifyPasswordStatuSlot(bool flag)
+{
+	InitMeshData(flag);
+}
+
+void QtArteryTechMeshSetup::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	//QMessageBox::information(this, "提示:", "接收信号");
+	int length = VariableParametersList.length();
+	qDebug() << "length:" << length;
+	for (size_t i = 0; i < VariableParametersList.length(); i++)
+	{
+		if (VariableParametersList.at(i).startsWith("File Name:"))
+		{
+			ui->FileNameLineEdit->setText(VariableParametersList.at(i).split(":").at(1));
 		}
 	}
 }

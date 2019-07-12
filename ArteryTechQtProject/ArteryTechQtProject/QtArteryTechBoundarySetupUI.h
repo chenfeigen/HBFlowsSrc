@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDateTime>
+#include <QDesktopWidget>
 
 namespace Ui { class QtArteryTechBoundarySetupUI; };
 
@@ -25,6 +26,7 @@ public:
 	QStringList boundaryDataList;//将界面上的数据保存在这个链表里面
 	QString bloodflowBcTypeText = NULL;
 	QStringList GetBoundaryData();
+	QStringList getUIData();
 protected:
 	void closeEvent(QCloseEvent *event);
 private:
@@ -34,10 +36,11 @@ private:
 	QCheckBox *inletFlowfactorCheckBox = NULL;
 	QCheckBox *parabolicInflowCheckBox = NULL;
 	QString m_tmpFileName = NULL;
-	void InitBoundaryData();
+	void InitBoundaryData(bool flag);
 	void SaveBoundaryData();
 	int isDigitStr(QString src);
 	void SendBoundaryTypeSignal(QString boundaryTypeText);
+	void InitUiData();
 
 signals:
 	void BoundaryTypeSignal(QString boundaryTypeText);
@@ -57,4 +60,8 @@ private slots:
 	void InletBoudaryUpperBoundYDirectionLineEditSlot();
 	void InletBoudaryUpperBoundZDirectionLineEditSlot();
 	void InletBoudaryAreaLineEditSlot();
+	void BTCheckBoxStateChanged(int Status);
+	void IFAOCheckBoxStateChanged(int Status);
+	void GetVerifyPasswordStatuSlot(bool flag);
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获取可变参数槽函数
 };

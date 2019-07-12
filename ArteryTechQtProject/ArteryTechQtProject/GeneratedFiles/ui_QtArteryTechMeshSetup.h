@@ -197,11 +197,6 @@ public:
 
         verticalLayout_6->addLayout(verticalLayout_5);
 
-        label->raise();
-        label_2->raise();
-        label_3->raise();
-        CoordinateScaleZDirectionLabel->raise();
-        label_4->raise();
 
         retranslateUi(QtArteryTechMeshSetup);
 

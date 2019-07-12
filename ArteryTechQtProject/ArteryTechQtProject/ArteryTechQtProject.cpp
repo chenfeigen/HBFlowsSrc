@@ -12,12 +12,12 @@ ArteryTechQtProject::ArteryTechQtProject(QWidget *parent)
 
 	this->setWindowTitle("CT无创血流储备分数测量系统");
 	this->setWindowIcon(QIcon("images/ArteryTech.ico"));
-
+	m_variableParametersList.clear();
 	show();
 	InitUIdata();
 	MainUI();
-	ui.label->setText(QString("<font color=#e9a96f;>软件版本号：01.00.00\n软件发布版本号：01\nCopyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
-
+	//ui.label->setText("软件型号规格：HBFlows \n软件版本号：01.00.00\n软件发布版本号：01");
+	ui.label->setText(QString("< font color=#e9a96f;> 软件版本号：01.00.00\n软件发布版本号：01\n Copyright&#169;2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//创建定时器
 	QTimer *timer = new QTimer(this);
@@ -40,17 +40,15 @@ ArteryTechQtProject::ArteryTechQtProject(QString tmpFileName, QWidget *parent)
 	this->setWindowTitle("CT无创血流储备分数测量系统");
 	this->setWindowIcon(QIcon("images/ArteryTech.ico"));
 	m_startTime = QDateTime::currentDateTime().toTime_t();
+	m_variableParametersList.clear();
 	show();
 	InitUIdata();
 	MainUI();
 	//去掉pushbutton的边框
 	ui.pushButton->setStyleSheet("border:none;");
 	ui.label->setAlignment(Qt::AlignCenter);//设置label的text信息居中显示
-	//ui.label->setText(QString("< font color=#e9a96f;>Copyright&#169; 2016</font>"));
-	//QString str1 = "软件版本号：01.00.06\n软件发布版本号：01\n";
-	//ui.label->setText(str1 + QString("< font color=#e9a96f;>Copyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
-	ui.label->setText(QString("< font color=#e9a96f;>软件版本号：01.00.00\n软件发布版本号：01\nCopyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
-	//ui.label->setText("软件版本号：01.00.06\n软件发布版本号：01\nCopyright &copy 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有");
+	//ui.label->setText("软件版本号：01.00.00\n软件发布版本号：01\nCopyright 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有");
+	ui.label->setText(QString("< font color=#e9a96f;> 软件版本号：01.00.00\n软件发布版本号：01\n Copyright&#169;2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
 	//创建定时器
 	QTimer *timer = new QTimer(this);
 	QObject::connect(timer, SIGNAL(timeout()), this, SLOT(TimeoutSlot()));
@@ -80,7 +78,9 @@ void ArteryTechQtProject::InitUIdata()
 
 	//slover菜单和solver菜单下的action
 	this->solverMenu = new QMenu("求解器");
+	this->actVerifyPassword = new QAction("禁止修改固定参数");
 	this->actLastInput = new QAction("上次输入");
+	this->actVariableParameters = new QAction("获取可变参数");
 	this->actMeshSetup = new QAction("网格设置");
 	this->actBoundarySetup = new QAction("边界条件设置");
 	this->actPhysicsSetup = new QAction("物理参数设置");
@@ -92,7 +92,9 @@ void ArteryTechQtProject::InitUIdata()
 	this->actOtherSetup = new QAction("其他参数设置");
 	this->actSaveOption = new QAction("保存设置");
 	this->actSaveCPR = new QAction("计算参数报告");
+	this->solverMenu->addAction(actVerifyPassword);//将禁止修改固定参数添加到Menu
 	this->solverMenu->addAction(actLastInput);
+	this->solverMenu->addAction(actVariableParameters);
 	this->solverMenu->addAction(actMeshSetup);
 	this->solverMenu->addAction(actBoundarySetup);
 	this->solverMenu->addAction(actPhysicsSetup);
@@ -106,16 +108,54 @@ void ArteryTechQtProject::InitUIdata()
 	this->solverMenu->addAction(actSaveOption);
 
 	this->qtATMeshSetupDlg = new QtArteryTechMeshSetup(m_tmpFileName,this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATMeshSetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));//GetVariableParametersSignalSlot
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATMeshSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATMeshSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATBoundarysetupDlg = new QtArteryTechBoundarySetupUI(m_tmpFileName,this);
 	QObject::connect(qtATBoundarysetupDlg,SIGNAL(BoundaryTypeSignal(QString)),this,SLOT(GetBoundaryTypeSlot(QString)));
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATBoundarysetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATBoundarysetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATBoundarysetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
+
 	this->qtATPhysicsSetupDlg = new QtArteryTechPhysicsSetupUI(m_tmpFileName, this);
 	QObject::connect(this, SIGNAL(BoundaryTypeToPhysicsSetupSignal(QString)), qtATPhysicsSetupDlg, SLOT(GetBoundaryTypeSlot(QString)));
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATPhysicsSetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATPhysicsSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATPhysicsSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATNonlinearsolversetupDlg = new QtArteryTechNonlinearSolverSetupUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATNonlinearsolversetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATNonlinearsolversetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATNonlinearsolversetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATLinearSolverSetupDlg = new QtArteryTechLinearSolverSetupUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATLinearSolverSetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATLinearSolverSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATLinearSolverSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATPreconditionerSetupDlg = new QtArteryTechPreconditionerSetupUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATPreconditionerSetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATPreconditionerSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATPreconditionerSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATTwoLevelPreconditionerDlg = new QtArteryTechTwoLevelPreconditionerUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATTwoLevelPreconditionerDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATTwoLevelPreconditionerDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATTwoLevelPreconditionerDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATOutputSetupDlg = new QtArteryTechOutputSetupUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATOutputSetupDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATOutputSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATOutputSetupDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
 	this->qtATOtherSetupsDlg = new QtArteryTechOtherSetupsUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(VerifyPasswordStatu(bool)), qtATOtherSetupsDlg, SLOT(GetVerifyPasswordStatuSlot(bool)));
+	QObject::connect(this, SIGNAL(VariableParametersSingnal(QStringList)), qtATOtherSetupsDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATOtherSetupsDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
+
+	this->verifyPassword = new VerifyPassword(this);
 
 	//this->HBFlowsHelpMenu = new QMenu("关于");
 	this->actHelp = new QAction("关于");
@@ -134,9 +174,12 @@ void ArteryTechQtProject::InitUIdata()
 	//this->actExecutionscript = new QAction("Job Submission");
 	//this->actPutty = new QAction("Download");
 	//this->actReport = new QAction("Report");
-	//this->actGetResults = new QAction("获取计算结果");//获取计算结果
+	this->actGetResults = new QAction("获取计算结果");//获取计算结果
 
-	this->help = new Help(this);
+	this->actComputingMultipleBP = new QAction("批量计算边界参数");
+
+	//信号与槽函数的连接
+	QObject::connect(this->verifyPassword, SIGNAL(PasswordStatu(bool)), this, SLOT(GetPasswordStatuSlot(bool)));
 }
 
 void ArteryTechQtProject::ActOpenDicompictureSlot()
@@ -180,6 +223,8 @@ void ArteryTechQtProject::ActMeshSetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATMeshSetupDlg = new QtArteryTechMeshSetup(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置MeshSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATMeshSetupDlg->show();
 }
 
@@ -188,6 +233,8 @@ void ArteryTechQtProject::ActBoundarySetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATBoundarysetupDlg = new QtArteryTechBoundarySetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置BoundarySetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATBoundarysetupDlg->show();
 }
 
@@ -197,6 +244,8 @@ void ArteryTechQtProject::ActPhysicsSetupSlot()
 	//this->qtATPhysicsSetupDlg = new QtArteryTechPhysicsSetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置BoundarySetup参数!";
 	SendBoundaryTypeToPhysicsSetup();
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATPhysicsSetupDlg->show();
 }
 
@@ -205,6 +254,8 @@ void ArteryTechQtProject::ActNonlinearSolverSetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATNonlinearsolversetupDlg = new QtArteryTechNonlinearSolverSetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置NonlinearSolverSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATNonlinearsolversetupDlg->show();
 }
 
@@ -213,6 +264,8 @@ void ArteryTechQtProject::ActLinearSolverSetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATLinearSolverSetupDlg = new QtArteryTechLinearSolverSetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置LinearSolverSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATLinearSolverSetupDlg->show();
 }
 
@@ -221,6 +274,8 @@ void ArteryTechQtProject::ActPreconditionerSetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATPreconditionerSetupDlg = new QtArteryTechPreconditionerSetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置PreconditionerSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATPreconditionerSetupDlg->show();
 }
 
@@ -229,6 +284,8 @@ void ArteryTechQtProject::ActTwoLevelPreconditionerSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATTwoLevelPreconditionerDlg = new QtArteryTechTwoLevelPreconditionerUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置TwoLevelPreconditioner参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATTwoLevelPreconditionerDlg->show();
 }
 
@@ -237,6 +294,8 @@ void ArteryTechQtProject::ActOutputSetupSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATOutputSetupDlg = new QtArteryTechOutputSetupUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置OutputSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATOutputSetupDlg->show();
 }
 
@@ -245,6 +304,8 @@ void ArteryTechQtProject::ActOtherSetupsSlot()
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATOtherSetupsDlg = new QtArteryTechOtherSetupsUI(this);
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置OtherSetup参数!";
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	SendVariableParameters(m_variableParametersList);
 	qtATOtherSetupsDlg->show();
 }
 
@@ -281,23 +342,23 @@ void ArteryTechQtProject::ActSaveOptionSlot()
 		//file->write(contenttext.toStdString().c_str(), contenttext.length() + 2);
 		//依次将菜单界面上的数据追加到fileContent列表中
 		if (NULL != this->qtATMeshSetupDlg)
-			fileContent.append(this->qtATMeshSetupDlg->meshSetupDataList);
+			fileContent.append(this->qtATMeshSetupDlg->getUIData());
 		if (NULL != this->qtATBoundarysetupDlg)
-			fileContent.append(this->qtATBoundarysetupDlg->boundaryDataList);
+			fileContent.append(this->qtATBoundarysetupDlg->getUIData());
 		if (NULL != this->qtATPhysicsSetupDlg)
-			fileContent.append(this->qtATPhysicsSetupDlg->physicsDataList);
+			fileContent.append(this->qtATPhysicsSetupDlg->getUIData());
 		if (NULL != this->qtATNonlinearsolversetupDlg)
-			fileContent.append(this->qtATNonlinearsolversetupDlg->nonlinearSolverDataList);
+			fileContent.append(this->qtATNonlinearsolversetupDlg->getUIData());
 		if (NULL != this->qtATLinearSolverSetupDlg)
-			fileContent.append(this->qtATLinearSolverSetupDlg->linearSolverDataList);
+			fileContent.append(this->qtATLinearSolverSetupDlg->getUIData());
 		if (NULL != this->qtATPreconditionerSetupDlg)
-			fileContent.append(this->qtATPreconditionerSetupDlg->preconditionerDataList);
+			fileContent.append(this->qtATPreconditionerSetupDlg->getUIData());
 		if (NULL != this->qtATTwoLevelPreconditionerDlg)
-			fileContent.append(this->qtATTwoLevelPreconditionerDlg->twoLPreconditionerDataList);
+			fileContent.append(this->qtATTwoLevelPreconditionerDlg->getUIData());
 		if (NULL != this->qtATOutputSetupDlg)
-			fileContent.append(this->qtATOutputSetupDlg->outputDataList);
+			fileContent.append(this->qtATOutputSetupDlg->getUIData());
 		if (NULL != this->qtATOtherSetupsDlg)
-			fileContent.append(this->qtATOtherSetupsDlg->otherDataList);
+			fileContent.append(this->qtATOtherSetupsDlg->getUIData());
 		if (0 != fileContent.length())
 		{
 			bool ok = file->open(QIODevice::Text | QIODevice::WriteOnly);
@@ -462,6 +523,7 @@ void ArteryTechQtProject::ProcessError(QProcess::ProcessError error)
 //当按了登陆按钮之后，登陆界面直接隐藏，然后显示软件界面
 void ArteryTechQtProject::MainUI()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//将Menu添加到MenuBar中
 	ui.menuBar->clear();
 	ui.menuBar->addMenu(loadFileMenu);
@@ -473,12 +535,14 @@ void ArteryTechQtProject::MainUI()
 	ui.mainToolBar->addAction(actMesh);
 	//ui.mainToolBar->addAction(actionCompute);
 	ui.mainToolBar->addAction(actView);
+	ui.mainToolBar->addAction(actGetResults);//将获取计算结果Action添加到mainToolBar
+	//批量计算边界参数添加到
+	ui.mainToolBar->addAction(actComputingMultipleBP);
 	ui.mainToolBar->addAction(actHelp);
 	//ui.mainToolBar->addAction(actionExecutionscript);
 	//ui.mainToolBar->addAction(actionPutty);
 	//ui.mainToolBar->addAction(actionReport);
 	//ui.mainToolBar->addAction(actEncryptedFile);
-	//ui.mainToolBar->addAction(actGetResults);//将获取计算结果Action添加到mainToolBar
 
 
 	QObject::connect(actLoadPicture, SIGNAL(triggered(bool)), this, SLOT(ActOpenpictureSlot()));
@@ -506,8 +570,12 @@ void ArteryTechQtProject::MainUI()
 	QObject::connect(actSaveCPR, SIGNAL(triggered(bool)), this, SLOT(ActSaveCPRSlot()));
 	//actEncryptedFile
 	QObject::connect(actEncryptedFile, SIGNAL(triggered(bool)), this, SLOT(ActEncryptedFileSlot()));//加密文件
-	//QObject::connect(actGetResults, SIGNAL(triggered(bool)), this, SLOT(ActGetResultsSlot()));//加密文件
-
+	QObject::connect(actGetResults, SIGNAL(triggered(bool)), this, SLOT(ActGetResultsSlot()));//获取计算结果
+	QObject::connect(actVariableParameters,SIGNAL(triggered(bool)),this,SLOT(ActVariableParameters()));//获取非固定参数槽函数
+	//actVerifyPassword
+	QObject::connect(actVerifyPassword, SIGNAL(triggered(bool)), this, SLOT(ActVerifyPasswordSlot()));//禁止/允许修改固定参数动作槽函数
+	//批量计算边界参数信号与槽函数的连接
+	QObject::connect(actComputingMultipleBP, SIGNAL(triggered(bool)), this, SLOT(ActComputingMultipleBPSlot()));//禁止/允许修改固定参数动作槽函数
 	return;
 }
 
@@ -1176,7 +1244,6 @@ void ArteryTechQtProject::mousePressEvent(QMouseEvent *event)
 void ArteryTechQtProject::mouseMoveEvent(QMouseEvent *event)
 {
 	m_startTime = QDateTime::currentDateTime().toTime_t();
-	m_startTime = QDateTime::currentDateTime().toTime_t();
 	// 这里必须使用buttons()
 	if (event->buttons() & Qt::LeftButton) //进行的按位与
 	{
@@ -1187,7 +1254,6 @@ void ArteryTechQtProject::mouseMoveEvent(QMouseEvent *event)
 //鼠标释放事件
 void ArteryTechQtProject::mouseReleaseEvent(QMouseEvent *event)
 {
-	m_startTime = QDateTime::currentDateTime().toTime_t();
 	m_startTime = QDateTime::currentDateTime().toTime_t();
 	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标松开事件!";
 }
@@ -1237,17 +1303,183 @@ void ArteryTechQtProject::TimeoutSlot()
 //通过槽函数获取BoundaryType的值
 void ArteryTechQtProject::GetBoundaryTypeSlot(QString boundaryTypeText)
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	m_boundaryTypeText = boundaryTypeText;
+	SendBoundaryTypeToPhysicsSetup();//接收成功发送信号
 }
 
 //发送信号函数
 void ArteryTechQtProject::SendBoundaryTypeToPhysicsSetup()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	emit BoundaryTypeToPhysicsSetupSignal(m_boundaryTypeText);
 }
-
+//获取计算结果
 void ArteryTechQtProject::ActGetResultsSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	GetCalculationResultsDialog *getCalculationResultsDialog = new GetCalculationResultsDialog(this);
 	getCalculationResultsDialog->show();
+}
+
+//获取可变参数
+void ArteryTechQtProject::ActVariableParameters()
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	VariableParametersDialog *variableParametersDialog = new VariableParametersDialog(this);
+	variableParametersDialog->show();
+	QObject::connect(variableParametersDialog,SIGNAL(VariableParametersSignal(QStringList)),this,SLOT(GetVariableParametersSignalSlot(QStringList)));
+}
+
+//禁止/允许修改固定参数
+void ArteryTechQtProject::ActVerifyPasswordSlot()
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	verifyPassword->show();
+}
+
+void ArteryTechQtProject::GetPasswordStatuSlot(bool flag)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	m_vpflag = flag;
+	if (flag)
+	{
+		this->actVerifyPassword->setText("允许修改固定参数");
+	}
+	else
+	{
+		this->actVerifyPassword->setText("禁止修改固定参数");
+	}
+	//需要触发信号
+	SendVerifyPasswordStatu(m_vpflag);//接收成功发送信号
+	
+}
+
+//发送信号
+void ArteryTechQtProject::SendVerifyPasswordStatu(bool flag)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	emit VerifyPasswordStatu(flag);
+}
+
+void ArteryTechQtProject::GetVariableParametersSignalSlot(QStringList VariableParametersList)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	m_variableParametersList = VariableParametersList;
+	SendVariableParameters(m_variableParametersList);
+}
+
+void ArteryTechQtProject::SendVariableParameters(QStringList variableParametersList)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	if (variableParametersList.length() == 0)
+	{
+		return;
+	}
+	emit VariableParametersSingnal(variableParametersList);
+}
+
+//获得计算边界参数槽函数
+void ArteryTechQtProject::GetComputingMultipleBPSignalSlot(QStringList ComputingMultipleBPList)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	QStringList m_computingMultipleBPList = ComputingMultipleBPList;
+	SendComputingMultipleBP(m_computingMultipleBPList);//发送信号到求解器的各个界面，然后求解器的各个界面设置参数
+	//生成option文件
+	QString fullFileName;
+	for (size_t i = 0; i < m_computingMultipleBPList.length(); i++)
+	{
+		if (m_computingMultipleBPList.at(i).trimmed().split("+").at(0).compare("Parameter file") == 0)//Parameter file:
+		{
+			fullFileName = m_computingMultipleBPList.at(i).trimmed().split("+").at(1);
+			break;
+		}
+
+	}
+	qDebug() << "fullFileName:" << fullFileName;
+	bool creatStatus = CreateOPTFile(fullFileName);
+	//将opt文件创建的信息发送到GetCalculationResultsDialog界面
+	SendCreateOPTFile(creatStatus);
+}
+
+void ArteryTechQtProject::SendComputingMultipleBP(QStringList ComputingMultipleBPList)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	emit ComputingMultipleBPSignal(ComputingMultipleBPList);
+}
+
+//创建option文件
+bool ArteryTechQtProject::CreateOPTFile(QString fullFileName)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	QFileInfo fileInfo(fullFileName);
+	QString filePath = fileInfo.path();
+	QString fileName = fileInfo.fileName();
+	QString filepathname = filePath + "/" + fileName.split(".").at(0) + "/" + fileName.split(".").at(0) + ".opt";
+
+
+	QStringList fileContent;
+	QFile *file = new QFile(filepathname);
+	//file->write(contenttext.toStdString().c_str(), contenttext.length() + 2);
+	//依次将菜单界面上的数据追加到fileContent列表中
+	if (NULL != this->qtATMeshSetupDlg)
+		fileContent.append(this->qtATMeshSetupDlg->getUIData());
+	if (NULL != this->qtATBoundarysetupDlg)
+		fileContent.append(this->qtATBoundarysetupDlg->getUIData());
+	if (NULL != this->qtATPhysicsSetupDlg)
+		fileContent.append(this->qtATPhysicsSetupDlg->getUIData());
+	if (NULL != this->qtATNonlinearsolversetupDlg)
+		fileContent.append(this->qtATNonlinearsolversetupDlg->getUIData());
+	if (NULL != this->qtATLinearSolverSetupDlg)
+		fileContent.append(this->qtATLinearSolverSetupDlg->getUIData());
+	if (NULL != this->qtATPreconditionerSetupDlg)
+		fileContent.append(this->qtATPreconditionerSetupDlg->getUIData());
+	if (NULL != this->qtATTwoLevelPreconditionerDlg)
+		fileContent.append(this->qtATTwoLevelPreconditionerDlg->getUIData());
+	if (NULL != this->qtATOutputSetupDlg)
+		fileContent.append(this->qtATOutputSetupDlg->getUIData());
+	if (NULL != this->qtATOtherSetupsDlg)
+		fileContent.append(this->qtATOtherSetupsDlg->getUIData());
+	if (0 != fileContent.length())
+	{
+		bool ok = file->open(QIODevice::Text | QIODevice::WriteOnly);
+		if (!ok)
+		{
+			qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong:!";
+			return false;
+		}
+		for (size_t i = 0; i < fileContent.length(); i++)
+		{
+			//写文件
+			file->write(fileContent[i].toStdString().c_str(), fileContent[i].toStdString().length());
+		}
+		file->close();
+		return true;
+	}
+	else
+	{
+		bool ok = file->open(QIODevice::Text | QIODevice::WriteOnly);
+		if (!ok)
+		{
+			qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "文件保存失败!";
+			return false;
+		}
+		file->close();
+	}
+}
+
+//批量计算边界参数槽函数
+void ArteryTechQtProject::ActComputingMultipleBPSlot()
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	ComputingMultipleBP *computingMultipleBP = new ComputingMultipleBP(this);
+	computingMultipleBP->show();
+	QObject::connect(computingMultipleBP, SIGNAL(ComputingMultipleBPSignal(QStringList)),this,SLOT(GetComputingMultipleBPSignalSlot(QStringList)));
+	QObject::connect(this, SIGNAL(CreateOPTFileSignal(bool)), computingMultipleBP, SLOT(GetCreateOPTFileSignalSlot(bool)));//发送opt文件创建状态
+}
+
+void ArteryTechQtProject::SendCreateOPTFile(bool createStatus)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	emit CreateOPTFileSignal(createStatus);
 }

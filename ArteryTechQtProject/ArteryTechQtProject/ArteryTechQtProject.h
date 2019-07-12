@@ -42,6 +42,9 @@
 #include "userInformation.h"
 #include "EncryptedFileDialog.h"
 #include "GetCalculationResultsDialog.h"//获取计算结果头文件
+#include "VariableParametersDialog.h" //获取可变参数头文件
+#include "VerifyPassword.h"//验证密码头文件
+#include "ComputingMultipleBP.h"//批量计算边界参数
 
 class ArteryTechQtProject : public QMainWindow
 {
@@ -69,6 +72,8 @@ private:
 	QString m_tmpFileName = NULL;
 	uint m_startTime = 0;
 	QString m_boundaryTypeText;
+	bool m_vpflag = false; //禁止/允许修改固定参数
+	QStringList m_variableParametersList;
 
 private:
 	//load file 菜单和load file菜单下的action
@@ -79,6 +84,7 @@ private:
 	//slover菜单和solver菜单下的action
 	QMenu *solverMenu = NULL;
 	QAction *actLastInput = NULL;
+	QAction *actVariableParameters = NULL;
 	QAction *actMeshSetup = NULL;
 	QAction *actBoundarySetup = NULL;
 	QAction *actPhysicsSetup = NULL;
@@ -90,6 +96,7 @@ private:
 	QAction *actOtherSetup = NULL;
 	QAction *actSaveOption = NULL;
 	QAction *actSaveCPR = NULL;//计算参数报告Action
+	QAction *actVerifyPassword = NULL;//修改计算参数
 
 	QMenu *HBFlowsHelpMenu = NULL;
 	QAction *actHelp = NULL;
@@ -104,6 +111,7 @@ private:
 	QAction *actReport = NULL;
 	QAction *actEncryptedFile = NULL;
 	QAction *actGetResults = NULL;
+	QAction *actComputingMultipleBP = NULL;//批量计算边界参数action
 
 	QProcess *processDivision = NULL;
 	QProcess *processGeomagic = NULL;
@@ -123,8 +131,10 @@ private:
 	QtArteryTechTwoLevelPreconditionerUI *qtATTwoLevelPreconditionerDlg = NULL;
 	QtArteryTechOutputSetupUI *qtATOutputSetupDlg = NULL;
 	QtArteryTechOtherSetupsUI *qtATOtherSetupsDlg = NULL;
+	VerifyPassword *verifyPassword = NULL;//禁止修改固定参数界面
 	//QtPainEvent *qtPainEventDialog;
-	Help *help;
+	Help *help = NULL;
+	//ComputingMultipleBP *computingMultipleBP = NULL; //批量计算边界参数
 
 	QProcess *process = new QProcess(this);
 	QString UpperEncryption(QString pretext);
@@ -137,10 +147,20 @@ private:
 	void InitUIdata();
 	void MainUI();
 	void SendBoundaryTypeToPhysicsSetup();
+	void SendVerifyPasswordStatu(bool flag);
+	void SendVariableParameters(QStringList variableParametersList);
+	void SendComputingMultipleBP(QStringList m_computingMultipleBPList);
+	bool CreateOPTFile(QString fullFileName);//创建option文件
+	void SendCreateOPTFile(bool creatStatus);//发送创建opt文件的状态
 
 //将BoundaryType内容通过信号发送给qtATPhysicsSetupDlg
 signals:
-	void BoundaryTypeToPhysicsSetupSignal(QString boundaryType);
+	void BoundaryTypeToPhysicsSetupSignal(QString boundaryType);//发送BoundaryType给PhysicsSetup
+	void VerifyPasswordStatu(bool flag);//发送允许/禁止修改固定参数的标志
+	void VariableParametersSingnal(QStringList);//发送可变参数到求解器界面
+	void ComputingMultipleBPSignal(QStringList);//发送计算边界参数的可变参数到求解器界面
+	void CreateOPTFileSignal(bool status);
+
 private slots:
 	void ActOpenDicompictureSlot();
 	void ActOpenpictureSlot();
@@ -178,5 +198,11 @@ private slots:
 	//void RetrievePasswordpushButtonSlots();//找回密码功能槽函数
 	void GetPuttyInfoSignal(puttyInformation*);
 	void TimeoutSlot();
-	void GetBoundaryTypeSlot(QString boundaryTypeText);
+	void GetBoundaryTypeSlot(QString boundaryTypeText);//获取QtArteryTechBoundarySetupUI界面上boundaryType的参数
+	void ActVariableParameters();
+	void ActVerifyPasswordSlot();//禁止/允许修改固定参数
+	void GetPasswordStatuSlot(bool flag);//获取允许/禁止对话框界面上状态
+	void GetVariableParametersSignalSlot(QStringList VariableParametersList);//获得可变参数信号槽函数
+	void GetComputingMultipleBPSignalSlot(QStringList ComputingMultipleBPList);//获得批量计算边界参数槽函数
+	void ActComputingMultipleBPSlot();//批量计算边界参数槽函数
 };

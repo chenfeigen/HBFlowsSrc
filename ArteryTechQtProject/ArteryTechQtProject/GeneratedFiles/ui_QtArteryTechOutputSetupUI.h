@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -28,8 +27,8 @@ QT_BEGIN_NAMESPACE
 class Ui_QtArteryTechOutputSetupUI
 {
 public:
-    QVBoxLayout *verticalLayout_16;
-    QVBoxLayout *verticalLayout_15;
+    QVBoxLayout *verticalLayout_21;
+    QVBoxLayout *verticalLayout_20;
     QHBoxLayout *horizontalLayout_15;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
@@ -52,6 +51,39 @@ public:
     QLabel *label_4;
     QLabel *MonitorPoint3Label;
     QLineEdit *MonitorPoint3LineEdit;
+    QHBoxLayout *horizontalLayout_27;
+    QHBoxLayout *horizontalLayout_21;
+    QVBoxLayout *verticalLayout_14;
+    QLabel *label_14;
+    QLabel *MonitorPoint4Label;
+    QLineEdit *MonitorPoint4LineEdit;
+    QHBoxLayout *horizontalLayout_22;
+    QVBoxLayout *verticalLayout_15;
+    QLabel *label_16;
+    QLabel *MonitorPoint5Label;
+    QLineEdit *MonitorPoint5LineEdit;
+    QHBoxLayout *horizontalLayout_28;
+    QHBoxLayout *horizontalLayout_23;
+    QVBoxLayout *verticalLayout_16;
+    QLabel *label_18;
+    QLabel *MonitorPoint6Label;
+    QLineEdit *MonitorPoint6LineEdit;
+    QHBoxLayout *horizontalLayout_24;
+    QVBoxLayout *verticalLayout_17;
+    QLabel *label_20;
+    QLabel *MonitorPoint7Label;
+    QLineEdit *MonitorPoint7LineEdit;
+    QHBoxLayout *horizontalLayout_29;
+    QHBoxLayout *horizontalLayout_25;
+    QVBoxLayout *verticalLayout_18;
+    QLabel *label_22;
+    QLabel *MonitorPoint8Label;
+    QLineEdit *MonitorPoint8LineEdit;
+    QHBoxLayout *horizontalLayout_26;
+    QVBoxLayout *verticalLayout_19;
+    QLabel *label_24;
+    QLabel *MonitorPoint9Label;
+    QLineEdit *MonitorPoint9LineEdit;
     QHBoxLayout *horizontalLayout_17;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *verticalLayout_5;
@@ -96,17 +128,11 @@ public:
     QLabel *label_12;
     QLabel *NumberOfStepsForOutputLabel;
     QLineEdit *NumberOfStepsForOutputLineEdit;
-    QHBoxLayout *horizontalLayout_22;
     QHBoxLayout *horizontalLayout_13;
     QVBoxLayout *verticalLayout_13;
     QLabel *label_13;
     QLabel *TimeIntervalForOutputLabel;
     QLineEdit *TimeIntervalForOutputLineEdit;
-    QHBoxLayout *horizontalLayout_21;
-    QVBoxLayout *verticalLayout_14;
-    QLabel *label_14;
-    QLabel *PlotFFRLabel;
-    QCheckBox *PlotFFRCheckBox;
     QHBoxLayout *horizontalLayout_14;
     QPushButton *OkPushButton;
     QSpacerItem *horizontalSpacer;
@@ -116,14 +142,14 @@ public:
     {
         if (QtArteryTechOutputSetupUI->objectName().isEmpty())
             QtArteryTechOutputSetupUI->setObjectName(QStringLiteral("QtArteryTechOutputSetupUI"));
-        QtArteryTechOutputSetupUI->resize(720, 339);
-        verticalLayout_16 = new QVBoxLayout(QtArteryTechOutputSetupUI);
-        verticalLayout_16->setSpacing(6);
-        verticalLayout_16->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_16->setObjectName(QStringLiteral("verticalLayout_16"));
-        verticalLayout_15 = new QVBoxLayout();
-        verticalLayout_15->setSpacing(6);
-        verticalLayout_15->setObjectName(QStringLiteral("verticalLayout_15"));
+        QtArteryTechOutputSetupUI->resize(652, 0);
+        verticalLayout_21 = new QVBoxLayout(QtArteryTechOutputSetupUI);
+        verticalLayout_21->setSpacing(6);
+        verticalLayout_21->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_21->setObjectName(QStringLiteral("verticalLayout_21"));
+        verticalLayout_20 = new QVBoxLayout();
+        verticalLayout_20->setSpacing(6);
+        verticalLayout_20->setObjectName(QStringLiteral("verticalLayout_20"));
         horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setSpacing(6);
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
@@ -182,7 +208,7 @@ public:
         horizontalLayout_15->addLayout(horizontalLayout_2);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_15);
+        verticalLayout_20->addLayout(horizontalLayout_15);
 
         horizontalLayout_16 = new QHBoxLayout();
         horizontalLayout_16->setSpacing(6);
@@ -242,7 +268,187 @@ public:
         horizontalLayout_16->addLayout(horizontalLayout_4);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_16);
+        verticalLayout_20->addLayout(horizontalLayout_16);
+
+        horizontalLayout_27 = new QHBoxLayout();
+        horizontalLayout_27->setSpacing(6);
+        horizontalLayout_27->setObjectName(QStringLiteral("horizontalLayout_27"));
+        horizontalLayout_21 = new QHBoxLayout();
+        horizontalLayout_21->setSpacing(6);
+        horizontalLayout_21->setObjectName(QStringLiteral("horizontalLayout_21"));
+        verticalLayout_14 = new QVBoxLayout();
+        verticalLayout_14->setSpacing(6);
+        verticalLayout_14->setObjectName(QStringLiteral("verticalLayout_14"));
+        label_14 = new QLabel(QtArteryTechOutputSetupUI);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        verticalLayout_14->addWidget(label_14);
+
+        MonitorPoint4Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint4Label->setObjectName(QStringLiteral("MonitorPoint4Label"));
+
+        verticalLayout_14->addWidget(MonitorPoint4Label);
+
+
+        horizontalLayout_21->addLayout(verticalLayout_14);
+
+        MonitorPoint4LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint4LineEdit->setObjectName(QStringLiteral("MonitorPoint4LineEdit"));
+
+        horizontalLayout_21->addWidget(MonitorPoint4LineEdit);
+
+
+        horizontalLayout_27->addLayout(horizontalLayout_21);
+
+        horizontalLayout_22 = new QHBoxLayout();
+        horizontalLayout_22->setSpacing(6);
+        horizontalLayout_22->setObjectName(QStringLiteral("horizontalLayout_22"));
+        verticalLayout_15 = new QVBoxLayout();
+        verticalLayout_15->setSpacing(6);
+        verticalLayout_15->setObjectName(QStringLiteral("verticalLayout_15"));
+        label_16 = new QLabel(QtArteryTechOutputSetupUI);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        verticalLayout_15->addWidget(label_16);
+
+        MonitorPoint5Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint5Label->setObjectName(QStringLiteral("MonitorPoint5Label"));
+
+        verticalLayout_15->addWidget(MonitorPoint5Label);
+
+
+        horizontalLayout_22->addLayout(verticalLayout_15);
+
+        MonitorPoint5LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint5LineEdit->setObjectName(QStringLiteral("MonitorPoint5LineEdit"));
+
+        horizontalLayout_22->addWidget(MonitorPoint5LineEdit);
+
+
+        horizontalLayout_27->addLayout(horizontalLayout_22);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_27);
+
+        horizontalLayout_28 = new QHBoxLayout();
+        horizontalLayout_28->setSpacing(6);
+        horizontalLayout_28->setObjectName(QStringLiteral("horizontalLayout_28"));
+        horizontalLayout_23 = new QHBoxLayout();
+        horizontalLayout_23->setSpacing(6);
+        horizontalLayout_23->setObjectName(QStringLiteral("horizontalLayout_23"));
+        verticalLayout_16 = new QVBoxLayout();
+        verticalLayout_16->setSpacing(6);
+        verticalLayout_16->setObjectName(QStringLiteral("verticalLayout_16"));
+        label_18 = new QLabel(QtArteryTechOutputSetupUI);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        verticalLayout_16->addWidget(label_18);
+
+        MonitorPoint6Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint6Label->setObjectName(QStringLiteral("MonitorPoint6Label"));
+
+        verticalLayout_16->addWidget(MonitorPoint6Label);
+
+
+        horizontalLayout_23->addLayout(verticalLayout_16);
+
+        MonitorPoint6LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint6LineEdit->setObjectName(QStringLiteral("MonitorPoint6LineEdit"));
+
+        horizontalLayout_23->addWidget(MonitorPoint6LineEdit);
+
+
+        horizontalLayout_28->addLayout(horizontalLayout_23);
+
+        horizontalLayout_24 = new QHBoxLayout();
+        horizontalLayout_24->setSpacing(6);
+        horizontalLayout_24->setObjectName(QStringLiteral("horizontalLayout_24"));
+        verticalLayout_17 = new QVBoxLayout();
+        verticalLayout_17->setSpacing(6);
+        verticalLayout_17->setObjectName(QStringLiteral("verticalLayout_17"));
+        label_20 = new QLabel(QtArteryTechOutputSetupUI);
+        label_20->setObjectName(QStringLiteral("label_20"));
+
+        verticalLayout_17->addWidget(label_20);
+
+        MonitorPoint7Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint7Label->setObjectName(QStringLiteral("MonitorPoint7Label"));
+
+        verticalLayout_17->addWidget(MonitorPoint7Label);
+
+
+        horizontalLayout_24->addLayout(verticalLayout_17);
+
+        MonitorPoint7LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint7LineEdit->setObjectName(QStringLiteral("MonitorPoint7LineEdit"));
+
+        horizontalLayout_24->addWidget(MonitorPoint7LineEdit);
+
+
+        horizontalLayout_28->addLayout(horizontalLayout_24);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_28);
+
+        horizontalLayout_29 = new QHBoxLayout();
+        horizontalLayout_29->setSpacing(6);
+        horizontalLayout_29->setObjectName(QStringLiteral("horizontalLayout_29"));
+        horizontalLayout_25 = new QHBoxLayout();
+        horizontalLayout_25->setSpacing(6);
+        horizontalLayout_25->setObjectName(QStringLiteral("horizontalLayout_25"));
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setSpacing(6);
+        verticalLayout_18->setObjectName(QStringLiteral("verticalLayout_18"));
+        label_22 = new QLabel(QtArteryTechOutputSetupUI);
+        label_22->setObjectName(QStringLiteral("label_22"));
+
+        verticalLayout_18->addWidget(label_22);
+
+        MonitorPoint8Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint8Label->setObjectName(QStringLiteral("MonitorPoint8Label"));
+
+        verticalLayout_18->addWidget(MonitorPoint8Label);
+
+
+        horizontalLayout_25->addLayout(verticalLayout_18);
+
+        MonitorPoint8LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint8LineEdit->setObjectName(QStringLiteral("MonitorPoint8LineEdit"));
+
+        horizontalLayout_25->addWidget(MonitorPoint8LineEdit);
+
+
+        horizontalLayout_29->addLayout(horizontalLayout_25);
+
+        horizontalLayout_26 = new QHBoxLayout();
+        horizontalLayout_26->setSpacing(6);
+        horizontalLayout_26->setObjectName(QStringLiteral("horizontalLayout_26"));
+        verticalLayout_19 = new QVBoxLayout();
+        verticalLayout_19->setSpacing(6);
+        verticalLayout_19->setObjectName(QStringLiteral("verticalLayout_19"));
+        label_24 = new QLabel(QtArteryTechOutputSetupUI);
+        label_24->setObjectName(QStringLiteral("label_24"));
+
+        verticalLayout_19->addWidget(label_24);
+
+        MonitorPoint9Label = new QLabel(QtArteryTechOutputSetupUI);
+        MonitorPoint9Label->setObjectName(QStringLiteral("MonitorPoint9Label"));
+
+        verticalLayout_19->addWidget(MonitorPoint9Label);
+
+
+        horizontalLayout_26->addLayout(verticalLayout_19);
+
+        MonitorPoint9LineEdit = new QLineEdit(QtArteryTechOutputSetupUI);
+        MonitorPoint9LineEdit->setObjectName(QStringLiteral("MonitorPoint9LineEdit"));
+
+        horizontalLayout_26->addWidget(MonitorPoint9LineEdit);
+
+
+        horizontalLayout_29->addLayout(horizontalLayout_26);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_29);
 
         horizontalLayout_17 = new QHBoxLayout();
         horizontalLayout_17->setSpacing(6);
@@ -302,7 +508,7 @@ public:
         horizontalLayout_17->addLayout(horizontalLayout_6);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_17);
+        verticalLayout_20->addLayout(horizontalLayout_17);
 
         horizontalLayout_18 = new QHBoxLayout();
         horizontalLayout_18->setSpacing(6);
@@ -362,7 +568,7 @@ public:
         horizontalLayout_18->addLayout(horizontalLayout_8);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_18);
+        verticalLayout_20->addLayout(horizontalLayout_18);
 
         horizontalLayout_19 = new QHBoxLayout();
         horizontalLayout_19->setSpacing(6);
@@ -422,7 +628,7 @@ public:
         horizontalLayout_19->addLayout(horizontalLayout_10);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_19);
+        verticalLayout_20->addLayout(horizontalLayout_19);
 
         horizontalLayout_20 = new QHBoxLayout();
         horizontalLayout_20->setSpacing(6);
@@ -482,11 +688,8 @@ public:
         horizontalLayout_20->addLayout(horizontalLayout_12);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_20);
+        verticalLayout_20->addLayout(horizontalLayout_20);
 
-        horizontalLayout_22 = new QHBoxLayout();
-        horizontalLayout_22->setSpacing(6);
-        horizontalLayout_22->setObjectName(QStringLiteral("horizontalLayout_22"));
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setSpacing(6);
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
@@ -512,37 +715,7 @@ public:
         horizontalLayout_13->addWidget(TimeIntervalForOutputLineEdit);
 
 
-        horizontalLayout_22->addLayout(horizontalLayout_13);
-
-        horizontalLayout_21 = new QHBoxLayout();
-        horizontalLayout_21->setSpacing(6);
-        horizontalLayout_21->setObjectName(QStringLiteral("horizontalLayout_21"));
-        verticalLayout_14 = new QVBoxLayout();
-        verticalLayout_14->setSpacing(6);
-        verticalLayout_14->setObjectName(QStringLiteral("verticalLayout_14"));
-        label_14 = new QLabel(QtArteryTechOutputSetupUI);
-        label_14->setObjectName(QStringLiteral("label_14"));
-
-        verticalLayout_14->addWidget(label_14);
-
-        PlotFFRLabel = new QLabel(QtArteryTechOutputSetupUI);
-        PlotFFRLabel->setObjectName(QStringLiteral("PlotFFRLabel"));
-
-        verticalLayout_14->addWidget(PlotFFRLabel);
-
-
-        horizontalLayout_21->addLayout(verticalLayout_14);
-
-        PlotFFRCheckBox = new QCheckBox(QtArteryTechOutputSetupUI);
-        PlotFFRCheckBox->setObjectName(QStringLiteral("PlotFFRCheckBox"));
-
-        horizontalLayout_21->addWidget(PlotFFRCheckBox);
-
-
-        horizontalLayout_22->addLayout(horizontalLayout_21);
-
-
-        verticalLayout_15->addLayout(horizontalLayout_22);
+        verticalLayout_20->addLayout(horizontalLayout_13);
 
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setSpacing(6);
@@ -562,10 +735,10 @@ public:
         horizontalLayout_14->addWidget(CancelPushButton);
 
 
-        verticalLayout_15->addLayout(horizontalLayout_14);
+        verticalLayout_20->addLayout(horizontalLayout_14);
 
 
-        verticalLayout_16->addLayout(verticalLayout_15);
+        verticalLayout_21->addLayout(verticalLayout_20);
 
 
         retranslateUi(QtArteryTechOutputSetupUI);
@@ -584,6 +757,18 @@ public:
         MonitorPoint2Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 2: ", Q_NULLPTR));
         label_4->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2713\345\235\220\346\240\207", Q_NULLPTR));
         MonitorPoint3Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 3:", Q_NULLPTR));
+        label_14->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2714\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint4Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 4: ", Q_NULLPTR));
+        label_16->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2715\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint5Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 5: ", Q_NULLPTR));
+        label_18->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2716\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint6Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 6: ", Q_NULLPTR));
+        label_20->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2717\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint7Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 7: ", Q_NULLPTR));
+        label_22->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2718\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint8Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point 8: ", Q_NULLPTR));
+        label_24->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\233\221\346\265\213\347\202\2719\345\235\220\346\240\207", Q_NULLPTR));
+        MonitorPoint9Label->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Monitor Point9: ", Q_NULLPTR));
         label_5->setText(QApplication::translate("QtArteryTechOutputSetupUI", "FFR\347\233\221\346\216\247\346\226\207\344\273\266", Q_NULLPTR));
         FFRMonitorFileLabel->setText(QApplication::translate("QtArteryTechOutputSetupUI", "FFR Monitor File:", Q_NULLPTR));
         label_6->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\346\265\201\351\207\217\347\233\221\346\216\247\346\226\207\344\273\266", Q_NULLPTR));
@@ -602,9 +787,6 @@ public:
         NumberOfStepsForOutputLabel->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Number of Steps for Output:", Q_NULLPTR));
         label_13->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\346\214\211\347\205\247\347\211\271\345\256\232\346\227\266\351\227\264\346\255\245\351\227\264\351\232\224\350\276\223\345\207\272\346\225\260\345\200\274\347\273\223\346\236\234", Q_NULLPTR));
         TimeIntervalForOutputLabel->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Time Interval for Output:", Q_NULLPTR));
-        label_14->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\346\217\217\350\277\260FFR", Q_NULLPTR));
-        PlotFFRLabel->setText(QApplication::translate("QtArteryTechOutputSetupUI", "Plot FFR:", Q_NULLPTR));
-        PlotFFRCheckBox->setText(QApplication::translate("QtArteryTechOutputSetupUI", "plot_FFR", Q_NULLPTR));
         OkPushButton->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\347\241\256\345\256\232", Q_NULLPTR));
         CancelPushButton->setText(QApplication::translate("QtArteryTechOutputSetupUI", "\345\217\226\346\266\210", Q_NULLPTR));
     } // retranslateUi

@@ -144,7 +144,7 @@ bool RegisterInterface::SaveuserInfoFile()
 	}
 	else
 	{
-		//先解密隐藏文件
+		//先解密隐藏文件qstrUserInfo,得到零时文件temporaryFile
 		bool ret = encryptedFileDialog->DecryptionFile(qstrUserInfo, temporaryFile);
 		if (ret)
 		{

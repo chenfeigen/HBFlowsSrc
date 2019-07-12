@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 static const unsigned char qt_resource_data[] = {
-  // D:/GitWork/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/images/ArteryTech.ico
+  // D:/HBFlowsSrc/ArteryTechQtProject/ArteryTechQtProject/images/ArteryTech.ico
   0x0,0x0,0x0,0xef,
   0x0,
   0x0,0xc,0xbe,0x78,0x9c,0xdd,0x96,0xbd,0xe,0x41,0x31,0x18,0x86,0x1f,0xbb,0x18,

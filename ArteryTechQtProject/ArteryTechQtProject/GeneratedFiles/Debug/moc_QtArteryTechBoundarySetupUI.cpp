@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtArteryTechBoundarySetupUI_t {
-    QByteArrayData data[17];
-    char stringdata0[564];
+    QByteArrayData data[26];
+    char stringdata0[742];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,26 +32,36 @@ struct qt_meta_stringdata_QtArteryTechBoundarySetupUI_t {
 static const qt_meta_stringdata_QtArteryTechBoundarySetupUI_t qt_meta_stringdata_QtArteryTechBoundarySetupUI = {
     {
 QT_MOC_LITERAL(0, 0, 27), // "QtArteryTechBoundarySetupUI"
-QT_MOC_LITERAL(1, 28, 17), // "OKPushButtonSlots"
-QT_MOC_LITERAL(2, 46, 0), // ""
-QT_MOC_LITERAL(3, 47, 21), // "CancelPushButtonSlots"
-QT_MOC_LITERAL(4, 69, 24), // "BoundaryTypeLineEditSlot"
-QT_MOC_LITERAL(5, 94, 27), // "NumberOfOutletsLineEditSlot"
-QT_MOC_LITERAL(6, 122, 31), // "IndexForAortaOutletLineEditSlot"
-QT_MOC_LITERAL(7, 154, 38), // "InletBoudaryNormXDirectionLin..."
-QT_MOC_LITERAL(8, 193, 38), // "InletBoudaryNormYDirectionLin..."
-QT_MOC_LITERAL(9, 232, 38), // "InletBoudaryNormZDirectionLin..."
-QT_MOC_LITERAL(10, 271, 42), // "InletBoudaryLowBoundXDirectio..."
-QT_MOC_LITERAL(11, 314, 42), // "InletBoudaryLowBoundYDirectio..."
-QT_MOC_LITERAL(12, 357, 42), // "InletBoudaryLowBoundZDirectio..."
-QT_MOC_LITERAL(13, 400, 44), // "InletBoudaryUpperBoundXDirect..."
-QT_MOC_LITERAL(14, 445, 44), // "InletBoudaryUpperBoundYDirect..."
-QT_MOC_LITERAL(15, 490, 44), // "InletBoudaryUpperBoundZDirect..."
-QT_MOC_LITERAL(16, 535, 28) // "InletBoudaryAreaLineEditSlot"
+QT_MOC_LITERAL(1, 28, 18), // "BoundaryTypeSignal"
+QT_MOC_LITERAL(2, 47, 0), // ""
+QT_MOC_LITERAL(3, 48, 16), // "boundaryTypeText"
+QT_MOC_LITERAL(4, 65, 17), // "OKPushButtonSlots"
+QT_MOC_LITERAL(5, 83, 21), // "CancelPushButtonSlots"
+QT_MOC_LITERAL(6, 105, 24), // "BoundaryTypeLineEditSlot"
+QT_MOC_LITERAL(7, 130, 27), // "NumberOfOutletsLineEditSlot"
+QT_MOC_LITERAL(8, 158, 31), // "IndexForAortaOutletLineEditSlot"
+QT_MOC_LITERAL(9, 190, 38), // "InletBoudaryNormXDirectionLin..."
+QT_MOC_LITERAL(10, 229, 38), // "InletBoudaryNormYDirectionLin..."
+QT_MOC_LITERAL(11, 268, 38), // "InletBoudaryNormZDirectionLin..."
+QT_MOC_LITERAL(12, 307, 42), // "InletBoudaryLowBoundXDirectio..."
+QT_MOC_LITERAL(13, 350, 42), // "InletBoudaryLowBoundYDirectio..."
+QT_MOC_LITERAL(14, 393, 42), // "InletBoudaryLowBoundZDirectio..."
+QT_MOC_LITERAL(15, 436, 44), // "InletBoudaryUpperBoundXDirect..."
+QT_MOC_LITERAL(16, 481, 44), // "InletBoudaryUpperBoundYDirect..."
+QT_MOC_LITERAL(17, 526, 44), // "InletBoudaryUpperBoundZDirect..."
+QT_MOC_LITERAL(18, 571, 28), // "InletBoudaryAreaLineEditSlot"
+QT_MOC_LITERAL(19, 600, 22), // "BTCheckBoxStateChanged"
+QT_MOC_LITERAL(20, 623, 6), // "Status"
+QT_MOC_LITERAL(21, 630, 24), // "IFAOCheckBoxStateChanged"
+QT_MOC_LITERAL(22, 655, 26), // "GetVerifyPasswordStatuSlot"
+QT_MOC_LITERAL(23, 682, 4), // "flag"
+QT_MOC_LITERAL(24, 687, 31), // "GetVariableParametersSignalSlot"
+QT_MOC_LITERAL(25, 719, 22) // "VariableParametersList"
 
     },
     "QtArteryTechBoundarySetupUI\0"
-    "OKPushButtonSlots\0\0CancelPushButtonSlots\0"
+    "BoundaryTypeSignal\0\0boundaryTypeText\0"
+    "OKPushButtonSlots\0CancelPushButtonSlots\0"
     "BoundaryTypeLineEditSlot\0"
     "NumberOfOutletsLineEditSlot\0"
     "IndexForAortaOutletLineEditSlot\0"
@@ -64,7 +74,12 @@ QT_MOC_LITERAL(16, 535, 28) // "InletBoudaryAreaLineEditSlot"
     "InletBoudaryUpperBoundXDirectionLineEditSlot\0"
     "InletBoudaryUpperBoundYDirectionLineEditSlot\0"
     "InletBoudaryUpperBoundZDirectionLineEditSlot\0"
-    "InletBoudaryAreaLineEditSlot"
+    "InletBoudaryAreaLineEditSlot\0"
+    "BTCheckBoxStateChanged\0Status\0"
+    "IFAOCheckBoxStateChanged\0"
+    "GetVerifyPasswordStatuSlot\0flag\0"
+    "GetVariableParametersSignalSlot\0"
+    "VariableParametersList"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,29 +89,39 @@ static const uint qt_meta_data_QtArteryTechBoundarySetupUI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    1,  114,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x08 /* Private */,
-       3,    0,   90,    2, 0x08 /* Private */,
-       4,    0,   91,    2, 0x08 /* Private */,
-       5,    0,   92,    2, 0x08 /* Private */,
-       6,    0,   93,    2, 0x08 /* Private */,
-       7,    0,   94,    2, 0x08 /* Private */,
-       8,    0,   95,    2, 0x08 /* Private */,
-       9,    0,   96,    2, 0x08 /* Private */,
-      10,    0,   97,    2, 0x08 /* Private */,
-      11,    0,   98,    2, 0x08 /* Private */,
-      12,    0,   99,    2, 0x08 /* Private */,
-      13,    0,  100,    2, 0x08 /* Private */,
-      14,    0,  101,    2, 0x08 /* Private */,
-      15,    0,  102,    2, 0x08 /* Private */,
-      16,    0,  103,    2, 0x08 /* Private */,
+       4,    0,  117,    2, 0x08 /* Private */,
+       5,    0,  118,    2, 0x08 /* Private */,
+       6,    0,  119,    2, 0x08 /* Private */,
+       7,    0,  120,    2, 0x08 /* Private */,
+       8,    0,  121,    2, 0x08 /* Private */,
+       9,    0,  122,    2, 0x08 /* Private */,
+      10,    0,  123,    2, 0x08 /* Private */,
+      11,    0,  124,    2, 0x08 /* Private */,
+      12,    0,  125,    2, 0x08 /* Private */,
+      13,    0,  126,    2, 0x08 /* Private */,
+      14,    0,  127,    2, 0x08 /* Private */,
+      15,    0,  128,    2, 0x08 /* Private */,
+      16,    0,  129,    2, 0x08 /* Private */,
+      17,    0,  130,    2, 0x08 /* Private */,
+      18,    0,  131,    2, 0x08 /* Private */,
+      19,    1,  132,    2, 0x08 /* Private */,
+      21,    1,  135,    2, 0x08 /* Private */,
+      22,    1,  138,    2, 0x08 /* Private */,
+      24,    1,  141,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QString,    3,
 
  // slots: parameters
     QMetaType::Void,
@@ -114,6 +139,10 @@ static const uint qt_meta_data_QtArteryTechBoundarySetupUI[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, QMetaType::Bool,   23,
+    QMetaType::Void, QMetaType::QStringList,   25,
 
        0        // eod
 };
@@ -124,25 +153,39 @@ void QtArteryTechBoundarySetupUI::qt_static_metacall(QObject *_o, QMetaObject::C
         QtArteryTechBoundarySetupUI *_t = static_cast<QtArteryTechBoundarySetupUI *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OKPushButtonSlots(); break;
-        case 1: _t->CancelPushButtonSlots(); break;
-        case 2: _t->BoundaryTypeLineEditSlot(); break;
-        case 3: _t->NumberOfOutletsLineEditSlot(); break;
-        case 4: _t->IndexForAortaOutletLineEditSlot(); break;
-        case 5: _t->InletBoudaryNormXDirectionLineEditSlot(); break;
-        case 6: _t->InletBoudaryNormYDirectionLineEditSlot(); break;
-        case 7: _t->InletBoudaryNormZDirectionLineEditSlot(); break;
-        case 8: _t->InletBoudaryLowBoundXDirectionLineEditSlot(); break;
-        case 9: _t->InletBoudaryLowBoundYDirectionLineEditSlot(); break;
-        case 10: _t->InletBoudaryLowBoundZDirectionLineEditSlot(); break;
-        case 11: _t->InletBoudaryUpperBoundXDirectionLineEditSlot(); break;
-        case 12: _t->InletBoudaryUpperBoundYDirectionLineEditSlot(); break;
-        case 13: _t->InletBoudaryUpperBoundZDirectionLineEditSlot(); break;
-        case 14: _t->InletBoudaryAreaLineEditSlot(); break;
+        case 0: _t->BoundaryTypeSignal((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: _t->OKPushButtonSlots(); break;
+        case 2: _t->CancelPushButtonSlots(); break;
+        case 3: _t->BoundaryTypeLineEditSlot(); break;
+        case 4: _t->NumberOfOutletsLineEditSlot(); break;
+        case 5: _t->IndexForAortaOutletLineEditSlot(); break;
+        case 6: _t->InletBoudaryNormXDirectionLineEditSlot(); break;
+        case 7: _t->InletBoudaryNormYDirectionLineEditSlot(); break;
+        case 8: _t->InletBoudaryNormZDirectionLineEditSlot(); break;
+        case 9: _t->InletBoudaryLowBoundXDirectionLineEditSlot(); break;
+        case 10: _t->InletBoudaryLowBoundYDirectionLineEditSlot(); break;
+        case 11: _t->InletBoudaryLowBoundZDirectionLineEditSlot(); break;
+        case 12: _t->InletBoudaryUpperBoundXDirectionLineEditSlot(); break;
+        case 13: _t->InletBoudaryUpperBoundYDirectionLineEditSlot(); break;
+        case 14: _t->InletBoudaryUpperBoundZDirectionLineEditSlot(); break;
+        case 15: _t->InletBoudaryAreaLineEditSlot(); break;
+        case 16: _t->BTCheckBoxStateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->IFAOCheckBoxStateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->GetVerifyPasswordStatuSlot((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 19: _t->GetVariableParametersSignalSlot((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
         default: ;
         }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        void **func = reinterpret_cast<void **>(_a[1]);
+        {
+            typedef void (QtArteryTechBoundarySetupUI::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&QtArteryTechBoundarySetupUI::BoundaryTypeSignal)) {
+                *result = 0;
+                return;
+            }
+        }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject QtArteryTechBoundarySetupUI::staticMetaObject = {
@@ -170,15 +213,22 @@ int QtArteryTechBoundarySetupUI::qt_metacall(QMetaObject::Call _c, int _id, void
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 20;
     }
     return _id;
+}
+
+// SIGNAL 0
+void QtArteryTechBoundarySetupUI::BoundaryTypeSignal(QString _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
