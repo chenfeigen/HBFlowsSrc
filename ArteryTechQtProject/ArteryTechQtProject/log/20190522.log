@@ -1,0 +1,177 @@
+
+Info:  (2019-05-22 08:26:28 周三)
+filename: LoginInterface.cpp  line: 1069  functionName: LoginInterface::SaveLicenseFile  LOG: lineEditstr: "8E5193125378BDB18025DB8F70482E027FF4CF37FB3CCC2D"
+Debug:  (2019-05-22 08:26:31 周三)
+saveStatus: true
+Info:  (2019-05-22 11:08:09 周三)
+filename: LoginInterface.cpp  line: 1095  functionName: LoginInterface::SaveLicenseFile  LOG: Register successfully, thank you for using the genuine software, welcome to use!
+Critical:  (2019-05-22 11:52:29 周三)
+filename: ArteryTechQtProject.cpp  line: 759  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 11:57:43 周三)
+filename: ArteryTechQtProject.cpp  line: 759  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 12:19:24 周三)
+filename: ArteryTechQtProject.cpp  line: 759  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 12:26:39 周三)
+filename: ArteryTechQtProject.cpp  line: 759  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 13:02:18 周三)
+filename: ArteryTechQtProject.cpp  line: 759  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 13:45:35 周三)
+QFSFileEngine::open: No file name specified
+Warning:  (2019-05-22 13:45:44 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 13:45:44 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 13:45:44 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 13:45:44 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 13:45:44 周三)
+QIODevice::write (QFile, ""): device not open
+Critical:  (2019-05-22 13:50:10 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 15:00:17 周三)
+QFSFileEngine::open: No file name specified
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:27 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:32 周三)
+QFSFileEngine::open: No file name specified
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:33 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:38 周三)
+QFSFileEngine::open: No file name specified
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Warning:  (2019-05-22 15:00:39 周三)
+QIODevice::write (QFile, ""): device not open
+Critical:  (2019-05-22 15:00:43 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 15:00:43 周三)
+External WM_DESTROY received for  QWidgetWindow(0x197e0d16dd0, name="QtArteryTechNonlinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x197e0a4d210, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:00:43 周三)
+External WM_DESTROY received for  QWidgetWindow(0x197e0d7cdc0, name="QtArteryTechPhysicsSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x197e0a4d210, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:00:43 周三)
+External WM_DESTROY received for  QWidgetWindow(0x197e0d7c4c0, name="QtArteryTechBoundarySetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x197e0a4d210, name="ArteryTechQtProjectClassWindow")
+Critical:  (2019-05-22 15:03:58 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb1286530, name="QtArteryTechOtherSetupsUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb1285a50, name="QtArteryTechOutputSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb12098f0, name="QtArteryTechTwoLevelPreconditionerUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb1208bd0, name="QtArteryTechPreconditionerSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb1208b70, name="QtArteryTechLinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb1208f90, name="QtArteryTechNonlinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb119fc00, name="QtArteryTechPhysicsSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:03:58 周三)
+External WM_DESTROY received for  QWidgetWindow(0x21fb119f3c0, name="QtArteryTechBoundarySetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x21fb104e170, name="ArteryTechQtProjectClassWindow")
+Critical:  (2019-05-22 15:05:37 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1e034420, name="QtArteryTechOtherSetupsUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df99c50, name="QtArteryTechOutputSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df98bd0, name="QtArteryTechTwoLevelPreconditionerUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df9c0b0, name="QtArteryTechPreconditionerSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df9bd50, name="QtArteryTechLinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df9a3d0, name="QtArteryTechNonlinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df34580, name="QtArteryTechPhysicsSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 15:05:37 周三)
+External WM_DESTROY received for  QWidgetWindow(0x25a1df364a0, name="QtArteryTechBoundarySetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x25a1ddc28c0, name="ArteryTechQtProjectClassWindow")
+Critical:  (2019-05-22 15:17:53 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 15:21:11 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Critical:  (2019-05-22 15:33:37 周三)
+filename: ArteryTechQtProject.cpp  line: 778  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be447ed0, name="QtArteryTechOtherSetupsUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be4467f0, name="QtArteryTechOutputSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be866220, name="QtArteryTechLinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be865da0, name="QtArteryTechPreconditionerSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be6738e0, name="QtArteryTechNonlinearSolverSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be445a10, name="QtArteryTechPhysicsSetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be6770c0, name="QtArteryTechBoundarySetupUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")
+Warning:  (2019-05-22 16:42:34 周三)
+External WM_DESTROY received for  QWidgetWindow(0x241be8641e0, name="QtArteryTechTwoLevelPreconditionerUIWindow") , parent:  QWindow(0x0) , transient parent:  QWidgetWindow(0x241be456e00, name="ArteryTechQtProjectClassWindow")

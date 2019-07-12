@@ -1,0 +1,39 @@
+
+Info:  (2019-05-24 10:12:31 周五)
+filename: RegisterInterface.cpp  line: 78  functionName: RegisterInterface::checkedRegisterUserInfo  LOG: Two inconsistent passwords!
+Info:  (2019-05-24 10:13:05 周五)
+filename: RegisterInterface.cpp  line: 103  functionName: RegisterInterface::checkedRegisterUserInfo  LOG: Account length can not exceed 20 characters, password length can not exceed 30 characters, please re-enter!
+Warning:  (2019-05-24 10:18:07 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:21:13 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:24:07 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:25:41 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:25:59 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:27:31 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:28:41 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Info:  (2019-05-24 10:31:16 周五)
+filename: ArteryTechQtProject.cpp  line: 295  functionName: ArteryTechQtProject::ActDivisionSlot  LOG: Exefilename: "\"D:/Program Files/Materialise/Mimics Research 21.0/MimicsResearch.exe\""
+Warning:  (2019-05-24 10:36:03 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:36:24 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 10:43:53 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Critical:  (2019-05-24 11:37:11 周五)
+filename: ArteryTechQtProject.cpp  line: 780  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Warning:  (2019-05-24 16:53:01 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 16:55:42 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 16:56:50 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 16:57:05 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).
+Warning:  (2019-05-24 16:58:12 周五)
+QWindowsWindow::setGeometry: Unable to set geometry 100x30+910+515 on QWidgetWindow/'QWidgetClassWindow'. Resulting geometry:  152x30+910+515 (frame: 9, 38, 9, 9, custom margin: 0, 0, 0, 0, minimum size: 0x0, maximum size: 16777215x16777215).

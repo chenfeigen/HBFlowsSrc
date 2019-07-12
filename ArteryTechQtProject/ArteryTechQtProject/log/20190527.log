@@ -1,0 +1,27 @@
+
+Info:  (2019-05-27 10:24:09 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 759  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 11:46:41 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 13:15:24 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 13:16:59 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 13:20:23 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 14:07:29 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Info:  (2019-05-27 14:07:35 鍛ㄤ竴)
+filename: LoginInterface.cpp  line: 779  functionName: LoginInterface::CheckedLoginUserInfo  LOG: Enter the password can not be empty, please re-enter!
+Critical:  (2019-05-27 14:17:46 鍛ㄤ竴)
+filename: ArteryTechQtProject.cpp  line: 780  functionName: ArteryTechQtProject::closeEvent  LOG: Software abnormal exit!
+Debug:  (2019-05-27 14:46:16 周一)
+writeSize: 1
+Debug:  (2019-05-27 14:46:18 周一)
+writeSize: 1
+Debug:  (2019-05-27 15:02:46 周一)
+writeSize: 1
+Info:  (2019-05-27 15:02:47 周一)
+filename: EncryptedFileDialog.cpp  line: 602  functionName: EncryptedFileDialog::EncryptionFile  LOG: "temporaryFile 加密成功！"
+Debug:  (2019-05-27 15:02:49 周一)
+writeSize: 1
