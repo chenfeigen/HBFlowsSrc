@@ -1,0 +1,227 @@
+#Mesh Setup
+   -f wrc00011000157636014090_239w
+   -coord_x_scale 10
+   -coord_y_scale 10
+   -coord_z_scale 10
+#Boundary Setup
+   -bloodflow_bc_type 2
+   -nodeset_file Nodeset
+   -sideset_file Sideset
+   -BC_setup_file BCsetup
+   -Windkessel_file windkessel
+   -Q_file 
+   -num_outlet 21
+   -aortic_outlet 21
+   -inlet_nx 0.718928
+   -inlet_ny 0.027633
+   -inlet_nz -0.694535
+   -inlet_xi 24.921133
+   -inlet_yi -187.05519
+   -inlet_zi -207.82251
+   -inlet_xf 38.772308 
+   -inlet_yf -167.14671 
+   -inlet_zf -193.4859 
+   -inlet_area 312.646729
+#Physics Setup
+   -R_total 1
+   -C_total 
+   -impedance_pd 0
+   -impedance_p0 80
+   -viscosity 0.035
+   -fluid_density 1.06
+   -timestep 1
+   -initial_time 0
+   -final_time 0.857142857
+   -dt 0.008571429
+   -period 5
+   -P1coords 1
+#Nonlinear Solver Setup
+   -snes_type newtonls
+   -snes_rtol 0.000001
+   -snes_atol 0.000001
+   -snes_max_it 300
+   -snes_lag_jacobian 1
+   -snes_lag_preconditioner 1
+#Nonlinear Solver Setup
+   -snes_type newtonls
+   -snes_rtol 0.000001
+   -snes_atol 0.000001
+   -snes_max_it 300
+   -snes_lag_jacobian 1
+   -snes_lag_preconditioner 1
+#Linear Solver Setup
+   -ksp_type fgmres 
+   -ksp_pc_side right 
+   -ksp_gmres_restart 400
+   -ksp_max_it 5000
+   -ksp_rtol 0.00001
+   -ksp_atol 1E-30
+   -diff_lst_ksp_rtol_ratio 0.001
+#Preconditioner Setup
+   -pc_type asm
+   -pc_asm_type RESTRICT
+   -sub_pc_type ilu
+   -sub_pc_factor_levels 2
+   -sub_pc_factor_mat_ordering_type rcm
+   -geometric_asm_overlap 1
+#Two-Level Preconditioner
+   -two_level 
+   -coarse_ksp_type gmres 
+   -coarse_ksp_pc_side right 
+   -coarse_ksp_gmres_restart 30
+   -coarse_ksp_max_it 30
+   -coarse_ksp_rtol 0.1
+   -pc_composite_type multiplicative
+   -pc_mg_cycle_type v
+   -fine_pc_type asm
+   -fine_sub_pc_type ilu
+   -fine_sub_pc_factor_levels 0
+   -fine_sub_pc_factor_mat_ordering_type rcm
+   -coarse_pc_type asm
+   -coarse_sub_pc_type ilu
+   -coarse_sub_pc_factor_levels 0
+   -coarse_sub_pc_factor_mat_ordering_type rcm
+#Output Setup
+   -P1coords  3.22922,-17.6584,-20.017
+   -P2coords 7.24606,-24.4544,-23.8341
+   -P3coords 6.19813,-15.6095,-17.7495
+   -P4coords 8.07051,-15.5159,-23.6449
+   -ffroutputname ./resultsA/ffrmonitorwrcnewtest1.txt
+   -flowoutputname ./resultsA/bloodflowmonitorwrcnewtest1.txt
+   -output ./resultsA/casewrcnewtest1
+   -Nplot 25
+   -dtplot 0.2
+#Other Setups
+   -metis_parts 0
+   -mat_partitioning_type parmetis 
+   -diag_scale 1
+#Boundary Setup
+   -bloodflow_bc_type 2
+   -nodeset_file Nodeset
+   -sideset_file Sideset
+   -BC_setup_file BCsetup
+   -Windkessel_file windkessel
+   -Q_file inflowrate.txt
+   -num_outlet 21
+   -aortic_outlet 21
+   -inlet_nx 0.718928
+   -inlet_ny 0.027633
+   -inlet_nz -0.694535
+   -inlet_xi 24.921133
+   -inlet_yi -187.05519
+   -inlet_zi -207.82251
+   -inlet_xf 38.772308 
+   -inlet_yf -167.14671 
+   -inlet_zf -193.4859 
+   -inlet_area 312.646729
+#Mesh Setup
+   -f /WORK/siat_crl_cxc1/nsfc2015_452_1_old/nsfc2015_452_1/bkwu/stent_test/mesh/v3_withoutstent/wrc00011000157636014090_239w.exo
+   -coord_x_scale 10
+   -coord_y_scale 10
+   -coord_z_scale 10
+#Boundary Setup
+   -bloodflow_bc_type 2
+   -nodeset_file Nodeset
+   -sideset_file Sideset
+   -BC_setup_file BCsetup
+   -Windkessel_file windkessel
+   -Q_file inflowrate.txt
+   -num_outlet 21
+   -aortic_outlet 21
+   -vin 
+   -wall 
+   -inlet_nx 0.718928
+   -inlet_ny 0.027633
+   -inlet_nz -0.694535
+   -inlet_xi 24.921133
+   -inlet_yi -187.05519
+   -inlet_zi -207.82251
+   -inlet_xf 38.772308 
+   -inlet_yf -167.14671 
+   -inlet_zf -193.4859 
+   -inlet_area 312.646729
+#Physics Setup
+   -R_total 1
+   -C_total 
+   -impedance_pd 0
+   -impedance_p0 80
+   -viscosity 0.035
+   -fluid_density 1.06
+   -bloodflow 
+   -fluidonly 
+   -timestep 1
+   -initial_time 0
+   -final_time 0.857142857
+   -dt 0.008571429
+   -period 5
+   -fixed_mesh 
+   -zero_initial 
+   -P1coords 1
+#Linear Solver Setup
+   -ksp_type fgmres 
+   -ksp_pc_side right 
+   -ksp_gmres_restart 400
+   -ksp_max_it 5000
+   -ksp_rtol 0.00001
+   -ksp_atol 1E-30
+   -diff_lst_ksp_rtol 
+   -diff_lst_ksp_rtol_ratio 0.001
+#Nonlinear Solver Setup
+   -snes_type newtonls
+   -snes_rtol 0.000001
+   -snes_atol 0.000001
+   -snes_max_it 300
+   -snes_view 
+   -snes_lag_jacobian 1
+   -snes_lag_preconditioner 1
+#Output Setup
+   -P1coords  3.22922,-17.6584,-20.017
+   -P2coords 7.24606,-24.4544,-23.8341
+   -P3coords 6.19813,-15.6095,-17.7495
+   -P4coords 8.07051,-15.5159,-23.6449
+   -ffroutputname ./resultsA/ffrmonitorwrcnewtest1.txt
+   -flowoutputname ./resultsA/bloodflowmonitorwrcnewtest1.txt
+   -output ./resultsA/casewrcnewtest1
+   -solution_output 
+   -Nplot 25
+   -dtplot 0.2
+#Other Setups
+   -metis_parts 0
+   -mat_partitioning_type parmetis 
+   -diag_scale 1
+   -block_order 
+   -log_view 
+#Preconditioner Setup
+   -pc_type asm
+   -pc_asm_type RESTRICT
+   -sub_pc_type ilu
+   -sub_pc_factor_levels 2
+   -sub_pc_factor_mat_ordering_type rcm
+   -geometric_asm 
+   -geometric_asm_overlap 1
+#Linear Solver Setup
+   -ksp_type fgmres 
+   -ksp_pc_side right 
+   -ksp_gmres_restart 400
+   -ksp_max_it 5000
+   -ksp_rtol 0.00001
+   -ksp_atol 1E-30
+   -diff_lst_ksp_rtol 
+   -diff_lst_ksp_rtol_ratio 0.001
+#Output Setup
+   -P1coords  3.22922,-17.6584,-20.017
+   -P2coords 7.24606,-24.4544,-23.8341
+   -P3coords 6.19813,-15.6095,-17.7495
+   -P4coords 8.07051,-15.5159,-23.6449
+   -ffroutputname ./resultsA/ffrmonitorwrcnewtest1.txt
+   -flowoutputname ./resultsA/bloodflowmonitorwrcnewtest1.txt
+   -output ./resultsA/casewrcnewtest1
+   -solution_output 
+   -Nplot 25
+   -dtplot 0.2
+#Other Setups
+   -metis_parts 0
+   -mat_partitioning_type parmetis 
+   -diag_scale 1
+   -block_order 
+   -log_view 

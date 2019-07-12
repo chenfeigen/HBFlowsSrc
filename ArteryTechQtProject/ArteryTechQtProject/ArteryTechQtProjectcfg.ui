@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtGuiApplication2Class</class>
+ <widget class="QMainWindow" name="QtGuiApplication2Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>754</width>
+    <height>613</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtGuiApplication2</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QVTKWidget" name="qvtkWidget"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QVTKWidget" name="qvtkWidget_3"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QVTKWidget" name="qvtkWidget_2"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QVTKWidget" name="qvtkWidget_4"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>754</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionopen"/>
+   </widget>
+   <widget class="QMenu" name="menuinputdata">
+    <property name="title">
+     <string>InPutData</string>
+    </property>
+    <addaction name="actionMesh_Setup_2"/>
+    <addaction name="actionBoundary_Setup"/>
+    <addaction name="actionPhysics_Setup_2"/>
+    <addaction name="actionNonlinear_Solver_Setup"/>
+    <addaction name="actionLinear_Solver_Setup"/>
+    <addaction name="actionPreconditioner_Setup"/>
+    <addaction name="actionTwo_Level_Preconditioner"/>
+    <addaction name="actionOutput_Setup"/>
+    <addaction name="actionOther_Setups"/>
+    <addaction name="actionModify_Finish"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>open software</string>
+    </property>
+    <addaction name="actionOpenExe"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuinputdata"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="FileNameAction">
+   <property name="text">
+    <string>File Name</string>
+   </property>
+  </action>
+  <action name="CoordinateSaleXDirectionAction">
+   <property name="text">
+    <string>Coordinate Scale (X-direction)</string>
+   </property>
+  </action>
+  <action name="CoordinateScaleYDirectionaction">
+   <property name="text">
+    <string>Coordinate Scale (Y-direction)</string>
+   </property>
+  </action>
+  <action name="CoordinateScaleZDirectionAction">
+   <property name="text">
+    <string>Coordinate Scale (Z-direction)</string>
+   </property>
+  </action>
+  <action name="BoundaryTypeAction">
+   <property name="text">
+    <string>Boundary Type</string>
+   </property>
+  </action>
+  <action name="NodeSetFileAction">
+   <property name="text">
+    <string>Node Set File</string>
+   </property>
+  </action>
+  <action name="SideSetFileAction">
+   <property name="text">
+    <string>Side Set File</string>
+   </property>
+  </action>
+  <action name="WindkesselFileAction">
+   <property name="text">
+    <string>Windkessel File</string>
+   </property>
+  </action>
+  <action name="InletFlowRateFileAction">
+   <property name="text">
+    <string>Inlet Flow Rate File</string>
+   </property>
+  </action>
+  <action name="NumberOfOutletsAction">
+   <property name="text">
+    <string>Number of Outlets</string>
+   </property>
+  </action>
+  <action name="IndexForAortaOutletAction">
+   <property name="text">
+    <string>Index for Aorta Outlet</string>
+   </property>
+  </action>
+  <action name="IncludeInletBoundaryAction">
+   <property name="text">
+    <string>Include Inlet Boundary</string>
+   </property>
+  </action>
+  <action name="IncludeWallBoundaryAction">
+   <property name="text">
+    <string>Include Wall Boundary</string>
+   </property>
+  </action>
+  <action name="InletBoudaryNormXDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Norm (X-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryNormYDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Norm (Y-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryNormZDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Norm (Z-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryLowBoundXDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Low Bound (X-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryLowBoundYDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Low Bound (Y-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryLowBoundZDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Low Bound (Z-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryUpperBoundXDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Upper Bound (X-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryUpperBoundYDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Upper Bound (Y-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryUpperBoundZDirectionAction">
+   <property name="text">
+    <string>Inlet Boudary Upper Bound (Z-direction)</string>
+   </property>
+  </action>
+  <action name="InletBoudaryAreaAction">
+   <property name="text">
+    <string>Inlet Boudary Area</string>
+   </property>
+  </action>
+  <action name="InletFlowRateFactorAction">
+   <property name="text">
+    <string>Inlet Flow Rate Factor</string>
+   </property>
+  </action>
+  <action name="ParabolicInflowAction">
+   <property name="text">
+    <string>Parabolic Inflow</string>
+   </property>
+  </action>
+  <action name="TotalResistanceAction">
+   <property name="text">
+    <string>Total Resistance</string>
+   </property>
+  </action>
+  <action name="TotalCapacityAction">
+   <property name="text">
+    <string>Total Capacity</string>
+   </property>
+  </action>
+  <action name="AllImpedanceAction">
+   <property name="text">
+    <string>All Impedance</string>
+   </property>
+  </action>
+  <action name="actionNonlinear_Solver_Setup">
+   <property name="text">
+    <string>Nonlinear Solver Setup</string>
+   </property>
+  </action>
+  <action name="actionLinear_Solver_Setup">
+   <property name="text">
+    <string>Linear Solver Setup</string>
+   </property>
+  </action>
+  <action name="actionPreconditioner_Setup">
+   <property name="text">
+    <string>Preconditioner Setup</string>
+   </property>
+  </action>
+  <action name="actionTwo_Level_Preconditioner">
+   <property name="text">
+    <string>Two-Level Preconditioner</string>
+   </property>
+  </action>
+  <action name="actionOutput_Setup">
+   <property name="text">
+    <string>Output Setup</string>
+   </property>
+  </action>
+  <action name="actionOther_Setups">
+   <property name="text">
+    <string>Other Setups</string>
+   </property>
+  </action>
+  <action name="actionMesh_Setup_2">
+   <property name="text">
+    <string>Mesh Setup</string>
+   </property>
+  </action>
+  <action name="actionBoundary_Setup">
+   <property name="text">
+    <string>Boundary Setup</string>
+   </property>
+  </action>
+  <action name="actionPhysics_Setup_2">
+   <property name="text">
+    <string>Physics Setup</string>
+   </property>
+  </action>
+  <action name="actionOpenExe">
+   <property name="text">
+    <string>Open Exe</string>
+   </property>
+  </action>
+  <action name="actionModify_Finish">
+   <property name="text">
+    <string>Modify Finish</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="ArteryTechQtProject.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtPainEvent</class>
+ <widget class="QWidget" name="QtPainEvent">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>728</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtPainEvent</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QVTKWidget" name="qvtkWidget"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QVTKWidget" name="qvtkWidget_2"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QVTKWidget" name="qvtkWidget_3"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QVTKWidget" name="qvtkWidget_4"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

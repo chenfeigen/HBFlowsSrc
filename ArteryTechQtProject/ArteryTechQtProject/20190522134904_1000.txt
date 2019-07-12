@@ -1,0 +1,5 @@
+#Mesh Setup
+   -f test
+   -coord_x_scale 0
+   -coord_y_scale 0
+   -coord_z_scale 0

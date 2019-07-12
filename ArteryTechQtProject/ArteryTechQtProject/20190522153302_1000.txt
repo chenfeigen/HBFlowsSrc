@@ -1,0 +1,7 @@
+#Nonlinear Solver Setup
+   -snes_type 
+   -snes_rtol 0
+   -snes_atol 0
+   -snes_max_it 0
+   -snes_lag_jacobian 0
+   -snes_lag_preconditioner 0

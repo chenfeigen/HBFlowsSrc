@@ -1,0 +1,8 @@
+#Linear Solver Setup
+   -ksp_type 
+   -ksp_pc_side 
+   -ksp_gmres_restart 1523462133
+   -ksp_max_it 0
+   -ksp_rtol 0
+   -ksp_atol 0
+   -diff_lst_ksp_rtol_ratio 0

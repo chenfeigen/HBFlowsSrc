@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ArteryTechQtProjectClass</class>
+ <widget class="QMainWindow" name="ArteryTechQtProjectClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>623</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ArteryTechQtProject</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ArteryTechQtProject.qrc">
+    <normaloff>:/new/prefix1/images/ArteryTech.ico</normaloff>:/new/prefix1/images/ArteryTech.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>623</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionopen">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open Picture</string>
+   </property>
+  </action>
+  <action name="actionOpenExe">
+   <property name="text">
+    <string>Open Exe</string>
+   </property>
+  </action>
+  <action name="actionMesh_Setup_2">
+   <property name="text">
+    <string>Mesh Setup</string>
+   </property>
+  </action>
+  <action name="actionBoundary_Setup">
+   <property name="text">
+    <string>Boundary Setup</string>
+   </property>
+  </action>
+  <action name="actionPhysics_Setup_2">
+   <property name="text">
+    <string>Physics Setup</string>
+   </property>
+  </action>
+  <action name="actionNonlinear_Solver_Setup">
+   <property name="text">
+    <string>Nonlinear Solver Setup</string>
+   </property>
+  </action>
+  <action name="actionLinear_Solver_Setup">
+   <property name="text">
+    <string>Linear Solver Setup</string>
+   </property>
+  </action>
+  <action name="actionPreconditioner_Setup">
+   <property name="text">
+    <string>Preconditioner Setup</string>
+   </property>
+  </action>
+  <action name="actionTwo_Level_Preconditioner">
+   <property name="text">
+    <string>Two-Level Preconditioner</string>
+   </property>
+  </action>
+  <action name="actionOutput_Setup">
+   <property name="text">
+    <string>Output Setup</string>
+   </property>
+  </action>
+  <action name="actionOther_Setups">
+   <property name="text">
+    <string>Other Setups</string>
+   </property>
+  </action>
+  <action name="actionModify_Finish">
+   <property name="text">
+    <string>Modify Finish</string>
+   </property>
+  </action>
+  <action name="actionOpen_Dicompicture">
+   <property name="text">
+    <string>Open Dicompicture</string>
+   </property>
+  </action>
+  <action name="actionView">
+   <property name="text">
+    <string>View</string>
+   </property>
+  </action>
+  <action name="actionDivision">
+   <property name="text">
+    <string>Division</string>
+   </property>
+  </action>
+  <action name="actionGeometry">
+   <property name="text">
+    <string>Geometry</string>
+   </property>
+  </action>
+  <action name="actionMesh">
+   <property name="text">
+    <string>Mesh</string>
+   </property>
+  </action>
+  <action name="actionCompute">
+   <property name="text">
+    <string>Compute</string>
+   </property>
+  </action>
+  <action name="actionPutty">
+   <property name="text">
+    <string>Open Putty</string>
+   </property>
+  </action>
+  <action name="actionadd_username">
+   <property name="text">
+    <string>add username</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ArteryTechQtProject.qrc"/>
+ </resources>
+ <connections/>
+</ui>
