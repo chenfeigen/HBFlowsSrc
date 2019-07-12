@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechOutputSetupUI; };
 
@@ -33,8 +34,11 @@ private:
 	void closeEvent(QCloseEvent *event);
 	void InitOutputData();
 	void SaveOutputData();
+	int isDigitStr(QString str);
 
 private slots:
+	void NumberOfStepsForOutputLineEditSlot();
+	void TimeIntervalForOutputLineEditSlot();
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
 

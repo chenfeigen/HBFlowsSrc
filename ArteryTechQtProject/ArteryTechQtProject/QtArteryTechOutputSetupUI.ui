@@ -6,195 +6,395 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>229</width>
-    <height>409</height>
+    <width>720</width>
+    <height>339</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechOutputSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_16">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_15">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_15">
        <item>
-        <widget class="QLabel" name="RefMonitorPointLabel">
-         <property name="text">
-          <string>Ref Monitor Point:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>参考点坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RefMonitorPointLabel">
+             <property name="text">
+              <string>Ref Monitor Point:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="RefMonitorPointLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="RefMonitorPointLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>监测点1坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MonitorPoint1Label">
+             <property name="text">
+              <string>Monitor Point 1:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="MonitorPoint1LineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
        <item>
-        <widget class="QLabel" name="MonitorPoint1Label">
-         <property name="text">
-          <string>Monitor Point 1:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>监测点2坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MonitorPoint2Label">
+             <property name="text">
+              <string>Monitor Point 2: </string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="MonitorPoint2LineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="MonitorPoint1LineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="MonitorPoint2Label">
-         <property name="text">
-          <string>Monitor Point 2: </string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="MonitorPoint2LineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="MonitorPoint3Label">
-         <property name="text">
-          <string>Monitor Point 3:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="MonitorPoint3LineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_5">
-       <item>
-        <widget class="QLabel" name="FFRMonitorFileLabel">
-         <property name="text">
-          <string>FFR Monitor File:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="FFRMonitorFileLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>监测点3坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MonitorPoint3Label">
+             <property name="text">
+              <string>Monitor Point 3:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="MonitorPoint3LineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <layout class="QHBoxLayout" name="horizontalLayout_17">
        <item>
-        <widget class="QLabel" name="FlowRateMonitorFileLabel">
-         <property name="text">
-          <string>Flow Rate Monitor File:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>FFR监控文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FFRMonitorFileLabel">
+             <property name="text">
+              <string>FFR Monitor File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="FFRMonitorFileLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="FlowRateMonitorFileLineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QLabel" name="SolutionOutputFileLabel">
-         <property name="text">
-          <string>Solution Output File:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="SolutionOutputFileLineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
-       <item>
-        <widget class="QLabel" name="ShowSubdomainMeshDataLabel">
-         <property name="text">
-          <string>Show Subdomain Mesh Data:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="ShowSubdomainMeshDataLineEdit"/>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <item>
-        <widget class="QLabel" name="ShowMeshDataLabel">
-         <property name="text">
-          <string>Show Mesh Data:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="ShowMeshDataLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>流量监控文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FlowRateMonitorFileLabel">
+             <property name="text">
+              <string>Flow Rate Monitor File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="FlowRateMonitorFileLineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <layout class="QHBoxLayout" name="horizontalLayout_18">
        <item>
-        <widget class="QLabel" name="ShowSolutionLabel">
-         <property name="text">
-          <string>Show Solution:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>数值结果输出文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="SolutionOutputFileLabel">
+             <property name="text">
+              <string>Solution Output File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SolutionOutputFileLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="ShowSolutionLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>是否输出分区子域网格数据</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ShowSubdomainMeshDataLabel">
+             <property name="text">
+              <string>Show Subdomain Mesh Data:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ShowSubdomainMeshDataLineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
        <item>
-        <widget class="QLabel" name="MonitorResidualLabel">
-         <property name="text">
-          <string>Monitor Residual:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>是否输出网格数据</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ShowMeshDataLabel">
+             <property name="text">
+              <string>Show Mesh Data:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ShowMeshDataLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="MonitorResidualLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>是否输出数值结果</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ShowSolutionLabel">
+             <property name="text">
+              <string>Show Solution:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ShowSolutionLineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <layout class="QHBoxLayout" name="horizontalLayout_20">
        <item>
-        <widget class="QLabel" name="NumberOfStepsForOutputLabel">
-         <property name="text">
-          <string>Number of Steps for Output:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>监视残差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MonitorResidualLabel">
+             <property name="text">
+              <string>Monitor Residual:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="MonitorResidualLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="NumberOfStepsForOutputLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>按照某特定时间步输出数值结果</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="NumberOfStepsForOutputLabel">
+             <property name="text">
+              <string>Number of Steps for Output:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="NumberOfStepsForOutputLineEdit"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <layout class="QHBoxLayout" name="horizontalLayout_22">
        <item>
-        <widget class="QLabel" name="TimeIntervalForOutputLabel">
-         <property name="text">
-          <string>Time Interval for Output:</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>按照特定时间步间隔输出数值结果</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TimeIntervalForOutputLabel">
+             <property name="text">
+              <string>Time Interval for Output:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="TimeIntervalForOutputLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="TimeIntervalForOutputLineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>描述FFR</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="PlotFFRLabel">
+             <property name="text">
+              <string>Plot FFR:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="PlotFFRCheckBox">
+           <property name="text">
+            <string>plot_FFR</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -203,7 +403,7 @@
        <item>
         <widget class="QPushButton" name="OkPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -223,7 +423,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

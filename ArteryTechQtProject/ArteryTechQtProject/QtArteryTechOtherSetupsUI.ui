@@ -6,24 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>235</width>
-    <height>185</height>
+    <width>848</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechOtherSetupsUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="InitialNumberOfPartitionLabel">
-         <property name="text">
-          <string>Initial Number of Partition:</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>初始分区数</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="InitialNumberOfPartitionLabel">
+           <property name="text">
+            <string>Initial Number of Partition:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLineEdit" name="InitialNumberOfPartitionLineEdit"/>
@@ -33,11 +44,22 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="TypeOfPartitionerLabel">
-         <property name="text">
-          <string>Type of Partitioner:</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>分区类型</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="TypeOfPartitionerLabel">
+           <property name="text">
+            <string>Type of Partitioner:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLineEdit" name="TypeOfPartitionerLineEdit"/>
@@ -47,11 +69,22 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="DiagnalScalerLabel">
-         <property name="text">
-          <string>Diagnal Scaler:</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>诊断缩放器</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="DiagnalScalerLabel">
+           <property name="text">
+            <string>Diagnal Scaler:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLineEdit" name="DiagnalScalerLineEdit"/>
@@ -61,11 +94,22 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="PointBlockSolverLabel">
-         <property name="text">
-          <string>Point Block Solver:</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>点块解算器</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="PointBlockSolverLabel">
+           <property name="text">
+            <string>Point Block Solver:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLineEdit" name="PointBlockSolverLineEdit"/>
@@ -75,11 +119,22 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QLabel" name="LogSummaryLabel">
-         <property name="text">
-          <string>Log Summary:</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>输出日志摘要</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="LogSummaryLabel">
+           <property name="text">
+            <string>Log Summary:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLineEdit" name="LogSummaryLineEdit"/>
@@ -91,7 +146,7 @@
        <item>
         <widget class="QPushButton" name="OKPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -111,7 +166,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

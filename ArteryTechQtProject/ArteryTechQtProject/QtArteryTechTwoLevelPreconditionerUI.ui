@@ -6,43 +6,91 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>279</width>
-    <height>553</height>
+    <width>528</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechTwoLevelPreconditionerUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_20">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_19">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_1"/>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QHBoxLayout" name="horizontalLayout_20">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>两水平预处理器</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TwoLevelPreconditionerLabel">
+             <property name="text">
+              <string>Two-Level Preconditioner</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="TwoLevelPreconditionerLineEdit"/>
+         </item>
+        </layout>
+       </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="CoarseLinearSolverLabel">
-           <property name="text">
-            <string>Coarse Linear Solver:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>粗网格线性求解器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseLinearSolverLabel">
+             <property name="text">
+              <string>Coarse Linear Solver</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseLinearSolverLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_21">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="CoarsePreconditionerSideLabel">
-           <property name="text">
-            <string>Coarse Preconditioner Side:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>粗网格预处理方向</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarsePreconditionerSideLabel">
+             <property name="text">
+              <string>Coarse Preconditioner Side</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarsePreconditionerSideLineEdit"/>
@@ -52,25 +100,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="CoarseLinearSolverRestartLabel">
-           <property name="text">
-            <string>Coarse Linear Solver Restart:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>粗网格线性求解器重启设置</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseLinearSolverRestartLabel">
+             <property name="text">
+              <string>Coarse Linear Solver Restart</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseLinearSolverRestartLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_22">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="CoarseLinearSolverMaxIterationLabel">
-           <property name="text">
-            <string>Coarse Linear Solver Max Iteration:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>粗网格线性求解器最大迭代次数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseLinearSolverMaxIterationLabel">
+             <property name="text">
+              <string>Coarse Linear Solver Max Iteration</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseLinearSolverMaxIterationLineEdit"/>
@@ -80,11 +154,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="CoarseLinearSolverRelativeTolLabel">
-           <property name="text">
-            <string>Coarse Linear Solver Relative Tol:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>粗网格线性求解器相对收敛误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseLinearSolverRelativeTolLabel">
+             <property name="text">
+              <string>Coarse Linear Solver Relative Tol</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseLinearSolverRelativeTolLineEdit"/>
@@ -94,21 +179,80 @@
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_23">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>是否使用MG</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="UseMGLabel">
+             <property name="text">
+              <string>Use MG</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="UseMGLineEdit"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>MG类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MGTypeLabel">
+             <property name="text">
+              <string>MG Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="MGTypeLineEdit"/>
+         </item>
+        </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_24">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QLabel" name="CompositeTypeLabel">
-           <property name="text">
-            <string>Composite Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>复合类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CompositeTypeLabel">
+             <property name="text">
+              <string>Composite Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CompositeTypeLineEdit"/>
@@ -118,25 +262,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QLabel" name="MGCycleTypeLabel">
-           <property name="text">
-            <string>MG Cycle Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>MG循环类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MGCycleTypeLabel">
+             <property name="text">
+              <string>MG Cycle Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="MGCycleTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_25">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
-          <widget class="QLabel" name="FinePreconditionerTypeLabel">
-           <property name="text">
-            <string>Fine Preconditioner Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>细网格预处理器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FinePreconditionerTypeLabel">
+             <property name="text">
+              <string>Fine Preconditioner Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FinePreconditionerTypeLineEdit"/>
@@ -146,25 +316,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
-          <widget class="QLabel" name="FineSubdomainPreconTypeLabel">
-           <property name="text">
-            <string>Fine Subdomain Precon Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>细网格子区域预处理类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FineSubdomainPreconTypeLabel">
+             <property name="text">
+              <string>Fine Subdomain Precon Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FineSubdomainPreconTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_26">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_13">
          <item>
-          <widget class="QLabel" name="FineILULevelsLabel">
-           <property name="text">
-            <string>Fine ILU Levels:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>细网格ILU填充元水平</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FineILULevelsLabel">
+             <property name="text">
+              <string>Fine ILU Levels</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FineILULevelsLineEdit"/>
@@ -174,25 +370,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
-          <widget class="QLabel" name="FineSubMatrixOderingTypeLabel">
-           <property name="text">
-            <string>Fine SubMatrix Odering Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>细网格子矩阵排序类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FineSubMatrixOderingTypeLabel">
+             <property name="text">
+              <string>Fine SubMatrix Odering Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FineSubMatrixOderingTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_27">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
          <item>
-          <widget class="QLabel" name="CoarsePreconditionerTypeLabel">
-           <property name="text">
-            <string>Coarse Preconditioner Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>粗网格预处理器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarsePreconditionerTypeLabel">
+             <property name="text">
+              <string>Coarse Preconditioner Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarsePreconditionerTypeLineEdit"/>
@@ -202,25 +424,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_16">
          <item>
-          <widget class="QLabel" name="CoarseSubdomainPreconTypeLabel">
-           <property name="text">
-            <string>Coarse Subdomain Precon Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>粗网格子区域预处理器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseSubdomainPreconTypeLabel">
+             <property name="text">
+              <string>Coarse Subdomain Precon Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseSubdomainPreconTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_28">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_17">
          <item>
-          <widget class="QLabel" name="CoarseILULevelsLabel">
-           <property name="text">
-            <string>Coarse ILU Levels:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>粗网格子区域ILU填充元水平</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseILULevelsLabel">
+             <property name="text">
+              <string>Coarse ILU Levels</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseILULevelsLineEdit"/>
@@ -230,11 +478,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_18">
          <item>
-          <widget class="QLabel" name="CoarseSubMatrixOderingTypeLabel">
-           <property name="text">
-            <string>Coarse SubMatrix Odering Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>粗网格子矩阵排序类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="CoarseSubMatrixOderingTypeLabel">
+             <property name="text">
+              <string>Coarse SubMatrix Odering Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="CoarseSubMatrixOderingTypeLineEdit"/>
@@ -248,7 +507,7 @@
        <item>
         <widget class="QPushButton" name="OKPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -268,7 +527,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

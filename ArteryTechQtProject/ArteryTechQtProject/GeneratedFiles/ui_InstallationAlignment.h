@@ -132,8 +132,8 @@ public:
     void retranslateUi(QDialog *InstallationAlignment)
     {
         InstallationAlignment->setWindowTitle(QApplication::translate("InstallationAlignment", "InstallationAlignment", Q_NULLPTR));
-        label->setText(QApplication::translate("InstallationAlignment", "SerialNumber:", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("InstallationAlignment", "OK", Q_NULLPTR));
+        label->setText(QApplication::translate("InstallationAlignment", "\345\272\217\345\210\227\347\240\201:", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("InstallationAlignment", "\347\241\256\345\256\232", Q_NULLPTR));
     } // retranslateUi
 
 };

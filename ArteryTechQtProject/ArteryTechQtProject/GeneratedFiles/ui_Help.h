@@ -29,6 +29,9 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *SoftwareName;
     QLabel *softwareNamelabel;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *TypeSpecificationName;
+    QLabel *TypeSpecificationlabel;
     QHBoxLayout *horizontalLayout_2;
     QLabel *SoftwareVersion;
     QLabel *softwareVersionlabel;
@@ -40,7 +43,7 @@ public:
     {
         if (Help->objectName().isEmpty())
             Help->setObjectName(QStringLiteral("Help"));
-        Help->resize(395, 143);
+        Help->resize(844, 240);
         verticalLayout_2 = new QVBoxLayout(Help);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -63,6 +66,22 @@ public:
 
 
         verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        TypeSpecificationName = new QLabel(Help);
+        TypeSpecificationName->setObjectName(QStringLiteral("TypeSpecificationName"));
+
+        horizontalLayout_4->addWidget(TypeSpecificationName);
+
+        TypeSpecificationlabel = new QLabel(Help);
+        TypeSpecificationlabel->setObjectName(QStringLiteral("TypeSpecificationlabel"));
+
+        horizontalLayout_4->addWidget(TypeSpecificationlabel);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
@@ -99,6 +118,9 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
+        SoftwareReleaseVersion->raise();
+        TypeSpecificationName->raise();
+        TypeSpecificationlabel->raise();
 
         retranslateUi(Help);
 
@@ -108,11 +130,13 @@ public:
     void retranslateUi(QDialog *Help)
     {
         Help->setWindowTitle(QApplication::translate("Help", "Help", Q_NULLPTR));
-        SoftwareName->setText(QApplication::translate("Help", "Software name:", Q_NULLPTR));
+        SoftwareName->setText(QApplication::translate("Help", "\350\275\257\344\273\266\345\220\215\347\247\260:", Q_NULLPTR));
         softwareNamelabel->setText(QString());
-        SoftwareVersion->setText(QApplication::translate("Help", "Software version:", Q_NULLPTR));
+        TypeSpecificationName->setText(QApplication::translate("Help", "\350\275\257\344\273\266\345\236\213\345\217\267\350\247\204\346\240\274\357\274\232", Q_NULLPTR));
+        TypeSpecificationlabel->setText(QString());
+        SoftwareVersion->setText(QApplication::translate("Help", "\350\275\257\344\273\266\347\211\210\346\234\254\345\217\267:", Q_NULLPTR));
         softwareVersionlabel->setText(QString());
-        SoftwareReleaseVersion->setText(QApplication::translate("Help", "Software Release Version:", Q_NULLPTR));
+        SoftwareReleaseVersion->setText(QApplication::translate("Help", "\350\275\257\344\273\266\345\217\221\345\270\203\347\211\210\346\234\254\345\217\267:", Q_NULLPTR));
         softwareReleaseVersionlabel->setText(QString());
     } // retranslateUi
 

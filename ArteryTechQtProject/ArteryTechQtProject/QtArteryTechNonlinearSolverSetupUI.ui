@@ -6,26 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>219</width>
+    <width>702</width>
     <height>243</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechNonlinearSolverSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_9">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout_8">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="NonlinearSolverTypeLabel">
-           <property name="text">
-            <string>Nonlinear Solver Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>非线性求解器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="NonlinearSolverTypeLabel">
+             <property name="text">
+              <string>Nonlinear Solver Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="NonlinearSolverTypeLineEdit"/>
@@ -35,25 +46,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="RelativeTolleranceLabel">
-           <property name="text">
-            <string>Relative Tollerance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>非线性收敛相对误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RelativeTolleranceLabel">
+             <property name="text">
+              <string>Relative Tollerance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="RelativeTolleranceLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="AbsoluteTolleranceLabel">
-           <property name="text">
-            <string>Absolute Tollerance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>非线性收敛绝对误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="AbsoluteTolleranceLabel">
+             <property name="text">
+              <string>Absolute Tollerance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="AbsoluteTolleranceLineEdit"/>
@@ -63,25 +100,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="MaxIterationNumberLabel">
-           <property name="text">
-            <string>Max Iteration Number:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>最大非线性迭代次数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MaxIterationNumberLabel">
+             <property name="text">
+              <string>Max Iteration Number:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="MaxIterationNumberLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="MonitorNonlinearSolverLabel">
-           <property name="text">
-            <string>Monitor Nonlinear Solver:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>监视非线性求解器</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MonitorNonlinearSolverLabel">
+             <property name="text">
+              <string>Monitor Nonlinear Solver:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="MonitorNonlinearSolverLineEdit"/>
@@ -91,19 +154,41 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="RebuildJacobianLabel">
-           <property name="text">
-            <string>Rebuild Jacobian:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>重建雅可比行列式</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RebuildJacobianLabel">
+             <property name="text">
+              <string>Rebuild Jacobian:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="RebuildJacobianLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>重建预处理器</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="RebuildPreconditionerLabel">
            <property name="text">
@@ -111,10 +196,10 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLineEdit" name="RebuildPreconditionerLineEdit"/>
-         </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="RebuildPreconditionerLineEdit"/>
        </item>
       </layout>
      </item>
@@ -123,7 +208,7 @@
        <item>
         <widget class="QPushButton" name="OkPushButton">
          <property name="text">
-          <string>Ok</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -143,7 +228,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

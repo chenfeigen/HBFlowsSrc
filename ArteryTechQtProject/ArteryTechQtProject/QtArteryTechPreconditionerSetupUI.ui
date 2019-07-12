@@ -6,26 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>255</width>
-    <height>243</height>
+    <width>610</width>
+    <height>211</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechPreconditionerSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_9">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout_8">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="PreconditionerTypeLabel">
-           <property name="text">
-            <string>Preconditioner Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>预处理类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="PreconditionerTypeLabel">
+             <property name="text">
+              <string>Preconditioner Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="PreconditionerTypeLineEdit"/>
@@ -35,25 +46,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="ASMTypeLabel">
-           <property name="text">
-            <string>ASM Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>ASM类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ASMTypeLabel">
+             <property name="text">
+              <string>ASM Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="ASMTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="SubdomainSolverLabel">
-           <property name="text">
-            <string>Subdomain Solver:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>子域求解器</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="SubdomainSolverLabel">
+             <property name="text">
+              <string>Subdomain Solver:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="SubdomainSolverLineEdit"/>
@@ -61,27 +98,53 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="ILULevelsLabel">
-           <property name="text">
-            <string>ILU Levels:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>ILU填充水平</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ILULevelsLabel">
+             <property name="text">
+              <string>ILU Levels:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="ILULevelsLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="SubdomainMatrixOrderingTypeLabel">
-           <property name="text">
-            <string>Subdomain Matrix Ordering Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>子区域矩阵排序类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="SubdomainMatrixOrderingTypeLabel">
+             <property name="text">
+              <string>Subdomain Matrix Ordering Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="SubdomainMatrixOrderingTypeLineEdit"/>
@@ -89,21 +152,43 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="OverlappingTypeLabel">
-           <property name="text">
-            <string>Overlapping Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>重叠类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="OverlappingTypeLabel">
+             <property name="text">
+              <string>Overlapping Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="OverlappingTypeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>重叠层数</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="OverlappingSizeLabel">
            <property name="text">
@@ -111,19 +196,19 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLineEdit" name="OverlappingSizeLineEdit"/>
-         </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="OverlappingSizeLineEdit"/>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
         <widget class="QPushButton" name="OKPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -143,7 +228,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

@@ -32,7 +32,7 @@
        <item>
         <widget class="QLabel" name="UsernameLabel">
          <property name="text">
-          <string>Number：</string>
+          <string>账号：</string>
          </property>
         </widget>
        </item>
@@ -46,7 +46,7 @@
        <item>
         <widget class="QLabel" name="PasswordLabel">
          <property name="text">
-          <string>Password：</string>
+          <string>密码：</string>
          </property>
         </widget>
        </item>
@@ -60,7 +60,7 @@
        <item>
         <widget class="QPushButton" name="RetrievePasswordPushButton">
          <property name="text">
-          <string>RetrievePassword</string>
+          <string>密码找回</string>
          </property>
         </widget>
        </item>
@@ -80,7 +80,7 @@
        <item>
         <widget class="QPushButton" name="RegisterPushButton">
          <property name="text">
-          <string>Register</string>
+          <string>注册</string>
          </property>
         </widget>
        </item>
@@ -91,7 +91,7 @@
        <item>
         <widget class="QPushButton" name="LoginPushButton">
          <property name="text">
-          <string>Login</string>
+          <string>登录</string>
          </property>
         </widget>
        </item>
@@ -102,6 +102,13 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>UsernameLineEdit</tabstop>
+  <tabstop>PasswordLineEdit</tabstop>
+  <tabstop>LoginPushButton</tabstop>
+  <tabstop>RetrievePasswordPushButton</tabstop>
+  <tabstop>RegisterPushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

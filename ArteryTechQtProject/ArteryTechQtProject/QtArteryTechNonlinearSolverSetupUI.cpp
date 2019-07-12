@@ -7,9 +7,9 @@ QtArteryTechNonlinearSolverSetupUI::QtArteryTechNonlinearSolverSetupUI(QWidget *
 	ui = new Ui::QtArteryTechNonlinearSolverSetupUI();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setWindowTitle("Nonlinear Solver Setup");
-	this->setMinimumSize(219, 243);
-	this->setMaximumSize(219, 243);
+	this->setWindowTitle("非线性求解器参数设置");
+	this->setMinimumSize(777, 230);
+	this->setMaximumSize(777, 230);
 
 	this->snesViewCheckBox = new QCheckBox;
 	this->snesViewCheckBox->setText("snes_view");
@@ -34,9 +34,9 @@ QtArteryTechNonlinearSolverSetupUI::QtArteryTechNonlinearSolverSetupUI(QString t
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	m_tmpFileName = tmpFileName;
-	this->setWindowTitle("Nonlinear Solver Setup");
-	this->setMinimumSize(219, 243);
-	this->setMaximumSize(219, 243);
+	this->setWindowTitle("非线性求解器参数设置");
+	this->setMinimumSize(777, 230);
+	this->setMaximumSize(777, 230);
 
 	this->snesViewCheckBox = new QCheckBox;
 	this->snesViewCheckBox->setText("snes_view");
@@ -60,7 +60,7 @@ void QtArteryTechNonlinearSolverSetupUI::InitNonlinearSolverData()
 	ui->AbsoluteTolleranceLineEdit->setText("0");
 	ui->MaxIterationNumberLineEdit->setText("0");
 	ui->MonitorNonlinearSolverLineEdit->setText(NULL);
-	ui->MonitorNonlinearSolverLabel->setVisible(false);
+	ui->MonitorNonlinearSolverLabel->setVisible(true);
 	ui->MonitorNonlinearSolverLineEdit->setVisible(false);
 	ui->RebuildJacobianLineEdit->setText("0");
 	ui->RebuildPreconditionerLineEdit->setText("0");
@@ -73,7 +73,7 @@ void QtArteryTechNonlinearSolverSetupUI::InitNonlinearSolverData()
 	ui->AbsoluteTolleranceLineEdit->setText("1.e-6");
 	ui->MaxIterationNumberLineEdit->setText("300");
 	ui->MonitorNonlinearSolverLineEdit->setText(NULL);
-	ui->MonitorNonlinearSolverLabel->setVisible(false);
+	ui->MonitorNonlinearSolverLabel->setVisible(true);
 	ui->MonitorNonlinearSolverLineEdit->setVisible(false);
 	ui->RebuildJacobianLineEdit->setText("1");
 	ui->RebuildPreconditionerLineEdit->setText("1");
@@ -85,25 +85,25 @@ void QtArteryTechNonlinearSolverSetupUI::SaveNonlinearSolverData()
 	QString Menustr = "#Nonlinear Solver Setup\n";
 	this->nonlinearSolverDataList.append(Menustr);
 	//QString labeltext = "	" + ui->NonlinearSolverTypeLabel->text() + " " + "-snes_type" + " ";
-	QString labeltext = "   -snes_type ";
+	QString labeltext = "	#-snes_type ";
 	QString lineEdit = ui->NonlinearSolverTypeLineEdit->text() + "\n";
 	QString contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->RelativeTolleranceLabel->text() + " " + "-snes_rtol" + " ";
-	labeltext = "   -snes_rtol ";
+	labeltext = "	-snes_rtol ";
 	lineEdit = ui->RelativeTolleranceLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->AbsoluteTolleranceLabel->text() + " " + "-snes_atol" + " ";
-	labeltext = "   -snes_atol ";
+	labeltext = "	-snes_atol ";
 	lineEdit = ui->AbsoluteTolleranceLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->MaxIterationNumberLabel->text() + " " + "-snes_max_it" + " ";
-	labeltext = "   -snes_max_it ";
+	labeltext = "	-snes_max_it ";
 	lineEdit = ui->MaxIterationNumberLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
@@ -111,20 +111,20 @@ void QtArteryTechNonlinearSolverSetupUI::SaveNonlinearSolverData()
 	if (this->snesViewCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->MonitorNonlinearSolverLabel->text() + " " + "-snes_view" + " ";
-		labeltext = "   -snes_view ";
+		labeltext = "	-snes_view ";
 		lineEdit = ui->MonitorNonlinearSolverLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->nonlinearSolverDataList.append(contenttext);
 	}
 
 	//labeltext = "	" + ui->RebuildJacobianLabel->text() + " " + "-snes_lag_jacobian" + " ";
-	labeltext = "   -snes_lag_jacobian ";
+	labeltext = "	#-snes_lag_jacobian ";
 	lineEdit = ui->RebuildJacobianLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->RebuildPreconditionerLabel->text() + " " + "-snes_lag_preconditioner" + " ";
-	labeltext = "   -snes_lag_preconditioner ";
+	labeltext = "	#-snes_lag_preconditioner ";
 	lineEdit = ui->RebuildPreconditionerLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->nonlinearSolverDataList.append(contenttext);
@@ -160,8 +160,12 @@ void QtArteryTechNonlinearSolverSetupUI::closeEvent(QCloseEvent *event)
 	bool tmpFileOpenStatus = tmpFile.open(QIODevice::Append | QIODevice::Text);
 	if (!tmpFileOpenStatus)
 	{
-		QMessageBox::warning(this, "this", m_tmpFileName + " file open fail !");
+		QMessageBox::warning(this, "警告：", m_tmpFileName + " 文件打开失败！");
+		return;
 	}
+	QString timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	tmpFile.write(timePoint.toStdString().c_str());
+	tmpFile.write("\n");
 	for (int i = 0; i < nonlinearSolverDataList.length(); i++)
 	{
 		tmpFile.write(nonlinearSolverDataList[i].toStdString().c_str());
@@ -227,20 +231,20 @@ void QtArteryTechNonlinearSolverSetupUI::MaxIterationNumberLineEditSlot()
 	}
 	else
 	{
-		if (ui->MaxIterationNumberLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->MaxIterationNumberLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->MaxIterationNumberLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->MaxIterationNumberLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->MaxIterationNumberLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->MaxIterationNumberLineEdit->setText("0");
 		}
 	}
@@ -256,20 +260,20 @@ void QtArteryTechNonlinearSolverSetupUI::RebuildJacobianLineEditSlot()
 	}
 	else
 	{
-		if (ui->RebuildJacobianLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->RebuildJacobianLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->RebuildJacobianLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->RebuildJacobianLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->RebuildJacobianLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->RebuildJacobianLineEdit->setText("0");
 		}
 	}
@@ -285,20 +289,20 @@ void QtArteryTechNonlinearSolverSetupUI::RebuildPreconditionerLineEditSlot()
 	}
 	else
 	{
-		if (ui->RebuildPreconditionerLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->RebuildPreconditionerLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->RebuildPreconditionerLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->RebuildPreconditionerLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->RebuildPreconditionerLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->RebuildPreconditionerLineEdit->setText("0");
 		}
 	}

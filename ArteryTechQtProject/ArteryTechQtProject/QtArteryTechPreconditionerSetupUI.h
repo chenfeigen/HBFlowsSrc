@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechPreconditionerSetupUI; };
 
@@ -22,6 +23,7 @@ public:
 	~QtArteryTechPreconditionerSetupUI();
 	QStringList preconditionerDataList;
 	QStringList GetTechPreconditionerData();
+	int isDigitStr(QString str);
 
 private:
 	Ui::QtArteryTechPreconditionerSetupUI *ui;
@@ -35,4 +37,6 @@ private:
 private slots:
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
+	void ILULevelsLineEditSlot();
+	void OverlappingSizeLineEditSlot();
 };

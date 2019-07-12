@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechLinearSolverSetupUI; };
 

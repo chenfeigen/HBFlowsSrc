@@ -10,6 +10,7 @@
 #include <QTextStream>
 #include <QMutex>
 #include <QDateTime>
+#include <windows.h>
 using namespace std;
 QMutex mutex;// 日志代码互斥
 QString timePoint;
@@ -79,7 +80,7 @@ void LogOutTxt(QtMsgType type, const QMessageLogContext &context, const QString 
 	QString log = QString("%1 %2\r\n%3").arg(typeTxt).arg(current_time).arg(msg);
 
 	QFile file;
-	QString path = QString("log/%1.log").arg(timePoint);
+	QString path = QString("log/%1.png").arg(timePoint);
 	file.setFileName(path);
 	if (!file.open(QIODevice::ReadWrite | QIODevice::Append)) {
 		QString erinfo = file.errorString();
@@ -100,21 +101,48 @@ int main(int argc, char *argv[])
 //#ifndef _DEBUG
 	timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
 	timePoint = QDateTime::currentDateTime().toString("yyyyMMdd");
-	qInstallMessageHandler(LogOutTxt);
+	//qInstallMessageHandler(LogOutTxt);
 //#endif
-
 	QApplication a(argc, argv);
+	//a.setWindowIcon(QIcon("./images/图片路径"));//设置应用程序的图标//.exe的图标
+
+//先建立两个隐藏文件夹，一个叫UserInfo用来存放用户信息的隐藏文件，一个叫LockUserInfo文件夹用来存放上锁的用户信息
+//这两个文件夹下的内容都先进行了加密
+#if 1
+	// 获取当前的路径
+	QString qstrpath = QDir::currentPath();
+	QString qstrUserInfo = qstrpath + QString("/UserInfo");
+	QString qstrLockUserInfo = qstrpath + QString("/LockUserInfo");
+	// 上面这个是正常创建的文件夹
+	QDir dirUserInfo(qstrUserInfo);
+	if (!dirUserInfo.exists())
+	{
+		dirUserInfo.mkdir(qstrUserInfo);
+	}
+	// 这个文件夹需要隐藏
+	QDir dirLockUserInfo(qstrLockUserInfo);
+	if (!dirLockUserInfo.exists())
+	{
+		dirLockUserInfo.mkdir(qstrLockUserInfo);
+	}
+	// windows API需要将 QString 转化为 LPCWSTR
+	// 将文件夹设置为隐藏
+	SetFileAttributes((LPCWSTR)qstrUserInfo.unicode(), FILE_ATTRIBUTE_HIDDEN);
+	SetFileAttributes((LPCWSTR)qstrLockUserInfo.unicode(), FILE_ATTRIBUTE_HIDDEN);
+#endif 
+
 	//下面两个方法都能设置vtkOutputWindow在程序运行的时候不显示出来
 	//vtkObject::GlobalWarningDisplayOff();
 	vtkObject::SetGlobalWarningDisplay(0);
 
 	//在显示ArteryTechQtProject界面之前先显示一个用户登录界面，只有用户登录成功才能显示ArteryTechQtProject界面，并对软件进行操作
-	QTextCodec *codec = QTextCodec::codecForName("GB18030");
+	//QTextCodec *codec = QTextCodec::codecForName("GB18030");
 	//qFatal("divide:Fatal");
 
-	//ArteryTechQtProject w;
 	LoginInterface w;
+
 	//LoginInterfaceWidget w;
+	//GetCalculationResultsDialog w;
 	//w.show();
 
 	

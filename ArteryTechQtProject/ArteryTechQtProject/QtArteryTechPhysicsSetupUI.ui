@@ -6,26 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>231</width>
-    <height>523</height>
+    <width>733</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechPhysicsSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_19">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout_18">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="TotalResistanceLabel">
-           <property name="text">
-            <string>Total Resistance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>总阻力</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TotalResistanceLabel">
+             <property name="text">
+              <string>Total Resistance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="TotalResistanceLineEdit"/>
@@ -35,25 +46,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="TotalCapacityLabel">
-           <property name="text">
-            <string>Total Capacity:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>总容量</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TotalCapacityLabel">
+             <property name="text">
+              <string>Total Capacity:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="TotalCapacityLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_20">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="AllImpedanceLabel">
-           <property name="text">
-            <string>All Impedance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>总阻抗</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="AllImpedanceLabel">
+             <property name="text">
+              <string>All Impedance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="AllImpedanceLineEdit"/>
@@ -63,25 +100,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="PdForWK3Label">
-           <property name="text">
-            <string>Pd for WK3:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>对应于WK3的Pd</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="PdForWK3Label">
+             <property name="text">
+              <string>Pd for WK3:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="PdForWK3LineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_21">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="P0ForWK3Label">
-           <property name="text">
-            <string>P0 for WK3:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>对应于WK3的P0</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="P0ForWK3Label">
+             <property name="text">
+              <string>P0 for WK3:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="P0ForWK3LineEdit">
@@ -95,25 +158,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="FluidViscosityLabel">
-           <property name="text">
-            <string>Fluid Viscosity:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>血液粘度</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FluidViscosityLabel">
+             <property name="text">
+              <string>Fluid Viscosity:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FluidViscosityLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_22">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QLabel" name="FluidDensityLabel">
-           <property name="text">
-            <string>Fluid Density:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>血液密度</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FluidDensityLabel">
+             <property name="text">
+              <string>Fluid Density:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FluidDensityLineEdit"/>
@@ -123,25 +212,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="QLabel" name="BloodFlowSimulationLabel">
-           <property name="text">
-            <string>Blood Flow Simulation:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>血流模拟</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="BloodFlowSimulationLabel">
+             <property name="text">
+              <string>Blood Flow Simulation:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="BloodFlowSimulationLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_23">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QLabel" name="FluidOnlySimulationLabel">
-           <property name="text">
-            <string>Fluid Only Simulation:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>仅流体模拟</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FluidOnlySimulationLabel">
+             <property name="text">
+              <string>Fluid Only Simulation:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FluidOnlySimulationLineEdit"/>
@@ -151,25 +266,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QLabel" name="TimeDiscretizationMethodLabel">
-           <property name="text">
-            <string>Time Discretization Method:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>时间离散方法</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TimeDiscretizationMethodLabel">
+             <property name="text">
+              <string>Time Discretization Method:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="TimeDiscretizationMethodLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_24">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
-          <widget class="QLabel" name="InitialTimeLabel">
-           <property name="text">
-            <string>Initial Time:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>初始时间</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InitialTimeLabel">
+             <property name="text">
+              <string>Initial Time:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InitialTimeLineEdit"/>
@@ -179,25 +320,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
-          <widget class="QLabel" name="FinalTimeLabel">
-           <property name="text">
-            <string>Final Time:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>最后时间</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FinalTimeLabel">
+             <property name="text">
+              <string>Final Time:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FinalTimeLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_25">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_13">
          <item>
-          <widget class="QLabel" name="TimeStepSizeLabel">
-           <property name="text">
-            <string>Time Step Size:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>时间步长</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="TimeStepSizeLabel">
+             <property name="text">
+              <string>Time Step Size:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="TimeStepSizeLineEdit"/>
@@ -207,25 +374,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
-          <widget class="QLabel" name="PeriodLabel">
-           <property name="text">
-            <string>Period:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>周期数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="PeriodLabel">
+             <property name="text">
+              <string>Period:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="PeriodLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_26">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
          <item>
-          <widget class="QLabel" name="FixedMeshLabel">
-           <property name="text">
-            <string>Fixed Mesh:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>固定网格类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="FixedMeshLabel">
+             <property name="text">
+              <string>Fixed Mesh:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="FixedMeshLineEdit"/>
@@ -235,19 +428,41 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_16">
          <item>
-          <widget class="QLabel" name="ZeroInitialConditionLabel">
-           <property name="text">
-            <string>Zero Initial Condition:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>零初始条件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ZeroInitialConditionLabel">
+             <property name="text">
+              <string>Zero Initial Condition:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="ZeroInitialConditionLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_17">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_17">
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>入口速度</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="InletVelocityLabel">
            <property name="text">
@@ -255,10 +470,10 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLineEdit" name="InletVelocityLineEdit"/>
-         </item>
         </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="InletVelocityLineEdit"/>
        </item>
       </layout>
      </item>
@@ -267,7 +482,7 @@
        <item>
         <widget class="QPushButton" name="OkPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -287,7 +502,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

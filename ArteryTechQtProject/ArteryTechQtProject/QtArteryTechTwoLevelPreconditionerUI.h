@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechTwoLevelPreconditionerUI; };
 
@@ -22,6 +23,7 @@ public:
 	~QtArteryTechTwoLevelPreconditionerUI();
 	QStringList twoLPreconditionerDataList;
 	QStringList GetTLPreconditionerData();
+	int isDigitStr(QString str);
 
 private:
 	Ui::QtArteryTechTwoLevelPreconditionerUI *ui;
@@ -40,4 +42,8 @@ private slots:
 	void TwoLevelPreconditionerCheckBoxSlots();
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
+	void CoarseLinearSolverRestartLineEditSlot();
+	void CoarseLinearSolverMaxIterationLineEditSlot();
+	void FineILULevelsLineEditSlot();
+	void CoarseILULevelsLineEditSlot();
 };

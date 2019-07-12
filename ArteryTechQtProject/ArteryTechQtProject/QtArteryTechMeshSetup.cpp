@@ -7,9 +7,9 @@ QtArteryTechMeshSetup::QtArteryTechMeshSetup(QWidget *parent)
 	ui = new Ui::QtArteryTechMeshSetup();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setMinimumSize(253, 175);
-	this->setMaximumSize(253, 175);
-	this->setWindowTitle("Mesh Setup");
+	this->setMinimumSize(782, 209);
+	this->setMaximumSize(782, 209);
+	this->setWindowTitle("网格设置");
 	//先给现实界面设计初始值
 	InitMeshData();
 	//SaveMeshData();
@@ -29,9 +29,9 @@ QtArteryTechMeshSetup::QtArteryTechMeshSetup(QString tmpFileName, QWidget *paren
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
 	m_tmpFileName = tmpFileName;
-	this->setMinimumSize(253, 175);
-	this->setMaximumSize(253, 175);
-	this->setWindowTitle("Mesh Setup");
+	this->setMinimumSize(782, 209);
+	this->setMaximumSize(782, 209);
+	this->setWindowTitle("网格设置");
 	//先给现实界面设计初始值
 	InitMeshData();
 	//SaveMeshData();
@@ -80,26 +80,26 @@ void QtArteryTechMeshSetup::SaveMeshData()
 	meshSetupDataList.append(MenuStr);
 	//QString labeltest = "	" + ui->FileNameLabel->text().trimmed() + " " + "-f" + " ";
 	//qDebug() << "labeltest:" << labeltest;
-	QString labeltext = "   -f ";
+	QString labeltext = "	-f ";
 	QString lineEdit = ui->FileNameLineEdit->text() + "\n";
 	QString contenttext = labeltext + lineEdit;
 	meshSetupDataList.append(contenttext);
 
 	//qDebug() << "contenttext text:" << contenttext;
 	//labeltext = "	" + ui->CoordinateScaleXDirectionLabel->text().trimmed() + " " + "-coord_x_scale" + " ";
-	labeltext = "   -coord_x_scale ";
+	labeltext = "	-coord_x_scale ";
 	lineEdit = ui->CoordinateScaleXDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	meshSetupDataList.append(contenttext);
 
 	//labeltext = "	" + ui->CoordinateScaleYDirectionLabel->text().trimmed() + " " + "-coord_y_scale" + " ";
-	labeltext = "   -coord_y_scale ";
+	labeltext = "	-coord_y_scale ";
 	lineEdit = ui->CoordinateScaleYDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	meshSetupDataList.append(contenttext);
 
 	//labeltext = "	" + ui->CoordinateScaleZDirectionLabel->text().trimmed() + " " + "-coord_z_scale" + " ";
-	labeltext = "   -coord_z_scale ";
+	labeltext = "	-coord_z_scale ";
 	lineEdit = ui->CoordinateScaleZDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	meshSetupDataList.append(contenttext);
@@ -129,8 +129,12 @@ void QtArteryTechMeshSetup::closeEvent(QCloseEvent *event)
 	bool tmpFileOpenStatus = tmpFile.open(QIODevice::Append | QIODevice::Text);
 	if (!tmpFileOpenStatus)
 	{
-		QMessageBox::warning(this,"this", m_tmpFileName + " file open fail !");
+		QMessageBox::warning(this,"警告", m_tmpFileName + " 文件打开失败!");
+		return;
 	}
+	QString timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	tmpFile.write(timePoint.toStdString().c_str());
+	tmpFile.write("\n");
 	for (int i = 0; i < meshSetupDataList.length(); i++)
 	{
 		tmpFile.write(meshSetupDataList[i].toStdString().c_str());
@@ -186,20 +190,20 @@ void QtArteryTechMeshSetup::XEditingFinishedSlot()
 	}
 	else
 	{
-		if (ui->CoordinateScaleXDirectionLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->CoordinateScaleXDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->CoordinateScaleXDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->CoordinateScaleXDirectionLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->CoordinateScaleXDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this,"Warning:","Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this,"警告：","只能输入数字，请重新输入！");
 			ui->CoordinateScaleXDirectionLineEdit->setText("0");
 		}
 	}
@@ -214,20 +218,20 @@ void QtArteryTechMeshSetup::YEditingFinishedSlot()
 	}
 	else
 	{
-		if (ui->CoordinateScaleYDirectionLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->CoordinateScaleYDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->CoordinateScaleYDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->CoordinateScaleYDirectionLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->CoordinateScaleYDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->CoordinateScaleYDirectionLineEdit->setText("0");
 		}
 	}
@@ -242,20 +246,20 @@ void QtArteryTechMeshSetup::ZEditingFinishedSlot()
 	}
 	else
 	{
-		if (ui->CoordinateScaleZDirectionLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->CoordinateScaleZDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->CoordinateScaleZDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->CoordinateScaleZDirectionLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->CoordinateScaleZDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->CoordinateScaleZDirectionLineEdit->setText("0");
 		}
 	}

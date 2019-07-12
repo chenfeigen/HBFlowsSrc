@@ -18,6 +18,7 @@ RetrievePasswordInterface::RetrievePasswordInterface(QWidget *parent)
 	//QObject::connect(ui.CancelPushButton,SIGNAL(clicked(bool)),this,SLOT(CancelPushButtonSlot()));
 
 	//提示通过厂商获取密码
+	this->setWindowTitle("密码找回");
 	ui.UsernameLabel->setVisible(false);
 	ui.UsernameLineEdit->setVisible(false);
 	ui.PasswordLabel->setVisible(false);
@@ -47,7 +48,7 @@ bool RetrievePasswordInterface::checkedRetPasswordUserInfo()
 	if (userName == NULL)
 	{
 		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Input account number cannot be empty, please re-enter!";
-		QMessageBox::information(this, "Message:", "Input account number cannot be empty, please re-enter!");
+		QMessageBox::information(this, "消息:", "输入的账号不能为空，请重新输入！");
 		return false;
 	}
 	int userNamelength = userName.length();
@@ -63,7 +64,7 @@ bool RetrievePasswordInterface::checkedRetPasswordUserInfo()
 			else
 			{
 				qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account cannot have special characters except numbers and characters. Please re-enter!";
-				QMessageBox::information(this, "Message:", "Account cannot have special characters except numbers and characters. Please re-enter!");
+				QMessageBox::information(this, "消息:", "账号不能包含除数字和字母以外的其他字符，请重新输入！");
 				return false;
 			}
 		}
@@ -71,7 +72,7 @@ bool RetrievePasswordInterface::checkedRetPasswordUserInfo()
 	else
 	{
 		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account length can not exceed 20 characters,please re-enter!";
-		QMessageBox::information(this, "Message:", "Account length can not exceed 20 characters,please re-enter!");
+		QMessageBox::information(this, "消息:", "账号长度不能超过30个字符，请重新输入！");
 		return false;
 	}
 	return true;
@@ -81,7 +82,7 @@ void RetrievePasswordInterface::ConfirmPushButtonSlot()
 {
 	if (NULL == ui.UsernameLineEdit->text().trimmed())
 	{
-		QMessageBox::information(this, "Message:", "Account cannot be empty, please re-enter!");
+		QMessageBox::information(this, "消息:", "账号不能为空，请重新输入！");
 		return;
 	}
 	bool checkStatus = checkedRetPasswordUserInfo();
@@ -118,7 +119,7 @@ QString RetrievePasswordInterface::findInfoFromUserInfo(QString str1)
 	bool openStatus = file.open(QIODevice::ReadOnly | QIODevice::Text);
 	if (!openStatus)
 	{
-		QMessageBox::information(this, "Massage:", "Account not registered, login failed.");
+		QMessageBox::warning(this, "警告:", "账号没有被注册，请重新输入！.");
 		return password;
 	}
 	QString fileContent;
@@ -142,6 +143,6 @@ QString RetrievePasswordInterface::findInfoFromUserInfo(QString str1)
 			continue;
 		}
 	}
-	QMessageBox::information(this, "Message:", "The account entered is incorrect. Please re-enter it!");
+	QMessageBox::information(this, "消息:", "账号输入不正确，请重新输入！");
 	return password;
 }

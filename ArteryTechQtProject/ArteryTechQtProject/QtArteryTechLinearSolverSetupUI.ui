@@ -6,26 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>225</width>
-    <height>271</height>
+    <width>670</width>
+    <height>285</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechLinearSolverSetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_10">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout_9">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="LinearSolverTypeLabel">
-           <property name="text">
-            <string>Linear Solver Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>线性求解器类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="LinearSolverTypeLabel">
+             <property name="text">
+              <string>Linear Solver Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="LinearSolverTypeLineEdit"/>
@@ -35,25 +46,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="PreconditioningSideLabel">
-           <property name="text">
-            <string>Preconditioning Side:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>预处理方向</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="PreconditioningSideLabel">
+             <property name="text">
+              <string>Preconditioning Side:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="PreconditioningSideLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="RestartNumberLabel">
-           <property name="text">
-            <string>Restart Number:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>重启数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RestartNumberLabel">
+             <property name="text">
+              <string>Restart Number:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="RestartNumberLineEdit"/>
@@ -63,25 +100,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="MaxIterationNumberLabel">
-           <property name="text">
-            <string>Max Iteration Number:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>最大迭代次数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="MaxIterationNumberLabel">
+             <property name="text">
+              <string>Max Iteration Number:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="MaxIterationNumberLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="RelativeTolleranceLabel">
-           <property name="text">
-            <string>Relative Tollerance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>线性相对收敛误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RelativeTolleranceLabel">
+             <property name="text">
+              <string>Relative Tollerance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="RelativeTolleranceLineEdit"/>
@@ -91,25 +154,51 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="AbsoluteTolleranceLabel">
-           <property name="text">
-            <string>Absolute Tollerance:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>线性绝对收敛误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="AbsoluteTolleranceLabel">
+             <property name="text">
+              <string>Absolute Tollerance:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="AbsoluteTolleranceLineEdit"/>
          </item>
         </layout>
        </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QLabel" name="Different1stStepTolLabel">
-           <property name="text">
-            <string>Different 1st Step Tol:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>第一步线性收敛相对误差</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Different1stStepTolLabel">
+             <property name="text">
+              <string>Different 1st Step Tol:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="Different1stStepTolLineEdit"/>
@@ -119,11 +208,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="QLabel" name="RatioOfThe1stStepTolLabel">
-           <property name="text">
-            <string>Ratio of the 1st Step Tol:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>第一步线性收敛相对误差比率</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="RatioOfThe1stStepTolLabel">
+             <property name="text">
+              <string>Ratio of the 1st Step Tol:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="RatioOfThe1stStepTolLineEdit"/>
@@ -137,7 +237,7 @@
        <item>
         <widget class="QPushButton" name="OkPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -157,7 +257,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>

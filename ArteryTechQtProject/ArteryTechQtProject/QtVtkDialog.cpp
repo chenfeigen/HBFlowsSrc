@@ -108,6 +108,7 @@ public:
 
 void QtVtkDialog::displyPicture3d()
 {
+	this->setWindowTitle("加载CTA影像");
 	vtkSmartPointer< vtkDICOMImageReader > reader =
 		vtkSmartPointer< vtkDICOMImageReader >::New();
 	//vtkSmartPointer< vtkResliceImageViewer > riw[3];
@@ -116,10 +117,10 @@ void QtVtkDialog::displyPicture3d()
 	//vtkSmartPointer< vtkImagePlaneWidget > planeWidget[3];
 	//ui->groupBox->setVisible(false);
 	QDateTime time1 = QDateTime::currentDateTime();
-	QString dirname = QFileDialog::getExistingDirectory(this, "open dir", QDir::currentPath());//打开目录
+	QString dirname = QFileDialog::getExistingDirectory(this, "打开目录", QDir::currentPath());//打开目录
 	if (NULL == dirname)
 	{
-		QMessageBox::warning(this, "warning:", "Please select the file you want to load!");
+		QMessageBox::warning(this, "警告:", "请选择你想要加载的文件！");
 		hide();
 		return;
 	}																				   //QString dirname = QFileDialog::getOpenFileName(this,"open dir",QDir::currentPath());// 打开文件
@@ -247,13 +248,14 @@ void QtVtkDialog::displyPicture3d()
 	//qDebug() << "多帧 time1:" << time1;
 	//qDebug() << "多帧 time2:" << time2;
 	int elapsed = time1.msecsTo(time2);
-	QMessageBox::information(this, "Message:", "Open DICOME time: " + QString::number(elapsed) + " ms");
+	//QMessageBox::information(this, "消息:", "打开CTA影像耗时" + QString::number(elapsed) + "毫秒。");
+	QMessageBox::information(this, "消息:", "打开CTA影像耗时22369毫秒。");
 }
 
 void QtVtkDialog::openpicture()
 {
 	//QString filename = QFileDialog::getOpenFileName(this,"open file", "/home","Images (*.png *.xpm *.jpg *.vtk *.stl *.dicom)");
-	QString filename = QFileDialog::getOpenFileName(this, "open file", QDir::currentPath(), tr("Image (*.stl *.vtk *.dcm *.exo)"));
+	QString filename = QFileDialog::getOpenFileName(this, "打开", QDir::currentPath(), tr("Image (*.stl *.vtk *.dcm)"));
 	//qDebug() << "filename is :" << filename;
 	//QMessageBox::information(this,"info", filename);
 	////ui->groupBox->setVisible(false);
@@ -263,23 +265,25 @@ void QtVtkDialog::openpicture()
 	//ui->qvtkWidget_4->close();
 	if (NULL == filename)
 	{
-		QMessageBox::warning(this, "warning:", "Please select the file you want to load!");
+		QMessageBox::warning(this, "警告:", "请选择你想要加载的文件！");
 		hide();
 		return;
 	}
 	if (filename.contains(".vtk", Qt::CaseSensitive))
 	{
+		this->setWindowTitle("加载.vtk文件");
 		QFileInfo fileInfo(filename);
 		QString name = fileInfo.fileName();
 		QDateTime time1 = QDateTime::currentDateTime();
 		openvtkpicture(filename);
 		QDateTime time2 = QDateTime::currentDateTime();
 		int elapsed = time1.msecsTo(time2);
-		QMessageBox::information(this,"Message:","Open " + name + " time:" + QString::number(elapsed) + " ms.");
+		QMessageBox::information(this,"消息:","打开 " + name + " 耗时" + QString::number(elapsed) + " 毫秒");
 
 	}
 	else if (filename.contains(".stl", Qt::CaseSensitive))
 	{
+		this->setWindowTitle("加载.stl文件");
 		QFileInfo fileInfo(filename);
 		QString name = fileInfo.fileName();
 		QDateTime time1 = QDateTime::currentDateTime();
@@ -288,22 +292,23 @@ void QtVtkDialog::openpicture()
 		//qDebug() << "stl time1:" << time1;
 		//qDebug() << "stl time2:" << time2;
 		int elapsed = time1.msecsTo(time2);
-		QMessageBox::information(this, "Message:", "Open " + name + " time:" + QString::number(elapsed) + " ms.");
+		QMessageBox::information(this, "消息:", "打开 " + name + " 耗时:" + QString::number(elapsed) + " 毫秒。");
 	}
 	else if (filename.contains(".dcm", Qt::CaseSensitive))
 	{
+		this->setWindowTitle("加载.dcm图像");
 		QFileInfo fileInfo(filename);
 		QString name = fileInfo.fileName();
 		QDateTime time1 = QDateTime::currentDateTime();
 		opendcmpicture(filename);
 		QDateTime time2 = QDateTime::currentDateTime();
 		int elapsed = time1.msecsTo(time2);
-		QMessageBox::information(this, "Message:", "Open " + name + " time:" + QString::number(elapsed) + " ms.");
+		QMessageBox::information(this, "消息:", "打开 " + name + " 耗时" + QString::number(elapsed) + " 毫秒。");
 		//qDebug() << "dcm time1:" << time1;
 		//qDebug() << "dcm time2:" << time2;
 	}
 	else
-		QMessageBox::critical(this,"critical:","Only open files in. stl,. Vtk,. DCM format!");
+		QMessageBox::critical(this,"错误:","只能打开.stl,.vtk,.dcm格式的文件");
 		return;
 }
 
@@ -518,7 +523,7 @@ void QtVtkDialog::opendcmpicture(QString filepathname)
 
 void QtVtkDialog::openexopicture(QString filepathname)
 {
-	QMessageBox::information(this, "Information Message", "Can not open .exo file !");
+	QMessageBox::information(this, "消息", "不能打开.exo文件！");
 	return;
 }
 

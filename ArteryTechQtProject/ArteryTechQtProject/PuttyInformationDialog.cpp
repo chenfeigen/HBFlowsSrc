@@ -5,7 +5,7 @@ PuttyInformationDialog::PuttyInformationDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	this->setWindowTitle("Connect Information:");
+	this->setWindowTitle("putty连接信息设置:");
 	this->setMaximumSize(290, 180);
 	this->setMinimumSize(290, 180);
 	//先给界面上的信息赋初值
@@ -71,22 +71,22 @@ void PuttyInformationDialog::ConfirmPushButtonSlot()
 	puttyInfon = new puttyInformation(this);
 	if (NULL == ui.UsernamelineEdit->text())
 	{
-		QMessageBox::information(this,"information:","User name cannot be empty! ");
+		QMessageBox::information(this,"消息:","用户名不能为空! ");
 		return;
 	}
 	if (NULL == ui.PasswordlineEdit->text())
 	{
-		QMessageBox::information(this, "information:", "Password cannot be empty! ");
+		QMessageBox::information(this, "消息:", "密码不能为空! ");
 		return;
 	}
 	if (NULL == ui.IPlineEdit->text())
 	{
-		QMessageBox::information(this, "information:", "IP cannot be empty! ");
+		QMessageBox::information(this, "消息:", "IP地址不能为空！ ");
 		return;
 	}
 	if (NULL == ui.PortlineEdit->text())
 	{
-		QMessageBox::information(this, "information:", "Port cannot be empty! ");
+		QMessageBox::information(this, "消息:", "端口号不能为空! ");
 		return;
 	}
 	puttyInfon->m_username = ui.UsernamelineEdit->text().trimmed();

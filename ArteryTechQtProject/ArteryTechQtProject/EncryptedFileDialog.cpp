@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 bool aes(char*, char*, char*, int);
+unsigned char* aes_char(char* sourcestr, char* password, int method);//2019/05/27 cfg
 void aes_detail(int[4][4], int[4][4], int);
 void subBytes(int[4][4], int);
 void shiftRows(int[4][4], int);
@@ -68,11 +69,9 @@ bool aes(char* source_path, char* des_path, char* password, int method) {
 	}
 
 	FILE *file = fopen(source_path, "rb"); //获取文件的指针
-	//qDebug() << "source_path:" << source_path;
-	//printf("source_path:", source_path);
 	if (NULL == file)
 	{
-		printf("file open fail！");
+		printf("文件打开失败！");
 		return false;
 	}
 	fseek(file, 0, SEEK_END); //移动文件的指针到文件结尾
@@ -121,6 +120,57 @@ bool aes(char* source_path, char* des_path, char* password, int method) {
 
 }
 
+
+//加密解密字符串
+//2019/5/27 cfg
+unsigned char* aes_char(char* sourcestr, char* password, int method) {
+	//将密钥转换成4*4数组
+	int p[4][4];
+	for (int m = 0; m < 4; ++m) {
+		for (int i = 0; i < 4; ++i) {
+			int indx = 4 * i + m;
+			p[i][m] = 16 * c2i(password[indx]) + c2i(password[indx + 1]);
+		}
+	}
+
+	//首先获取需要加解密字符的长度
+	int len = strlen(sourcestr);
+	// 如果文件长度不是128位（16字节）的整数倍，则补齐
+	int size = len;
+	if (len % 16 != 0) {
+		size = (len / 16 + 1) * 16;
+	}
+	//给需要加密解密的字符分配空间
+	unsigned char *content;
+	content = (unsigned char *)malloc(size);
+	memset(content, 0, size);
+	//将sourcestr内容赋值给content
+	memcpy(content, sourcestr,size);
+	//存储结果
+	unsigned char *encry;
+	encry = (unsigned char *)malloc(size);
+	memset(encry, 0, size);
+	//将文件转换成16字节的int型数组加密、解密
+	for (int i = 0; i < size / 16; ++i) {
+
+		int content_to_int[4][4];
+		for (int j = 0; j < 4; ++j) {
+			for (int k = 0; k < 4; ++k) {
+				content_to_int[j][k] = content[j * 4 + k + 16 * i];
+			}
+		}
+		aes_detail(content_to_int, p, method);
+		for (int j = 0; j < 4; ++j) {
+			for (int k = 0; k < 4; ++k) {
+				encry[j * 4 + k + 16 * i] = content_to_int[j][k];
+			}
+		}
+	}
+	//直接输出结果
+	printf("encry:", encry);
+	return encry;
+
+}
 
 void aes_detail(int content[4][4], int password[4][4], int encode) {
 	int p[11][4][4];
@@ -322,7 +372,7 @@ EncryptedFileDialog::EncryptedFileDialog(QWidget *parent)
 	ui.setupUi(this);
 	this->setMaximumSize(600, 80);
 	this->setMinimumSize(600, 80);
-	this->setWindowTitle("Encrypted File");
+	this->setWindowTitle("加密文件");
 	//QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("GBK"));
 	//ui.DecryptionPushButton->setVisible(false);
@@ -343,7 +393,7 @@ void EncryptedFileDialog::InputFilePushButtonSlot()
 
 	if (fileNameList.length() == 0)
 	{
-		QMessageBox::warning(this, "Warning", "Please select the file you want to encrypt!");
+		QMessageBox::warning(this, "警告", "请选择你需要加密的文件!");
 		return;
 	}
 	QString fileName = NULL;
@@ -363,7 +413,7 @@ void EncryptedFileDialog::EncryptionPushButtonSlot()//加密按钮槽函数
 {
 	if (NULL == ui.SourceFileLineEdit->text().trimmed())
 	{
-		QMessageBox::warning(this, "Warning", "Please input the file you want to encrypt!");
+		QMessageBox::warning(this, "警告", "请输入你需要加密的文件!");
 		return;
 	}
 	QStringList fileNameList = ui.SourceFileLineEdit->text().trimmed().split(";");
@@ -371,7 +421,7 @@ void EncryptedFileDialog::EncryptionPushButtonSlot()//加密按钮槽函数
 	//qDebug() << "fileNameList.length():" << fileNameList.length();
 	if (fileNameList.length() == 0)
 	{
-		QMessageBox::warning(this,"Warning","Please input the file you want to encrypt!");
+		QMessageBox::warning(this,"警告","请输入你需要加密的文件!");
 		return;
 	}
 
@@ -404,8 +454,8 @@ void EncryptedFileDialog::EncryptionPushButtonSlot()//加密按钮槽函数
 		if (!res)
 		{
 			QMessageBox msgBox;
-			msgBox.setText(fileNameList.at(i) + "Text file failed to open, the file can not be encrypted!");
-			msgBox.setInformativeText("Do you want to continue encrypting other files?");
+			msgBox.setText(fileNameList.at(i) + "文件打开失败，文件不能被加密!");
+			msgBox.setInformativeText("是否继续加密其它文件?");
 			msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
 			msgBox.setButtonText(2048,"Continue");
 			msgBox.setDefaultButton(QMessageBox::Save);
@@ -416,14 +466,14 @@ void EncryptedFileDialog::EncryptionPushButtonSlot()//加密按钮槽函数
 			}
 			else
 			{
-				QMessageBox::information(this, "Message:", "Encryption Fail!");
+				QMessageBox::information(this, "消息:", "加密失败!");
 				return;
 			}
 			
 		}
 	}
 
-	QMessageBox::information(this, "Message:", "Encryption Finished!");
+	QMessageBox::information(this, "消息:", "加密完成!");
 
 }
 
@@ -432,14 +482,14 @@ void EncryptedFileDialog::DecryptionPushButtonSlot()//解密按钮槽函数
 {
 	if (NULL == ui.SourceFileLineEdit->text().trimmed())
 	{
-		QMessageBox::warning(this, "Warning", "Please input the file you want to decrypt!");
+		QMessageBox::warning(this, "警告", "请输入你想解密的文件!");
 		return;
 	}
 	QStringList fileNameList = ui.SourceFileLineEdit->text().trimmed().split(";");
 
 	if (fileNameList.length() == 0)
 	{
-		QMessageBox::warning(this, "Warning", "Please input the file you want to decrypt!");
+		QMessageBox::warning(this, "警告", "请输入你想解密的文件!");
 		return;
 	}
 
@@ -472,10 +522,11 @@ void EncryptedFileDialog::DecryptionPushButtonSlot()//解密按钮槽函数
 		if (!res)
 		{
 			QMessageBox msgBox;
-			msgBox.setText(fileNameList.at(i) + "Text file failed to open, the file can not be decrypted!");
-			msgBox.setInformativeText("Do you want to continue decrypting other files?");
+			msgBox.setText(fileNameList.at(i) + "文件打开失败，该文件不能被解密!");
+			msgBox.setInformativeText("是否继续解密其他文件?");
 			msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
-			msgBox.setButtonText(2048, "Continue");
+			msgBox.setButtonText(2048, "继续");
+			msgBox.setButtonText(4194304, "取消");
 			msgBox.setDefaultButton(QMessageBox::Save);
 			int ret = msgBox.exec();
 			if (ret == 2048)
@@ -484,14 +535,96 @@ void EncryptedFileDialog::DecryptionPushButtonSlot()//解密按钮槽函数
 			}
 			else
 			{
-				QMessageBox::information(this, "Message:", "Decryption Fail!");
+				QMessageBox::information(this, "消息:", "解密失败!");
 				return;
 			}
 
 		}
 	}
 
-	QMessageBox::information(this,"Message:","Decryption Finished!");
+	QMessageBox::information(this,"消息:","解密成功!");
 }
 
 
+//plaintext为需要加密的字符串
+unsigned char* EncryptedFileDialog::EncryptionStr(QString plaintext)//加密函数,传入的参数为需要加密的明文
+{
+	int method = 1;//1表示加密， 0表示解密
+				   //待加密/解密文件存放路径
+				   //char * source_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000.dcm";
+				   // 加密/解密后文件存放路径
+				   //char *des_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000new.dcm";
+				   // 32位16进制密钥
+				   //char * password = "0f1571c947d9e8590cb7add6af7f6798";
+	char * password = "0f1829c967d9f8963bf7abd6acfedf89";
+	unsigned char* res = aes_char(plaintext.toLocal8Bit().data(), password, method);
+	return res;
+}
+
+//ciphertext为需要解密的字符串
+unsigned char*  EncryptedFileDialog::DecryptionStr(QString ciphertext)//解密函数
+{
+	int method = 0;//1表示加密， 0表示解密
+				   //待加密/解密文件存放路径
+				   //char * source_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000.dcm";
+				   // 加密/解密后文件存放路径
+				   //char *des_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000new.dcm";
+				   // 32位16进制密钥
+				   //char * password = "0f1571c947d9e8590cb7add6af7f6798";
+	char * password = "0f1829c967d9f8963bf7abd6acfedf89";
+	unsigned char* res = aes_char(ciphertext.toLocal8Bit().data(), password, method);
+	return res;
+}
+
+
+bool EncryptedFileDialog::EncryptionFile(QString fullFileName,QString outputFileName)//加密文件函数
+{
+	int method = 1;//1表示加密， 0表示解密
+				   //待加密/解密文件存放路径
+				   //char * source_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000.dcm";
+				   // 加密/解密后文件存放路径
+				   //char *des_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000new.dcm";
+				   // 32位16进制密钥
+				   //char * password = "0f1571c947d9e8590cb7add6af7f6798";
+	char * password = "0f1829c967d9f8963bf7abd6acfedf89";
+
+	QByteArray sourcePathByteArray = fullFileName.toLocal8Bit();
+	char *sourcePath = sourcePathByteArray.data();
+	QByteArray desPathByteArray = outputFileName.toLocal8Bit();
+	char *desPath = desPathByteArray.data();
+	bool res = aes(sourcePath, desPath, password, method);
+	if (!res)
+	{
+		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << fullFileName + " 加密失败！";
+		return false;
+	}
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << fullFileName + " 加密成功！";
+	return true;
+
+}
+
+
+bool EncryptedFileDialog::DecryptionFile(QString fullFileName, QString outputFileName)//解密文件函数
+{
+	int method = 0;//1表示加密， 0表示解密
+				   //待加密/解密文件存放路径
+				   //char * source_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000.dcm";
+				   // 加密/解密后文件存放路径
+				   //char *des_path = "D:/AESTest/du_yi_juan_bah_00392321_F_79y0000new.dcm";
+				   // 32位16进制密钥
+				   //char * password = "0f1571c947d9e8590cb7add6af7f6798";
+	char * password = "0f1829c967d9f8963bf7abd6acfedf89";
+
+	QByteArray sourcePathByteArray = fullFileName.toLocal8Bit();
+	char *sourcePath = sourcePathByteArray.data();
+	QByteArray desPathByteArray = outputFileName.toLocal8Bit();
+	char *desPath = desPathByteArray.data();
+	bool res = aes(sourcePath, desPath, password, method);
+	if (!res)
+	{
+		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << fullFileName + " 解密失败！";
+		return false;
+	}
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << fullFileName + " 解密成功！";
+	return true;
+}

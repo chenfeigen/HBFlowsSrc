@@ -10,11 +10,13 @@
 #include <QFile>
 #include <QIODevice>
 #include <QProcess>
+#include <windows.h>
 #include "ui_LoginInterface.h"
 #include "RegisterInterface.h"
 #include "RetrievePasswordInterface.h"
 #include "ArteryTechQtProject.h"
 #include "InstallationAlignment.h"
+#include "EncryptedFileDialog.h"
 
 class LoginInterface : public QDialog
 {
@@ -28,11 +30,16 @@ private:
 	Ui::LoginInterface ui;
 	QProcess *process;
 	InstallationAlignment *installationAlignment;
+	int m_errorCount = 0;//账号输入连续错误次数
+
 	void paintEvent(QPaintEvent *event);
 	bool CheckedLoginUserInfo();
-	bool FindInfoFromUserInfo(QString usernamePar, QString passwordPar);
+	int FindInfoFromUserInfo(QString usernamePar, QString passwordPar);
 	bool GetSerialNumber();
 	bool SaveLicenseFile(QString serialNumber);
+	bool LockAccountsStatus(QString userNamePar);//校验账号有没有被锁定。
+	void CreateLockFile();
+	void SaveLockInfo();
 	private slots:
 	//槽函数定义
 	void RetPasswordPushButtonSlot();//找回密码槽函数

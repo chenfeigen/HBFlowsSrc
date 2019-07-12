@@ -122,8 +122,8 @@ public:
         BackgroundLabel->setText(QString());
         UsernameLabel->setText(QApplication::translate("RetrievePasswordInterface", "Number\357\274\232", Q_NULLPTR));
         PasswordLabel->setText(QApplication::translate("RetrievePasswordInterface", "Password\357\274\232", Q_NULLPTR));
-        ConfirmPushButton->setText(QApplication::translate("RetrievePasswordInterface", "Confirm", Q_NULLPTR));
-        CancelPushButton->setText(QApplication::translate("RetrievePasswordInterface", "Cancel", Q_NULLPTR));
+        ConfirmPushButton->setText(QApplication::translate("RetrievePasswordInterface", "\347\241\256\345\256\232", Q_NULLPTR));
+        CancelPushButton->setText(QApplication::translate("RetrievePasswordInterface", "\345\217\226\346\266\210", Q_NULLPTR));
     } // retranslateUi
 
 };

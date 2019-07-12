@@ -13,7 +13,7 @@ AbnormalData::AbnormalData(QWidget *parent)
 	if (!ok)
 	{
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong!";
-		QMessageBox::information(this, "Error Message", "Open save file is wrong!");
+		QMessageBox::critical(this, "错误", "文件打开失败！");
 		return;
 	}
 	QTextStream out(file);
@@ -42,7 +42,7 @@ AbnormalData::AbnormalData(QString tmpFileName, QWidget *parent)
 	if (!ok)
 	{
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong!";
-		QMessageBox::information(this, "Error Message", "Open save file is wrong!");
+		QMessageBox::critical(this, "错误", "文件打开失败！");
 		return;
 	}
 	QTextStream out(file);

@@ -10,6 +10,9 @@
 #include <QFile>
 #include <QIODevice>
 #include <QDialog>
+#include <QDir>
+#include <windows.h>
+#include "EncryptedFileDialog.h"
 #include "ui_RegisterInterface.h"
 
 class RegisterInterface : public QDialog

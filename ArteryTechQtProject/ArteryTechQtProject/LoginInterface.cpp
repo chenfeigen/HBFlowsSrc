@@ -569,7 +569,7 @@ QString decode_str(char *inputstr)
 	}
 
 	QString results = outfilestr;
-	//qDebug() << "outfilestr:" << outfilestr;
+	//qDebug() << "outfilestr:" << outfilestr; 
 	return results;
 }
 /*==================================================================================
@@ -653,9 +653,11 @@ LoginInterface::LoginInterface(QWidget *parent)
 	ui.setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	this->setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
-	this->setMaximumSize(418, 295);
-	this->setMinimumSize(418, 295);
-	this->setWindowTitle("HBFLows Login");
+	this->setMaximumSize(500, 300);
+	this->setMinimumSize(500, 300);
+	ui.BackgroundLabel->setAlignment(Qt::AlignCenter);
+	ui.BackgroundLabel->setText("软件型号规格：HBFlows \n软件版本号：01.00.00\n软件发布版本号：01");
+	this->setWindowTitle("CT无创血流储备分数测量系统");
 	ui.PasswordLineEdit->setEchoMode(QLineEdit::Password);//输入的时候就显示圆点
 	bool getStatus = GetSerialNumber();
 	if (!getStatus)
@@ -669,6 +671,7 @@ LoginInterface::LoginInterface(QWidget *parent)
 		show();
 	}
 	//show();
+	ui.LoginPushButton->setFocus();
 	//信号与槽函数的连接
 	QObject::connect(ui.LoginPushButton, SIGNAL(clicked(bool)), this, SLOT(LoginPushButtonSlot()));
 	QObject::connect(ui.PasswordLineEdit, SIGNAL(returnPressed()), this, SLOT(LoginPushButtonSlot()));
@@ -696,7 +699,7 @@ void LoginInterface::RetPasswordPushButtonSlot()//找回密码槽函数
 void LoginInterface::RegisterPushButtonSlot()//注册槽函数
 {
 	RegisterInterface *registerInterface = new RegisterInterface();
-	QMessageBox::information(this,"Information","Register Account");
+	QMessageBox::information(this,"消息","注册账号！");
 	registerInterface->show();
 	//QObject::connect(registerInterface, SIGNAL(registerSignal()), this, SLOT(getRegisterSignal()));
 }
@@ -708,12 +711,20 @@ void LoginInterface::LoginPushButtonSlot()
 	if (checkStatus)
 	{
 		//数据库链接成功，下面判断用户名和密码是否在数据库表中
-		QString username = ui.UsernameLineEdit->text();
-		QString password = ui.PasswordLineEdit->text();
-		bool findStatus = FindInfoFromUserInfo(username, password);//从用户信息表文件中查找信息
-		if (findStatus)
+		QString username = ui.UsernameLineEdit->text().trimmed();
+		QString password = ui.PasswordLineEdit->text().trimmed();
+		//需要先验证账号是否已被锁定进行校验
+		bool lockStatus = LockAccountsStatus(username);
+		if (lockStatus)
 		{
-			QMessageBox::information(this, "Message:", "Congratulations on your successful login.");
+			QMessageBox::warning(this, "警告:", "您的账号已被锁。\n如需解锁，请联系软件厂商，厂商电话：057185165173！");
+			return;
+		}
+		int findStatus = FindInfoFromUserInfo(username, password);//从用户信息表文件中查找信息
+		if (findStatus == 0)
+		{
+			m_errorCount = 0;
+			QMessageBox::information(this, "消息:", "恭喜你登录成功！");
 			//创建用户名时间文件
 			QString timeStr = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
 			QString accoutStr = ui.UsernameLineEdit->text().trimmed();
@@ -722,7 +733,7 @@ void LoginInterface::LoginPushButtonSlot()
 			bool tmpFileOpen = tmpFile.open(QIODevice::WriteOnly | QIODevice::Text);
 			if (!tmpFileOpen)
 			{
-				QMessageBox::information(this, "Message:", "Temporary File Creation Failed!");
+				QMessageBox::information(this, "消息:", "临时文件创建失败！");
 				return;
 			}
 			tmpFile.close();
@@ -733,23 +744,60 @@ void LoginInterface::LoginPushButtonSlot()
 			//发送登录成功的信号
 			//sendLoginSuccessSignal();
 		}
+		else if(findStatus == 3)
+		{
+			//判断登录次数是不是大于5次，如果是的，直接锁死文件
+			if (m_errorCount < 5)
+			{
+				m_errorCount++;
+				int residualTimes = 5 - m_errorCount;
+				QMessageBox::information(this, "消息：", "您的账号密码在连续输入" + QString::number(residualTimes) + "次错误之后，会被锁定。\n请确定密码正确之后慎重操作！");
+				return;
+			}
+			else
+			{
+				QMessageBox::warning(this, "警告:", "由于您连续输入密码的错误次数过多，您的登录账号已被锁。\n如需解锁，请联系软件厂商，厂商电话：057185165173！");
+				//将需要锁定的账号信息写入到文件
+				CreateLockFile();
+				return;
+			}
+		}
+		else
+		{
+			//拓展功能
+			m_errorCount = 0;
+			return;
+		}
 	}
 }
 
 bool LoginInterface::CheckedLoginUserInfo()
 {
-	QString userName = ui.UsernameLineEdit->text();
-	QString password = ui.PasswordLineEdit->text();
+	QString userName = ui.UsernameLineEdit->text().trimmed();
+	QString password = ui.PasswordLineEdit->text().trimmed();
 	if (userName == NULL)
 	{
 		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Input account number cannot be empty, please re-enter!";
-		QMessageBox::information(this, "Message:", "Input account number cannot be empty, please re-enter!");
+		QMessageBox::warning(this, "警告:", "输入的账号不能为空, 请重新输入！");
 		return false;
 	}
 	if (password == NULL)
 	{
 		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Enter the password can not be empty, please re-enter!";
-		QMessageBox::information(this, "Message:", "Enter the password can not be empty, please re-enter!");
+		QMessageBox::warning(this, "警告:", "输入的密码不能为空，请重新输入！");
+		return false;
+	}
+	if (password.length() < 8)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Enter the password can not be empty, please re-enter!";
+		QMessageBox::warning(this, "警告:", "密码长度不能小于8位，请重新输入！");
+		return false;
+	}
+
+	if (userName.compare(password) == 0)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "登录时账号和密码一致!";
+		QMessageBox::warning(this, "警告:", "账号和密码不能一致，请重新输入！");
 		return false;
 	}
 	int userNamelength = userName.length();
@@ -766,7 +814,7 @@ bool LoginInterface::CheckedLoginUserInfo()
 			else
 			{
 				qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account cannot have special characters except numbers and characters. Please re-enter!";
-				QMessageBox::information(this, "Message:", "Account cannot have special characters except numbers and characters. Please re-enter!");
+				QMessageBox::warning(this, "警告:", "账号不能包含除数字和字母以外的其他特殊字符，请重新输入！");
 				return false;
 			}
 		}
@@ -774,29 +822,65 @@ bool LoginInterface::CheckedLoginUserInfo()
 	else
 	{
 		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account length can not exceed 20 characters, password length can not exceed 30 characters, please re-enter!";
-		QMessageBox::information(this, "Message:", "Account length can not exceed 20 characters, password length can not exceed 30 characters, please re-enter!");
+		QMessageBox::warning(this, "警告:", "账号长度不能超过20个字符，密码长度不能超过30个字符，请重新输入！");
 		return false;
 	}
 	return true;
 }
 
-bool LoginInterface::FindInfoFromUserInfo(QString usernamePar, QString passwordPar)
+/*
+函数名：FindInfoFromUserInfo
+参数：QString usernamePar, QString passwordPar
+功能：查找用户名，确定用户名和密码是否正确
+返回值为int
+	0 用户名和密码正确，登录成功。
+	1 账号没有被注册
+	2 用户信息文件解密出现了BUG
+	3 密码输入不正确，用来判断密码的错误次数
+	4 临时文件打开失败
+*/
+int LoginInterface::FindInfoFromUserInfo(QString usernamePar, QString passwordPar)
 {
-	QString filename = "userInfo.db";
-	QFile file(filename);
+	//登录序列码验证的时候，需要先将隐藏的信息文件userInfo.db解密，解密成临时文件userInfo.db
+	QString qstrpath = QDir::currentPath();
+	QString qstrUserInfo = qstrpath + QString("/UserInfo/userInfo.db");
+	QString temporaryFile = "userInfo.db";
+	EncryptedFileDialog *encryptedFileDialog = new EncryptedFileDialog(this);
 
-	bool openStatus = file.open(QIODevice::ReadOnly | QIODevice::Text);
+	//先判断音场的信息文件时否存在，如果不存在，说明还没有注册过账号
+	QFile userFile(qstrUserInfo);
+	bool existStatus = userFile.exists(qstrUserInfo);
+	if (!existStatus)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "第一次使用系统，还没有注册过账号！";
+		QMessageBox::information(this, "消息:", "账号没有被注册，请先注册之后再登录！");
+		return 1;
+	}
+	//对文件进行解密，生成临时文件
+	bool decryptionStatus = encryptedFileDialog->DecryptionFile(qstrUserInfo, temporaryFile);
+	if (!decryptionStatus)
+	{
+		//解密失败，可能时解密程序有问题，需联系官方解决bug
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "用户信息文件解密失败，无法登录系统！";
+		QMessageBox::information(this, "消息:", "软件登录有误，请反馈厂商解决\n厂商电话：057185165173");
+		return 2;
+	}
+
+	//解密成功，操作临时文件
+	QFile tmpfile(temporaryFile);
+
+	bool openStatus = tmpfile.open(QIODevice::ReadOnly | QIODevice::Text);
 	if (!openStatus)
 	{
-		QMessageBox::information(this, "Massage:", "Account not registered, login failed.");
-		return false;
+		QMessageBox::information(this, "消息:", "账号没有被注册，请重新登陆！");
+		return 4;
 	}
 	QString fileContent = NULL;
 	QString username = NULL;
 	QString password = NULL;
-	while (!file.atEnd())
+	while (!tmpfile.atEnd())
 	{
-		fileContent = file.readLine();
+		fileContent = tmpfile.readLine();
 		if (NULL == fileContent.trimmed())
 		{
 			continue;
@@ -807,12 +891,16 @@ bool LoginInterface::FindInfoFromUserInfo(QString usernamePar, QString passwordP
 		{
 			if (password.compare(passwordPar.trimmed()) == 0)
 			{
-				return true;
+				tmpfile.close();
+				remove(temporaryFile.toStdString().c_str());
+				return 0;
 			}
 			else
 			{
-				QMessageBox::information(this, "Message:", "The password you entered is incorrect. Please re-enter it!");
-				return false;
+				QMessageBox::information(this, "消息:", "密码输入不正确，请重新输入！");
+				tmpfile.close();
+				remove(temporaryFile.toStdString().c_str());
+				return 3;
 			}
 		}
 		else
@@ -820,11 +908,125 @@ bool LoginInterface::FindInfoFromUserInfo(QString usernamePar, QString passwordP
 			continue;
 		}
 	}
-	QMessageBox::information(this, "Message:", "The account entered is incorrect. Please re-enter it!");
-	return false;
+	tmpfile.close();
+	remove(temporaryFile.toStdString().c_str());
+	QMessageBox::information(this, "消息:", "账号没有被注册，请重新输入！");
+	return 1;
 }
 
+bool LoginInterface::GetSerialNumber()
+{
+	//把加密字符串进行解密，然后与serialnumber进行比较看是不是完全相同
+	//获取机器序列码
+	QString runPath = QCoreApplication::applicationDirPath();
+	QString filepath = runPath + "/license.lic";
+	this->process = new QProcess(this);
+	process->start("wmic bios get serialnumber");
+	process->waitForFinished();
+	QByteArray output = process->readAllStandardOutput();
+	QString serialnumberstr = output;
+	//qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "serialnumberstr:" << serialnumberstr;
+	QStringList serialnumberlist = serialnumberstr.split("\n");
+	QString serialnumber = "serialnumber:" + serialnumberlist.at(1).trimmed();
+	qDebug() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "serialnumber:" << serialnumber;
+	//qDebug() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "encrypt_str after str:" << encrypt_str(serialnumber.toLocal8Bit().data());
+	//QFile licfile("license.lic");
+	QFile licfile(filepath);
+	bool ok = licfile.exists();
+	if (ok)
+	{
+		//可读打开该软件
+		ok = licfile.open(QIODevice::ReadOnly | QIODevice::Text);
+		if (!ok)
+		{
+			qCritical() << "授权文件打开失败，授权失败！";
+			QMessageBox::critical(this, "Critical", "授权文件打开失败，授权失败！");
+			return false;
+		}
+		else
+		{
+			QByteArray readfileByte = licfile.readAll();//全部读取文件的内容
+			qDebug() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "readfileByte:" << readfileByte;
+			licfile.close();
+			//先对读到的字符串进行解密，readFileDecodestr解密之后的字符串
+			//将文件内容进行解密
+			QString readFileDecodestr = decode_str(readfileByte.data());
+			//qDebug() << "解密之后的字符串:" << readFileDecodestr;
 
+			//获取当前时间
+			QDateTime currentTime = QDateTime::currentDateTime();
+			QString currentTimeStr = currentTime.toString("yyyyMMdd");
+			int IntcurrentTime = currentTimeStr.toInt();
+			//qDebug() << "当前时间:" << IntcurrentTime;
+			//将解密之后的序列码分解成几个部分，注册时间，电脑序列码，到期时间
+			QString startTimeStr = readFileDecodestr.split("|").at(0);//注册时间
+			if (!startTimeStr.startsWith("start:"))
+			{
+				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经被修改，授权验证失败！";
+				QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
+				return false;
+			}
+			else
+			{
+				//如果当前的时间小于注册时间，则认为文件已经被修改了
+				int IntStartTime = startTimeStr.split(":").at(1).toInt();
+				if (IntcurrentTime < IntStartTime)
+				{
+					qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经被修改，授权验证失败！";
+					QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
+					return false;
+				}
+			}
+			//qDebug() << "注册时间：" << startTimeStr;
+
+			QString inputSerialNumber = readFileDecodestr.split("|").at(1);//解密字符串中的序列码
+			if (!inputSerialNumber.startsWith("serialnumber:"))
+			{
+				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经被修改，授权验证失败！";
+				QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
+				return false;
+			}
+			else if (inputSerialNumber.compare(serialnumber) != 0)
+			{
+				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经被修改，授权验证失败！";
+				QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
+				return false;
+			}
+			//qDebug() << "解密字符串中的序列码：" << inputSerialNumber;
+
+			QString endTimeStr = readFileDecodestr.split("|").at(2);//到期时间
+			if (!endTimeStr.endsWith(":end"))
+			{
+				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经被修改，授权验证失败！";
+				QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
+				return false;
+			}
+			else
+			{
+				int IntEndTime = endTimeStr.split(":").at(0).toInt();
+				int diffTime = IntEndTime - IntcurrentTime;//时间差
+														   //qDebug() << "时间差：" << diffTime;
+				if (diffTime < 0)
+				{
+					QMessageBox::critical(this, "错误", "对不起，授权文件已经到期，软件不能继续使用！请联系官方续费！");
+					return false;
+				}
+				if (diffTime <= 30)
+				{
+					QMessageBox::information(this, "警告", "软件还有 " + QString::number(diffTime) + " 天到期，请联系官方进行续费！");
+				}
+			}
+			//qDebug() << "到期时间：" << endTimeStr;
+		}
+	}
+	else
+	{
+		return false;
+	}
+	return true;
+}
+
+#if 0
 bool LoginInterface::GetSerialNumber()
 {
 	//把加密字符串进行解密，然后与serialnumber进行比较看是不是完全相同
@@ -851,7 +1053,7 @@ bool LoginInterface::GetSerialNumber()
 		if (!ok)
 		{
 			qCritical() << "license.lic file open fail !";
-			QMessageBox::information(this, "Critical", "license.lic file open fail !");
+			QMessageBox::critical(this, "Critical", "license.lic 文件打开失败！");
 			return false;
 		}
 		else
@@ -886,7 +1088,7 @@ bool LoginInterface::GetSerialNumber()
 					else
 					{
 						qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The license file has been modified to render the program unavailable !";
-						QMessageBox::information(this, "Fatal", "The license file has been modified to render the program unavailable !");
+						QMessageBox::critical(this, "错误：", "授权文件已经被修改，授权验证失败！");
 						licfile.close();
 						return false;
 					}
@@ -904,20 +1106,20 @@ bool LoginInterface::GetSerialNumber()
 					if (timeDiff < 0)
 					{
 						qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Sorry, the license of this software has expired and can't continue to use.";
-						QMessageBox::information(this, "warning", "Sorry, the license of this software has expired and can't continue to use.");
+						QMessageBox::critical(this, "错误：", "对不起，授权文件已经到期，软件不能继续使用！请联系官方续费！");
 						return false;
 					}
 					if (timeDiff < 30)
 					{
 						//提示软件还有timeDiff多天到期，请联系官方进行续期
-						QMessageBox::information(this, "warning", "The software still has " + QString::number(timeDiff) + " days to expire. Please contact the official for renewal.");
+						QMessageBox::warning(this, "警告：", "软件还有  " + QString::number(timeDiff) + " 天到期，请联系官方进行续费。");
 					}
 					break;
 				}
 				else
 				{
 					qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The license file has been modified to render the program unavailable !";
-					QMessageBox::information(this, "Fatal", "The license file has been modified to render the program unavailable !");
+					QMessageBox::critical(this, "错误：", "授权文件已经被修改，授权验证失败！");
 					licfile.close();
 					return false;
 				}
@@ -932,7 +1134,7 @@ bool LoginInterface::GetSerialNumber()
 	}
 	return true;
 }
-
+#endif
 void LoginInterface::GetInstallationAlignmentSlot(QString serialNumber)
 {
 	bool saveStatus = SaveLicenseFile(serialNumber);
@@ -948,7 +1150,92 @@ void LoginInterface::GetInstallationAlignmentSlot(QString serialNumber)
 		installationAlignment->close();
 	}
 }
-#if 1
+
+
+//按注册按钮会进行注册
+/******************************************************************************
+函数名：saveLicenseFile
+参数：QString serialNumber 序列号
+返回值：bool
+功能：更具输入的序列号，然后判断是否正确，正确生成license文件
+步骤：
+1.先执行wmic bios get serialnumber命令获取本机的序列号serialnumberstr，获取的是未加密的序列号SerialNumber\nM705URC8\n
+2.将serialnumberstr用\n分解，然后与serialnumber:字符串拼接成加密文件中的加密的序列号serialnumber
+3.先判断licence文件是否存在，如果存在则判断是否正确，如果不存在，则生成license文件
+******************************************************************************/
+bool LoginInterface::SaveLicenseFile(QString ParamSerialNumber)
+{
+	qDebug() << "参数传入的序列码：" << ParamSerialNumber;
+	//把加密字符串进行解密，然后与serialnumber进行比较看是不是完全相同
+	//获取机器序列码
+	QString runPath = QCoreApplication::applicationDirPath();
+	QString filepath = runPath + "/license.lic";
+	this->process = new QProcess(this);
+	process->start("wmic bios get serialnumber");
+	process->waitForFinished();
+	QByteArray output = process->readAllStandardOutput();
+	QString serialnumberstr = output;
+	QStringList serialnumberlist = serialnumberstr.split("\n");
+	QString serialnumber = "serialnumber:" + serialnumberlist.at(1).trimmed();//获取安装电脑的序列码
+	qDebug() << "安装电脑的序列码：" << serialnumber;
+	QFile licfile(filepath);
+	bool ok = licfile.exists();
+	if (ok)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "授权文件已经存在，再次授权！";
+	}
+	//如果验证文件不存在，说明是首次注册则需要输入序列码进行验证
+	//将参数传入的序列码赋值给lineEditstr
+	QString lineEditstr = ParamSerialNumber;
+	//qDebug() << "参数传入的序列码2：" << lineEditstr;
+	//qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "lineEditstr:" << lineEditstr;
+	QString decode_str1 = decode_str(lineEditstr.toLocal8Bit().data());
+	//qDebug() << "解密之后的参数传入的序列码decode_str1:" << decode_str1;
+	//将解密之后的序列码分解成几个部分，注册时间，电脑序列码，到期时间
+	QString startTimeStr = decode_str1.split("|").at(0);//注册时间
+														//qDebug() << "注册时间：" << startTimeStr;
+	QString inputSerialNumber = decode_str1.split("|").at(1);//解密字符串中的序列码
+															 //qDebug() << "解密字符串中的序列码：" << inputSerialNumber;
+	QString endTimeStr = decode_str1.split("|").at(2);//到期时间
+													  //qDebug() << "到期时间：" << inputSerialNumber;
+	if (serialnumber.compare(inputSerialNumber) == 0)
+	{
+		//序列号验证成功，将序列号写入到文件
+		//QFile *licenseFile = new QFile(filepath);
+		QFile *licenseFile = new QFile(filepath);//"D:\\license.lic"
+		bool openWriteStatus = licenseFile->open(QIODevice::WriteOnly | QIODevice::Text);//WriteOnly不行，ReadWrite也不行
+		if (!openWriteStatus)
+		{
+			//QMessageBox::information(this, "information:", filepath + licenseFile->errorString());
+			qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "license.lic file creat fail !";
+			QMessageBox::information(this, "消息", "授权文件创建失败！");
+			return false;
+		}
+		else
+		{
+			licenseFile->write(lineEditstr.toStdString().c_str(), lineEditstr.length());
+			//licenseFile->write(DueTimeText.toStdString().c_str(), DueTimeText.length());
+			licfile.waitForBytesWritten(500);
+			licenseFile->close();
+
+			//隐藏注册界面
+			//displayUi(true);
+
+			qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Register successfully, thank you for using the genuine software, welcome to use!";
+			QMessageBox::information(this, "消息", "注册成功，多谢您使用正版的软件，欢迎使用！");
+			return true;
+		}
+	}
+
+	else
+	{
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Registration is unsuccessful, please contact the official to obtain the serial number, thank you for supporting the genuine software!";
+		QMessageBox::information(this, "警告：", "注册失败，请联系官方获取正确的序列码，多谢支持正版软件！");
+		return false;
+	}
+}
+
+#if 0
 //按注册按钮会进行注册
 /******************************************************************************
 函数名：saveLicenseFile
@@ -982,7 +1269,7 @@ bool LoginInterface::SaveLicenseFile(QString serialNumber)
 		if (!ok)
 		{
 			qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "license.lic file open fail !";
-			QMessageBox::information(this, "Critical", "license.lic file open fail !");
+			QMessageBox::information(this, "错误", "授权文件打开失败！");
 			return false;
 		}
 		else
@@ -1015,7 +1302,7 @@ bool LoginInterface::SaveLicenseFile(QString serialNumber)
 					else
 					{
 						//qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The license file has been modified to render the program unavailable !";
-						QMessageBox::information(this, "Fatal", "The license file has been modified to render the program unavailable !");
+						QMessageBox::critical(this, "错误：", "授权文件已经被修改，授权验证失败！");
 						licfile.close();
 						return false;
 					}
@@ -1033,20 +1320,20 @@ bool LoginInterface::SaveLicenseFile(QString serialNumber)
 					if (timeDiff < 0)
 					{
 						qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Sorry, the license of this software has expired and can't continue to use.";
-						QMessageBox::information(this, "warning", "Sorry, the license of this software has expired and can't continue to use.");
+						QMessageBox::information(this, "警告：", "对不起，授权文件已经到期，软件不能继续使用！请联系官方续费！");
 						return false;
 					}
 					if (timeDiff < 30)
 					{
 						//提示软件还有timeDiff多天到期，请联系官方进行续期
-						QMessageBox::information(this, "warning", "The software still has " + QString::number(timeDiff) + " days to expire. Please contact the official for renewal.");
+						QMessageBox::information(this, "警告", "软件还有 " + QString::number(timeDiff) + " 天到期，请联系官方进行续费！");
 					}
 					break;
 				}
 				else
 				{
 					qCritical() << "The license file has been modified to render the program unavailable !";
-					QMessageBox::information(this, "Fatal", "The license file has been modified to render the program unavailable !");
+					QMessageBox::critical(this, "错误", "授权文件已经被修改，授权验证失败！");
 					licfile.close();
 					return false;
 				}
@@ -1074,7 +1361,7 @@ bool LoginInterface::SaveLicenseFile(QString serialNumber)
 			{
 				//QMessageBox::information(this, "information:", filepath + licenseFile->errorString());
 				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "license.lic file creat fail !";
-				QMessageBox::information(this, "Critical", "license.lic file creat fail !");
+				QMessageBox::information(this, "消息", "授权文件创建失败！");
 				return false;
 			}
 			else
@@ -1104,16 +1391,112 @@ bool LoginInterface::SaveLicenseFile(QString serialNumber)
 				//displayUi(true);
 
 				qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Register successfully, thank you for using the genuine software, welcome to use!";
-				QMessageBox::information(this, "information", "Register successfully, thank you for using the genuine software, welcome to use!");
+				QMessageBox::information(this, "消息", "注册成功，多谢您使用正版的软件，欢迎使用！");
 				return true;
 			}
 		}
 		else
 		{
 			qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Registration is unsuccessful, please contact the official to obtain the serial number, thank you for supporting the genuine software!";
-			QMessageBox::information(this, "Warning", "Registration is unsuccessful, please contact the official to obtain the serial number, thank you for supporting the genuine software!");
+			QMessageBox::information(this, "警告：", "注册失败，请联系官方获取正确的序列码，多谢支持正版软件！");
 			return false;
 		}
 	}
 }
 #endif
+
+bool LoginInterface::LockAccountsStatus(QString userNamePar)
+{
+	QString qstrpath = QDir::currentPath();
+	QString qstrFilePathFileName = qstrpath + QString("/LockUserInfo/") + ui.UsernameLineEdit->text().trimmed() + ".db";
+	QFile lockFile(qstrFilePathFileName);
+	if (!lockFile.exists())//如果文件不存在,说明文件没有被锁
+	{
+		return false;
+	}
+	EncryptedFileDialog *encryptedFileDialog = new EncryptedFileDialog(this);
+	bool decryptionStatus= encryptedFileDialog->DecryptionFile(qstrFilePathFileName, "temporaryFile");
+	if (decryptionStatus)
+	{
+		//加密文件解密成功
+		QFile file("temporaryFile");
+		bool openStatus = file.open(QIODevice::ReadOnly | QIODevice::Text);
+		if (!openStatus)
+		{
+			qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "temporaryFile file open fail!";
+			return false;
+		}
+		QString fileContext = file.readLine();
+		QString lockStatu = fileContext.split("|").at(2);
+		if (lockStatu.compare("0") == 0)
+		{
+			qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "lock flag : " + lockStatu;
+			remove("temporaryFile");
+			return false;
+		}
+		else
+		{
+			qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "lock flag : " + lockStatu;
+			remove("temporaryFile");
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+//先创建一个名为LockUserInfo的隐藏文件夹，然后将信息保存在对应的文件里面
+void LoginInterface::CreateLockFile()
+{
+	// 获取当前的路径
+	QString qstrpath = QDir::currentPath();
+	QString qstrFilePathHide = qstrpath + QString("/LockUserInfo");
+	// 这个文件夹需要隐藏
+	QDir dir_path_hide(qstrFilePathHide);
+	if (!dir_path_hide.exists())
+	{
+		dir_path_hide.mkdir(qstrFilePathHide);
+		//如果文件夹创建成功，将内容写入到文件
+		SaveLockInfo();
+	}
+	// windows API需要将 QString 转化为 LPCWSTR
+	// 将文件夹设置为隐藏
+	SetFileAttributes((LPCWSTR)qstrFilePathHide.unicode(), FILE_ATTRIBUTE_HIDDEN);
+	SaveLockInfo();
+}
+
+void LoginInterface::SaveLockInfo()
+{
+	QString qstrpath = QDir::currentPath();
+	QString qstrFilePathFileName = qstrpath + QString("/LockUserInfo/") + ui.UsernameLineEdit->text().trimmed() + ".db";
+	QFile file("temporaryFile");
+	bool openStatus = file.open(QIODevice::WriteOnly | QIODevice::Text);
+	if (!openStatus)
+	{
+		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Lock file write fail!";
+		return;
+	}
+
+	EncryptedFileDialog *encryptedFileDialog = new EncryptedFileDialog(this);
+	QString timeStr = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	//需要加密的字符
+	QString plaintext = ui.UsernameLineEdit->text().trimmed() + "|" + ui.PasswordLineEdit->text().trimmed() + "|1|" + timeStr;
+	//QMessageBox::information(this,"内容:", plaintext);
+	file.write(plaintext.toStdString().c_str());
+
+	file.close();
+	//将文件进行加密
+	bool encryptedStatus = encryptedFileDialog->EncryptionFile("temporaryFile", qstrFilePathFileName);
+	if (encryptedStatus)
+	{
+		remove("temporaryFile");
+	}
+
+	//encryptedFileDialog->DecryptionFile(qstrFilePathFileName,"testcfg2.txt");
+	//将文件进行解密
+	//将加密字符用解密方法解密然后显示
+	SetFileAttributes((LPCWSTR)qstrFilePathFileName.unicode(), FILE_ATTRIBUTE_HIDDEN);
+}

@@ -54,7 +54,7 @@
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>SerialNumber:</string>
+              <string>序列码:</string>
              </property>
             </widget>
            </item>
@@ -81,7 +81,7 @@
            <item>
             <widget class="QPushButton" name="pushButton">
              <property name="text">
-              <string>OK</string>
+              <string>确定</string>
              </property>
             </widget>
            </item>

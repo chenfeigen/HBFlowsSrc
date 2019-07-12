@@ -13,11 +13,16 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -46,6 +51,14 @@ public:
     QAction *actionPutty;
     QAction *actionadd_username;
     QWidget *centralWidget;
+    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QLabel *label;
+    QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,7 +67,7 @@ public:
     {
         if (ArteryTechQtProjectClass->objectName().isEmpty())
             ArteryTechQtProjectClass->setObjectName(QStringLiteral("ArteryTechQtProjectClass"));
-        ArteryTechQtProjectClass->resize(623, 629);
+        ArteryTechQtProjectClass->resize(623, 710);
         QIcon icon;
         icon.addFile(QStringLiteral(":/new/prefix1/images/ArteryTech.ico"), QSize(), QIcon::Normal, QIcon::Off);
         ArteryTechQtProjectClass->setWindowIcon(icon);
@@ -102,6 +115,46 @@ public:
         actionadd_username->setObjectName(QStringLiteral("actionadd_username"));
         centralWidget = new QWidget(ArteryTechQtProjectClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        verticalLayout_2 = new QVBoxLayout(centralWidget);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        horizontalLayout->addWidget(label);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setAutoDefault(false);
+        pushButton->setFlat(false);
+
+        horizontalLayout->addWidget(pushButton);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+
+        verticalLayout_2->addLayout(verticalLayout);
+
         ArteryTechQtProjectClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ArteryTechQtProjectClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -115,6 +168,9 @@ public:
         ArteryTechQtProjectClass->setStatusBar(statusBar);
 
         retranslateUi(ArteryTechQtProjectClass);
+
+        pushButton->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(ArteryTechQtProjectClass);
     } // setupUi
@@ -142,6 +198,8 @@ public:
         actionCompute->setText(QApplication::translate("ArteryTechQtProjectClass", "Compute", Q_NULLPTR));
         actionPutty->setText(QApplication::translate("ArteryTechQtProjectClass", "Open Putty", Q_NULLPTR));
         actionadd_username->setText(QApplication::translate("ArteryTechQtProjectClass", "add username", Q_NULLPTR));
+        label->setText(QApplication::translate("ArteryTechQtProjectClass", "text", Q_NULLPTR));
+        pushButton->setText(QString());
     } // retranslateUi
 
 };

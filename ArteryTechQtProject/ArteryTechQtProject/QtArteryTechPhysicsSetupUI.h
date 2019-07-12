@@ -9,7 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
-#include "QtArteryTechBoundarySetupUI.h"
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechPhysicsSetupUI; };
 
@@ -31,15 +31,28 @@ private:
 	QCheckBox *fixedMeshCheckBox;
 	QCheckBox *zeroInitialCheckBox;
 	QString m_tmpFileName = NULL;
+	int m_boundaryType = 1;
 
 	void closeEvent(QCloseEvent *event);
 	void InitPhysicsData();
 	void SavePhysicsData();
+	int isDigitStr(QString str);
 
 private slots:
 	void OkPushButtonSlots();
 	void CancelPushButtonSlots();
-
+	void TotalResistanceLineEditSlot();
+	void PdForWK3LineEditSlot();
+	void P0ForWK3LineEditSlot();
+	void FluidViscosityLineEditSlot();
+	void FluidDensityLineEditSlot();
+	void TimeDiscretizationMethodLineEditSlot();
+	void InitialTimeLineEditSlot();
+	void FinalTimeLineEditSlot();
+	void TimeStepSizeLineEditSlot();
+	void PeriodLineEditSlot();
+	void InletVelocityLineEditSlot();
+	void GetBoundaryTypeSlot(QString boundaryTypeText);
 private:
 	Ui::QtArteryTechPhysicsSetupUI *ui;
 };

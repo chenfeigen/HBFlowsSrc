@@ -7,9 +7,9 @@ QtArteryTechOutputSetupUI::QtArteryTechOutputSetupUI(QWidget *parent)
 	ui = new Ui::QtArteryTechOutputSetupUI();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setMinimumSize(299, 409);
-	this->setMaximumSize(299, 409);
-	this->setWindowTitle("Output Setup");
+	this->setMinimumSize(730, 350);
+	this->setMaximumSize(730, 350);
+	this->setWindowTitle("结果输出设置");
 
 	this->showPartitionBasicCheckBox = new QCheckBox;
 	this->basicGridOutputCheckBox = new QCheckBox;
@@ -26,6 +26,8 @@ QtArteryTechOutputSetupUI::QtArteryTechOutputSetupUI(QWidget *parent)
 	//SaveOutputData();
 
 	//信号与槽链接
+	QObject::connect(ui->NumberOfStepsForOutputLineEdit, SIGNAL(editingFinished()), this, SLOT(NumberOfStepsForOutputLineEditSlot()));
+	QObject::connect(ui->TimeIntervalForOutputLineEdit, SIGNAL(editingFinished()), this, SLOT(TimeIntervalForOutputLineEditSlot()));
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked()), this, SLOT(OkPushButtonSlots()));
 	QObject::connect(ui->CancelPushButton, SIGNAL(clicked()), this, SLOT(CancelPushButtonSlots()));
 }
@@ -37,9 +39,9 @@ QtArteryTechOutputSetupUI::QtArteryTechOutputSetupUI(QString tmpFileName, QWidge
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	m_tmpFileName = tmpFileName;
-	this->setMinimumSize(299, 409);
-	this->setMaximumSize(299, 409);
-	this->setWindowTitle("Output Setup");
+	this->setMinimumSize(730, 350);
+	this->setMaximumSize(730, 350);
+	this->setWindowTitle("结果输出设置");
 
 	this->showPartitionBasicCheckBox = new QCheckBox;
 	this->basicGridOutputCheckBox = new QCheckBox;
@@ -56,6 +58,8 @@ QtArteryTechOutputSetupUI::QtArteryTechOutputSetupUI(QString tmpFileName, QWidge
 	//SaveOutputData();
 
 	//信号与槽链接
+	QObject::connect(ui->NumberOfStepsForOutputLineEdit, SIGNAL(editingFinished()), this, SLOT(NumberOfStepsForOutputLineEditSlot()));
+	QObject::connect(ui->TimeIntervalForOutputLineEdit, SIGNAL(editingFinished()), this, SLOT(TimeIntervalForOutputLineEditSlot()));
 	QObject::connect(ui->OkPushButton, SIGNAL(clicked()), this, SLOT(OkPushButtonSlots()));
 	QObject::connect(ui->CancelPushButton, SIGNAL(clicked()), this, SLOT(CancelPushButtonSlots()));
 }
@@ -70,16 +74,16 @@ void QtArteryTechOutputSetupUI::InitOutputData()
 	ui->FlowRateMonitorFileLineEdit->setText(NULL);
 	ui->SolutionOutputFileLineEdit->setText(NULL);
 	ui->ShowSubdomainMeshDataLineEdit->setText(NULL);
-	ui->ShowSubdomainMeshDataLabel->setVisible(false);
+	ui->ShowSubdomainMeshDataLabel->setVisible(true);
 	ui->ShowSubdomainMeshDataLineEdit->setVisible(false);
 	ui->ShowMeshDataLineEdit->setText(NULL);
-	ui->ShowMeshDataLabel->setVisible(false);
+	ui->ShowMeshDataLabel->setVisible(true);
 	ui->ShowMeshDataLineEdit->setVisible(false);
 	ui->ShowSolutionLineEdit->setText(NULL);
-	ui->ShowSolutionLabel->setVisible(false);
+	ui->ShowSolutionLabel->setVisible(true);
 	ui->ShowSolutionLineEdit->setVisible(false);
 	ui->MonitorResidualLineEdit->setText(NULL);
-	ui->MonitorResidualLabel->setVisible(false);
+	ui->MonitorResidualLabel->setVisible(true);
 	ui->MonitorResidualLineEdit->setVisible(false);
 
 	this->ui->horizontalLayout_8->addWidget(this->showPartitionBasicCheckBox);
@@ -101,16 +105,16 @@ void QtArteryTechOutputSetupUI::InitOutputData()
 	ui->FlowRateMonitorFileLineEdit->setText("./resultsA/bloodflowmonitor.txt");
 	ui->SolutionOutputFileLineEdit->setText("./resultsA/solution");
 	ui->ShowSubdomainMeshDataLineEdit->setText(NULL);
-	ui->ShowSubdomainMeshDataLabel->setVisible(false);
+	ui->ShowSubdomainMeshDataLabel->setVisible(true);
 	ui->ShowSubdomainMeshDataLineEdit->setVisible(false);
 	ui->ShowMeshDataLineEdit->setText(NULL);
-	ui->ShowMeshDataLabel->setVisible(false);
+	ui->ShowMeshDataLabel->setVisible(true);
 	ui->ShowMeshDataLineEdit->setVisible(false);
 	ui->ShowSolutionLineEdit->setText(NULL);
-	ui->ShowSolutionLabel->setVisible(false);
+	ui->ShowSolutionLabel->setVisible(true);
 	ui->ShowSolutionLineEdit->setVisible(false);
 	ui->MonitorResidualLineEdit->setText(NULL);
-	ui->MonitorResidualLabel->setVisible(false);
+	ui->MonitorResidualLabel->setVisible(true);
 	ui->MonitorResidualLineEdit->setVisible(false);
 
 	this->ui->horizontalLayout_8->addWidget(this->ShowPartitionBasicCheckBox);
@@ -140,43 +144,43 @@ void QtArteryTechOutputSetupUI::SaveOutputData()
 	QString Menustr = "#Output Setup\n";
 	this->outputDataList.append(Menustr);
 	//QString labeltext = "	" + ui->RefMonitorPointLabel->text() + " " + "-P1coords" + " ";
-	QString labeltext = "   -P1coords ";
+	QString labeltext = "	-P1coords ";
 	QString lineEdit = ui->RefMonitorPointLineEdit->text() + "\n";
 	QString contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->MonitorPoint1Label->text() + " " + "-P2coords" + " ";
-	labeltext = "   -P2coords ";
+	labeltext = "	-P2coords ";
 	lineEdit = ui->MonitorPoint1LineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->MonitorPoint2Label->text() + " " + "-P3coords" + " ";
-	labeltext = "   -P3coords ";
+	labeltext = "	-P3coords ";
 	lineEdit = ui->MonitorPoint2LineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->MonitorPoint3Label->text() + " " + "-P4coords" + " ";
-	labeltext = "   -P4coords ";
+	labeltext = "	-P4coords ";
 	lineEdit = ui->MonitorPoint3LineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->FFRMonitorFileLabel->text() + " " + "-ffroutputname" + " ";
-	labeltext = "   -ffroutputname ";
+	labeltext = "	-ffroutputname ";
 	lineEdit = ui->FFRMonitorFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->FlowRateMonitorFileLabel->text() + " " + "-flowoutputname" + " ";
-	labeltext = "   -flowoutputname ";
+	labeltext = "	-flowoutputname ";
 	lineEdit = ui->FlowRateMonitorFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->SolutionOutputFileLabel->text() + " " + "-output" + " ";
-	labeltext = "   -output ";
+	labeltext = "	-output ";
 	lineEdit = ui->SolutionOutputFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
@@ -184,7 +188,7 @@ void QtArteryTechOutputSetupUI::SaveOutputData()
 	if (this->showPartitionBasicCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->ShowSubdomainMeshDataLabel->text() + " " + "-show_partition_basic" + " ";
-		labeltext = "   -show_partition_basic ";
+		labeltext = "	-show_partition_basic ";
 		lineEdit = ui->ShowSubdomainMeshDataLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->outputDataList.append(contenttext);
@@ -193,7 +197,7 @@ void QtArteryTechOutputSetupUI::SaveOutputData()
 	if (this->basicGridOutputCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->ShowMeshDataLabel->text() + " " + "-basic_grid_output" + " ";
-		labeltext = "   -basic_grid_output ";
+		labeltext = "	-basic_grid_output ";
 		lineEdit = ui->ShowMeshDataLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->outputDataList.append(contenttext);
@@ -202,7 +206,7 @@ void QtArteryTechOutputSetupUI::SaveOutputData()
 	if (this->solutionOutputBasicCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->ShowSolutionLabel->text() + " " + "-solution_output" + " ";
-		labeltext = "   -solution_output ";
+		labeltext = "	-solution_output ";
 		lineEdit = ui->ShowSolutionLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->outputDataList.append(contenttext);
@@ -211,23 +215,30 @@ void QtArteryTechOutputSetupUI::SaveOutputData()
 	if (this->residualOutputBasicCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->MonitorResidualLabel->text() + " " + "-residual_output" + " ";
-		labeltext = "   -residual_output ";
+		labeltext = "	-residual_output ";
 		lineEdit = ui->MonitorResidualLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->outputDataList.append(contenttext);
 	}
 
 	//labeltext = "	" + ui->NumberOfStepsForOutputLabel->text() + " " + "-Nplot" + " ";
-	labeltext = "   -Nplot ";
+	labeltext = "	-Nplot ";
 	lineEdit = ui->NumberOfStepsForOutputLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
 
 	//labeltext = "	" + ui->TimeIntervalForOutputLabel->text() + " " + "-dtplot" + " ";
-	labeltext = "   -dtplot ";
+	labeltext = "	#-dtplot ";
 	lineEdit = ui->TimeIntervalForOutputLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->outputDataList.append(contenttext);
+
+	if (ui->PlotFFRCheckBox->isChecked())
+	{
+		labeltext = "	-plot_FFR\n";
+		contenttext = labeltext;
+		this->outputDataList.append(contenttext);
+	}
 	/*
 	for (size_t i = 0; i < this->outputDataList.length(); i++)
 	{
@@ -250,6 +261,9 @@ void QtArteryTechOutputSetupUI::closeEvent(QCloseEvent *event)
 	{
 		QMessageBox::warning(this, "this", m_tmpFileName + " file open fail !");
 	}
+	QString timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	tmpFile.write(timePoint.toStdString().c_str());
+	tmpFile.write("\n");
 	for (int i = 0; i < outputDataList.length(); i++)
 	{
 		tmpFile.write(outputDataList[i].toStdString().c_str());
@@ -290,4 +304,84 @@ QStringList QtArteryTechOutputSetupUI::GetOutputData()
 	TechOutputSetupUiData.append(timeIntervalForOutputStr);
 
 	return TechOutputSetupUiData;
+}
+
+int QtArteryTechOutputSetupUI::isDigitStr(QString src)
+{
+	QByteArray ba = src.toLatin1();//QString 转换为 char*  
+	const char *s = ba.data();
+	if (s[0] == '-')
+	{
+		s++;
+	}
+
+	while (*s && *s >= '0' && *s <= '9' || *s == '.') s++;
+
+	if (*s)
+	{
+		//不是纯数字  
+		return -1;
+	}
+	else
+	{
+		//纯数字  
+		return 0;
+	}
+}
+
+//NumberOfStepsForOutputLineEdit槽函数
+void QtArteryTechOutputSetupUI::NumberOfStepsForOutputLineEditSlot()
+{
+	if (ui->NumberOfStepsForOutputLineEdit->text() == NULL)
+	{
+		ui->NumberOfStepsForOutputLineEdit->setText("0");
+		return;
+	}
+	else
+	{
+		bool digitsStatus = isDigitStr(ui->NumberOfStepsForOutputLineEdit->text().trimmed());
+		if (digitsStatus == 0)
+		{
+			if (ui->NumberOfStepsForOutputLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->NumberOfStepsForOutputLineEdit->setText("0");
+				return;
+			}
+			return;
+		}
+		else
+		{
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
+			ui->NumberOfStepsForOutputLineEdit->setText("0");
+		}
+	}
+}
+//TimeIntervalForOutputLineEdit槽函数
+void QtArteryTechOutputSetupUI::TimeIntervalForOutputLineEditSlot()
+{
+	if (ui->TimeIntervalForOutputLineEdit->text() == NULL)
+	{
+		ui->TimeIntervalForOutputLineEdit->setText("0");
+		return;
+	}
+	else
+	{
+		bool digitsStatus = isDigitStr(ui->TimeIntervalForOutputLineEdit->text().trimmed());
+		if (digitsStatus == 0)
+		{
+			if (ui->TimeIntervalForOutputLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->TimeIntervalForOutputLineEdit->setText("0");
+				return;
+			}
+			return;
+		}
+		else
+		{
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
+			ui->TimeIntervalForOutputLineEdit->setText("0");
+		}
+	}
 }

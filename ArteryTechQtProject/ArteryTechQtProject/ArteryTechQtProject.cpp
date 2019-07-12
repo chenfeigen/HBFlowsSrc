@@ -10,14 +10,22 @@ ArteryTechQtProject::ArteryTechQtProject(QWidget *parent)
 	//窗口默认为最大化
 	this->setWindowState(Qt::WindowMaximized);
 
-	this->setWindowTitle("HBFlows");
+	this->setWindowTitle("CT无创血流储备分数测量系统");
 	this->setWindowIcon(QIcon("images/ArteryTech.ico"));
 
 	show();
 	InitUIdata();
 	MainUI();
+	ui.label->setText(QString("<font color=#e9a96f;>软件版本号：01.00.00\n软件发布版本号：01\nCopyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
+
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	//创建定时器
+	QTimer *timer = new QTimer(this);
+	QObject::connect(timer,SIGNAL(timeout()),this,SLOT(TimeoutSlot()));
 	//信号与槽函数链接
 	QObject::connect(actHelp, SIGNAL(triggered(bool)), this, SLOT(ActHelpSlot()));
+	//开启定时器
+	timer->start(1000);//1秒钟触发一次
 }
 
 ArteryTechQtProject::ArteryTechQtProject(QString tmpFileName, QWidget *parent)
@@ -29,14 +37,27 @@ ArteryTechQtProject::ArteryTechQtProject(QString tmpFileName, QWidget *parent)
 	//窗口默认为最大化
 	this->setWindowState(Qt::WindowMaximized);
 
-	this->setWindowTitle("HBFlows");
+	this->setWindowTitle("CT无创血流储备分数测量系统");
 	this->setWindowIcon(QIcon("images/ArteryTech.ico"));
-
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	show();
 	InitUIdata();
 	MainUI();
+	//去掉pushbutton的边框
+	ui.pushButton->setStyleSheet("border:none;");
+	ui.label->setAlignment(Qt::AlignCenter);//设置label的text信息居中显示
+	//ui.label->setText(QString("< font color=#e9a96f;>Copyright&#169; 2016</font>"));
+	//QString str1 = "软件版本号：01.00.06\n软件发布版本号：01\n";
+	//ui.label->setText(str1 + QString("< font color=#e9a96f;>Copyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
+	ui.label->setText(QString("< font color=#e9a96f;>软件版本号：01.00.00\n软件发布版本号：01\nCopyright&#169; 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有</font>"));
+	//ui.label->setText("软件版本号：01.00.06\n软件发布版本号：01\nCopyright &copy 2019 Artery All Rights Reserved.杭州阿特瑞科技有限公司版权所有");
+	//创建定时器
+	QTimer *timer = new QTimer(this);
+	QObject::connect(timer, SIGNAL(timeout()), this, SLOT(TimeoutSlot()));
 	//信号与槽函数链接
 	QObject::connect(actHelp, SIGNAL(triggered(bool)), this, SLOT(ActHelpSlot()));
+	//开启定时器
+	timer->start(1000);//1秒钟触发一次
 }
 
 //对软件界面进行初始化
@@ -51,26 +72,26 @@ void ArteryTechQtProject::InitUIdata()
 	this->processPutty = new QProcess;
 
 	//创建两个QMenu（菜单）
-	this->loadFileMenu = new QMenu("Load Data");
-	this->actLoadPicture = new QAction("Load Geometry");
-	this->actLoadDicomPicture = new QAction("Load CTA Image");
+	this->loadFileMenu = new QMenu("加载数据");
+	this->actLoadPicture = new QAction("加载图像文件");
+	this->actLoadDicomPicture = new QAction("加载CTA影像");
 	this->loadFileMenu->addAction(actLoadPicture);
 	this->loadFileMenu->addAction(actLoadDicomPicture);
 
 	//slover菜单和solver菜单下的action
-	this->solverMenu = new QMenu("Solver");
-	this->actLastInput = new QAction("Last Input");
-	this->actMeshSetup = new QAction("Mesh Setup");
-	this->actBoundarySetup = new QAction("Boundary Setup");
-	this->actPhysicsSetup = new QAction("Physics Setup");
-	this->actNonlinearSolverSetup = new QAction("Nonlinear Solver Setup");
-	this->actLinearSolverSetup = new QAction("Linear Solver Setup");
-	this->actPreconditionerSetup = new QAction("Preconditioner Setup");
-	this->actTwoLevelPreconditioner = new QAction("Two-LevelPreconditioner");
-	this->actOutputSetup = new QAction("Output Setup");
-	this->actOtherSetup = new QAction("Other Setup");
-	this->actSaveOption = new QAction("Save Options");
-	this->actSaveCPR = new QAction("Computational Parameter Report");
+	this->solverMenu = new QMenu("求解器");
+	this->actLastInput = new QAction("上次输入");
+	this->actMeshSetup = new QAction("网格设置");
+	this->actBoundarySetup = new QAction("边界条件设置");
+	this->actPhysicsSetup = new QAction("物理参数设置");
+	this->actNonlinearSolverSetup = new QAction("非线性求解器参数设置");
+	this->actLinearSolverSetup = new QAction("线性求解器参数设置");
+	this->actPreconditionerSetup = new QAction("预处理算法参数设置");
+	this->actTwoLevelPreconditioner = new QAction("两水平预处理参数设置");
+	this->actOutputSetup = new QAction("结果输出设置");
+	this->actOtherSetup = new QAction("其他参数设置");
+	this->actSaveOption = new QAction("保存设置");
+	this->actSaveCPR = new QAction("计算参数报告");
 	this->solverMenu->addAction(actLastInput);
 	this->solverMenu->addAction(actMeshSetup);
 	this->solverMenu->addAction(actBoundarySetup);
@@ -81,12 +102,14 @@ void ArteryTechQtProject::InitUIdata()
 	this->solverMenu->addAction(actTwoLevelPreconditioner);
 	this->solverMenu->addAction(actOutputSetup);
 	this->solverMenu->addAction(actOtherSetup);
-	this->solverMenu->addAction(actSaveCPR);
+	//this->solverMenu->addAction(actSaveCPR);//保存计算参数报告
 	this->solverMenu->addAction(actSaveOption);
 
 	this->qtATMeshSetupDlg = new QtArteryTechMeshSetup(m_tmpFileName,this);
 	this->qtATBoundarysetupDlg = new QtArteryTechBoundarySetupUI(m_tmpFileName,this);
+	QObject::connect(qtATBoundarysetupDlg,SIGNAL(BoundaryTypeSignal(QString)),this,SLOT(GetBoundaryTypeSlot(QString)));
 	this->qtATPhysicsSetupDlg = new QtArteryTechPhysicsSetupUI(m_tmpFileName, this);
+	QObject::connect(this, SIGNAL(BoundaryTypeToPhysicsSetupSignal(QString)), qtATPhysicsSetupDlg, SLOT(GetBoundaryTypeSlot(QString)));
 	this->qtATNonlinearsolversetupDlg = new QtArteryTechNonlinearSolverSetupUI(m_tmpFileName, this);
 	this->qtATLinearSolverSetupDlg = new QtArteryTechLinearSolverSetupUI(m_tmpFileName, this);
 	this->qtATPreconditionerSetupDlg = new QtArteryTechPreconditionerSetupUI(m_tmpFileName, this);
@@ -94,29 +117,31 @@ void ArteryTechQtProject::InitUIdata()
 	this->qtATOutputSetupDlg = new QtArteryTechOutputSetupUI(m_tmpFileName, this);
 	this->qtATOtherSetupsDlg = new QtArteryTechOtherSetupsUI(m_tmpFileName, this);
 
-
-	this->HBFlowsHelpMenu = new QMenu("Help");
-	this->actHelp = new QAction("HBFlows help");
-	this->HBFlowsHelpMenu->addAction(actHelp);
-	ui.menuBar->addMenu(HBFlowsHelpMenu);
+	//this->HBFlowsHelpMenu = new QMenu("关于");
+	this->actHelp = new QAction("关于");
+	//this->HBFlowsHelpMenu->addAction(actHelp);
+	//ui.menuBar->addMenu(HBFlowsHelpMenu);
+	ui.menuBar->addAction(this->actHelp);
 
 	//初始化Action
-	this->actDivision = new QAction("Segmentation");
-	this->actGeomagic = new QAction("Geometry");
-	this->actMesh = new QAction("Mesh");
+	this->actDivision = new QAction("图像分割");
+	this->actGeomagic = new QAction("几何修复");
+	this->actMesh = new QAction("生成网格");
 	//this->actCompute = new QAction("Upload");
-	this->actView = new QAction("Visualization");
+	this->actView = new QAction("可视化");
 	//加密文件
-	this->actEncryptedFile = new QAction("Encrypted file");
+	this->actEncryptedFile = new QAction("加密文件");
 	//this->actExecutionscript = new QAction("Job Submission");
 	//this->actPutty = new QAction("Download");
 	//this->actReport = new QAction("Report");
+	//this->actGetResults = new QAction("获取计算结果");//获取计算结果
 
 	this->help = new Help(this);
 }
 
 void ArteryTechQtProject::ActOpenDicompictureSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	QtVtkDialog *qtVtkDialog = new QtVtkDialog(this);
 	//qtPainEventDialog = new QtPainEvent(this);
 	qtVtkDialog->displyPicture3d();
@@ -127,6 +152,7 @@ void ArteryTechQtProject::ActOpenDicompictureSlot()
 
 void ArteryTechQtProject::ActOpenpictureSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	QtVtkDialog *qtVtkDialog = new QtVtkDialog(this);
 	//qtPainEventDialog = new QtPainEvent(this);
 	qtVtkDialog->openpicture();
@@ -137,6 +163,7 @@ void ArteryTechQtProject::ActOpenpictureSlot()
 
 void ArteryTechQtProject::ActOpenExeSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	QProcess *process = new QProcess;
 	QString Exefilepathname = QFileDialog::getOpenFileName(this, "open exe", QDir::currentPath()).trimmed();
 
@@ -150,55 +177,74 @@ void ArteryTechQtProject::ActOpenExeSlot()
 
 void ArteryTechQtProject::ActMeshSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATMeshSetupDlg = new QtArteryTechMeshSetup(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置MeshSetup参数!";
 	qtATMeshSetupDlg->show();
 }
 
 void ArteryTechQtProject::ActBoundarySetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATBoundarysetupDlg = new QtArteryTechBoundarySetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置BoundarySetup参数!";
 	qtATBoundarysetupDlg->show();
 }
 
 void ArteryTechQtProject::ActPhysicsSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATPhysicsSetupDlg = new QtArteryTechPhysicsSetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置BoundarySetup参数!";
+	SendBoundaryTypeToPhysicsSetup();
 	qtATPhysicsSetupDlg->show();
 }
 
 void ArteryTechQtProject::ActNonlinearSolverSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATNonlinearsolversetupDlg = new QtArteryTechNonlinearSolverSetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置NonlinearSolverSetup参数!";
 	qtATNonlinearsolversetupDlg->show();
 }
 
 void ArteryTechQtProject::ActLinearSolverSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATLinearSolverSetupDlg = new QtArteryTechLinearSolverSetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置LinearSolverSetup参数!";
 	qtATLinearSolverSetupDlg->show();
 }
 
 void ArteryTechQtProject::ActPreconditionerSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATPreconditionerSetupDlg = new QtArteryTechPreconditionerSetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置PreconditionerSetup参数!";
 	qtATPreconditionerSetupDlg->show();
 }
 
 void ArteryTechQtProject::ActTwoLevelPreconditionerSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATTwoLevelPreconditionerDlg = new QtArteryTechTwoLevelPreconditionerUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置TwoLevelPreconditioner参数!";
 	qtATTwoLevelPreconditionerDlg->show();
 }
 
 void ArteryTechQtProject::ActOutputSetupSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATOutputSetupDlg = new QtArteryTechOutputSetupUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置OutputSetup参数!";
 	qtATOutputSetupDlg->show();
 }
 
 void ArteryTechQtProject::ActOtherSetupsSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//this->qtATOtherSetupsDlg = new QtArteryTechOtherSetupsUI(this);
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "设置OtherSetup参数!";
 	qtATOtherSetupsDlg->show();
 }
 
@@ -211,13 +257,14 @@ function:这是Modify Finish Action的槽函数，当该action被点击，就会触发这个函数；
 */
 void ArteryTechQtProject::ActSaveOptionSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	QString filepathname = QFileDialog::getSaveFileName(this, "Save File", QDir::currentPath(), NULL);
 
 	//qDebug() << "save file path name:" << filepathname;
 	if (NULL == filepathname)
 	{
-		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Please select the save data file!";
-		QMessageBox::information(this, "Info Message", "Please select the save data file!");
+		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "请选择你需要保存的文件!";
+		QMessageBox::information(this, "消息", "请选择需要保存的文件!");
 		return;
 	}
 	else
@@ -257,7 +304,7 @@ void ArteryTechQtProject::ActSaveOptionSlot()
 			if (!ok)
 			{
 				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong:!";
-				QMessageBox::information(this, "Error Message", "Open save file is wrong!");
+				QMessageBox::critical(this, "错误", "文件打开失败");
 				return;
 			}
 			for (size_t i = 0; i < fileContent.length(); i++)
@@ -269,12 +316,12 @@ void ArteryTechQtProject::ActSaveOptionSlot()
 		}
 		else
 		{
-			QMessageBox::warning(this,"warning:","The value of the Slover menu interface is initially empty, and an empty file will be saved!");
+			QMessageBox::warning(this,"警告:","求解器菜单界面参数设置为空, 保存一个空文件!");
 			bool ok = file->open(QIODevice::Text | QIODevice::WriteOnly);
 			if (!ok)
 			{
 				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong:!";
-				QMessageBox::information(this, "Error Message", "Open save file is wrong!");
+				QMessageBox::critical(this, "错误", "文件保存失败！");
 				return;
 			}
 			file->close();
@@ -285,6 +332,7 @@ void ArteryTechQtProject::ActSaveOptionSlot()
 //Mimics
 void ArteryTechQtProject::ActDivisionSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//QString Exefilepathname = QFileDialog::getOpenFileName(this, "open exe", QDir::currentPath()).trimmed();
 	//QString Exefilename = "\"C:/Program Files/Geomagic/Geomagic Foundation 2014/Studio.exe\"";
 	//这样处理加上加上引号，可以处理打开文件的路径中是都含有空格的情况，如果含有空格不加上引号是不能正常打开的
@@ -299,6 +347,7 @@ void ArteryTechQtProject::ActDivisionSlot()
 //Geomagic
 void ArteryTechQtProject::ActGeomagicSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//QString Exefilename = "\"D:/work/Geomagic/Studio.exe\"";
 	//"D:\Program Files\Geomagic\Geomagic Foundation 2014\Studio.exe"
 	QString Exefilename = "\"D:/Program Files/Geomagic/Geomagic Foundation 2014/Studio.exe\"";
@@ -310,6 +359,7 @@ void ArteryTechQtProject::ActGeomagicSlot()
 //ansys
 void ArteryTechQtProject::ActMeshSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//"D:\Program Files\ANSYS Inc\v145\icemcfd\win64_amd\bin\icemcfd.bat"
 	//QString Exefilename = "\"D:/work/ANSYS Inc/v145/icemcfd/win64_amd/bin/icemcfd.bat\"";
 	QString Exefilename = "\"D:/Program Files/ANSYS Inc/v145/icemcfd/win64_amd/bin/icemcfd.bat\"";
@@ -320,6 +370,7 @@ void ArteryTechQtProject::ActMeshSlot()
 
 void ArteryTechQtProject::ActComputeSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	TcpClientDialog *clientDialog = new TcpClientDialog;
 	clientDialog->fileTcpClientUi();
 	clientDialog->show();
@@ -328,6 +379,7 @@ void ArteryTechQtProject::ActComputeSlot()
 //paraview
 void ArteryTechQtProject::ActViewSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//"D:\Program Files\ParaView 5.3.0-Qt5-OpenGL2-Windows-64bit\bin\paraview.exe"
 	//QString Exefilename = "\"D:/work/ParaView 5.3.0/bin/paraview.exe\"";
 	QString Exefilename = "\"D:/Program Files/ParaView 5.3.0-Qt5-OpenGL2-Windows-64bit/bin/paraview.exe\"";
@@ -338,6 +390,7 @@ void ArteryTechQtProject::ActViewSlot()
 
 void ArteryTechQtProject::ActExecutionscriptSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	TcpClientDialog *clientDialog = new TcpClientDialog;
 	clientDialog->sshTcpClientUi();
 	clientDialog->show();
@@ -346,6 +399,7 @@ void ArteryTechQtProject::ActExecutionscriptSlot()
 //利用QProcess打开putty进程
 void ArteryTechQtProject::ActOpenPuttySlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	PuttyInformationDialog *puttyInformationDialog = new PuttyInformationDialog(this);
 	QObject::connect(puttyInformationDialog,SIGNAL(PuttyInfoSignal(puttyInformation*)),this,SLOT(getPuttyInfoSignal(puttyInformation*)));
 	puttyInformationDialog->show();
@@ -375,31 +429,31 @@ void ArteryTechQtProject::ProcessError(QProcess::ProcessError error)
 	{
 	case QProcess::FailedToStart:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ <<" LOG:" << "FailedToStart";
-		QMessageBox::information(0, "Tip", "FailedToStart");
+		QMessageBox::information(0, "消息", "开始失败！");
 		break;
 	case QProcess::Crashed:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Crashed";
-		QMessageBox::information(0, "Tip", "Crashed");
+		QMessageBox::information(0, "消息", "崩溃！");
 		break;
 	case QProcess::Timedout:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Timedout";
-		QMessageBox::information(0, "Tip", "Timedout");
+		QMessageBox::information(0, "消息", "超时！");
 		break;
 	case QProcess::WriteError:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "WriteError";
-		QMessageBox::information(0, "Tip", "WriteError");
+		QMessageBox::information(0, "消息", "输入错误！");
 		break;
 	case QProcess::ReadError:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "ReadError";
-		QMessageBox::information(0, "Tip", "ReadError");
+		QMessageBox::information(0, "消息", "读取错误！");
 		break;
 	case QProcess::UnknownError:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "UnknownError";
-		QMessageBox::information(0, "Tip", "UnknownError");
+		QMessageBox::information(0, "消息", "未知错误！");
 		break;
 	default:
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "UnknownError";
-		QMessageBox::information(0, "Tip", "UnknownError");
+		QMessageBox::information(0, "消息", "未知错误！");
 		break;
 	}
 
@@ -412,17 +466,19 @@ void ArteryTechQtProject::MainUI()
 	ui.menuBar->clear();
 	ui.menuBar->addMenu(loadFileMenu);
 	ui.menuBar->addMenu(solverMenu);
-	ui.menuBar->addMenu(HBFlowsHelpMenu);
+	//ui.menuBar->addMenu(HBFlowsHelpMenu);
 	//将action添加到mainToolBar
 	ui.mainToolBar->addAction(actDivision);
 	ui.mainToolBar->addAction(actGeomagic);
 	ui.mainToolBar->addAction(actMesh);
 	//ui.mainToolBar->addAction(actionCompute);
 	ui.mainToolBar->addAction(actView);
+	ui.mainToolBar->addAction(actHelp);
 	//ui.mainToolBar->addAction(actionExecutionscript);
 	//ui.mainToolBar->addAction(actionPutty);
 	//ui.mainToolBar->addAction(actionReport);
-	ui.mainToolBar->addAction(actEncryptedFile);
+	//ui.mainToolBar->addAction(actEncryptedFile);
+	//ui.mainToolBar->addAction(actGetResults);//将获取计算结果Action添加到mainToolBar
 
 
 	QObject::connect(actLoadPicture, SIGNAL(triggered(bool)), this, SLOT(ActOpenpictureSlot()));
@@ -450,18 +506,21 @@ void ArteryTechQtProject::MainUI()
 	QObject::connect(actSaveCPR, SIGNAL(triggered(bool)), this, SLOT(ActSaveCPRSlot()));
 	//actEncryptedFile
 	QObject::connect(actEncryptedFile, SIGNAL(triggered(bool)), this, SLOT(ActEncryptedFileSlot()));//加密文件
+	//QObject::connect(actGetResults, SIGNAL(triggered(bool)), this, SLOT(ActGetResultsSlot()));//加密文件
 
 	return;
 }
 
 void ArteryTechQtProject::ActReportHtmlSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	HtmlCreatedWord *htmlCreatedWord = new HtmlCreatedWord(this);
 }
 
 //利用Qt生成doc 报告文件,需要使用.dot模板文件
 void ArteryTechQtProject::ActReportSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	//QMessageBox::about(this,"information","Report is clicked()");
 	QAxWidget *word = new QAxWidget("Word.Application", this, Qt::MSWindowsOwnDC);
 	word->setProperty("Visible", true);
@@ -697,6 +756,7 @@ void ArteryTechQtProject::actionReportSlots()
 #endif
 void ArteryTechQtProject::ActHelpSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	this->help->show();
 }
 
@@ -728,7 +788,7 @@ void ArteryTechQtProject::closeEvent(QCloseEvent *event)
 	if (NULL == filepathname)
 	{
 		qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Please select the save data file!";
-		QMessageBox::information(this, "Info Message", "Please select the save data file!");
+		QMessageBox::critical(this, "错误:", "请选择需要保存的文件！");
 		return;
 	}
 	else
@@ -767,7 +827,7 @@ void ArteryTechQtProject::closeEvent(QCloseEvent *event)
 			if (!ok)
 			{
 				qCritical() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Open save file is wrong:!";
-				QMessageBox::information(this, "Error Message", "Open save file is wrong!");
+				QMessageBox::critical(this, "错误:", "文件打开失败！");
 				return;
 			}
 			for (size_t i = 0; i < fileContent.length(); i++)
@@ -880,6 +940,7 @@ QString ArteryTechQtProject::ToXOREncryptUncrypt(QString src, const QChar key)
 
 void ArteryTechQtProject::ActLastInputSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	AbnormalData *abnormalData = new AbnormalData(m_tmpFileName);
 	abnormalData->show();
 #if 0
@@ -950,6 +1011,7 @@ void ArteryTechQtProject::GetPuttyInfoSignal(puttyInformation* puttyInfo)
 //加密文件槽函数
 void ArteryTechQtProject::ActEncryptedFileSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	EncryptedFileDialog *encryptedFileDialog = new EncryptedFileDialog(this);
 	encryptedFileDialog->show();
 }
@@ -957,17 +1019,18 @@ void ArteryTechQtProject::ActEncryptedFileSlot()
 //生成计算参数报告槽函数
 void ArteryTechQtProject::ActSaveCPRSlot()
 {
+	m_startTime = QDateTime::currentDateTime().toTime_t();
 	QString CPRFileName = QFileDialog::getSaveFileName(this,"Save File",QDir::currentPath(), tr("Images (*.xls *.xlsx *.doc *.docx)"));
 	if (NULL == CPRFileName)
 	{
-		QMessageBox::warning(this,"Warning","Save files cannot be empty!");
+		QMessageBox::warning(this,"警告：","请选择你要保存的文件！");
 		return;
 	}
 	QFile file(CPRFileName);
 	bool openStatus = file.open(QIODevice::WriteOnly);
 	if (!openStatus)
 	{
-		QMessageBox::critical(this,"Critical","Failed to open the file!");
+		QMessageBox::critical(this,"错误：","文件打开失败！");
 		return;
 	}
 	file.write("\t计算参数报告\n");
@@ -1093,3 +1156,98 @@ void ArteryTechQtProject::ActSaveCPRSlot()
 	file.close();
 }
 
+//鼠标按下事件
+void ArteryTechQtProject::mousePressEvent(QMouseEvent *event)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	// 如果是鼠标左键按下
+	if (event->button() == Qt::LeftButton)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标按压左击事件!";
+	}
+	// 如果是鼠标右键按下
+	else if (event->button() == Qt::RightButton)
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标按压右击事件!";
+	}
+}
+
+//鼠标移动事件
+void ArteryTechQtProject::mouseMoveEvent(QMouseEvent *event)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	// 这里必须使用buttons()
+	if (event->buttons() & Qt::LeftButton) //进行的按位与
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标移动事件!";
+	}
+}
+
+//鼠标释放事件
+void ArteryTechQtProject::mouseReleaseEvent(QMouseEvent *event)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标松开事件!";
+}
+
+//鼠标双击事件
+void ArteryTechQtProject::mouseDoubleClickEvent(QMouseEvent *event)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	// 如果是鼠标左键按下
+	if (event->button() == Qt::LeftButton) {
+
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标双击事件!";
+	}
+}
+
+//鼠标滚轮事件
+void ArteryTechQtProject::wheelEvent(QWheelEvent *event)
+{
+	m_startTime = QDateTime::currentDateTime().toTime_t();
+	if (event->delta() > 0)// 当滚轮远离使用者时
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标滚轮前进事件!";
+	}
+	else//当滚轮向使用者方向旋转时
+	{
+		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "进入鼠标滚轮后退事件!";
+	}
+}
+
+//定时器超时槽函数
+void ArteryTechQtProject::TimeoutSlot()
+{
+	uint itime = QDateTime::currentDateTime().toTime_t();
+	int timeDifference = itime - m_startTime;
+	int closeTime = 60 - timeDifference;
+	//QMessageBox *messageBox = new QMessageBox(QMessageBox::Information, "警告:", "由于长时间没有使用该软件，将在" + QString::number(closeTime) + "秒之后退出软件系统。", QMessageBox::Close, this);
+	//QMessageBox *messageBox = new QMessageBox(QMessageBox::Information, "警告:", "由于长时间没有使用该软件，将在" + QString::number(closeTime) + "秒之后退出软件系统。", this);
+	//messageBox->show();
+	//qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "时间差：" << timeDifference;
+	if (itime - m_startTime > 3600)
+	{
+		QMessageBox::warning(this,"警告：","由于长时间没有使用该软件，将退出该软件系统,请重新打开软件并进行登录！");
+		close();
+	}
+}
+
+//通过槽函数获取BoundaryType的值
+void ArteryTechQtProject::GetBoundaryTypeSlot(QString boundaryTypeText)
+{
+	m_boundaryTypeText = boundaryTypeText;
+}
+
+//发送信号函数
+void ArteryTechQtProject::SendBoundaryTypeToPhysicsSetup()
+{
+	emit BoundaryTypeToPhysicsSetupSignal(m_boundaryTypeText);
+}
+
+void ArteryTechQtProject::ActGetResultsSlot()
+{
+	GetCalculationResultsDialog *getCalculationResultsDialog = new GetCalculationResultsDialog(this);
+	getCalculationResultsDialog->show();
+}

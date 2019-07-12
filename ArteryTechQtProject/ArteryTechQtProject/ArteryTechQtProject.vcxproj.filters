@@ -108,6 +108,9 @@
     <ClCompile Include="EncryptedFileDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GetCalculationResultsDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ArteryTechQtProject.h">
@@ -185,6 +188,9 @@
     <QtMoc Include="EncryptedFileDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="GetCalculationResultsDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ArteryTechQtProject.ui">
@@ -251,6 +257,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="EncryptedFileDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GetCalculationResultsDialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

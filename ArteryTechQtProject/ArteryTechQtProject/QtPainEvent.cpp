@@ -240,7 +240,7 @@ void QtPainEvent::displypicture3d()
 void QtPainEvent::openpicture()
 {
 	//QString filename = QFileDialog::getOpenFileName(this,"open file", "/home","Images (*.png *.xpm *.jpg *.vtk *.stl *.dicom)");
-	QString filename = QFileDialog::getOpenFileName(this, "open file", QDir::currentPath(), tr("Image (*.stl *.vtk *.dcm *.exo)"));
+	QString filename = QFileDialog::getOpenFileName(this, "打开", QDir::currentPath(), tr("Image (*.stl *.vtk *.dcm *.exo)"));
 	//qDebug() << "filename is :" << filename;
 	//QMessageBox::information(this,"info", filename);
 	//ui->groupBox->setVisible(false);
@@ -468,7 +468,7 @@ void QtPainEvent::opendcmpicture(QString filepathname)
 
 void QtPainEvent::openexopicture(QString filepathname)
 {
-	QMessageBox::information(this, "Information Message", "Can not open .exo file !");
+	QMessageBox::information(this, "消息", "不能够打开.exo文件！");
 	return;
 }
 

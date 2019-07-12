@@ -139,11 +139,11 @@ public:
     {
         RegisterInterface->setWindowTitle(QApplication::translate("RegisterInterface", "RegisterInterface", Q_NULLPTR));
         BackgroundLabel->setText(QString());
-        UsernameLabel->setText(QApplication::translate("RegisterInterface", "Number\357\274\232", Q_NULLPTR));
-        PasswordLabel->setText(QApplication::translate("RegisterInterface", "Password\357\274\232", Q_NULLPTR));
-        PasswordLabel2->setText(QApplication::translate("RegisterInterface", "Password Again\357\274\232", Q_NULLPTR));
-        ConfirmPushButton->setText(QApplication::translate("RegisterInterface", "Confirm", Q_NULLPTR));
-        CancelPushButton->setText(QApplication::translate("RegisterInterface", "Cancel", Q_NULLPTR));
+        UsernameLabel->setText(QApplication::translate("RegisterInterface", "\350\264\246\345\217\267\357\274\232", Q_NULLPTR));
+        PasswordLabel->setText(QApplication::translate("RegisterInterface", "\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
+        PasswordLabel2->setText(QApplication::translate("RegisterInterface", "\345\206\215\346\254\241\350\276\223\345\205\245\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
+        ConfirmPushButton->setText(QApplication::translate("RegisterInterface", "\347\241\256\345\256\232", Q_NULLPTR));
+        CancelPushButton->setText(QApplication::translate("RegisterInterface", "\345\217\226\346\266\210", Q_NULLPTR));
     } // retranslateUi
 
 };

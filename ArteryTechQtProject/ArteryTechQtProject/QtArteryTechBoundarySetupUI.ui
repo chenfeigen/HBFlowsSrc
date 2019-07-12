@@ -6,26 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>602</width>
-    <height>375</height>
+    <width>880</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtArteryTechBoundarySetupUI</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_24">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_23">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_23">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="BoundaryTypeLabel">
-           <property name="text">
-            <string>Boundary Type:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>边界条件类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="BoundaryTypeLabel">
+             <property name="text">
+              <string>Boundary Type:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="BoundaryTypeLineEdit"/>
@@ -35,11 +46,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLabel" name="NodeSetFileLabel">
-           <property name="text">
-            <string>Node Set File:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>网格节点集文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="NodeSetFileLabel">
+             <property name="text">
+              <string>Node Set File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="NodeSetFileLineEdit"/>
@@ -49,15 +71,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <layout class="QHBoxLayout" name="horizontalLayout_24">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="SideSetFileLabel">
-           <property name="text">
-            <string>Side Set File:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>网格单元边界集文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="SideSetFileLabel">
+             <property name="text">
+              <string>Side Set File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="SideSetFileLineEdit"/>
@@ -65,13 +98,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLabel" name="NodeAndSideSetFileLabel">
-           <property name="text">
-            <string>Node &amp; Side Set File:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>网格节点与单元边界集文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="NodeAndSideSetFileLabel">
+             <property name="text">
+              <string>Node &amp; Side Set File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="NodeAndSideSetFileLineEdit"/>
@@ -81,15 +125,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <layout class="QHBoxLayout" name="horizontalLayout_25">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="WindkesselFileLabel">
-           <property name="text">
-            <string>Windkessel File:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>弹性腔模型文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="WindkesselFileLabel">
+             <property name="text">
+              <string>Windkessel File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="WindkesselFileLineEdit"/>
@@ -97,13 +152,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="InletFlowRateFileLabel">
-           <property name="text">
-            <string>Inlet Flow Rate File:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>入口流量文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletFlowRateFileLabel">
+             <property name="text">
+              <string>Inlet Flow Rate File:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletFlowRateFileLineEdit"/>
@@ -113,15 +179,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <layout class="QHBoxLayout" name="horizontalLayout_26">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QLabel" name="NumberOfOutletsLabel">
-           <property name="text">
-            <string>Number of Outlets:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>总出口数量</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="NumberOfOutletsLabel">
+             <property name="text">
+              <string>Number of Outlets:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="NumberOfOutletsLineEdit"/>
@@ -129,13 +206,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="QLabel" name="IndexForAortaOutletLabel">
-           <property name="text">
-            <string>Index for Aorta Outlet:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>主动脉出口索引</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="IndexForAortaOutletLabel">
+             <property name="text">
+              <string>Index for Aorta Outlet:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="IndexForAortaOutletLineEdit"/>
@@ -145,15 +233,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_15">
+      <layout class="QHBoxLayout" name="horizontalLayout_27">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QLabel" name="IncludeInletBoundaryLabel">
-           <property name="text">
-            <string>Include Inlet Boundary:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>入口边界类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="IncludeInletBoundaryLabel">
+             <property name="text">
+              <string>Include Inlet Boundary:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="IncludeInletBoundaryLineEdit"/>
@@ -161,13 +260,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QLabel" name="IncludeWallBoundaryLabel">
-           <property name="text">
-            <string>Include Wall Boundary:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>壁面边界类型</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="IncludeWallBoundaryLabel">
+             <property name="text">
+              <string>Include Wall Boundary:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="IncludeWallBoundaryLineEdit"/>
@@ -177,15 +287,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_18">
+      <layout class="QHBoxLayout" name="horizontalLayout_28">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_16">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
-          <widget class="QLabel" name="InletBoudaryNormXDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Norm (X-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>入口边界面法向（X方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryNormXDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Norm (X-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryNormXDirectionLineEdit"/>
@@ -193,13 +314,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_17">
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
-          <widget class="QLabel" name="InletBoudaryNormYDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Norm (Y-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>入口边界面法向（Y方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryNormYDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Norm (Y-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryNormYDirectionLineEdit"/>
@@ -209,15 +341,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_21">
+      <layout class="QHBoxLayout" name="horizontalLayout_29">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_19">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
          <item>
-          <widget class="QLabel" name="InletBoudaryNormZDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Norm (Z-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>入口边界面法向（Z方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryNormZDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Norm (Z-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryNormZDirectionLineEdit"/>
@@ -225,13 +368,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_20">
+        <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
-          <widget class="QLabel" name="InletBoudaryLowBoundXDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Low Bound (X-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>入口边界下限（X方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryLowBoundXDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Low Bound (X-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryLowBoundXDirectionLineEdit"/>
@@ -241,15 +395,26 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_25">
+      <layout class="QHBoxLayout" name="horizontalLayout_30">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_23">
+        <layout class="QHBoxLayout" name="horizontalLayout_15">
          <item>
-          <widget class="QLabel" name="InletBoudaryLowBoundYDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Low Bound (Y-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>入口边界下限（Y方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryLowBoundYDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Low Bound (Y-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryLowBoundYDirectionLineEdit"/>
@@ -257,13 +422,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_24">
+        <layout class="QHBoxLayout" name="horizontalLayout_16">
          <item>
-          <widget class="QLabel" name="InletBoudaryLowBoundZDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Low Bound (Z-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>入口边界下限（Z方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryLowBoundZDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Low Bound (Z-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryLowBoundZDirectionLineEdit"/>
@@ -275,13 +451,24 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_31">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_26">
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
          <item>
-          <widget class="QLabel" name="InletBoudaryUpperBoundXDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Upper Bound (X-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>入口边界上限（X方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryUpperBoundXDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Upper Bound (X-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryUpperBoundXDirectionLineEdit"/>
@@ -289,13 +476,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_27">
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
          <item>
-          <widget class="QLabel" name="InletBoudaryUpperBoundYDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Upper Bound (Y-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>入口边界上限（Y方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryUpperBoundYDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Upper Bound (Y-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletBoudaryUpperBoundYDirectionLineEdit"/>
@@ -307,30 +505,52 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_32">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_29">
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
          <item>
-          <widget class="QLabel" name="InletBoudaryAreaLabel">
-           <property name="text">
-            <string>Inlet Boudary Area:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>入口边界上限（Z方向）</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryUpperBoundZDirectionLabel">
+             <property name="text">
+              <string>Inlet Boudary Upper Bound (Z-direction):</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="InletBoudaryAreaLineEdit"/>
+          <widget class="QLineEdit" name="InletBoudaryUpperBoundZDirectionLineEdit"/>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_28">
+        <layout class="QHBoxLayout" name="horizontalLayout_20">
          <item>
-          <widget class="QLabel" name="InletBoudaryUpperBoundZDirectionLabel">
-           <property name="text">
-            <string>Inlet Boudary Upper Bound (Z-direction):</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_20">
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>入口边界区域</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletBoudaryAreaLabel">
+             <property name="text">
+              <string>Inlet Boudary Area:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="InletBoudaryUpperBoundZDirectionLineEdit"/>
+          <widget class="QLineEdit" name="InletBoudaryAreaLineEdit"/>
          </item>
         </layout>
        </item>
@@ -339,13 +559,24 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_33">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_30">
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
          <item>
-          <widget class="QLabel" name="InletFlowRateFactorLabel">
-           <property name="text">
-            <string>Inlet Flow Rate Factor:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_21">
+           <item>
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>入口流速因子</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="InletFlowRateFactorLabel">
+             <property name="text">
+              <string>Inlet Flow Rate Factor:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="InletFlowRateFactorLineEdit"/>
@@ -355,11 +586,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_22">
          <item>
-          <widget class="QLabel" name="ParabolicInflowLabel">
-           <property name="text">
-            <string>Parabolic Inflow:</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string>抛物型入口流</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ParabolicInflowLabel">
+             <property name="text">
+              <string>Parabolic Inflow:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLineEdit" name="ParabolicInflowLineEdit"/>
@@ -373,7 +615,7 @@
        <item>
         <widget class="QPushButton" name="OKPushButton">
          <property name="text">
-          <string>OK</string>
+          <string>确定</string>
          </property>
         </widget>
        </item>
@@ -393,7 +635,7 @@
        <item>
         <widget class="QPushButton" name="CancelPushButton">
          <property name="text">
-          <string>Cancel</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>
@@ -402,6 +644,7 @@
     </layout>
    </item>
   </layout>
+  <zorder></zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>76</height>
+    <height>91</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
        <item>
         <widget class="QLabel" name="SourceFileLabel">
          <property name="text">
-          <string>SourceFile:</string>
+          <string>源文件:</string>
          </property>
         </widget>
        </item>
@@ -31,7 +31,7 @@
        <item>
         <widget class="QPushButton" name="InputFilePushButton">
          <property name="text">
-          <string>InputFile</string>
+          <string>输入文件</string>
          </property>
         </widget>
        </item>
@@ -42,7 +42,7 @@
        <item>
         <widget class="QPushButton" name="EncryptionPushButton">
          <property name="text">
-          <string>Encryption</string>
+          <string>加密</string>
          </property>
         </widget>
        </item>
@@ -62,7 +62,7 @@
        <item>
         <widget class="QPushButton" name="DecryptionPushButton">
          <property name="text">
-          <string>Decryption</string>
+          <string>解密</string>
          </property>
         </widget>
        </item>

@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechBoundarySetupUI; };
 
@@ -36,7 +37,10 @@ private:
 	void InitBoundaryData();
 	void SaveBoundaryData();
 	int isDigitStr(QString src);
+	void SendBoundaryTypeSignal(QString boundaryTypeText);
 
+signals:
+	void BoundaryTypeSignal(QString boundaryTypeText);
 private slots:
 	void OKPushButtonSlots();
 	void CancelPushButtonSlots();

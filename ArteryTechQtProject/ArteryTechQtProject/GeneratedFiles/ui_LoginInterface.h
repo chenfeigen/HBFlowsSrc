@@ -129,6 +129,10 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
+        QWidget::setTabOrder(UsernameLineEdit, PasswordLineEdit);
+        QWidget::setTabOrder(PasswordLineEdit, LoginPushButton);
+        QWidget::setTabOrder(LoginPushButton, RetrievePasswordPushButton);
+        QWidget::setTabOrder(RetrievePasswordPushButton, RegisterPushButton);
 
         retranslateUi(LoginInterface);
 
@@ -139,11 +143,11 @@ public:
     {
         LoginInterface->setWindowTitle(QApplication::translate("LoginInterface", "LoginInterface", Q_NULLPTR));
         BackgroundLabel->setText(QString());
-        UsernameLabel->setText(QApplication::translate("LoginInterface", "Number\357\274\232", Q_NULLPTR));
-        PasswordLabel->setText(QApplication::translate("LoginInterface", "Password\357\274\232", Q_NULLPTR));
-        RetrievePasswordPushButton->setText(QApplication::translate("LoginInterface", "RetrievePassword", Q_NULLPTR));
-        RegisterPushButton->setText(QApplication::translate("LoginInterface", "Register", Q_NULLPTR));
-        LoginPushButton->setText(QApplication::translate("LoginInterface", "Login", Q_NULLPTR));
+        UsernameLabel->setText(QApplication::translate("LoginInterface", "\350\264\246\345\217\267\357\274\232", Q_NULLPTR));
+        PasswordLabel->setText(QApplication::translate("LoginInterface", "\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
+        RetrievePasswordPushButton->setText(QApplication::translate("LoginInterface", "\345\257\206\347\240\201\346\211\276\345\233\236", Q_NULLPTR));
+        RegisterPushButton->setText(QApplication::translate("LoginInterface", "\346\263\250\345\206\214", Q_NULLPTR));
+        LoginPushButton->setText(QApplication::translate("LoginInterface", "\347\231\273\345\275\225", Q_NULLPTR));
     } // retranslateUi
 
 };

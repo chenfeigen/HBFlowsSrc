@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIODevice>
+#include <QDateTime>
 
 namespace Ui { class QtArteryTechOtherSetupsUI; };
 
@@ -31,9 +32,12 @@ private:
 	void closeEvent(QCloseEvent *event);
 	void InitOtherData();
 	void SaveOtherData();
+	int isDigitStr(QString str);
 private slots:
 	void OkButtonSlots();
 	void CancelButtonSlots();
+	void InitialNumberOfPartitionLineEditSlot();
+	void DiagnalScalerLineEditSlot();
 
 private:
 	Ui::QtArteryTechOtherSetupsUI *ui;

@@ -17,6 +17,10 @@ class EncryptedFileDialog : public QDialog
 public:
 	EncryptedFileDialog(QWidget *parent = Q_NULLPTR);
 	~EncryptedFileDialog();
+	unsigned char* EncryptionStr(QString plaintext);//加密字符串函数
+	unsigned char* DecryptionStr(QString ciphertext);//解密字符串函数
+	bool EncryptionFile(QString fullFileName, QString outputFileName);//加密文件函数
+	bool DecryptionFile(QString fullFileName, QString outputFileName);//解密文件函数
 
 private:
 	Ui::EncryptedFileDialog ui;

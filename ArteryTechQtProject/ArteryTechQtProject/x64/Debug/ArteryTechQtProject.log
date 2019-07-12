@@ -1,29 +1,60 @@
-﻿生成启动时间为 2019/5/22 星期三 15:19:55。
-     1>项目“D:\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/6/17 星期一 13:43:10。
+     1>项目“D:\GitWork\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”在节点 2 上(Build 个目标)。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ArteryTechQtProject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>QtRccSetDependencies:
          "D:\Software_installation\Qt\5.8\msvc2015_64\bin\rcc.exe" --list "ArteryTechQtProject.qrc" > "x64\Debug\rcc_list.txt" 2> nul
        QtWork:
+         Moc'ing ArteryTechQtProject.h...
+         Moc'ing RetrievePasswordInterface.h...
+         Moc'ing userInformation.h...
+         Moc'ing TcpClientDialog.h...
+         Moc'ing SshClient.h...
+         Moc'ing QtTcpClient.h...
+         Moc'ing QtArteryTechBoundarySetupUI.h...
          Moc'ing QtArteryTechLinearSolverSetupUI.h...
+         Moc'ing QtArteryTechMeshSetup.h...
+         Moc'ing QtArteryTechNonlinearSolverSetupUI.h...
+         Moc'ing QtArteryTechOtherSetupsUI.h...
+         Moc'ing QtArteryTechOutputSetupUI.h...
+         Moc'ing QtArteryTechPhysicsSetupUI.h...
+         Moc'ing QtArteryTechPreconditionerSetupUI.h...
+         Moc'ing QtArteryTechTwoLevelPreconditionerUI.h...
+         Moc'ing QtPainEvent.h...
+         Moc'ing Help.h...
+         Moc'ing HtmlCreatedWord.h...
+         Moc'ing QtVtkDialog.h...
+         Moc'ing AbnormalData.h...
+         Moc'ing PuttyInformationDialog.h...
+         Moc'ing LoginInterface.h...
+         Moc'ing RegisterInterface.h...
+         Moc'ing InstallationAlignment.h...
+         Moc'ing EncryptedFileDialog.h...
+         Moc'ing GetCalculationResultsDialog.h...
        ClCompile:
-         D:\Software_installation\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Software_installation\Qt\5.8\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtCore /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtGui /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtANGLE /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtWidgets /I"include\vtk-8.1" /ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtNetwork /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtNetworkAuth /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtSql /ID:\Software_installation\Qt\5.8\msvc2015_64\include\ActiveQt /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtPrintSupport /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtOpenGL /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtOpenGLExtensions /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_NETWORKAUTH_LIB /D QT_SQL_LIB /D QT_PRINTSUPPORT_LIB /D QT_OPENGL_LIB /D QT_OPENGLEXTENSIONS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt AbnormalData.cpp ArteryTechQtProject.cpp EncryptedFileDialog.cpp GeneratedFiles\Debug\moc_AbnormalData.cpp GeneratedFiles\Debug\moc_ArteryTechQtProject.cpp GeneratedFiles\Debug\moc_EncryptedFileDialog.cpp GeneratedFiles\Debug\moc_InstallationAlignment.cpp GeneratedFiles\Debug\moc_LoginInterface.cpp GeneratedFiles\Debug\moc_PuttyInformationDialog.cpp GeneratedFiles\Debug\moc_QtArteryTechLinearSolverSetupUI.cpp GeneratedFiles\Debug\moc_RegisterInterface.cpp GeneratedFiles\Debug\moc_RetrievePasswordInterface.cpp GeneratedFiles\qrc_ArteryTechQtProject.cpp Help.cpp InstallationAlignment.cpp LoginInterface.cpp PuttyInformationDialog.cpp QtArteryTechBoundarySetupUI.cpp QtArteryTechLinearSolverSetupUI.cpp QtArteryTechMeshSetup.cpp QtArteryTechNonlinearSolverSetupUI.cpp QtArteryTechOtherSetupsUI.cpp QtArteryTechOutputSetupUI.cpp QtArteryTechPhysicsSetupUI.cpp QtArteryTechPreconditionerSetupUI.cpp QtArteryTechTwoLevelPreconditionerUI.cpp QtPainEvent.cpp QtVtkDialog.cpp RegisterInterface.cpp RetrievePasswordInterface.cpp SshClient.cpp TcpClientDialog.cpp main.cpp
+         D:\Software_installation\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Software_installation\Qt\5.8\msvc2015_64\include /I.\GeneratedFiles\Debug /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtCore /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtGui /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtANGLE /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtWidgets /I"include\vtk-8.1" /ID:\Qt\Qt5.8.0\5.8\msvc2015_64\include\QtNetwork /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtNetwork /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtNetworkAuth /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtSql /ID:\Software_installation\Qt\5.8\msvc2015_64\include\ActiveQt /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtPrintSupport /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtOpenGL /ID:\Software_installation\Qt\5.8\msvc2015_64\include\QtOpenGLExtensions /Zi /nologo /W1 /WX- /MP /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D QT_NETWORK_LIB /D QT_NETWORKAUTH_LIB /D QT_SQL_LIB /D QT_PRINTSUPPORT_LIB /D QT_OPENGL_LIB /D QT_OPENGLEXTENSIONS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt AbnormalData.cpp ArteryTechQtProject.cpp EncryptedFileDialog.cpp GetCalculationResultsDialog.cpp Help.cpp HtmlCreatedWord.cpp InstallationAlignment.cpp LoginInterface.cpp main.cpp PuttyInformationDialog.cpp QtArteryTechBoundarySetupUI.cpp QtArteryTechLinearSolverSetupUI.cpp QtArteryTechMeshSetup.cpp QtArteryTechNonlinearSolverSetupUI.cpp QtArteryTechOtherSetupsUI.cpp QtArteryTechOutputSetupUI.cpp QtArteryTechPhysicsSetupUI.cpp QtArteryTechPreconditionerSetupUI.cpp QtArteryTechTwoLevelPreconditionerUI.cpp QtPainEvent.cpp QtTcpClient.cpp QtVtkDialog.cpp RegisterInterface.cpp RetrievePasswordInterface.cpp SshClient.cpp TcpClientDialog.cpp userInformation.cpp GeneratedFiles\qrc_ArteryTechQtProject.cpp GeneratedFiles\Debug\moc_ArteryTechQtProject.cpp GeneratedFiles\Debug\moc_RetrievePasswordInterface.cpp GeneratedFiles\Debug\moc_userInformation.cpp GeneratedFiles\Debug\moc_TcpClientDialog.cpp GeneratedFiles\Debug\moc_SshClient.cpp GeneratedFiles\Debug\moc_QtTcpClient.cpp GeneratedFiles\Debug\moc_QtArteryTechBoundarySetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechLinearSolverSetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechMeshSetup.cpp GeneratedFiles\Debug\moc_QtArteryTechNonlinearSolverSetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechOtherSetupsUI.cpp GeneratedFiles\Debug\moc_QtArteryTechOutputSetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechPhysicsSetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechPreconditionerSetupUI.cpp GeneratedFiles\Debug\moc_QtArteryTechTwoLevelPreconditionerUI.cpp GeneratedFiles\Debug\moc_QtPainEvent.cpp GeneratedFiles\Debug\moc_Help.cpp GeneratedFiles\Debug\moc_HtmlCreatedWord.cpp GeneratedFiles\Debug\moc_QtVtkDialog.cpp GeneratedFiles\Debug\moc_AbnormalData.cpp GeneratedFiles\Debug\moc_PuttyInformationDialog.cpp GeneratedFiles\Debug\moc_LoginInterface.cpp GeneratedFiles\Debug\moc_RegisterInterface.cpp GeneratedFiles\Debug\moc_InstallationAlignment.cpp GeneratedFiles\Debug\moc_EncryptedFileDialog.cpp GeneratedFiles\Debug\moc_GetCalculationResultsDialog.cpp
          AbnormalData.cpp
          ArteryTechQtProject.cpp
          EncryptedFileDialog.cpp
-         moc_AbnormalData.cpp
-         moc_ArteryTechQtProject.cpp
-         moc_EncryptedFileDialog.cpp
-         moc_InstallationAlignment.cpp
-         moc_LoginInterface.cpp
-     1>EncryptedFileDialog.cpp(75): warning C4819: 该文件包含不能在当前代码页(0)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         moc_PuttyInformationDialog.cpp
-         moc_QtArteryTechLinearSolverSetupUI.cpp
-         moc_RegisterInterface.cpp
-         moc_RetrievePasswordInterface.cpp
-         qrc_ArteryTechQtProject.cpp
+         GetCalculationResultsDialog.cpp
          Help.cpp
+         HtmlCreatedWord.cpp
          InstallationAlignment.cpp
          LoginInterface.cpp
+     1>HtmlCreatedWord.cpp(116): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(133): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(136): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(139): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(142): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(145): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(148): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(151): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(158): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(164): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(167): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(170): warning C4129: “c”: 不可识别的字符转义序列
+     1>HtmlCreatedWord.cpp(173): warning C4129: “c”: 不可识别的字符转义序列
+     1>EncryptedFileDialog.cpp(74): warning C4819: 该文件包含不能在当前代码页(0)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         main.cpp
          PuttyInformationDialog.cpp
          QtArteryTechBoundarySetupUI.cpp
          QtArteryTechLinearSolverSetupUI.cpp
@@ -35,17 +66,48 @@
          QtArteryTechPreconditionerSetupUI.cpp
          QtArteryTechTwoLevelPreconditionerUI.cpp
          QtPainEvent.cpp
+         QtTcpClient.cpp
          QtVtkDialog.cpp
          RegisterInterface.cpp
          RetrievePasswordInterface.cpp
          SshClient.cpp
          TcpClientDialog.cpp
-         main.cpp
+         userInformation.cpp
+         qrc_ArteryTechQtProject.cpp
+         moc_ArteryTechQtProject.cpp
+         moc_RetrievePasswordInterface.cpp
+         moc_userInformation.cpp
+         moc_TcpClientDialog.cpp
+         moc_SshClient.cpp
+         moc_QtTcpClient.cpp
+         moc_QtArteryTechBoundarySetupUI.cpp
+         moc_QtArteryTechLinearSolverSetupUI.cpp
+         moc_QtArteryTechMeshSetup.cpp
+         moc_QtArteryTechNonlinearSolverSetupUI.cpp
+         moc_QtArteryTechOtherSetupsUI.cpp
+         moc_QtArteryTechOutputSetupUI.cpp
+         moc_QtArteryTechPhysicsSetupUI.cpp
+         moc_QtArteryTechPreconditionerSetupUI.cpp
+         moc_QtArteryTechTwoLevelPreconditionerUI.cpp
+         moc_QtPainEvent.cpp
+         moc_Help.cpp
+         moc_HtmlCreatedWord.cpp
+         moc_QtVtkDialog.cpp
+         moc_AbnormalData.cpp
+         moc_PuttyInformationDialog.cpp
+         moc_LoginInterface.cpp
+         moc_RegisterInterface.cpp
+         moc_InstallationAlignment.cpp
+         moc_EncryptedFileDialog.cpp
+         moc_GetCalculationResultsDialog.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"x64\Debug\ArteryTechQtProject.res" ArteryTechQtProject.rc 
        Link:
-         D:\Software_installation\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\HBFlowsSrc\ArteryTechQtProject\x64\Debug\\ArteryTechQtProject.exe" /NOLOGO /LIBPATH:D:\Software_installation\Qt\5.8\msvc2015_64\lib /LIBPATH:lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib "vtkalglib-8.1.lib" "vtkChartsCore-8.1.lib" "vtkCommonColor-8.1.lib" "vtkCommonComputationalGeometry-8.1.lib" "vtkCommonCore-8.1.lib" "vtkCommonDataModel-8.1.lib" "vtkCommonExecutionModel-8.1.lib" "vtkCommonMath-8.1.lib" "vtkCommonMisc-8.1.lib" "vtkCommonSystem-8.1.lib" "vtkCommonTransforms-8.1.lib" "vtkDICOMParser-8.1.lib" "vtkDomainsChemistry-8.1.lib" "vtkDomainsChemistryOpenGL2-8.1.lib" "vtkexoIIc-8.1.lib" "vtkexpat-8.1.lib" "vtkFiltersAMR-8.1.lib" "vtkFiltersCore-8.1.lib" "vtkFiltersExtraction-8.1.lib" "vtkFiltersFlowPaths-8.1.lib" "vtkFiltersGeneral-8.1.lib" "vtkFiltersGeneric-8.1.lib" "vtkFiltersGeometry-8.1.lib" "vtkFiltersHybrid-8.1.lib" "vtkFiltersHyperTree-8.1.lib" "vtkFiltersImaging-8.1.lib" "vtkFiltersModeling-8.1.lib" "vtkFiltersParallel-8.1.lib" "vtkFiltersParallelImaging-8.1.lib" "vtkFiltersPoints-8.1.lib" "vtkFiltersProgrammable-8.1.lib" "vtkFiltersSelection-8.1.lib" "vtkFiltersSMP-8.1.lib" "vtkFiltersSources-8.1.lib" "vtkFiltersStatistics-8.1.lib" "vtkFiltersTexture-8.1.lib" "vtkFiltersTopology-8.1.lib" "vtkFiltersVerdict-8.1.lib" "vtkfreetype-8.1.lib" "vtkGeovisCore-8.1.lib" "vtkgl2ps-8.1.lib" "vtkglew-8.1.lib" "vtkGUISupportQt-8.1.lib" "vtkGUISupportQtSQL-8.1.lib" "vtkhdf5-8.1.lib" "vtkhdf5_hl-8.1.lib" "vtkImagingColor-8.1.lib" "vtkImagingCore-8.1.lib" "vtkImagingFourier-8.1.lib" "vtkImagingGeneral-8.1.lib" "vtkImagingHybrid-8.1.lib" "vtkImagingMath-8.1.lib" "vtkImagingMorphological-8.1.lib" "vtkImagingSources-8.1.lib" "vtkImagingStatistics-8.1.lib" "vtkImagingStencil-8.1.lib" "vtkInfovisCore-8.1.lib" "vtkInfovisLayout-8.1.lib" "vtkInteractionImage-8.1.lib" "vtkInteractionStyle-8.1.lib" "vtkInteractionWidgets-8.1.lib" "vtkIOAMR-8.1.lib" "vtkIOCore-8.1.lib" "vtkIOEnSight-8.1.lib" "vtkIOExodus-8.1.lib" "vtkIOExport-8.1.lib" "vtkIOExportOpenGL2-8.1.lib" "vtkIOGeometry-8.1.lib" "vtkIOImage-8.1.lib" "vtkIOImport-8.1.lib" "vtkIOInfovis-8.1.lib" "vtkIOLegacy-8.1.lib" "vtkIOLSDyna-8.1.lib" "vtkIOMINC-8.1.lib" "vtkIOMovie-8.1.lib" "vtkIONetCDF-8.1.lib" "vtkIOParallel-8.1.lib" "vtkIOParallelXML-8.1.lib" "vtkIOPLY-8.1.lib" "vtkIOSQL-8.1.lib" "vtkIOTecplotTable-8.1.lib" "vtkIOVideo-8.1.lib" "vtkIOXML-8.1.lib" "vtkIOXMLParser-8.1.lib" "vtkjpeg-8.1.lib" "vtkjsoncpp-8.1.lib" "vtklibharu-8.1.lib" "vtklibxml2-8.1.lib" "vtklz4-8.1.lib" "vtkmetaio-8.1.lib" "vtkNetCDF-8.1.lib" "vtknetcdfcpp-8.1.lib" "vtkoggtheora-8.1.lib" "vtkParallelCore-8.1.lib" "vtkpng-8.1.lib" "vtkproj4-8.1.lib" "vtkRenderingAnnotation-8.1.lib" "vtkRenderingContext2D-8.1.lib" "vtkRenderingContextOpenGL2-8.1.lib" "vtkRenderingCore-8.1.lib" "vtkRenderingFreeType-8.1.lib" "vtkRenderingGL2PSOpenGL2-8.1.lib" "vtkRenderingImage-8.1.lib" "vtkRenderingLabel-8.1.lib" "vtkRenderingLOD-8.1.lib" "vtkRenderingOpenGL2-8.1.lib" "vtkRenderingQt-8.1.lib" "vtkRenderingVolume-8.1.lib" "vtkRenderingVolumeOpenGL2-8.1.lib" "vtksqlite-8.1.lib" "vtksys-8.1.lib" "vtkTestingGenericBridge-8.1.lib" "vtkTestingIOSQL-8.1.lib" "vtkTestingRendering-8.1.lib" "vtktiff-8.1.lib" "vtkverdict-8.1.lib" "vtkViewsContext2D-8.1.lib" "vtkViewsCore-8.1.lib" "vtkViewsInfovis-8.1.lib" "vtkViewsQt-8.1.lib" "vtkzlib-8.1.lib" Qt5Networkd.lib Qt5NetworkAuthd.lib Qt5Sqld.lib Qt5AxContainerd.lib Qt5AxBased.lib Qt5PrintSupportd.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5OpenGLExtensionsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.lib" /MACHINE:X64 x64\Debug\ArteryTechQtProject.res
+         D:\Software_installation\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitWork\HBFlowsSrc\ArteryTechQtProject\x64\Debug\\ArteryTechQtProject.exe" /NOLOGO /LIBPATH:D:\Software_installation\Qt\5.8\msvc2015_64\lib /LIBPATH:lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib "vtkalglib-8.1.lib" "vtkChartsCore-8.1.lib" "vtkCommonColor-8.1.lib" "vtkCommonComputationalGeometry-8.1.lib" "vtkCommonCore-8.1.lib" "vtkCommonDataModel-8.1.lib" "vtkCommonExecutionModel-8.1.lib" "vtkCommonMath-8.1.lib" "vtkCommonMisc-8.1.lib" "vtkCommonSystem-8.1.lib" "vtkCommonTransforms-8.1.lib" "vtkDICOMParser-8.1.lib" "vtkDomainsChemistry-8.1.lib" "vtkDomainsChemistryOpenGL2-8.1.lib" "vtkexoIIc-8.1.lib" "vtkexpat-8.1.lib" "vtkFiltersAMR-8.1.lib" "vtkFiltersCore-8.1.lib" "vtkFiltersExtraction-8.1.lib" "vtkFiltersFlowPaths-8.1.lib" "vtkFiltersGeneral-8.1.lib" "vtkFiltersGeneric-8.1.lib" "vtkFiltersGeometry-8.1.lib" "vtkFiltersHybrid-8.1.lib" "vtkFiltersHyperTree-8.1.lib" "vtkFiltersImaging-8.1.lib" "vtkFiltersModeling-8.1.lib" "vtkFiltersParallel-8.1.lib" "vtkFiltersParallelImaging-8.1.lib" "vtkFiltersPoints-8.1.lib" "vtkFiltersProgrammable-8.1.lib" "vtkFiltersSelection-8.1.lib" "vtkFiltersSMP-8.1.lib" "vtkFiltersSources-8.1.lib" "vtkFiltersStatistics-8.1.lib" "vtkFiltersTexture-8.1.lib" "vtkFiltersTopology-8.1.lib" "vtkFiltersVerdict-8.1.lib" "vtkfreetype-8.1.lib" "vtkGeovisCore-8.1.lib" "vtkgl2ps-8.1.lib" "vtkglew-8.1.lib" "vtkGUISupportQt-8.1.lib" "vtkGUISupportQtSQL-8.1.lib" "vtkhdf5-8.1.lib" "vtkhdf5_hl-8.1.lib" "vtkImagingColor-8.1.lib" "vtkImagingCore-8.1.lib" "vtkImagingFourier-8.1.lib" "vtkImagingGeneral-8.1.lib" "vtkImagingHybrid-8.1.lib" "vtkImagingMath-8.1.lib" "vtkImagingMorphological-8.1.lib" "vtkImagingSources-8.1.lib" "vtkImagingStatistics-8.1.lib" "vtkImagingStencil-8.1.lib" "vtkInfovisCore-8.1.lib" "vtkInfovisLayout-8.1.lib" "vtkInteractionImage-8.1.lib" "vtkInteractionStyle-8.1.lib" "vtkInteractionWidgets-8.1.lib" "vtkIOAMR-8.1.lib" "vtkIOCore-8.1.lib" "vtkIOEnSight-8.1.lib" "vtkIOExodus-8.1.lib" "vtkIOExport-8.1.lib" "vtkIOExportOpenGL2-8.1.lib" "vtkIOGeometry-8.1.lib" "vtkIOImage-8.1.lib" "vtkIOImport-8.1.lib" "vtkIOInfovis-8.1.lib" "vtkIOLegacy-8.1.lib" "vtkIOLSDyna-8.1.lib" "vtkIOMINC-8.1.lib" "vtkIOMovie-8.1.lib" "vtkIONetCDF-8.1.lib" "vtkIOParallel-8.1.lib" "vtkIOParallelXML-8.1.lib" "vtkIOPLY-8.1.lib" "vtkIOSQL-8.1.lib" "vtkIOTecplotTable-8.1.lib" "vtkIOVideo-8.1.lib" "vtkIOXML-8.1.lib" "vtkIOXMLParser-8.1.lib" "vtkjpeg-8.1.lib" "vtkjsoncpp-8.1.lib" "vtklibharu-8.1.lib" "vtklibxml2-8.1.lib" "vtklz4-8.1.lib" "vtkmetaio-8.1.lib" "vtkNetCDF-8.1.lib" "vtknetcdfcpp-8.1.lib" "vtkoggtheora-8.1.lib" "vtkParallelCore-8.1.lib" "vtkpng-8.1.lib" "vtkproj4-8.1.lib" "vtkRenderingAnnotation-8.1.lib" "vtkRenderingContext2D-8.1.lib" "vtkRenderingContextOpenGL2-8.1.lib" "vtkRenderingCore-8.1.lib" "vtkRenderingFreeType-8.1.lib" "vtkRenderingGL2PSOpenGL2-8.1.lib" "vtkRenderingImage-8.1.lib" "vtkRenderingLabel-8.1.lib" "vtkRenderingLOD-8.1.lib" "vtkRenderingOpenGL2-8.1.lib" "vtkRenderingQt-8.1.lib" "vtkRenderingVolume-8.1.lib" "vtkRenderingVolumeOpenGL2-8.1.lib" "vtksqlite-8.1.lib" "vtksys-8.1.lib" "vtkTestingGenericBridge-8.1.lib" "vtkTestingIOSQL-8.1.lib" "vtkTestingRendering-8.1.lib" "vtktiff-8.1.lib" "vtkverdict-8.1.lib" "vtkViewsContext2D-8.1.lib" "vtkViewsCore-8.1.lib" "vtkViewsInfovis-8.1.lib" "vtkViewsQt-8.1.lib" "vtkzlib-8.1.lib" Qt5Networkd.lib Qt5NetworkAuthd.lib Qt5Sqld.lib Qt5AxContainerd.lib Qt5AxBased.lib Qt5PrintSupportd.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5OpenGLExtensionsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\GitWork\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitWork\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.lib" /MACHINE:X64 x64\Debug\ArteryTechQtProject.res
          x64\Debug\AbnormalData.obj
          x64\Debug\ArteryTechQtProject.obj
          x64\Debug\EncryptedFileDialog.obj
+         x64\Debug\GetCalculationResultsDialog.obj
          x64\Debug\Help.obj
          x64\Debug\HtmlCreatedWord.obj
          x64\Debug\InstallationAlignment.obj
@@ -77,6 +139,7 @@
          x64\Debug\moc_SshClient.obj
          x64\Debug\moc_QtTcpClient.obj
          x64\Debug\moc_QtArteryTechBoundarySetupUI.obj
+         x64\Debug\moc_QtArteryTechLinearSolverSetupUI.obj
          x64\Debug\moc_QtArteryTechMeshSetup.obj
          x64\Debug\moc_QtArteryTechNonlinearSolverSetupUI.obj
          x64\Debug\moc_QtArteryTechOtherSetupsUI.obj
@@ -94,10 +157,10 @@
          x64\Debug\moc_RegisterInterface.obj
          x64\Debug\moc_InstallationAlignment.obj
          x64\Debug\moc_EncryptedFileDialog.obj
-         x64\Debug\moc_QtArteryTechLinearSolverSetupUI.obj
-         ArteryTechQtProject.vcxproj -> D:\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.exe
-     1>已完成生成项目“D:\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”(Build 个目标)的操作。
+         x64\Debug\moc_GetCalculationResultsDialog.obj
+         ArteryTechQtProject.vcxproj -> D:\GitWork\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.exe
+     1>已完成生成项目“D:\GitWork\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
 
-已用时间 00:00:36.71
+已用时间 00:00:46.44

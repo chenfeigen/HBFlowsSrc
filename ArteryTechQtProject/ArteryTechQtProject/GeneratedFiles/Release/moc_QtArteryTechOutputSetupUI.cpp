@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtArteryTechOutputSetupUI_t {
-    QByteArrayData data[4];
-    char stringdata0[67];
+    QByteArrayData data[6];
+    char stringdata0[136];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,17 @@ struct qt_meta_stringdata_QtArteryTechOutputSetupUI_t {
 static const qt_meta_stringdata_QtArteryTechOutputSetupUI_t qt_meta_stringdata_QtArteryTechOutputSetupUI = {
     {
 QT_MOC_LITERAL(0, 0, 25), // "QtArteryTechOutputSetupUI"
-QT_MOC_LITERAL(1, 26, 17), // "OkPushButtonSlots"
-QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 21) // "CancelPushButtonSlots"
+QT_MOC_LITERAL(1, 26, 34), // "NumberOfStepsForOutputLineEdi..."
+QT_MOC_LITERAL(2, 61, 0), // ""
+QT_MOC_LITERAL(3, 62, 33), // "TimeIntervalForOutputLineEdit..."
+QT_MOC_LITERAL(4, 96, 17), // "OkPushButtonSlots"
+QT_MOC_LITERAL(5, 114, 21) // "CancelPushButtonSlots"
 
     },
-    "QtArteryTechOutputSetupUI\0OkPushButtonSlots\0"
-    "\0CancelPushButtonSlots"
+    "QtArteryTechOutputSetupUI\0"
+    "NumberOfStepsForOutputLineEditSlot\0\0"
+    "TimeIntervalForOutputLineEditSlot\0"
+    "OkPushButtonSlots\0CancelPushButtonSlots"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +52,7 @@ static const uint qt_meta_data_QtArteryTechOutputSetupUI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,10 +60,14 @@ static const uint qt_meta_data_QtArteryTechOutputSetupUI[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    0,   34,    2, 0x08 /* Private */,
+       3,    0,   35,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -72,8 +80,10 @@ void QtArteryTechOutputSetupUI::qt_static_metacall(QObject *_o, QMetaObject::Cal
         QtArteryTechOutputSetupUI *_t = static_cast<QtArteryTechOutputSetupUI *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OkPushButtonSlots(); break;
-        case 1: _t->CancelPushButtonSlots(); break;
+        case 0: _t->NumberOfStepsForOutputLineEditSlot(); break;
+        case 1: _t->TimeIntervalForOutputLineEditSlot(); break;
+        case 2: _t->OkPushButtonSlots(); break;
+        case 3: _t->CancelPushButtonSlots(); break;
         default: ;
         }
     }
@@ -105,13 +115,13 @@ int QtArteryTechOutputSetupUI::qt_metacall(QMetaObject::Call _c, int _id, void *
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }

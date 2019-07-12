@@ -50,7 +50,7 @@ public:
     {
         if (PuttyInformationDialog->objectName().isEmpty())
             PuttyInformationDialog->setObjectName(QStringLiteral("PuttyInformationDialog"));
-        PuttyInformationDialog->resize(290, 173);
+        PuttyInformationDialog->resize(290, 174);
         verticalLayout_2 = new QVBoxLayout(PuttyInformationDialog);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -158,8 +158,8 @@ public:
         Passwordlabel->setText(QApplication::translate("PuttyInformationDialog", "Password:", Q_NULLPTR));
         IPlabel->setText(QApplication::translate("PuttyInformationDialog", "IP:", Q_NULLPTR));
         Portlabel->setText(QApplication::translate("PuttyInformationDialog", "Port:", Q_NULLPTR));
-        ConfirmpushButton->setText(QApplication::translate("PuttyInformationDialog", "Confirm", Q_NULLPTR));
-        CancelpushButton->setText(QApplication::translate("PuttyInformationDialog", "Cancel", Q_NULLPTR));
+        ConfirmpushButton->setText(QApplication::translate("PuttyInformationDialog", "\347\241\256\345\256\232", Q_NULLPTR));
+        CancelpushButton->setText(QApplication::translate("PuttyInformationDialog", "\345\217\226\346\266\210", Q_NULLPTR));
     } // retranslateUi
 
 };

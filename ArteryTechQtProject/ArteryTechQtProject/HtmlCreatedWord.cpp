@@ -17,7 +17,7 @@ HtmlCreatedWord::HtmlCreatedWord(QWidget *parent)
 	QDateTime time2 = QDateTime::currentDateTime();
 	qDebug() << "doc time1:" << time1;
 	qDebug() << "doc time2:" << time2;
-	QMessageBox::about(this,"info","Created word success !");
+	QMessageBox::about(this,"消息","创建word成功!");
 }
 
 HtmlCreatedWord::~HtmlCreatedWord()

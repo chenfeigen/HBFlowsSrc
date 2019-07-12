@@ -42,7 +42,7 @@ public:
     {
         if (EncryptedFileDialog->objectName().isEmpty())
             EncryptedFileDialog->setObjectName(QStringLiteral("EncryptedFileDialog"));
-        EncryptedFileDialog->resize(600, 76);
+        EncryptedFileDialog->resize(600, 91);
         verticalLayout_2 = new QVBoxLayout(EncryptedFileDialog);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -103,10 +103,10 @@ public:
     void retranslateUi(QDialog *EncryptedFileDialog)
     {
         EncryptedFileDialog->setWindowTitle(QApplication::translate("EncryptedFileDialog", "EncryptedFileDialog", Q_NULLPTR));
-        SourceFileLabel->setText(QApplication::translate("EncryptedFileDialog", "SourceFile:", Q_NULLPTR));
-        InputFilePushButton->setText(QApplication::translate("EncryptedFileDialog", "InputFile", Q_NULLPTR));
-        EncryptionPushButton->setText(QApplication::translate("EncryptedFileDialog", "Encryption", Q_NULLPTR));
-        DecryptionPushButton->setText(QApplication::translate("EncryptedFileDialog", "Decryption", Q_NULLPTR));
+        SourceFileLabel->setText(QApplication::translate("EncryptedFileDialog", "\346\272\220\346\226\207\344\273\266:", Q_NULLPTR));
+        InputFilePushButton->setText(QApplication::translate("EncryptedFileDialog", "\350\276\223\345\205\245\346\226\207\344\273\266", Q_NULLPTR));
+        EncryptionPushButton->setText(QApplication::translate("EncryptedFileDialog", "\345\212\240\345\257\206", Q_NULLPTR));
+        DecryptionPushButton->setText(QApplication::translate("EncryptedFileDialog", "\350\247\243\345\257\206", Q_NULLPTR));
     } // retranslateUi
 
 };

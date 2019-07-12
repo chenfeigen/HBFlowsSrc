@@ -7,9 +7,9 @@ QtArteryTechLinearSolverSetupUI::QtArteryTechLinearSolverSetupUI(QWidget *parent
 	ui = new Ui::QtArteryTechLinearSolverSetupUI();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setWindowTitle("Linear Solver Setup");
-	this->setMinimumSize(255, 271);
-	this->setMaximumSize(255, 271);
+	this->setWindowTitle("线性求解器参数设置");
+	this->setMinimumSize(791, 250);
+	this->setMaximumSize(791, 250);
 	this->diffLKRtolGAsmCheckBox = new QCheckBox;
 	this->diffLKRtolGAsmCheckBox->setText("diff_1st_ksp_rtol");
 
@@ -31,9 +31,9 @@ QtArteryTechLinearSolverSetupUI::QtArteryTechLinearSolverSetupUI(QString tmpFile
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	m_tmpFileName = tmpFileName;
-	this->setWindowTitle("Linear Solver Setup");
-	this->setMinimumSize(255, 271);
-	this->setMaximumSize(255, 271);
+	this->setWindowTitle("线性求解器参数设置");
+	this->setMinimumSize(791, 250);
+	this->setMaximumSize(791, 250);
 	this->diffLKRtolGAsmCheckBox = new QCheckBox;
 	this->diffLKRtolGAsmCheckBox->setText("diff_1st_ksp_rtol");
 
@@ -58,7 +58,7 @@ void QtArteryTechLinearSolverSetupUI::InitLinearSolverData()
 	ui->RelativeTolleranceLineEdit->setText("0");
 	ui->AbsoluteTolleranceLineEdit->setText("0");
 	ui->Different1stStepTolLineEdit->setText(NULL);
-	ui->Different1stStepTolLabel->setVisible(false);
+	ui->Different1stStepTolLabel->setVisible(true);
 	ui->Different1stStepTolLineEdit->setVisible(false);
 	ui->horizontalLayout_7->addWidget(this->diffLKRtolGAsmCheckBox);
 	ui->RatioOfThe1stStepTolLineEdit->setText("0");
@@ -73,7 +73,7 @@ void QtArteryTechLinearSolverSetupUI::InitLinearSolverData()
 	ui->RelativeTolleranceLineEdit->setText("1.e-5");
 	ui->AbsoluteTolleranceLineEdit->setText("1.e-30");
 	ui->Different1stStepTolLineEdit->setText(NULL);
-	ui->Different1stStepTolLabel->setVisible(false);
+	ui->Different1stStepTolLabel->setVisible(true);
 	ui->Different1stStepTolLineEdit->setVisible(false);
 	ui->horizontalLayout_7->addWidget(this->diffLKRtolGAsmCheckBox);
 	ui->RatioOfThe1stStepTolLineEdit->setText("0.001");
@@ -86,37 +86,37 @@ void QtArteryTechLinearSolverSetupUI::SaveLinearSolverData()
 	QString Menustr = "#Linear Solver Setup\n";
 	this->linearSolverDataList.append(Menustr);
 	//QString labeltext = "	" + ui->LinearSolverTypeLabel->text() + " " + "-ksp_type" + " ";
-	QString labeltext = "   -ksp_type ";
+	QString labeltext = "	-ksp_type ";
 	QString lineEdit = ui->LinearSolverTypeLineEdit->text() + "\n";
 	QString contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->PreconditioningSideLabel->text() + " " + "-ksp_pc_side" + " ";
-	labeltext = "   -ksp_pc_side ";
+	labeltext = "	-ksp_pc_side ";
 	lineEdit = ui->PreconditioningSideLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->RestartNumberLabel->text() + " " + "-ksp_gmres_restart" + " ";
-	labeltext = "   -ksp_gmres_restart ";
+	labeltext = "	-ksp_gmres_restart ";
 	lineEdit = ui->RestartNumberLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->MaxIterationNumberLabel->text() + " " + "-ksp_max_it" + " ";
-	labeltext = "   -ksp_max_it ";
+	labeltext = "	-ksp_max_it ";
 	lineEdit = ui->MaxIterationNumberLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->RelativeTolleranceLabel->text() + " " + "-ksp_rtol" + " ";
-	labeltext = "   -ksp_rtol ";
+	labeltext = "	-ksp_rtol ";
 	lineEdit = ui->RelativeTolleranceLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
 
 	//labeltext = "	" + ui->AbsoluteTolleranceLabel->text() + " " + "-ksp_atol" + " ";
-	labeltext = "   -ksp_atol ";
+	labeltext = "	#-ksp_atol ";
 	lineEdit = ui->AbsoluteTolleranceLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
@@ -124,14 +124,14 @@ void QtArteryTechLinearSolverSetupUI::SaveLinearSolverData()
 	if (this->diffLKRtolGAsmCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->Different1stStepTolLabel->text() + " " + "-diff_lst_ksp_rtol" + " ";
-		labeltext = "   -diff_lst_ksp_rtol ";
+		labeltext = "	-diff_1st_ksp_rtol ";
 		lineEdit = ui->Different1stStepTolLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		this->linearSolverDataList.append(contenttext);
 	}
 
 	//labeltext = "	" + ui->RatioOfThe1stStepTolLabel->text() + " " + "-diff_lst_ksp_rtol_ratio" + " ";
-	labeltext = "   -diff_lst_ksp_rtol_ratio ";
+	labeltext = "	-diff_1st_ksp_rtol_ratio ";
 	lineEdit = ui->RatioOfThe1stStepTolLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	this->linearSolverDataList.append(contenttext);
@@ -167,8 +167,12 @@ void QtArteryTechLinearSolverSetupUI::closeEvent(QCloseEvent *event)
 	bool tmpFileOpenStatus = tmpFile.open(QIODevice::Append | QIODevice::Text);
 	if (!tmpFileOpenStatus)
 	{
-		QMessageBox::warning(this, "this", m_tmpFileName + " file open fail !");
+		QMessageBox::warning(this, "警告：", m_tmpFileName + " 文件打开失败！");
+		return;
 	}
+	QString timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	tmpFile.write(timePoint.toStdString().c_str());
+	tmpFile.write("\n");
 	for (int i = 0; i < linearSolverDataList.length(); i++)
 	{
 		tmpFile.write(linearSolverDataList[i].toStdString().c_str());
@@ -224,6 +228,7 @@ int QtArteryTechLinearSolverSetupUI::isDigitStr(QString src)
 	}
 }
 
+//RestartNumberLineEdit槽函数
 void QtArteryTechLinearSolverSetupUI::RestartNumberLineEditSlot()
 {
 	if (ui->RestartNumberLineEdit->text() == NULL)
@@ -233,25 +238,26 @@ void QtArteryTechLinearSolverSetupUI::RestartNumberLineEditSlot()
 	}
 	else
 	{
-		if (ui->RestartNumberLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->RestartNumberLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->RestartNumberLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->RestartNumberLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->RestartNumberLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->RestartNumberLineEdit->setText("0");
 		}
 	}
 }
 
+//MaxIterationNumberLineEdit槽函数
 void QtArteryTechLinearSolverSetupUI::MaxIterationNumberLineEditSlot()
 {
 	if (ui->MaxIterationNumberLineEdit->text() == NULL)
@@ -261,25 +267,26 @@ void QtArteryTechLinearSolverSetupUI::MaxIterationNumberLineEditSlot()
 	}
 	else
 	{
-		if (ui->MaxIterationNumberLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->MaxIterationNumberLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->MaxIterationNumberLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->MaxIterationNumberLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->MaxIterationNumberLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->MaxIterationNumberLineEdit->setText("0");
 		}
 	}
 }
 
+//RatioOfThe1stStepTolLineEdit槽函数
 void QtArteryTechLinearSolverSetupUI::RatioOfThe1stStepTolLineEditSlot()
 {
 	if (ui->RatioOfThe1stStepTolLineEdit->text() == NULL)
@@ -289,20 +296,20 @@ void QtArteryTechLinearSolverSetupUI::RatioOfThe1stStepTolLineEditSlot()
 	}
 	else
 	{
-		if (ui->RatioOfThe1stStepTolLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->RatioOfThe1stStepTolLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->RatioOfThe1stStepTolLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->RatioOfThe1stStepTolLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->RatioOfThe1stStepTolLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->RatioOfThe1stStepTolLineEdit->setText("0");
 		}
 	}

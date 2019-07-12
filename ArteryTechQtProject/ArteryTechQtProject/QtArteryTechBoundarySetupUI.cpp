@@ -7,9 +7,9 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QWidget *parent)
 	ui = new Ui::QtArteryTechBoundarySetupUI();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setWindowTitle("Boundary Setup");
-	this->setMinimumSize(610, 375);
-	this->setMaximumSize(610, 375);
+	this->setWindowTitle("边界条件设置");
+	setMinimumSize(1115, 500);
+	setMaximumSize(1115, 500);
 	this->vinCheckBox = new QCheckBox;
 	this->wallCheckBox = new QCheckBox;
 	this->inletFlowfactorCheckBox = new QCheckBox;
@@ -23,9 +23,9 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QWidget *parent)
 	//this->VinCheckBox->setCheckState(Qt::Checked);
 	//this->WallCheckBox->setCheckState(Qt::Checked);
 
-	ui->horizontalLayout_13->addWidget(this->vinCheckBox);
-	ui->horizontalLayout_14->addWidget(this->wallCheckBox);
-	ui->horizontalLayout_30->addWidget(this->inletFlowfactorCheckBox);
+	ui->horizontalLayout_9->addWidget(this->vinCheckBox);
+	ui->horizontalLayout_10->addWidget(this->wallCheckBox);
+	ui->horizontalLayout_21->addWidget(this->inletFlowfactorCheckBox);
 	ui->horizontalLayout_22->addWidget(this->parabolicInflowCheckBox);
 
 
@@ -57,9 +57,9 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QString tmpFileName,QWi
 	ui = new Ui::QtArteryTechBoundarySetupUI();
 	ui->setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-	this->setWindowTitle("Boundary Setup");
-	this->setMinimumSize(610, 375);
-	this->setMaximumSize(610, 375);
+	this->setWindowTitle("边界条件设置");
+	setMinimumSize(1115, 500);
+	setMaximumSize(1115, 500);
 
 	m_tmpFileName = tmpFileName;
 
@@ -76,9 +76,9 @@ QtArteryTechBoundarySetupUI::QtArteryTechBoundarySetupUI(QString tmpFileName,QWi
 	//this->VinCheckBox->setCheckState(Qt::Checked);
 	//this->WallCheckBox->setCheckState(Qt::Checked);
 
-	ui->horizontalLayout_13->addWidget(this->vinCheckBox);
-	ui->horizontalLayout_14->addWidget(this->wallCheckBox);
-	ui->horizontalLayout_30->addWidget(this->inletFlowfactorCheckBox);
+	ui->horizontalLayout_9->addWidget(this->vinCheckBox);
+	ui->horizontalLayout_10->addWidget(this->wallCheckBox);
+	ui->horizontalLayout_21->addWidget(this->inletFlowfactorCheckBox);
 	ui->horizontalLayout_22->addWidget(this->parabolicInflowCheckBox);
 
 
@@ -128,10 +128,10 @@ void QtArteryTechBoundarySetupUI::InitBoundaryData()
 	ui->NumberOfOutletsLineEdit->setText("0");
 	ui->IndexForAortaOutletLineEdit->setText("0");
 	ui->IncludeInletBoundaryLineEdit->setText(NULL);
-	ui->IncludeInletBoundaryLabel->setVisible(false);
+	ui->IncludeInletBoundaryLabel->setVisible(true);
 	ui->IncludeInletBoundaryLineEdit->setVisible(false);
 	ui->IncludeWallBoundaryLineEdit->setText(NULL);
-	ui->IncludeWallBoundaryLabel->setVisible(false);
+	ui->IncludeWallBoundaryLabel->setVisible(true);
 	ui->IncludeWallBoundaryLineEdit->setVisible(false);
 	ui->InletBoudaryNormXDirectionLineEdit->setText("0");
 	ui->InletBoudaryNormYDirectionLineEdit->setText("0");
@@ -144,10 +144,10 @@ void QtArteryTechBoundarySetupUI::InitBoundaryData()
 	ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
 	ui->InletBoudaryAreaLineEdit->setText("0");
 	ui->InletFlowRateFactorLineEdit->setText(NULL);
-	ui->InletFlowRateFactorLabel->setVisible(false);
+	ui->InletFlowRateFactorLabel->setVisible(true);
 	ui->InletFlowRateFactorLineEdit->setVisible(false);
 	ui->ParabolicInflowLineEdit->setText(NULL);
-	ui->ParabolicInflowLabel->setVisible(false);
+	ui->ParabolicInflowLabel->setVisible(true);
 	ui->ParabolicInflowLineEdit->setVisible(false);
 }
 
@@ -164,10 +164,10 @@ void QtArteryTechBoundarySetupUI::InitBoundaryData()
 	ui->NumberOfOutletsLineEdit->setText("15");
 	ui->IndexForAortaOutletLineEdit->setText("21");
 	ui->IncludeInletBoundaryLineEdit->setText(NULL);
-	ui->IncludeInletBoundaryLabel->setVisible(false);
+	ui->IncludeInletBoundaryLabel->setVisible(true);
 	ui->IncludeInletBoundaryLineEdit->setVisible(false);
 	ui->IncludeWallBoundaryLineEdit->setText(NULL);
-	ui->IncludeWallBoundaryLabel->setVisible(false);
+	ui->IncludeWallBoundaryLabel->setVisible(true);
 	ui->IncludeWallBoundaryLineEdit->setVisible(false);
 	ui->InletBoudaryNormXDirectionLineEdit->setText("-0.750503");
 	ui->InletBoudaryNormYDirectionLineEdit->setText("-0.28611");
@@ -180,10 +180,10 @@ void QtArteryTechBoundarySetupUI::InitBoundaryData()
 	ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("109.63409");
 	ui->InletBoudaryAreaLineEdit->setText("4.47770145");
 	ui->InletFlowRateFactorLineEdit->setText(NULL);
-	ui->InletFlowRateFactorLabel->setVisible(false);
+	ui->InletFlowRateFactorLabel->setVisible(true);
 	ui->InletFlowRateFactorLineEdit->setVisible(false);
 	ui->ParabolicInflowLineEdit->setText(NULL);
-	ui->ParabolicInflowLabel->setVisible(false);
+	ui->ParabolicInflowLabel->setVisible(true);
 	ui->ParabolicInflowLineEdit->setVisible(false);
 }
 #endif
@@ -194,50 +194,51 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	QString MenuStr = "#Boundary Setup\n";
 	boundaryDataList.append(MenuStr);
 	//QString labeltext = "	" + ui->BoundaryTypeLabel->text() + " " + "-bloodflow_bc_type" + " ";
-	QString labeltext = "   -bloodflow_bc_type ";
+	QString labeltext = "	-bloodflow_bc_type ";
 	QString lineEdit = ui->BoundaryTypeLineEdit->text() + "\n";
 	QString contenttext = labeltext + lineEdit;
-	bloodflowBcTypeText = ui->BoundaryTypeLineEdit->text();
+	bloodflowBcTypeText = ui->BoundaryTypeLineEdit->text().trimmed();
+	SendBoundaryTypeSignal(bloodflowBcTypeText);
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->NodeSetFileLabel->text() + " " + "-nodeset_file" + " ";
-	labeltext = "   -nodeset_file ";
+	labeltext = "	#-nodeset_file ";
 	lineEdit = ui->NodeSetFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->SideSetFileLabel->text() + " " + "-sideset_file" + " ";
-	labeltext = "   -sideset_file ";
+	labeltext = "	#-sideset_file ";
 	lineEdit = ui->SideSetFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->NodeAndSideSetFileLabel->text() + " " + "-BC_setup_file" + " ";
-	labeltext = "   -BC_setup_file ";
+	labeltext = "	-BC_setup_file ";
 	lineEdit = ui->NodeAndSideSetFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->WindkesselFileLabel->text() + " " + "-Windkessel_file" + " ";
-	labeltext = "   -Windkessel_file ";
+	labeltext = "	-Windkessel_file ";
 	lineEdit = ui->WindkesselFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletFlowRateFileLabel->text() + " " + "-Q_file" + " ";
-	labeltext = "   -Q_file ";
+	labeltext = "	-Q_file ";
 	lineEdit = ui->InletFlowRateFileLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->NumberOfOutletsLabel->text() + " " + "-num_outlet" + " ";
-	labeltext = "   -num_outlet ";
+	labeltext = "	-num_outlet ";
 	lineEdit = ui->NumberOfOutletsLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->IndexForAortaOutletLabel->text() + " " + "-aortic_outlet" + " ";
-	labeltext = "   -aortic_outlet ";
+	labeltext = "	-aortic_outlet ";
 	lineEdit = ui->IndexForAortaOutletLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
@@ -245,7 +246,7 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	if (this->vinCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->IncludeInletBoundaryLabel->text() + " " + "-vin" + " ";
-		labeltext = "   -vin ";
+		labeltext = "	-vin ";
 		lineEdit = ui->IncludeInletBoundaryLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		boundaryDataList.append(contenttext);
@@ -254,68 +255,68 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	if (this->wallCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->IncludeWallBoundaryLabel->text() + " " + "-wall" + " ";
-		labeltext = "   -wall ";
+		labeltext = "	-wall ";
 		lineEdit = ui->IncludeWallBoundaryLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		boundaryDataList.append(contenttext);
 	}
 
 	//labeltext = "	" + ui->InletBoudaryNormXDirectionLabel->text() + " " + "-inlet_nx" + " ";
-	labeltext = "   -inlet_nx ";
+	labeltext = "	#-inlet_nx ";
 	lineEdit = ui->InletBoudaryNormXDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryNormYDirectionLabel->text() + " " + "-inlet_ny" + " ";
-	labeltext = "   -inlet_ny ";
+	labeltext = "	#-inlet_ny ";
 	lineEdit = ui->InletBoudaryNormYDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryNormZDirectionLabel->text() + " " + "-inlet_nz" + " ";
-	labeltext = "   -inlet_nz ";
+	labeltext = "	#-inlet_nz ";
 	lineEdit = ui->InletBoudaryNormZDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryLowBoundXDirectionLabel->text() + " " + "-inlet_xi" + " ";
-	labeltext = "   -inlet_xi ";
+	labeltext = "	#-inlet_xi ";
 	lineEdit = ui->InletBoudaryLowBoundXDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryLowBoundYDirectionLabel->text() + " " + "-inlet_yi" + " ";
-	labeltext = "   -inlet_yi ";
+	labeltext = "	#-inlet_yi ";
 	lineEdit = ui->InletBoudaryLowBoundYDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryLowBoundZDirectionLabel->text() + " " + "-inlet_zi" + " ";
-	labeltext = "   -inlet_zi ";
+	labeltext = "	#-inlet_zi ";
 	lineEdit = ui->InletBoudaryLowBoundZDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryUpperBoundXDirectionLabel->text() + " " + "-inlet_xf" + " ";
-	labeltext = "   -inlet_xf ";
+	labeltext = "	#-inlet_xf ";
 	lineEdit = ui->InletBoudaryUpperBoundXDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryUpperBoundYDirectionLabel->text() + " " + "-inlet_yf" + " ";
-	labeltext = "   -inlet_yf ";
+	labeltext = "	#-inlet_yf ";
 	lineEdit = ui->InletBoudaryUpperBoundYDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryUpperBoundZDirectionLabel->text() + " " + "-inlet_zf" + " ";
-	labeltext = "   -inlet_zf ";
+	labeltext = "	#-inlet_zf ";
 	lineEdit = ui->InletBoudaryUpperBoundZDirectionLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
 
 	//labeltext = "	" + ui->InletBoudaryAreaLabel->text() + " " + "-inlet_area" + " ";
-	labeltext = "   -inlet_area ";
+	labeltext = "	#-inlet_area ";//-inlet_flowfactor
 	lineEdit = ui->InletBoudaryAreaLineEdit->text() + "\n";
 	contenttext = labeltext + lineEdit;
 	boundaryDataList.append(contenttext);
@@ -323,7 +324,7 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	if (this->inletFlowfactorCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->InletFlowRateFactorLabel->text() + " " + "-inlet_flowfactor" + " ";
-		labeltext = "   -inlet_flowfactor ";
+		labeltext = "	-inlet_flowfactor ";
 		lineEdit = ui->InletFlowRateFactorLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		boundaryDataList.append(contenttext);
@@ -332,7 +333,7 @@ void QtArteryTechBoundarySetupUI::SaveBoundaryData()
 	if (this->parabolicInflowCheckBox->isChecked())
 	{
 		//labeltext = "	" + ui->ParabolicInflowLabel->text() + " " + "-parabolic_inflow" + " ";
-		labeltext = "   -parabolic_inflow ";
+		labeltext = "	-parabolic_inflow ";
 		lineEdit = ui->ParabolicInflowLineEdit->text() + "\n";
 		contenttext = labeltext + lineEdit;
 		boundaryDataList.append(contenttext);
@@ -351,8 +352,12 @@ void QtArteryTechBoundarySetupUI::closeEvent(QCloseEvent *event)
 	bool tmpFileOpenStatus = tmpFile.open(QIODevice::Append | QIODevice::Text);
 	if (!tmpFileOpenStatus)
 	{
-		QMessageBox::warning(this, "this", m_tmpFileName + " file open fail !");
+		QMessageBox::warning(this, "警告", m_tmpFileName + " 文件打开失败！");
+		return;
 	}
+	QString timePoint = QDateTime::currentDateTime().toString("yyyyMMddHHmmss");
+	tmpFile.write(timePoint.toStdString().c_str());
+	tmpFile.write("\n");
 	for (int i = 0; i < boundaryDataList.length(); i++)
 	{
 		tmpFile.write(boundaryDataList[i].toStdString().c_str());
@@ -436,6 +441,7 @@ int QtArteryTechBoundarySetupUI::isDigitStr(QString src)
 	}
 }
 
+//BoundaryTypeLineEdit槽函数
 void QtArteryTechBoundarySetupUI::BoundaryTypeLineEditSlot()
 {
 	if (ui->BoundaryTypeLineEdit->text() == NULL)
@@ -445,26 +451,26 @@ void QtArteryTechBoundarySetupUI::BoundaryTypeLineEditSlot()
 	}
 	else
 	{
-		if (ui->BoundaryTypeLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->BoundaryTypeLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->BoundaryTypeLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->BoundaryTypeLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告:", "数字输入过长，请重新输入！");
+				ui->BoundaryTypeLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告:", "只能输入数字，请重新输入！");
 			ui->BoundaryTypeLineEdit->setText("0");
 		}
 	}
 }
 
-
+//NumberOfOutletsLineEdit槽函数
 void QtArteryTechBoundarySetupUI::NumberOfOutletsLineEditSlot()
 {
 	if (ui->NumberOfOutletsLineEdit->text() == NULL)
@@ -474,25 +480,26 @@ void QtArteryTechBoundarySetupUI::NumberOfOutletsLineEditSlot()
 	}
 	else
 	{
-		if (ui->NumberOfOutletsLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->NumberOfOutletsLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->NumberOfOutletsLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->NumberOfOutletsLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告:", "数字输入过长，请重新输入！");
+				ui->NumberOfOutletsLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告:", "只能输入数字，请重新输入！");
 			ui->NumberOfOutletsLineEdit->setText("0");
 		}
 	}
 }
 
+//IndexForAortaOutletLineEdit槽函数
 void QtArteryTechBoundarySetupUI::IndexForAortaOutletLineEditSlot()
 {
 	if (ui->IndexForAortaOutletLineEdit->text() == NULL)
@@ -502,25 +509,26 @@ void QtArteryTechBoundarySetupUI::IndexForAortaOutletLineEditSlot()
 	}
 	else
 	{
-		if (ui->IndexForAortaOutletLineEdit->text().trimmed().length() > 8)
-		{
-			QMessageBox::warning(this, "Warning:", "Number length can not exceed 8 bits, please re-enter!");
-			ui->IndexForAortaOutletLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->IndexForAortaOutletLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->IndexForAortaOutletLineEdit->text().trimmed().length() > 8)
+			{
+				QMessageBox::warning(this, "警告:", "数字输入过长，请重新输入！");
+				ui->IndexForAortaOutletLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告:", "只能输入数字，请重新输入！");
 			ui->IndexForAortaOutletLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryNormXDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryNormXDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryNormXDirectionLineEdit->text() == NULL)
@@ -530,25 +538,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryNormXDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryNormXDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryNormXDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryNormXDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryNormXDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryNormXDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryNormXDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryNormYDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryNormYDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryNormYDirectionLineEdit->text() == NULL)
@@ -558,25 +567,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryNormYDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryNormYDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryNormYDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryNormYDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryNormYDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryNormYDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryNormYDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryNormZDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryNormZDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryNormZDirectionLineEdit->text() == NULL)
@@ -586,25 +596,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryNormZDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryNormZDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryNormZDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryNormZDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryNormZDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryNormZDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryNormZDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryLowBoundXDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundXDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryLowBoundXDirectionLineEdit->text() == NULL)
@@ -614,25 +625,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundXDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryLowBoundXDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryLowBoundXDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryLowBoundXDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryLowBoundXDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryLowBoundYDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundYDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryLowBoundYDirectionLineEdit->text() == NULL)
@@ -642,25 +654,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundYDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryLowBoundYDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryLowBoundYDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryLowBoundYDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryLowBoundYDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryLowBoundZDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundZDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryLowBoundZDirectionLineEdit->text() == NULL)
@@ -670,26 +683,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryLowBoundZDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryLowBoundZDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryLowBoundZDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryLowBoundZDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryLowBoundZDirectionLineEdit->setText("0");
 		}
 	}
 }
 
-
+//InletBoudaryUpperBoundXDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundXDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryUpperBoundXDirectionLineEdit->text() == NULL)
@@ -699,25 +712,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundXDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryUpperBoundXDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryUpperBoundXDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryUpperBoundXDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryUpperBoundXDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryUpperBoundYDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundYDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryUpperBoundYDirectionLineEdit->text() == NULL)
@@ -727,25 +741,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundYDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryUpperBoundYDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryUpperBoundYDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryUpperBoundYDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryUpperBoundYDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryUpperBoundZDirectionLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundZDirectionLineEditSlot()
 {
 	if (ui->InletBoudaryUpperBoundZDirectionLineEdit->text() == NULL)
@@ -755,25 +770,26 @@ void QtArteryTechBoundarySetupUI::InletBoudaryUpperBoundZDirectionLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryUpperBoundZDirectionLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryUpperBoundZDirectionLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryUpperBoundZDirectionLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryUpperBoundZDirectionLineEdit->setText("0");
 		}
 	}
 }
 
+//InletBoudaryAreaLineEdit槽函数
 void QtArteryTechBoundarySetupUI::InletBoudaryAreaLineEditSlot()
 {
 	if (ui->InletBoudaryAreaLineEdit->text() == NULL)
@@ -783,22 +799,27 @@ void QtArteryTechBoundarySetupUI::InletBoudaryAreaLineEditSlot()
 	}
 	else
 	{
-		if (ui->InletBoudaryAreaLineEdit->text().trimmed().length() > 15)
-		{
-			QMessageBox::warning(this, "Warning:", "The number entered is too large to reach the range. Please re-enter it!");
-			ui->InletBoudaryAreaLineEdit->setText("0");
-			return;
-		}
 		bool digitsStatus = isDigitStr(ui->InletBoudaryAreaLineEdit->text().trimmed());
 		if (digitsStatus == 0)
 		{
+			if (ui->InletBoudaryAreaLineEdit->text().trimmed().length() > 15)
+			{
+				QMessageBox::warning(this, "警告：", "数字输入过长，请重新输入！");
+				ui->InletBoudaryAreaLineEdit->setText("0");
+				return;
+			}
 			return;
 		}
 		else
 		{
-			QMessageBox::warning(this, "Warning:", "Only numbers can be entered. Please re-enter.");
+			QMessageBox::warning(this, "警告：", "只能输入数字，请重新输入！");
 			ui->InletBoudaryAreaLineEdit->setText("0");
 		}
 	}
+}
+
+void QtArteryTechBoundarySetupUI::SendBoundaryTypeSignal(QString boundaryTypeText)
+{
+	emit BoundaryTypeSignal(boundaryTypeText);
 }
 
