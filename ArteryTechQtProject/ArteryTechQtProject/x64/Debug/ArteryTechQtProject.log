@@ -1,12 +1,5 @@
-﻿生成启动时间为 2019/7/10 星期三 14:20:40。
-     1>项目“D:\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”在节点 2 上(Build 个目标)。
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ArteryTechQtProject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     1>QtRccSetDependencies:
-         "D:\Software_installation\Qt\5.8\msvc2015_64\bin\rcc.exe" --list "ArteryTechQtProject.qrc" > "x64\Debug\rcc_list.txt" 2> nul
-       Link:
-         ArteryTechQtProject.vcxproj -> D:\HBFlowsSrc\ArteryTechQtProject\x64\Debug\ArteryTechQtProject.exe
-     1>已完成生成项目“D:\HBFlowsSrc\ArteryTechQtProject\ArteryTechQtProject\ArteryTechQtProject.vcxproj”(Build 个目标)的操作。
+﻿生成启动时间为 2019/7/12 星期五 16:45:01。
 
 已成功生成。
 
-已用时间 00:00:02.62
+已用时间 00:00:00.00
