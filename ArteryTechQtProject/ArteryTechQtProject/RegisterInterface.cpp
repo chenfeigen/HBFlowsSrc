@@ -31,7 +31,7 @@ void RegisterInterface::ConfirmPushButtonSlot()
 {
 	if (NULL == ui.UsernameLineEdit->text().trimmed())
 	{
-		QMessageBox::information(this, "消息:", "账号不能为空，请重新输入！");
+		QMessageBox::warning(this, "警告:", "账号不能为空，请重新输入！");
 		return;
 	}
 	bool checkStatus = checkedRegisterUserInfo();
@@ -65,34 +65,34 @@ bool RegisterInterface::checkedRegisterUserInfo()
 	QString password2 = ui.PasswordLineEdit2->text().trimmed();
 	if (userName == NULL)
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The account entered at the time of registration cannot be empty, please re-enter!";
-		QMessageBox::information(this, "消息:", "注册账号输入不能为空，请重新输入！");
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The account entered at the time of registration cannot be empty, please re-enter!";
+		QMessageBox::warning(this, "警告:", "注册账号输入不能为空，请重新输入！");
 		return false;
 	}
 	if (password == NULL || password2 == NULL)
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The password entered at the time of registration cannot be empty. Please re-enter it!";
-		QMessageBox::information(this, "消息:", "注册账号密码输入不能为空，请重新输入！");
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "The password entered at the time of registration cannot be empty. Please re-enter it!";
+		QMessageBox::warning(this, "警告:", "注册账号密码输入不能为空，请重新输入！");
 		return false;
 	}
 	else if (password.compare(password2) != 0)
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Two inconsistent passwords!";
-		QMessageBox::information(this, "消息:", "两次密码输入不对!");
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Two inconsistent passwords!";
+		QMessageBox::warning(this, "警告:", "两次密码输入不一致，请重新输入!");
 		return false;
 	}
 
 	if (userName.compare(password) == 0)
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "注册账号时，账号和密码一致!";
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "注册账号时，账号和密码一致!";
 		QMessageBox::warning(this, "警告:", "账号和密码不能一致，请重新输入！");
 		return false;
 	}
 
 	if (password.length() < 8)
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Enter the password can not be empty, please re-enter!";
-		QMessageBox::information(this, "消息:", "密码长度不能小于8位，请重新输入！");
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Enter the password can not be empty, please re-enter!";
+		QMessageBox::warning(this, "警告:", "密码长度不能小于8位，请重新输入！");
 		return false;
 	}
 	int userNamelength = userName.length();
@@ -108,16 +108,16 @@ bool RegisterInterface::checkedRegisterUserInfo()
 			}
 			else
 			{
-				qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account cannot have special characters except numbers and characters. Please re-enter!";
-				QMessageBox::information(this, "消息:", "账号不能有除数字和字母以外的其他字符，请重新输入！");
+				qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account cannot have special characters except numbers and characters. Please re-enter!";
+				QMessageBox::warning(this, "警告:", "账号不能有除数字和字母以外的其他字符，请重新输入！");
 				return false;
 			}
 		}
 	}
 	else
 	{
-		qInfo() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account length can not exceed 20 characters, password length can not exceed 30 characters, please re-enter!";
-		QMessageBox::information(this, "消息:", "账号长度不能超过20个字符，密码长度不能超过30个字符，请重新输入！");
+		qWarning() << "filename:" << __FILE__ << " line:" << __LINE__ << " functionName:" << __FUNCTION__ << " LOG:" << "Account length can not exceed 20 characters, password length can not exceed 30 characters, please re-enter!";
+		QMessageBox::warning(this, "警告:", "账号长度不能超过20个字符，密码长度不能超过30个字符，请重新输入！");
 		return false;
 	}
 	return true;
