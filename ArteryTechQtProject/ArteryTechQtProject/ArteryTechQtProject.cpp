@@ -156,7 +156,7 @@ void ArteryTechQtProject::InitUIdata()
 	QObject::connect(this, SIGNAL(ComputingMultipleBPSignal(QStringList)), qtATOtherSetupsDlg, SLOT(GetVariableParametersSignalSlot(QStringList)));
 
 	this->verifyPassword = new VerifyPassword(this);
-
+	this->help = new Help(this);
 	//this->HBFlowsHelpMenu = new QMenu("关于");
 	this->actHelp = new QAction("关于");
 	//this->HBFlowsHelpMenu->addAction(actHelp);
