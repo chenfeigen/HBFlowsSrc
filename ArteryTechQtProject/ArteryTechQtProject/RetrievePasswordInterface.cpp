@@ -6,18 +6,11 @@ RetrievePasswordInterface::RetrievePasswordInterface(QWidget *parent)
 	ui.setupUi(this);
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 	//密码找回，通过界面密码找回
-	//this->setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
-	//this->setWindowTitle("HBFLows RetrievePassword");
-	//this->setMaximumSize(418, 295);
-	//this->setMinimumSize(418, 295);
-	//ui.PasswordLabel->setVisible(false);
-	//ui.PasswordLineEdit->setVisible(false);
-
-	////信号与槽函数的连接
-	//QObject::connect(ui.ConfirmPushButton,SIGNAL(clicked(bool)),this,SLOT(ConfirmPushButtonSlot()));
-	//QObject::connect(ui.CancelPushButton,SIGNAL(clicked(bool)),this,SLOT(CancelPushButtonSlot()));
 
 	//提示通过厂商获取密码
+	this->setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
+	this->setMaximumSize(500, 300);
+	this->setMinimumSize(500, 300);
 	this->setWindowTitle("密码找回");
 	ui.UsernameLabel->setVisible(false);
 	ui.UsernameLineEdit->setVisible(false);

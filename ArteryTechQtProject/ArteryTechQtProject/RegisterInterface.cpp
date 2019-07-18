@@ -6,8 +6,8 @@ RegisterInterface::RegisterInterface(QWidget *parent)
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
 	this->setWindowTitle("用户注册");
-	this->setMaximumSize(418, 295);
-	this->setMinimumSize(418, 295);
+	this->setMaximumSize(500, 300);
+	this->setMinimumSize(500, 300);
 	ui.PasswordLineEdit->setEchoMode(QLineEdit::Password);//输入的时候就显示圆点
 	ui.PasswordLineEdit2->setEchoMode(QLineEdit::Password);//输入的时候就显示圆点
 
